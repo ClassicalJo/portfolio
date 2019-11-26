@@ -87,7 +87,7 @@ class App extends React.Component {
           <div className="item-container">
             <div className="item"><a href="https://classicaljo.github.io/simon-dice/" target="_blank"><img src={Simon} alt="Simon dice" /></a></div>
             <div className="item"><a href="https://classicaljo.github.io/barking-board/" target="_blank"><img src={BarkingBoard} alt="Barking board" /></a></div>
-            <div className="item"><a href="https://classicaljo.github.io/contact-info/" target="_blank"><img src={ContactInformation} alt="Contact information" /></a></div>
+            <div className="item"><a href="https://classicaljo.github.io/contact-information/index.html" target="_blank"><img src={ContactInformation} alt="Contact information" /></a></div>
           </div>}
 
 
