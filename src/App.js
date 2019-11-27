@@ -2,6 +2,7 @@ import React from 'react';
 import Canvas from './Canvas'
 import Simon from "./simon-dice.png"
 import BarkingBoard from "./barking-board.png"
+import Pokedex from "./pokedex.png"
 import ContactInformation from "./contact-information.png"
 import './App.css';
 
@@ -11,8 +12,9 @@ class App extends React.Component {
     super(props);
     this.state = {
       showCanvas: false,
-      showText: true,
+      showIntro: true,
       showWelcome: false,
+      showItems: false,
       canvas: {
         width: window.innerWidth * 0.9,
         height: window.innerHeight * 0.9,
@@ -33,20 +35,19 @@ class App extends React.Component {
     })
 
     setTimeout(() => { this.init() }, 2000)
-    setTimeout(() => { this.setState({ showWelcome: true }) }, 20000)
-    setTimeout(() => { this.setState({ showItems: true }) }, 22000)
+    setTimeout(() => { this.setState({ showWelcome: true }) }, 14000)
+    setTimeout(() => { this.setState({ showItems: true }) }, 14000)
 
 
   }
 
   init() {
-    window.requestAnimationFrame(() => { this.draw(1, 4000) });
-    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(2, 2000) }) }, 4000)
-    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(4, 2000) }) }, 6000)
-    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(8, 2000) }) }, 8000)
-    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(16, 2000) }) }, 10000)
-    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(32, 2000) }) }, 12000)
-    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(64, 2000) }) }, 14000)
+    window.requestAnimationFrame(() => { this.draw(4, 2000) })
+    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(8, 2000) }) }, 2000)
+    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(16, 2000) }) }, 4000)
+    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(32, 2000) }) }, 6000)
+    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(64, 2000) }) }, 8000)
+    
   }
 
   draw(ratio, time) {
@@ -68,7 +69,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        {(this.state.showText) &&
+        {(this.state.showIntro) &&
           <p
             className="intro"
             onClick={() => this.showCanvas()}>
@@ -81,13 +82,14 @@ class App extends React.Component {
         {(this.state.showWelcome) &&
           <p className="welcome-container"><a
             className="welcome" >
-            Welcome, </a><a className="stranger">stranger.</a></p>}
+            Welcome, stranger.</a></p>}
 
         {(this.state.showItems) &&
           <div className="item-container">
-            <div className="item"><a href="https://classicaljo.github.io/simon-dice/" target="_blank"><img src={Simon} alt="Simon dice" /></a></div>
-            <div className="item"><a href="https://classicaljo.github.io/barking-board/" target="_blank"><img src={BarkingBoard} alt="Barking board" /></a></div>
-            <div className="item"><a href="https://classicaljo.github.io/contact-information/index.html" target="_blank"><img src={ContactInformation} alt="Contact information" /></a></div>
+            <div className="item itema"><a href="https://classicaljo.github.io/simon-dice/" target="_blank"><img src={Simon} alt="Simon dice" /></a></div>
+            <div className="item itemb"><a href="https://classicaljo.github.io/barking-board/" target="_blank"><img src={BarkingBoard} alt="Barking board" /></a></div>
+            <div className="item itemc"><a href="https://classicaljo.github.io/pokedex-v1.1/" target="_blank"><img src={Pokedex} alt="Pokedex" /></a></div>
+            <div className="item itemd"><a href="https://classicaljo.github.io/contact-information/index.html" target="_blank"><img src={ContactInformation} alt="Contact information" /></a></div>
           </div>}
 
 
