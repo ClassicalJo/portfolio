@@ -9,7 +9,6 @@
 
 .canvas {
   grid-column-start: 1;
-  grid-column-end: 2;
   grid-row-start: 1;
   grid-row-end: 3;
   background-color: lightgray;
@@ -17,7 +16,7 @@
   animation: welcome 0.5s; 
   justify-self: stretch;
   align-self: stretch;
-  
+  overflow-x: scroll;
 }
 
 .item-container{
@@ -78,6 +77,8 @@ img:hover {
   text-shadow: 3px 3px 3px black;  
   animation: welcome 0.5s;
   margin: 0px;
+  background: rgba(0,0,0,0.2);
+  padding: 10px;
 }
 
 .intro {
