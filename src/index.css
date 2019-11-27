@@ -29,6 +29,7 @@
   flex-wrap: wrap;
   overflow-y: scroll;
   justify-content: space-around;
+  -webkit-overflow-scrolling: touch;
 }
 
 .item {
