@@ -1,25 +1,27 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.09639032.chunk.css",
-    "main.js": "/portfolio/static/js/main.eb50876d.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.eb50876d.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.6221864e.chunk.css",
+    "main.js": "/portfolio/static/js/main.83b38071.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.83b38071.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.86a05020.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.86a05020.js.map",
-    "static/js/2.bf59abb4.chunk.js": "/portfolio/static/js/2.bf59abb4.chunk.js",
-    "static/js/2.bf59abb4.chunk.js.map": "/portfolio/static/js/2.bf59abb4.chunk.js.map",
+    "static/js/2.fb865757.chunk.js": "/portfolio/static/js/2.fb865757.chunk.js",
+    "static/js/2.fb865757.chunk.js.map": "/portfolio/static/js/2.fb865757.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.f782b8a9148a98189e4005c388534294.js": "/portfolio/precache-manifest.f782b8a9148a98189e4005c388534294.js",
+    "precache-manifest.5f2ef740cad0b8bb024fbdd1afa2b266.js": "/portfolio/precache-manifest.5f2ef740cad0b8bb024fbdd1afa2b266.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.09639032.chunk.css.map": "/portfolio/static/css/main.09639032.chunk.css.map",
+    "static/css/main.6221864e.chunk.css.map": "/portfolio/static/css/main.6221864e.chunk.css.map",
+    "static/media/at.png": "/portfolio/static/media/at.baddce02.png",
     "static/media/barking-board.png": "/portfolio/static/media/barking-board.97454d85.png",
-    "static/media/contact-information.png": "/portfolio/static/media/contact-information.99969086.png",
+    "static/media/contact-information.png": "/portfolio/static/media/contact-information.599cc85b.png",
+    "static/media/gh.png": "/portfolio/static/media/gh.d1723500.png",
     "static/media/pokedex.png": "/portfolio/static/media/pokedex.81244e2e.png",
     "static/media/simon-dice.png": "/portfolio/static/media/simon-dice.11e133fe.png"
   },
   "entrypoints": [
     "static/js/runtime-main.86a05020.js",
-    "static/js/2.bf59abb4.chunk.js",
-    "static/css/main.09639032.chunk.css",
-    "static/js/main.eb50876d.chunk.js"
+    "static/js/2.fb865757.chunk.js",
+    "static/css/main.6221864e.chunk.css",
+    "static/js/main.83b38071.chunk.js"
   ]
 }
