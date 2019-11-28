@@ -62,7 +62,7 @@ class App extends React.Component {
       showCanvas: true,
       showIntro: false,
     })
-    
+
     setTimeout(() => { this.init() }, 2000)
     setTimeout(() => { this.setState({ showWelcome: true }) }, 14000)
     setTimeout(() => { this.setState({ showItems: true }) }, 14000)
@@ -97,10 +97,7 @@ class App extends React.Component {
     return (
       <div className="app">
         {(this.state.showIntro) &&
-          <p
-            className="intro"
-            onClick={() => this.showCanvas()}>
-            Dreams aren't dreams if you devote every waking hour on them</p>}
+          <p className="intro">Dreams aren't dreams if you devote every waking hour on them</p>}
 
         {(this.state.showCanvas) &&
           <Canvas
@@ -108,9 +105,7 @@ class App extends React.Component {
             ref="canvas" />}
 
         {(this.state.showWelcome) &&
-          <p className="welcome-container">
-            <span className="welcome" >
-              Welcome, stranger.</span></p>}
+          <p className="welcome-container"><span className="welcome" >Welcome, stranger.</span></p>}
 
         {(this.state.showItems) && <Items />}
         {(this.state.showAbout) && <About />}
