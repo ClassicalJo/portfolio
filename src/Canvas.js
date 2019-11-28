@@ -1,9 +1,12 @@
 import React from "react"
 
-const Canvas = (props) => {
-    return (<canvas id="canvas" className="canvas" width={props.frame.width} height={props.frame.height}></canvas>
-    )
-}
-
+const Canvas = React.forwardRef((props, ref) => (
+    <canvas
+        ref={ref}
+        className="canvas"
+        width={props.canvasFrame.width}
+        height={props.canvasFrame.height}>
+    </canvas>
+));
 
 export default Canvas
