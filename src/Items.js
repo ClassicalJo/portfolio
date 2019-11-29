@@ -2,7 +2,7 @@ import React from "react"
 import Simon from "./simon-dice.png"
 import BarkingBoard from "./barking-board.png"
 import Pokedex from "./pokedex.png"
-import ContactInformation from "./contact-information.png"
+import Simpleform from "./simple-form.png"
 
 function Items() {
     return (
@@ -34,10 +34,10 @@ function Items() {
             </div>
             <div className="item itemd">
                 <a
-                    href="https://classicaljo.github.io/contact-information/index.html"
+                    href="https://classicaljo.github.io/simple-form"
                     target="_blank"
                     rel="noopener noreferrer">
-                    <img src={ContactInformation} alt="Contact information" />
+                    <img src={Simpleform} alt="Simple form" />
                 </a>
             </div>
         </div>
