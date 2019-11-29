@@ -1,27 +1,28 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.6221864e.chunk.css",
-    "main.js": "/portfolio/static/js/main.81c7999a.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.81c7999a.chunk.js.map",
+    "main.js": "/portfolio/static/js/main.1ca38aa6.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.1ca38aa6.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.86a05020.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.86a05020.js.map",
-    "static/js/2.fb865757.chunk.js": "/portfolio/static/js/2.fb865757.chunk.js",
-    "static/js/2.fb865757.chunk.js.map": "/portfolio/static/js/2.fb865757.chunk.js.map",
+    "static/js/2.d3a1dc57.chunk.js": "/portfolio/static/js/2.d3a1dc57.chunk.js",
+    "static/js/2.d3a1dc57.chunk.js.map": "/portfolio/static/js/2.d3a1dc57.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.b95879b626d4c8774c77a17dafc060ac.js": "/portfolio/precache-manifest.b95879b626d4c8774c77a17dafc060ac.js",
+    "precache-manifest.3cbf35f4c1b9a01511245b394a43acf5.js": "/portfolio/precache-manifest.3cbf35f4c1b9a01511245b394a43acf5.js",
     "service-worker.js": "/portfolio/service-worker.js",
     "static/css/main.6221864e.chunk.css.map": "/portfolio/static/css/main.6221864e.chunk.css.map",
     "static/media/at.png": "/portfolio/static/media/at.baddce02.png",
     "static/media/barking-board.png": "/portfolio/static/media/barking-board.97454d85.png",
-    "static/media/contact-information.png": "/portfolio/static/media/contact-information.599cc85b.png",
     "static/media/gh.png": "/portfolio/static/media/gh.d1723500.png",
-    "static/media/pokedex.png": "/portfolio/static/media/pokedex.81244e2e.png",
-    "static/media/simon-dice.png": "/portfolio/static/media/simon-dice.11e133fe.png"
+    "static/media/pokedex.png": "/portfolio/static/media/pokedex.f4de9c65.png",
+    "static/media/resume.pdf": "/portfolio/static/media/resume.637aae9a.pdf",
+    "static/media/simon-dice.png": "/portfolio/static/media/simon-dice.f5375ebc.png",
+    "static/media/simple-form.png": "/portfolio/static/media/simple-form.bf76a0e0.png"
   },
   "entrypoints": [
     "static/js/runtime-main.86a05020.js",
-    "static/js/2.fb865757.chunk.js",
+    "static/js/2.d3a1dc57.chunk.js",
     "static/css/main.6221864e.chunk.css",
-    "static/js/main.81c7999a.chunk.js"
+    "static/js/main.1ca38aa6.chunk.js"
   ]
 }
