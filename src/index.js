@@ -8,7 +8,7 @@ import * as serviceWorker from './serviceWorker';
 ReactDOM.render(<App />, document.getElementById('root'));
 serviceWorker.unregister();
 
-function initilizeReactGA() {
+function initializeReactGA() {
     ReactGA.initialize('UA-153521299-1');
     ReactGA.pageview('/homepage')
 }
