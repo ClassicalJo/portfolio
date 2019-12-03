@@ -10,13 +10,13 @@ class App extends React.Component {
     super(props);
     this.state = {
       showCanvas: false,
-      showIntro: true,
+      showIntro: false,
       showWelcome: false,
       showItems: false,
       showAbout: false,
       canvasFrame: {
-        width: window.innerWidth * 0.9,
-        height: window.innerHeight * 0.9,
+        width: window.innerWidth * 0.95,
+        height: window.innerHeight * 0.95,
         id: "canvas"
       },
       colors: ["#FCBA04", "#A50104", "#C03221", "#BE7C4D", "#F2D0A4"]
@@ -26,7 +26,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    setTimeout(() => { this.showCanvas(); }, 4000)
+    setTimeout(() => { this.showCanvas(); }, 1000)
   }
 
   showAbout() {
@@ -64,16 +64,15 @@ class App extends React.Component {
     })
 
     setTimeout(() => { this.init() }, 2000)
-    setTimeout(() => { this.setState({ showWelcome: true }) }, 14000)
-    setTimeout(() => { this.setState({ showItems: true }) }, 14000)
+    setTimeout(() => { this.setState({ showWelcome: true }) }, 8000)
+    setTimeout(() => { this.setState({ showItems: true })}, 9500)
   }
 
   init() {
     window.requestAnimationFrame(() => { this.draw(4, 2000) })
-    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(8, 2000) }) }, 2000)
-    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(16, 2000) }) }, 4000)
-    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(32, 2000) }) }, 6000)
-    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(64, 2000) }) }, 8000)
+    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(16, 2000) }) }, 2000)
+    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(32, 2000) }) }, 4000)
+    setTimeout(() => { window.requestAnimationFrame(() => { this.draw(64, 2000) }) }, 6000)
 
   }
 
@@ -88,7 +87,7 @@ class App extends React.Component {
       ctx.lineTo(random(this.state.canvasFrame.width), (random(this.state.canvasFrame.height)))
       ctx.fillStyle = (this.state.colors[random(this.state.colors.length)])
       ctx.fill()
-    }, 500 / ratio)
+    }, 250 / ratio)
 
     setTimeout(function () { clearInterval(interval) }, time)
   }
@@ -96,9 +95,6 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        {(this.state.showIntro) &&
-          <p className="intro">Dreams aren't dreams if you devote every waking hour on them</p>}
-
         {(this.state.showCanvas) &&
           <Canvas
             canvasFrame={this.state.canvasFrame}

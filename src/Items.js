@@ -4,9 +4,9 @@ import BarkingBoard from "./barking-board.png"
 import Pokedex from "./pokedex.png"
 import Simpleform from "./simple-form.png"
 
-function Items() {
+let Items = React.forwardRef((props, ref) => {
     return (
-        <div className="item-container">
+        <div ref={ref} className="item-container">
             <div className="item itema">
                 <a
                     href="https://classicaljo.github.io/simon-dice/"
@@ -42,6 +42,6 @@ function Items() {
             </div>
         </div>
     )
-}
+})
 
 export default Items

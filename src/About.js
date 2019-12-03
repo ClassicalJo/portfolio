@@ -4,7 +4,7 @@ const About = function() {
     return (
         <div className="about-container">
             <div className="about">
-                <h1>Hi! My name is Joseph, multitalented jack-of-all trades extraordinaire!</h1>
+                <h1>Hi! My name is Jose, multitalented jack-of-all trades extraordinaire!</h1>
                 <h2>Honestly.</h2>
                 <p>My life was pretty boring until 28: dead-end office job (in which I performed EXCELLENTLY)</p>
                 <p>Got my solicitor degree and thought I should travel during my gap year</p> 
