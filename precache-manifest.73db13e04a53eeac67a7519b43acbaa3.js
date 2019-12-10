@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b6f2b5d08a22d52583e802e022766787",
+    "revision": "755637d78d30392adea979e3c5bf3bea",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "511fe9a2b6d3c8d6ca57",
-    "url": "/portfolio/static/css/main.228c7e48.chunk.css"
+    "revision": "680b71372c976a23c900",
+    "url": "/portfolio/static/css/main.59827c95.chunk.css"
   },
   {
     "revision": "775b911604f359f3033f",
     "url": "/portfolio/static/js/2.d6e6ba4e.chunk.js"
   },
   {
-    "revision": "511fe9a2b6d3c8d6ca57",
-    "url": "/portfolio/static/js/main.1c994169.chunk.js"
+    "revision": "680b71372c976a23c900",
+    "url": "/portfolio/static/js/main.e0bdc526.chunk.js"
   },
   {
     "revision": "6b26cb3bc1b9147ba086",
@@ -36,8 +36,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/media/pokedex.f4de9c65.png"
   },
   {
-    "revision": "637aae9a8f3bafefbb3325b0f84b8983",
-    "url": "/portfolio/static/media/resume.637aae9a.pdf"
+    "revision": "47819a6b3a966b780a6d3ffeda73312a",
+    "url": "/portfolio/static/media/resume.47819a6b.png"
   },
   {
     "revision": "f5375ebc5591de871deae65257c0e865",
