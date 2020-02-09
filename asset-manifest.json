@@ -1,28 +1,29 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.59827c95.chunk.css",
-    "main.js": "/portfolio/static/js/main.e0bdc526.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.e0bdc526.chunk.js.map",
-    "runtime-main.js": "/portfolio/static/js/runtime-main.86a05020.js",
-    "runtime-main.js.map": "/portfolio/static/js/runtime-main.86a05020.js.map",
-    "static/js/2.d6e6ba4e.chunk.js": "/portfolio/static/js/2.d6e6ba4e.chunk.js",
-    "static/js/2.d6e6ba4e.chunk.js.map": "/portfolio/static/js/2.d6e6ba4e.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.d246b5c2.chunk.css",
+    "main.js": "/portfolio/static/js/main.ec9ec7e2.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.ec9ec7e2.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.680679b4.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.680679b4.js.map",
+    "static/js/2.e10580aa.chunk.js": "/portfolio/static/js/2.e10580aa.chunk.js",
+    "static/js/2.e10580aa.chunk.js.map": "/portfolio/static/js/2.e10580aa.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.73db13e04a53eeac67a7519b43acbaa3.js": "/portfolio/precache-manifest.73db13e04a53eeac67a7519b43acbaa3.js",
+    "precache-manifest.429ca722772f8a0d2706445e0d127771.js": "/portfolio/precache-manifest.429ca722772f8a0d2706445e0d127771.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.59827c95.chunk.css.map": "/portfolio/static/css/main.59827c95.chunk.css.map",
-    "static/media/at.png": "/portfolio/static/media/at.baddce02.png",
-    "static/media/barking-board.png": "/portfolio/static/media/barking-board.97454d85.png",
-    "static/media/gh.png": "/portfolio/static/media/gh.d1723500.png",
+    "static/css/main.d246b5c2.chunk.css.map": "/portfolio/static/css/main.d246b5c2.chunk.css.map",
+    "static/js/2.e10580aa.chunk.js.LICENSE": "/portfolio/static/js/2.e10580aa.chunk.js.LICENSE",
+    "static/media/barking-board.png": "/portfolio/static/media/barking-board.46a63350.png",
+    "static/media/blinkjs.png": "/portfolio/static/media/blinkjs.5926e1aa.png",
+    "static/media/coolpic.png": "/portfolio/static/media/coolpic.915d9915.png",
+    "static/media/memotest.png": "/portfolio/static/media/memotest.c3c4bb74.png",
     "static/media/pokedex.png": "/portfolio/static/media/pokedex.f4de9c65.png",
-    "static/media/resume.png": "/portfolio/static/media/resume.47819a6b.png",
-    "static/media/simon-dice.png": "/portfolio/static/media/simon-dice.f5375ebc.png",
-    "static/media/simple-form.png": "/portfolio/static/media/simple-form.bf76a0e0.png"
+    "static/media/simple-form.png": "/portfolio/static/media/simple-form.bf76a0e0.png",
+    "static/media/sudoku.png": "/portfolio/static/media/sudoku.141b98a6.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.86a05020.js",
-    "static/js/2.d6e6ba4e.chunk.js",
-    "static/css/main.59827c95.chunk.css",
-    "static/js/main.e0bdc526.chunk.js"
+    "static/js/runtime-main.680679b4.js",
+    "static/js/2.e10580aa.chunk.js",
+    "static/css/main.d246b5c2.chunk.css",
+    "static/js/main.ec9ec7e2.chunk.js"
   ]
 }
