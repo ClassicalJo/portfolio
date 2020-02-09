@@ -1,0 +1,23 @@
+@mixin parenthesis() {
+    border-left: 0.3rem solid white;
+    border-right: 0.3rem solid white;
+    border-radius: 1rem;
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+}
+
+.hire {
+    justify-content: center;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    .hire-me {
+        align-self: center;
+        justify-self: center;
+        background: rgba(0,0,0,0.1);
+        @include parenthesis();
+        
+        h2 {
+            margin: 0.5rem 0;
+        }
+    }
+}

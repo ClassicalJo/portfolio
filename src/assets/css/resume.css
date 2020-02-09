@@ -1,0 +1,67 @@
+.resume {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 1rem;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+.resume .skillset {
+  display: flex;
+  flex: 1 1 100%;
+}
+.resume .skillset h2 {
+  margin: 0.5rem 0;
+}
+.resume .skillset .front-end, .resume .skillset .others {
+  border-left: 0.3rem solid white;
+  border-right: 0.3rem solid white;
+  border-radius: 1rem;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.1);
+}
+.resume .skillset .slider {
+  flex: 1.5;
+}
+.resume .skillset div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.resume .skillset div .skillblock ul {
+  list-style: none;
+  padding: 0;
+}
+.resume .skillset div .skillblock span {
+  display: flex;
+  flex: 1;
+}
+.resume .skillset div .skillblock span li {
+  flex: 2;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+.resume .work-history {
+  background: rgba(0, 0, 0, 0.1);
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  border-left: 0.3rem solid white;
+  border-right: 0.3rem solid white;
+  border-radius: 1rem;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+}
+.resume .work-history .work-history-wrapper {
+  max-width: 75%;
+}
+.resume .work-history .work-history-wrapper h1 {
+  margin: 0.5rem 0;
+}
+.resume .work-history .work-history-wrapper h2 {
+  margin: 1rem 0;
+  font-size: 1.75rem;
+}
+
+/*# sourceMappingURL=resume.css.map */

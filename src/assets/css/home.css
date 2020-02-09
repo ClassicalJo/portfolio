@@ -1,0 +1,29 @@
+.home .visible {
+  font-weight: 100;
+}
+.home .hidden {
+  visibility: hidden;
+}
+.home svg {
+  flex: 1;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+.home .home-text-container {
+  flex: 2;
+  flex-shrink: 20;
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  margin-top: 4rem;
+}
+.home .input {
+  background: transparent;
+  color: white;
+  letter-spacing: 2px;
+  border: 0px;
+  outline: 0px;
+  width: 80%;
+  font-weight: 100;
+}
+
+/*# sourceMappingURL=home.css.map */

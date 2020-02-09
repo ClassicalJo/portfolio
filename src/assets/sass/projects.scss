@@ -1,0 +1,95 @@
+@mixin parenthesis() {
+    border-left: 0.3rem solid white;
+    border-right: 0.3rem solid white;
+    border-radius: 1rem;
+    margin: 1rem 0.5rem;
+    padding: 1rem;
+    background: rgba(0,0,0,0.1);
+}
+
+$borderRadius: 25px;
+$blue: #306BAC;
+$maya_blue: #55cdfc;
+$darkblue: #141B41;
+
+@mixin borderRadius() {
+    border-radius: 25px;
+}
+
+.projects {
+    flex-direction: column;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    .item {
+        flex:1;
+        display: flex;
+    
+        .item-card {
+            flex: 2;
+            display: flex;
+            flex-direction: column;
+            @include parenthesis();
+
+            h2 {
+                font-size: 2rem;
+                margin-bottom: 1rem;
+            }
+
+            .item-body {
+                flex: 2;
+                font-size: 1.75rem;            
+            }
+    
+            .item-tags {
+                font-size: 1rem;
+                margin: 1rem 0;
+            }
+
+            .item-buttons {
+                display: flex;
+                align-items: flex-end;    
+                p {
+                    margin-bottom: 0;
+                    flex: 1;
+                }
+                a {
+                    color: white;
+                    font-size: 1rem;
+                    padding: 0.5rem 0;
+                    border-radius: $borderRadius/2;
+                    background: rgba(0,0,0,0.4);
+                    display: flex;
+                    justify-content: center;
+                    text-decoration: none;
+                    transition: background-color .1s;
+                }
+                a:hover {
+                    background-color: rgba(0,0,0,0.5);
+                }
+                a:visited {
+                    color:white;
+                }
+            }
+    
+            
+        }
+        
+        .image-wrapper {
+            flex: 1.3;
+            display: flex;
+            @include parenthesis();
+            img {
+                width: 100%;
+                align-self: center;
+                object-fit: cover;
+                flex: 1;
+            }
+        }
+    
+        
+    }
+    
+    
+}
+
+
