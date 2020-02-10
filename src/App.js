@@ -9,6 +9,9 @@ import memotest from "./images/memotest.png"
 import simple from "./images/simple-form.png"
 import bark from "./images/barking-board.png"
 import pokedex from "./images/pokedex.png"
+import blinkjs from './images/blinkjs.png'
+import sudoku from './images/sudoku.png'
+import blinkjs_blood from './images/blinkjs_blood.png'
 import ReactGA from 'react-ga';
 
 class App extends React.Component {
@@ -19,7 +22,8 @@ class App extends React.Component {
       showIntro: true,
     }
 
-    this.preload = [coolpic, simon, memotest, simple, bark, pokedex]
+    this.sections = ["home", "resume", "projects", "hire"]
+    this.preload = [coolpic, simon, memotest, simple, bark, pokedex, blinkjs, blinkjs_blood, sudoku]
     this.preloaded = []
     this.preload.forEach((key) => {
       let image = new Image()
@@ -31,16 +35,17 @@ class App extends React.Component {
     ReactGA.pageview('/homepage');
   }
 
+  
   onClickHandler = (e) => {
     this.setState({
-      currentlyShowing: e.target.id,
+      currentlyShowing: e,
       showIntro: false,
     })
   }
 
+  
   onEnter = (e) => {
     if (e.key === "Enter") {
-      console.log(e.target.value)
       if (e.target.value === "home()" || e.target.value === "Home()") {this.setState({ currentlyShowing: "home" })}
       else if (e.target.value === "projects()" || e.target.value === "Projects()") {this.setState({ currentlyShowing: "projects" })}
       else if (e.target.value === "resume()" || e.target.value === "Resume()") {this.setState({ currentlyShowing: "resume" })}
@@ -53,7 +58,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="container">
-        <Header onClick={(e) => this.onClickHandler(e)} />
+        <Header onClick={this.onClickHandler} />
         <Main currentlyShowing={this.state.currentlyShowing} showIntro={this.state.showIntro} commands={(e) => this.onEnter(e)} />
         <Footer />
       </div>

@@ -7,10 +7,12 @@ let Header = (props) => {
         <div className="header">
             <div className="logo-wrapper"><Logo /></div>
             <div className="header-wrapper">
-                <span className="title-wrapper"><h1>ClassicalJo</h1></span>
-                <h2>>> portfolio.create()</h2>
-                <NavBar onClick={props.onClick}></NavBar>
+                <span className="title-wrapper">
+                    <h1>ClassicalJo</h1>
+                    <h2>>> portfolio.create()</h2>
+                </span>
             </div>
+            <NavBar onClick={props.onClick}></NavBar>
         </div>
     )
 }

@@ -342,10 +342,12 @@ html {
   letter-spacing: 2px;
   font-size: 18px;
   color: white;
+  margin: 0;
 }
 
 body, html {
   overflow: hidden;
+  margin: 0;
 }
 
 .small-text {
@@ -376,10 +378,14 @@ a:visited {
   margin: 1rem;
   display: grid;
   min-height: 575px;
-  height: calc(100vh - 1rem);
+  height: 100%;
+  width: calc(100% - 2rem);
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
   height: -moz-available;
   height: -webkit-fill-available;
-  width: calc(100vw - 2rem);
+  height: fill-available;
   grid-template-rows: 12.5% 65% 12.5%;
   row-gap: 1rem;
   grid-template-areas: "header" "main" "footer";
@@ -400,43 +406,53 @@ a:visited {
   display: flex;
 }
 .header .header-wrapper {
-  flex: 10;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header .header-wrapper .title-wrapper {
   display: flex;
   flex-direction: column;
 }
-.header .header-wrapper .title-wrapper {
-  flex: 2;
-  display: flex;
-}
 .header .header-wrapper .title-wrapper h1 {
   font-weight: 500;
-  flex: 1;
-  align-self: flex-end;
 }
-.header .header-wrapper h2 {
+.header .header-wrapper .title-wrapper h2 {
   flex: 1;
   font-size: 0.7rem;
   font-style: italic;
-  justify-self: center;
-  align-self: flex-start;
   font-weight: 700;
 }
-.header .header-wrapper .nav-bar {
-  flex: 1;
+.header .nav-bar {
+  flex: 10;
   display: flex;
   padding: 0;
   align-self: stretch;
   list-style: none;
 }
-.header .header-wrapper .nav-bar span {
+.header .nav-bar span {
   flex: 1;
   display: flex;
-}
-.header .header-wrapper .nav-bar span li {
+  align-self: stretch;
   cursor: pointer;
+  align-items: center;
+}
+.header .nav-bar span li {
+  position: relative;
+  top: 0.1rem;
+  flex: 1;
+  justify-self: right;
   font-weight: 500;
   text-align: center;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+.header .nav-bar span:first-child {
+  margin-left: 1rem;
+}
+.header .nav-bar span:hover {
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .main-container {
@@ -490,9 +506,9 @@ a:visited {
     font-size: 12px;
   }
 }
-@media all and (max-width: 480px) {
+@media all and (max-width: 550px) {
   html {
-    font-size: 10px;
+    font-size: 7.5px;
   }
 
   li {

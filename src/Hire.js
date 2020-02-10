@@ -11,7 +11,7 @@ let Hire = () => {
                 <p>04870-56428</p>
                 <p>From 10:00 to 21:00</p>
                 <h2>Currently residing in: </h2>
-                <p>Canberra, ACT, Australia</p>
+                <p>Melbourne, VIC, Australia</p>
                 <p>I have no issue relocating anywhere in Australia</p>
                 <h2>VISA details</h2>
                 <p>Working Holiday (462)</p>

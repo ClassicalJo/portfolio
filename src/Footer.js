@@ -1,11 +1,60 @@
 import React from "react"
-import { Body, Bodies, World, Engine, Runner } from 'matter-js'
+import { Body, Bodies, World, Engine, Runner, Events } from 'matter-js'
 import Box from "./images/Box"
 import Circle from "./images/Circle"
 import Lobo from "./images/Lobo"
-import Overlay from './images/Overlay'
+
 import "./assets/css/footer.css"
 
+let bodyRender = {
+    square: key => {
+        return (
+            <Box
+                key={key.id}
+                x={key.position.x}
+                y={key.position.y}
+                width={key.width}
+                height={key.height}
+                angle={key.angle}
+                color={key.color}>
+            </Box>)
+    },
+    rectangle: key => {
+        return (
+            <Box
+                key={key.id}
+                x={key.position.x}
+                y={key.position.y}
+                width={key.width}
+                height={key.height}
+                angle={key.angle}
+                color={key.color}>
+            </Box>)
+    },
+    lobo: key => {
+        return (
+            <Lobo
+                key={key.id}
+                x={key.position.x}
+                y={key.position.y}
+                width={key.width}
+                height={key.height}
+                angle={key.angle}
+                color={key.color}>
+            </Lobo>)
+    },
+    circle: key => {
+        return (
+            <Circle
+                key={key.id}
+                cx={key.position.x}
+                cy={key.position.y}
+                r={key.radius}
+                color={key.color}>
+            </Circle>)
+    },
+
+}
 
 class Footer extends React.Component {
     constructor() {
@@ -19,34 +68,17 @@ class Footer extends React.Component {
         this.engine = Engine.create()
         this.runner = Runner.create()
         this.world = this.engine.world
+        this.timer = 1
         this.ground = Bodies.rectangle(0, 35, 2000, 5, { friction: 0, isStatic: true, width: 1500, height: 5, color: "white" })
         this.bodies = []
+        Events.on(this.engine, "beforeUpdate", () => this.timer++)
         World.add(this.world, this.ground)
         this.boxes = [this.ground]
     }
 
     componentDidMount() {
-        window.addEventListener("blur", () => { this.togglePause() })
-        window.addEventListener("focus", () => { this.togglePause() })
         this.cycle()
         Runner.run(this.runner, this.engine)
-        this.setBeltAndBodiesIntervals()
-    }
-
-    componentWillUnmount() {
-        document.removeEventListener("blur", () => this.togglePause());
-        document.removeEventListener("focus", () => this.togglePause())
-        clearInterval(this.conveyorBeltInterval)
-        clearInterval(this.randomBodiesInterval)
-    }
-
-    setBeltAndBodiesIntervals = () => {
-        this.randomBodiesInterval = setInterval(() => this.createRandomBody(-400, -10), 2000)
-        this.conveyorBeltInterval = setInterval(() => {
-            this.bodies.forEach((key) =>
-                Body.applyForce(key, { x: key.bounds.min.x, y: key.bounds.min.y }, { x: 0.00005, y: 0 }))
-
-        }, 250)
     }
 
     createRandomBody = (x, y) => {
@@ -91,6 +123,9 @@ class Footer extends React.Component {
     }
 
     updateCycle = () => {
+        if (this.timer % 200 === 0) this.createRandomBody(-400, -10)
+        if (this.timer % 25 === 0) this.bodies.forEach(key => Body.applyForce(key, { x: key.bounds.min.x, y: key.bounds.min.y }, { x: 0.00005, y: 0 }))
+
         this.bodies.forEach((key) => {
             if (this.isOffScreen(key)) {
                 World.remove(this.world, key)
@@ -113,78 +148,19 @@ class Footer extends React.Component {
 
     renderAllBodies = () => {
         return <React.Fragment>
-            {this.state.bodies.map((key) => {
-                if (key.label === "square") {
-                    return <Box
-                        key={this.state.bodies.indexOf(key)}
-                        x={key.position.x}
-                        y={key.position.y}
-                        width={key.width}
-                        height={key.height}
-                        angle={key.angle}
-                        color={key.color}>
-                    </Box>
-                }
-                else if (key.label === "rectangle") {
-                    return <Box
-                        key={this.state.bodies.indexOf(key)}
-                        x={key.position.x}
-                        y={key.position.y}
-                        width={key.width}
-                        height={key.height}
-                        angle={key.angle}
-                        color={key.color}>
-                    </Box>
-                }
-                else if (key.label === "lobo") {
-                    return <Lobo
-                        key={this.state.bodies.indexOf(key)}
-                        x={key.position.x}
-                        y={key.position.y}
-                        width={key.width}
-                        height={key.height}
-                        angle={key.angle}
-                        color={key.color}>
-                    </Lobo>
-                }
-                else if (key.label === "circle") {
-                    return <Circle
-                        key={this.state.bodies.indexOf(key)}
-                        cx={key.position.x}
-                        cy={key.position.y}
-                        r={key.radius}
-                        color={key.color}>
-                    </Circle>
-                }
-                else {
-                    return null
-                }
-            })}
+            {this.state.bodies.map(key => bodyRender[key.label](key))}
         </React.Fragment>
     }
 
-    togglePause = () => {
-        if (this.state.pause) {
-            this.setState({ pause: false })
-            this.cycle()
-            this.setBeltAndBodiesIntervals()
-            Runner.run(this.runner, this.engine)
-        } else {
-            this.setState({ pause: true })
-            clearInterval(this.conveyorBeltInterval)
-            clearInterval(this.randomBodiesInterval)
-            Runner.stop(this.runner)
-            cancelAnimationFrame(this.loop)
-        }
-    }
+
+
 
     render() {
         return (
-            <div className="footer" onClick={() => this.togglePause()} >
-                <svg width="100%" height="100%" viewBox="-400 -37.5 800 75" preserveAspectRatio="xMidYMid meet">
+            <div className="footer">
+                <svg width="100%" height="100%" viewBox="-400 -37.5 800 75" preserveAspectRatio="xMidYMax slice">
                     <Box x={this.ground.position.x} y={this.ground.position.y} width={this.ground.width} height={this.ground.height} angle={this.ground.angle} color={this.ground.color} />
-                    {this.renderAllBodies()}
-                    <Overlay pause={this.state.pause} />
+                    {this.state.bodies.map(key => bodyRender[key.label](key))}
                 </svg>
             </div >)
     }

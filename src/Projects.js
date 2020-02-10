@@ -5,6 +5,7 @@ import simple from "./images/simple-form.png"
 import bark from "./images/barking-board.png"
 import pokedex from "./images/pokedex.png"
 import blinkjs from "./images/blinkjs.png"
+import blinkjs_blood from './images/blinkjs_blood.png'
 import sudoku from "./images/sudoku.png"
 import './assets/css/projects.css'
 
@@ -13,6 +14,15 @@ class Projects extends React.Component {
         super()
         this.state = {
             items: [
+                {
+                    title: "blinkjs",
+                    picture: blinkjs_blood,
+                    text: "Hey, look at that, I updated the BlinkJS with a new enemy and some other things. You should check that out.",
+                    repo: "http://github.com/classicaljo/blinkjs",
+                    sample: "http://classicaljo.github.io/blinkjs",
+                    tags: ['react', 'matterJS', "game", "animations", 'svg', 'unfinished'],
+                    show: true,
+                },
                 {
                     title: "Sudoku & Solver",
                     picture: sudoku,

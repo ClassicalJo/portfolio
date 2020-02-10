@@ -11,17 +11,17 @@ let Resume = () => {
                     <div className="skillblock">
                         <h2>Front-end</h2>
                         <ul className="frameworks">
-                            <span><li> Javascript (ES6)</li><Slider progress="70%" /></span>
-                            <span><li> React</li><Slider progress="65%" /></span>
+                            <span><li> Javascript (ES6)</li><Slider progress="80%" /></span>
+                            <span><li> React</li><Slider progress="70%" /></span>
                             <span><li> Ruby</li><Slider progress="20%" /></span>
                         </ul>
                     </div>
                     <div className="skillblock">
                         <h2>CSS</h2>
                         <ul className="css">
-                            <span><li>CSS3</li><Slider progress="55%" /></span>
-                            <span><li>SASS, gulp</li><Slider progress="50%" /></span>
-                            <span><li>Post-CSS</li><Slider progress="35%" /></span>
+                            <span><li>CSS3</li><Slider progress="70%" /></span>
+                            <span><li>SASS</li><Slider progress="60%" /></span>
+                            <span><li>Post-CSS</li><Slider progress="25%" /></span>
                         </ul>
                     </div>
                 </div>

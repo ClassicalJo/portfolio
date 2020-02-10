@@ -5,7 +5,7 @@ import Windmill from './Windmill'
 
 let Home = (props) => {
     return (
-        <div className="home section">
+        <div className="home">
             <Windmill/>
             <HomeText showIntro={props.showIntro} commands={props.commands}/>
         </div>
