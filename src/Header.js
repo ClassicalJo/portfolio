@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar'
-import Logo from "./images/Logo"
+import Logo from "./images/svg/Logo"
 
 let Header = (props) => {
     return (
@@ -12,7 +12,7 @@ let Header = (props) => {
                     <h2>>> portfolio.create()</h2>
                 </span>
             </div>
-            <NavBar onClick={props.onClick}></NavBar>
+            <NavBar />
         </div>
     )
 }

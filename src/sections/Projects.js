@@ -1,19 +1,28 @@
 import React from 'react'
-import simon from './images/simon-dice.png'
-import memotest from "./images/memotest.png"
-import simple from "./images/simple-form.png"
-import bark from "./images/barking-board.png"
-import pokedex from "./images/pokedex.png"
-import blinkjs from "./images/blinkjs.png"
-import blinkjs_blood from './images/blinkjs_blood.png'
-import sudoku from "./images/sudoku.png"
-import './assets/css/projects.css'
+import simon from '../images/projects/simon-dice.png'
+import memotest from "../images/projects/memotest.png"
+import simple from "../images/projects/simple-form.png"
+import bark from "../images/projects/barking-board.png"
+import pokedex from "../images/projects/pokedex.png"
+import blinkjs from "../images/projects/blinkjs.png"
+import blinkjs_blood from '../images/projects/blinkjs_blood.png'
+import sudoku from "../images/projects/sudoku.png"
+
 
 class Projects extends React.Component {
     constructor() {
         super()
         this.state = {
             items: [
+                {
+                    title: "Pokedex",
+                    picture: pokedex,
+                    text: "An implementation of a Pokedex using the PokeAPI database. Basically my first approach at working with RESTful API's, React and Redux.",
+                    repo: "http://github.com/classicaljo/pokedex/",
+                    sample: "http://classicaljo.github.io/pokedex",
+                    tags: ['react', "redux", 'api', 'css3', 'unfinished'],
+                    show: true,
+                },
                 {
                     title: "blinkjs",
                     picture: blinkjs_blood,
@@ -26,7 +35,7 @@ class Projects extends React.Component {
                 {
                     title: "Sudoku & Solver",
                     picture: sudoku,
-                    text: "So, i've been told that having a sudoku solver in your portfolio is a good idea to demonstrate your ability to design and implement algorithms. Boring but practical I guess.",
+                    text: "So, i've been told that having a sudoku solver in your portfolio is a good idea to demonstrate your ability to design and implement algorithms. So I made one.",
                     repo: "http://github.com/classicaljo/sudoku",
                     sample: "http://classicaljo.github.io/sudoku",
                     tags: ['javascript', "game", "algorithm", 'finished'],
@@ -58,15 +67,6 @@ class Projects extends React.Component {
                     repo: "http://github.com/classicaljo/simple-form",
                     sample: "http://classicaljo.github.io/simple-form/",
                     tags: ['javascript', 'form', 'normalizer.css', 'finished'],
-                    show: true,
-                },
-                {
-                    title: "Pokedex",
-                    picture: pokedex,
-                    text: "An implementation of a Pokedex using the PokeAPI database. Basically my first approach at working with RESTful API's.",
-                    repo: "http://github.com/classicaljo/pokedex-v1.1/",
-                    sample: "http://classicaljo.github.io/pokedex-v1.1",
-                    tags: ['react', 'api', 'css3', 'unfinished'],
                     show: true,
                 },
                 {

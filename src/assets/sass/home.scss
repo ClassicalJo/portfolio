@@ -15,7 +15,6 @@
         grid-column: 1/2;
         max-height: 100%;
         -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
-        
     }
 
     .home-text-container {
@@ -23,17 +22,17 @@
         grid-row: 1/2;      
         grid-column: 1/2;  
         font-size: 2rem;
+        pointer-events: none;
     }
 
     .input {
-        background: transparent;
+        background-color: transparent;
         color: white;
         letter-spacing: 2px;
         border: 0px;
         outline: 0px;
         width: 80%;
-        font-weight: 100;
-        
+        font-weight: 100;   
     }    
 }
     

@@ -1,16 +1,19 @@
 import React from 'react'
-import Home from './Home'
-import Projects from "./Projects"
-import Resume from "./Resume"
-import Hire from "./Hire"
+import Home from './sections/Home'
+import Projects from "./sections/Projects"
+import Resume from "./sections/Resume"
+import Hire from "./sections/Hire"
+import { Switch, Route } from "react-router-dom"
 
 let Main = (props) => {
     return (
         <div className="main-container">
-            {props.currentlyShowing === "home" && <Home showIntro={props.showIntro} commands={props.commands} />}
-            {props.currentlyShowing === "projects" && <Projects />}
-            {props.currentlyShowing === "resume" && <Resume />}
-            {props.currentlyShowing === "hire" && <Hire/>}
+            <Switch>
+                <Route path="/projects"><Projects /></Route>
+                <Route path="/resume"><Resume /></Route>
+                <Route path="/hire"><Hire /></Route>
+                <Route path="/"><Home /></Route>
+            </Switch>
         </div>
     )
 }

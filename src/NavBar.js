@@ -1,14 +1,15 @@
 import React from 'react'
+import { Link } from "react-router-dom"
 
-let NavBar = (props) => {
+let NavBar = () => {
     return (
         <ul className="nav-bar">
-            <span onClick={() => props.onClick("home")} ><li >.home()</li></span>
-            <span onClick={() => props.onClick("resume")} ><li >.resume()</li></span>
-            <span onClick={() => props.onClick("projects")} ><li >.projects()</li></span>
-            <span onClick={() => window.open("https://github.com/classicaljo/", "_blank", "noopener noreferrer")}><li>.github()</li></span>
-            <span onClick={() => props.onClick("hire")} ><li >.hire()</li></span>
-        </ul>
+            <Link to="."><span>.home()</span></Link>
+            <Link to="/resume"><span>.resume()</span></Link>
+            <Link to="/projects"><span>.projects()</span></Link>
+            <Link to="/hire"><span>.hire()</span></Link>
+            <a href="https://github.com/classicaljo/" rel="noopener noreferrer" target="_blank"><span>.github()</span></a>
+        </ul >
     )
 }
 

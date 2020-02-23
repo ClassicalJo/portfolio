@@ -1,10 +1,8 @@
 import React from "react"
 import { Body, Bodies, World, Engine, Runner, Events } from 'matter-js'
-import Box from "./images/Box"
-import Circle from "./images/Circle"
-import Lobo from "./images/Lobo"
-
-import "./assets/css/footer.css"
+import Box from "./images/svg/Box"
+import Circle from "./images/svg/Circle"
+import Lobo from "./images/svg/Lobo"
 
 let bodyRender = {
     square: key => {

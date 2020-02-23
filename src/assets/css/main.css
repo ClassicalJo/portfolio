@@ -345,9 +345,18 @@ html {
   margin: 0;
 }
 
-body, html {
+body, html, #root {
   overflow: hidden;
   margin: 0;
+  height: 100%;
+  box-sizing: border-box;
+  width: calc(100% - 2rem);
+  width: -moz-available;
+  width: -webkit-fill-available;
+  width: fill-available;
+  height: -moz-available;
+  height: -webkit-fill-available;
+  height: fill-available;
 }
 
 .small-text {
@@ -375,84 +384,14 @@ a:visited {
 }
 
 .container {
+  box-sizing: border-box;
   margin: 1rem;
   display: grid;
   min-height: 575px;
   height: 100%;
-  width: calc(100% - 2rem);
-  width: -moz-available;
-  width: -webkit-fill-available;
-  width: fill-available;
-  height: -moz-available;
-  height: -webkit-fill-available;
-  height: fill-available;
   grid-template-rows: 12.5% 65% 12.5%;
   row-gap: 1rem;
   grid-template-areas: "header" "main" "footer";
-}
-
-.header {
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
-  background: #55cdfc;
-  display: flex;
-  flex: 1;
-  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);
-  grid-area: header;
-}
-.header .logo-wrapper {
-  flex: 1;
-  min-width: 50px;
-  display: flex;
-}
-.header .header-wrapper {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.header .header-wrapper .title-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-.header .header-wrapper .title-wrapper h1 {
-  font-weight: 500;
-}
-.header .header-wrapper .title-wrapper h2 {
-  flex: 1;
-  font-size: 0.7rem;
-  font-style: italic;
-  font-weight: 700;
-}
-.header .nav-bar {
-  flex: 10;
-  display: flex;
-  padding: 0;
-  align-self: stretch;
-  list-style: none;
-}
-.header .nav-bar span {
-  flex: 1;
-  display: flex;
-  align-self: stretch;
-  cursor: pointer;
-  align-items: center;
-}
-.header .nav-bar span li {
-  position: relative;
-  top: 0.1rem;
-  flex: 1;
-  justify-self: right;
-  font-weight: 500;
-  text-align: center;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-}
-.header .nav-bar span:first-child {
-  margin-left: 1rem;
-}
-.header .nav-bar span:hover {
-  background-color: rgba(255, 255, 255, 0.2);
 }
 
 .main-container {

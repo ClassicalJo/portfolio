@@ -1,69 +1,49 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import Header from './Header'
 import Main from "./Main"
 import Footer from "./Footer"
-import './assets/css/main.css';
-import coolpic from "./images/coolpic.png"
-import simon from './images/simon-dice.png'
-import memotest from "./images/memotest.png"
-import simple from "./images/simple-form.png"
-import bark from "./images/barking-board.png"
-import pokedex from "./images/pokedex.png"
-import blinkjs from './images/blinkjs.png'
-import sudoku from './images/sudoku.png'
-import blinkjs_blood from './images/blinkjs_blood.png'
+import { Router } from "react-router-dom"
+import createHistory from "history/createBrowserHistory"
 import ReactGA from 'react-ga';
+import './assets/css/main.css';
+import "./assets/css/resume.css";
+import './assets/css/projects.css';
+import "./assets/css/home.css";
+import "./assets/css/footer.css";
+import "./assets/css/header.css";
+import './assets/css/hire.css';
 
-class App extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      currentlyShowing: "home",
-      showIntro: true,
-    }
-
-    this.sections = ["home", "resume", "projects", "hire"]
-    this.preload = [coolpic, simon, memotest, simple, bark, pokedex, blinkjs, blinkjs_blood, sudoku]
-    this.preloaded = []
-    this.preload.forEach((key) => {
-      let image = new Image()
-      image.src = key
-      this.preloaded.push(image)
-    })
-    this.trackingId = "UA-153521299-1";
-    ReactGA.initialize(this.trackingId);
-    ReactGA.pageview('/homepage');
-  }
-
-  
-  onClickHandler = (e) => {
-    this.setState({
-      currentlyShowing: e,
-      showIntro: false,
-    })
-  }
-
-  
-  onEnter = (e) => {
-    if (e.key === "Enter") {
-      if (e.target.value === "home()" || e.target.value === "Home()") {this.setState({ currentlyShowing: "home" })}
-      else if (e.target.value === "projects()" || e.target.value === "Projects()") {this.setState({ currentlyShowing: "projects" })}
-      else if (e.target.value === "resume()" || e.target.value === "Resume()") {this.setState({ currentlyShowing: "resume" })}
-      else if (e.target.value === "hire()" || e.target.value === "Hire()") {this.setState({ currentlyShowing: "hire" })}
-      else if (e.target.value === "github()" || e.target.value === "Github()") {window.open("https://github.com/classicaljo/", "_blank", "noopener noreferrer")}
-      else (this.setState({currentlyShowing: "home"}))
-      e.preventDefault()
-    }
-  }
-  render() {
-    return (
-      <div className="container">
-        <Header onClick={this.onClickHandler} />
-        <Main currentlyShowing={this.state.currentlyShowing} showIntro={this.state.showIntro} commands={(e) => this.onEnter(e)} />
-        <Footer />
-      </div>
-    );
-  }
+let importAll = r => r.keys().map(r)
+let images = importAll(require.context("./images/projects/", false, /\.png$/))
+let preloadArray = []
+for (let i = 0; i < images.length; i++) {
+  let preload = new Image()
+  preload.src = images[i]
+  preloadArray.push(preload)
 }
 
-export default App;
+let trackingId = "UA-153521299-1";
+ReactGA.initialize(trackingId);
+ReactGA.pageview('/homepage');
+
+const history = createHistory()
+history.listen(location => {
+  ReactGA.set({ page: location.pathname })
+  ReactGA.pageview(location.pathname)
+})
+
+let useMount = fn => useEffect(fn, [])
+
+let App = () => {
+  useMount(() => ReactGA.pageview(window.location.pathname))
+  return (
+    <Router history={history}>
+      <div className="container">
+        <Header />
+        <Main />
+        <Footer />
+      </div>
+    </Router>
+  )
+}
+export default App

@@ -1,5 +1,5 @@
 import React from 'react'
-import './assets/css/hire.css'
+
 let Hire = () => {
     return (
         <div className="section hire">

@@ -1,0 +1,69 @@
+.header {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background: #55cdfc;
+  display: flex;
+  flex: 1;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);
+  grid-area: header;
+}
+.header .logo-wrapper {
+  flex: 1;
+  min-width: 50px;
+  display: flex;
+}
+.header .header-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.header .header-wrapper .title-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+.header .header-wrapper .title-wrapper h1 {
+  font-weight: 500;
+}
+.header .header-wrapper .title-wrapper h2 {
+  flex: 1;
+  font-size: 0.7rem;
+  font-style: italic;
+  font-weight: 700;
+}
+.header .nav-bar {
+  flex: 10;
+  display: flex;
+  padding: 0;
+  align-self: stretch;
+  list-style: none;
+}
+.header .nav-bar a {
+  flex: 1;
+  display: flex;
+  align-self: stretch;
+  cursor: pointer;
+  align-items: center;
+  text-decoration-color: transparent;
+}
+.header .nav-bar a span {
+  position: relative;
+  top: 0.1rem;
+  flex: 1;
+  justify-self: right;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  letter-spacing: 0.05px;
+}
+.header .nav-bar a:first-child {
+  margin-left: 1rem;
+}
+.header .nav-bar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all ease-in-out 0.35s;
+}
+
+/*# sourceMappingURL=header.css.map */
