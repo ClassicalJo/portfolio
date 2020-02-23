@@ -1,21 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.5c957ee4.chunk.css",
-    "main.js": "/portfolio/static/js/main.96a4940f.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.96a4940f.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.e1acf4e9.chunk.css",
+    "main.js": "/portfolio/static/js/main.c4c60c21.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.c4c60c21.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.680679b4.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.680679b4.js.map",
-    "static/js/2.feb0d55d.chunk.js": "/portfolio/static/js/2.feb0d55d.chunk.js",
-    "static/js/2.feb0d55d.chunk.js.map": "/portfolio/static/js/2.feb0d55d.chunk.js.map",
+    "static/js/2.840aca7b.chunk.js": "/portfolio/static/js/2.840aca7b.chunk.js",
+    "static/js/2.840aca7b.chunk.js.map": "/portfolio/static/js/2.840aca7b.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.b1dbcfc27b883cce1aefeecd94705922.js": "/portfolio/precache-manifest.b1dbcfc27b883cce1aefeecd94705922.js",
+    "precache-manifest.9a0ad325796f7aa23d45155fad2facbb.js": "/portfolio/precache-manifest.9a0ad325796f7aa23d45155fad2facbb.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.5c957ee4.chunk.css.map": "/portfolio/static/css/main.5c957ee4.chunk.css.map",
-    "static/js/2.feb0d55d.chunk.js.LICENSE": "/portfolio/static/js/2.feb0d55d.chunk.js.LICENSE",
+    "static/css/main.e1acf4e9.chunk.css.map": "/portfolio/static/css/main.e1acf4e9.chunk.css.map",
+    "static/js/2.840aca7b.chunk.js.LICENSE": "/portfolio/static/js/2.840aca7b.chunk.js.LICENSE",
     "static/media/barking-board.png": "/portfolio/static/media/barking-board.46a63350.png",
     "static/media/blinkjs.png": "/portfolio/static/media/blinkjs.5926e1aa.png",
     "static/media/blinkjs_blood.png": "/portfolio/static/media/blinkjs_blood.845b9a21.png",
-    "static/media/coolpic.png": "/portfolio/static/media/coolpic.915d9915.png",
     "static/media/memotest.png": "/portfolio/static/media/memotest.c3c4bb74.png",
     "static/media/pokedex.png": "/portfolio/static/media/pokedex.f4de9c65.png",
     "static/media/simple-form.png": "/portfolio/static/media/simple-form.bf76a0e0.png",
@@ -23,8 +22,8 @@
   },
   "entrypoints": [
     "static/js/runtime-main.680679b4.js",
-    "static/js/2.feb0d55d.chunk.js",
-    "static/css/main.5c957ee4.chunk.css",
-    "static/js/main.96a4940f.chunk.js"
+    "static/js/2.840aca7b.chunk.js",
+    "static/css/main.e1acf4e9.chunk.css",
+    "static/js/main.c4c60c21.chunk.js"
   ]
 }
