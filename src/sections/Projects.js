@@ -7,7 +7,7 @@ import pokedex from "../images/projects/pokedex.png"
 import blinkjs from "../images/projects/blinkjs.png"
 import blinkjs_blood from '../images/projects/blinkjs_blood.png'
 import sudoku from "../images/projects/sudoku.png"
-
+import { Event } from "../App"
 
 class Projects extends React.Component {
     constructor() {
@@ -108,7 +108,7 @@ class Projects extends React.Component {
     }
 
     filterTags = (e) => {
-        let shallowCopy = this.state.items
+        let shallowCopy = { ...this.state.items }
         for (let i = 0; i < this.state.items.length; i++) {
             shallowCopy[i].show = true
             if (!this.hasTag(e.target.id, this.state.items[i].tags)) {
@@ -122,7 +122,7 @@ class Projects extends React.Component {
     }
 
     allTags = () => {
-        let shallowCopy = this.state.items
+        let shallowCopy = { ...this.state.items }
         for (let i = 0; i < this.state.items.length; i++) {
             shallowCopy[i].show = true
         }
@@ -144,10 +144,10 @@ class Projects extends React.Component {
                             </span> </span>)}
                 </p>
 
-                {this.state.items.map((key) => {
+                {this.state.items.map((key, index) => {
                     if (key.show) {
                         return (
-                            <div className="item" key={this.state.items.indexOf(key)}>
+                            <div className="item" key={index}>
                                 <div className="image-wrapper">
                                     <img className="project-image" src={key.picture} alt={key.title} />
                                 </div>
@@ -157,8 +157,8 @@ class Projects extends React.Component {
                                     <p className="item-body">{key.text}</p>
                                     <p className="item-tags">Tags: {key.tags.join(", ").toString()}</p>
                                     <div className="item-buttons">
-                                        <p><a href={key.repo} target="_blank" rel="noopener noreferrer">Repository</a></p>
-                                        <p><a href={key.sample} target="_blank" rel="noopener noreferrer">Try it</a></p>
+                                        <p><a onClick={() => Event("REPO", "Clicked to see repository of " + key.title, key.repo)} href={key.repo} target="_blank" rel="noopener noreferrer">Repository</a></p>
+                                        <p><a onClick={() => Event("TRYIT", "Clicked to see live version of " + key.title, key.sample)} href={key.sample} target="_blank" rel="noopener noreferrer">Try it</a></p>
                                     </div>
                                 </div>
 

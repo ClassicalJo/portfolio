@@ -2,8 +2,7 @@ import React, { useEffect } from 'react';
 import Header from './Header'
 import Main from "./Main"
 import Footer from "./Footer"
-import { Router } from "react-router-dom"
-import createHistory from "history/createBrowserHistory"
+import { BrowserRouter as Router } from "react-router-dom"
 import ReactGA from 'react-ga';
 import './assets/css/main.css';
 import "./assets/css/resume.css";
@@ -16,28 +15,35 @@ import './assets/css/hire.css';
 let importAll = r => r.keys().map(r)
 let images = importAll(require.context("./images/projects/", false, /\.png$/))
 let preloadArray = []
+
 for (let i = 0; i < images.length; i++) {
   let preload = new Image()
   preload.src = images[i]
   preloadArray.push(preload)
 }
 
-let trackingId = "UA-153521299-1";
-ReactGA.initialize(trackingId);
-ReactGA.pageview('/homepage');
+export const trackingId = "UA-153521299-1";
+export const initGA = trackingId => ReactGA.initialize(trackingId);
+export const pageView = () => ReactGA.pageview(window.location.pathname + window.location.search)
 
-const history = createHistory()
-history.listen(location => {
-  ReactGA.set({ page: location.pathname })
-  ReactGA.pageview(location.pathname)
-})
+export const Event = (category, action, label) => {
+  ReactGA.event({
+    category: category,
+    action: action,
+    label: label
+  });
+};
 
 let useMount = fn => useEffect(fn, [])
 
 let App = () => {
-  useMount(() => ReactGA.pageview(window.location.pathname))
+  useMount(() => {
+    initGA(trackingId)
+    pageView()
+  })
+  
   return (
-    <Router history={history}>
+    <Router >
       <div className="container">
         <Header />
         <Main />
