@@ -1,4 +1,5 @@
 import React from 'react'
+import { shouldRender } from "./HomeSVG"
 
 let radiansToDegrees = (number) => {
     return number * 180 / Math.PI
@@ -21,7 +22,7 @@ let Vanes = (props) => {
                 Z
                 `
     var rotate = `rotate(${radiansToDegrees(props.angle)} ${props.x} ${props.y})`
-
+    if (!shouldRender(props.viewBox, props.x, 150 / props.ratio)) return <React.Fragment />
     return (
         <React.Fragment>
             <path d={`M ${props.x} ${props.y} L ${props.x - 35 / props.ratio} 400 H ${props.x + 35 / props.ratio}`} fill="#306BAC" />

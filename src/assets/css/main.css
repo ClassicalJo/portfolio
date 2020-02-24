@@ -337,6 +337,328 @@ template {
   display: none;
 }
 
+.resume {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding: 1rem;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.resume .skillset {
+  display: flex;
+  flex: 1 1 100%;
+}
+
+.resume .skillset h2 {
+  margin: 0.5rem 0;
+}
+
+.resume .skillset .front-end, .resume .skillset .others {
+  border-left: 0.3rem solid white;
+  border-right: 0.3rem solid white;
+  border-radius: 1rem;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.resume .skillset .slider {
+  flex: 1.5;
+}
+
+.resume .skillset div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+
+.resume .skillset div .skillblock ul {
+  list-style: none;
+  padding: 0;
+}
+
+.resume .skillset div .skillblock span {
+  display: flex;
+  flex: 1;
+}
+
+.resume .skillset div .skillblock span li {
+  flex: 2;
+  font-size: 1.2rem;
+  padding: 0 1rem;
+}
+
+.resume .work-history {
+  background: rgba(0, 0, 0, 0.1);
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  border-left: 0.3rem solid white;
+  border-right: 0.3rem solid white;
+  border-radius: 1rem;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+}
+
+.resume .work-history .work-history-wrapper {
+  max-width: 75%;
+}
+
+.resume .work-history .work-history-wrapper h1 {
+  margin: 0.5rem 0;
+}
+
+.resume .work-history .work-history-wrapper h2 {
+  margin: 1rem 0;
+  font-size: 1.75rem;
+}
+
+/*# sourceMappingURL=resume.css.map */
+.projects {
+  flex-direction: column;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.projects .item {
+  flex: 1;
+  display: flex;
+}
+
+.projects .item .item-card {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  border-left: 0.3rem solid white;
+  border-right: 0.3rem solid white;
+  border-radius: 1rem;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.projects .item .item-card h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.projects .item .item-card .item-body {
+  flex: 2;
+  font-size: 1.75rem;
+}
+
+.projects .item .item-card .item-tags {
+  font-size: 1rem;
+  margin: 1rem 0;
+}
+
+.projects .item .item-card .item-buttons {
+  display: flex;
+  align-items: flex-end;
+}
+
+.projects .item .item-card .item-buttons p {
+  margin-bottom: 0;
+  flex: 1;
+}
+
+.projects .item .item-card .item-buttons a {
+  color: white;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  border-radius: 12.5px;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+  transition: background-color 0.1s;
+}
+
+.projects .item .item-card .item-buttons a:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.projects .item .item-card .item-buttons a:visited {
+  color: white;
+}
+
+.projects .item .image-wrapper {
+  flex: 1.3;
+  display: flex;
+  border-left: 0.3rem solid white;
+  border-right: 0.3rem solid white;
+  border-radius: 1rem;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+.projects .item .image-wrapper img {
+  width: 100%;
+  align-self: center;
+  object-fit: cover;
+  flex: 1;
+}
+
+/*# sourceMappingURL=projects.css.map */
+.home {
+  flex: 1;
+  display: grid;
+}
+
+.home .visible {
+  font-weight: 100;
+}
+
+.home .hidden {
+  visibility: hidden;
+}
+
+.home svg {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  max-height: 100%;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.home .home-text-container {
+  padding: 1rem;
+  grid-row: 1/2;
+  grid-column: 1/2;
+  font-size: 2rem;
+  pointer-events: none;
+}
+
+.home .input {
+  background-color: transparent;
+  color: white;
+  letter-spacing: 2px;
+  border: 0px;
+  outline: 0px;
+  width: 80%;
+  font-weight: 100;
+}
+
+/*# sourceMappingURL=home.css.map */
+.footer {
+  grid-area: footer;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  background: #55cdfc;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);
+  display: flex;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+}
+
+.footer svg {
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+/*# sourceMappingURL=footer.css.map */
+.header {
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  background: #55cdfc;
+  display: flex;
+  flex: 1;
+  box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);
+  grid-area: header;
+}
+
+.header .logo-wrapper {
+  flex: 1;
+  min-width: 50px;
+  display: flex;
+}
+
+.header .header-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header .header-wrapper .title-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.header .header-wrapper .title-wrapper h1 {
+  font-weight: 500;
+}
+
+.header .header-wrapper .title-wrapper h2 {
+  flex: 1;
+  font-size: 0.7rem;
+  font-style: italic;
+  font-weight: 700;
+}
+
+.header .nav-bar {
+  flex: 10;
+  display: flex;
+  padding: 0;
+  align-self: stretch;
+  list-style: none;
+}
+
+.header .nav-bar a {
+  flex: 1;
+  display: flex;
+  align-self: stretch;
+  cursor: pointer;
+  align-items: center;
+  text-decoration-color: transparent;
+}
+
+.header .nav-bar a span {
+  position: relative;
+  top: 0.1rem;
+  flex: 1;
+  justify-self: right;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+  letter-spacing: 0.05px;
+}
+
+.header .nav-bar a:first-child {
+  margin-left: 1rem;
+}
+
+.header .nav-bar a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transition: all ease-in-out 0.35s;
+}
+
+/*# sourceMappingURL=header.css.map */
+.hire {
+  justify-content: center;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+.hire .hire-me {
+  align-self: center;
+  justify-self: center;
+  background: rgba(0, 0, 0, 0.1);
+  border-left: 0.3rem solid white;
+  border-right: 0.3rem solid white;
+  border-radius: 1rem;
+  margin: 1rem 0.5rem;
+  padding: 1rem;
+}
+
+.hire .hire-me h2 {
+  margin: 0.5rem 0;
+}
+
+/*# sourceMappingURL=hire.css.map */
 html {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   letter-spacing: 2px;

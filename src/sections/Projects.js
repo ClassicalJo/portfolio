@@ -1,13 +1,5 @@
 import React from 'react'
-import simon from '../images/projects/simon-dice.png'
-import memotest from "../images/projects/memotest.png"
-import simple from "../images/projects/simple-form.png"
-import bark from "../images/projects/barking-board.png"
-import pokedex from "../images/projects/pokedex.png"
-import blinkjs from "../images/projects/blinkjs.png"
-import blinkjs_blood from '../images/projects/blinkjs_blood.png'
-import sudoku from "../images/projects/sudoku.png"
-import { Event } from "../App"
+import { preloadArray, Event } from "../App"
 
 class Projects extends React.Component {
     constructor() {
@@ -16,7 +8,7 @@ class Projects extends React.Component {
             items: [
                 {
                     title: "Pokedex",
-                    picture: pokedex,
+                    picture: preloadArray[7].src,
                     text: "An implementation of a Pokedex using the PokeAPI database. Basically my first approach at working with RESTful API's, React and Redux.",
                     repo: "http://github.com/classicaljo/pokedex/",
                     sample: "http://classicaljo.github.io/pokedex",
@@ -25,7 +17,7 @@ class Projects extends React.Component {
                 },
                 {
                     title: "blinkjs",
-                    picture: blinkjs_blood,
+                    picture: preloadArray[6].src,
                     text: "Hey, look at that, I updated the BlinkJS with a new enemy and some other things. You should check that out.",
                     repo: "http://github.com/classicaljo/blinkjs",
                     sample: "http://classicaljo.github.io/blinkjs",
@@ -34,7 +26,7 @@ class Projects extends React.Component {
                 },
                 {
                     title: "Sudoku & Solver",
-                    picture: sudoku,
+                    picture: preloadArray[5].src,
                     text: "So, i've been told that having a sudoku solver in your portfolio is a good idea to demonstrate your ability to design and implement algorithms. So I made one.",
                     repo: "http://github.com/classicaljo/sudoku",
                     sample: "http://classicaljo.github.io/sudoku",
@@ -43,7 +35,7 @@ class Projects extends React.Component {
                 },
                 {
                     title: "blinkjs",
-                    picture: blinkjs,
+                    picture: preloadArray[4].src,
                     text: "Had some free time and started doodling with Matter-js, which kinda evolved in this monstruosity. But I love it. Kinda focusing on making easy to mod",
                     repo: "http://github.com/classicaljo/blinkjs",
                     sample: "http://classicaljo.github.io/blinkjs",
@@ -52,7 +44,7 @@ class Projects extends React.Component {
                 },
                 {
                     title: "Memotest",
-                    picture: memotest,
+                    picture: preloadArray[3].src,
                     text: "A memotest based on the award-winning TV Series Steven Universe™. I loved working with that colour palette.",
                     repo: "http://github.com/classicaljo/memotest/",
                     sample: "http://classicaljo.github.io/memotest/",
@@ -62,7 +54,7 @@ class Projects extends React.Component {
                 },
                 {
                     title: "Simple form",
-                    picture: simple,
+                    picture: preloadArray[2].src,
                     text: "Just a simple form project with front-end validation.",
                     repo: "http://github.com/classicaljo/simple-form",
                     sample: "http://classicaljo.github.io/simple-form/",
@@ -71,7 +63,7 @@ class Projects extends React.Component {
                 },
                 {
                     title: "Barking Board",
-                    picture: bark,
+                    picture: preloadArray[1].src,
                     text: "Barking board was an experiment to make something similar to a clicker that kinda spiraled out of control.",
                     repo: "http://github.com/classicaljo/barking-board/",
                     sample: "http://classicaljo.github.io/barking-board/",
@@ -80,7 +72,7 @@ class Projects extends React.Component {
                 },
                 {
                     title: "Simon says",
-                    picture: simon,
+                    picture: preloadArray[0].src,
                     text: "My first project was to develop an implementation of Simon Says. I'm honestly kinda proud of it.",
                     repo: "http://github.com/classicaljo/simon-dice",
                     sample: "http://classicaljo.github.io/simon-dice/",

@@ -5,16 +5,11 @@ import Footer from "./Footer"
 import { BrowserRouter as Router } from "react-router-dom"
 import ReactGA from 'react-ga';
 import './assets/css/main.css';
-import "./assets/css/resume.css";
-import './assets/css/projects.css';
-import "./assets/css/home.css";
-import "./assets/css/footer.css";
-import "./assets/css/header.css";
-import './assets/css/hire.css';
+
 
 let importAll = r => r.keys().map(r)
-let images = importAll(require.context("./images/projects/", false, /\.png$/))
-let preloadArray = []
+export var images = importAll(require.context("./images/projects/", false, /\.png$/))
+export var preloadArray = []
 
 for (let i = 0; i < images.length; i++) {
   let preload = new Image()

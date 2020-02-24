@@ -171,18 +171,16 @@ class Windmill extends React.Component {
             >
                 <Mountains />
                 <Mounts />
-                {this.state.clouds.map(key => <Cloud position={key.position} key={key.id} />)}
+                {this.state.clouds.map(key => <Cloud viewBox={this.state.viewBox} position={key.position} key={key.id} />)}
                 <Lobo />
-
-
-                <Luna cx={-2225} cy={100} id="luna1" />
-                <Luna cx={5775} cy={100} id="luna2" />
-                <Chain x={2700} y={400} />
-                <Chain x={-5300} y={400} />
-                <Clock cx={4750} cy={0} />
-                <Clock cx={-3250} cy={0} />
-                <Tower x={3500} id="tower1" />
-                <Tower x={-4500} id="tower2" />
+                <Luna viewBox={this.state.viewBox.x} cx={-2225} cy={100} id="luna1" />
+                <Luna viewBox={this.state.viewBox.x} cx={5775} cy={100} id="luna2" />
+                <Chain viewBox={this.state.viewBox.x} x={2700} y={400} />
+                <Chain viewBox={this.state.viewBox.x} x={-5300} y={400} />
+                <Clock viewBox={this.state.viewBox.x} cx={4750} cy={0} />
+                <Clock viewBox={this.state.viewBox.x} cx={-3250} cy={0} />
+                <Tower viewBox={this.state.viewBox.x} x={3500} id="tower1" />
+                <Tower viewBox={this.state.viewBox.x} x={-4500} id="tower2" />
 
                 <Vanes
                     onClick={() => Body.applyForce(this.vanes, { x: 15, y: 50 }, { x: -0.0005, y: 0 })}
@@ -190,6 +188,7 @@ class Windmill extends React.Component {
                     y={this.vanes.position.y}
                     ratio={0.6}
                     angle={this.vanes.angle}
+                    viewBox={this.state.viewBox.x}
                 />
                 <Vanes
                     onClick={() => Body.applyForce(this.honeyMill, { x: 15, y: -50 }, { x: 0.001, y: 0 })}
@@ -197,6 +196,7 @@ class Windmill extends React.Component {
                     y={this.honeyMill.position.y}
                     angle={this.honeyMill.angle}
                     ratio={2}
+                    viewBox={this.state.viewBox.x}
                 />
                 <Grass
                     x={-6000}
