@@ -7,6 +7,16 @@ class Projects extends React.Component {
         this.state = {
             items: [
                 {
+                    title: "Pathfinder",
+                    picture: preloadArray[8].src,
+                    text: "Another entry on 'how to prove you can design and implement an algorithm'. Also made in typescript because why not. Doesn't have touchscreen support yet.",
+                    repo: "http://github.com/classicaljo/pathfinder",
+                    sample: "http://classicaljo.github.io/pathfinder",
+                    tags: ["typescript", "css3","unfinished", "pc-only", 'algorithm' ],
+                    show: true
+
+                },
+                {
                     title: "Pokedex",
                     picture: preloadArray[7].src,
                     text: "An implementation of a Pokedex using the PokeAPI database. Basically my first approach at working with RESTful API's, React and Redux.",
