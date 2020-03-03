@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d49419b1766077dd30e4219cdba38318",
+    "revision": "a04588a4111c133990aba7d9dccb0286",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "6c5401bb395ac641ae3a",
+    "revision": "d80507daeecb4039c745",
     "url": "/portfolio/static/css/main.8c389e55.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/js/2.9b98b7cb.chunk.js.LICENSE"
   },
   {
-    "revision": "6c5401bb395ac641ae3a",
-    "url": "/portfolio/static/js/main.7e7733e5.chunk.js"
+    "revision": "d80507daeecb4039c745",
+    "url": "/portfolio/static/js/main.2f9305d0.chunk.js"
   },
   {
     "revision": "8575fab3f3395c90d845",
@@ -50,5 +50,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "f4de9c650151fdc1fcf1e6d313b20d13",
     "url": "/portfolio/static/media/07_pokedex.f4de9c65.png"
+  },
+  {
+    "revision": "799202412d93972e1d7e3ae4eebd80d1",
+    "url": "/portfolio/static/media/08_pathfinder.79920241.png"
   }
 ]);
