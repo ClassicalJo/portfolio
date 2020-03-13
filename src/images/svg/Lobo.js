@@ -10,8 +10,8 @@ let Lobo = (props) => {
     return (
         <g transform={rotate}>
             <path d={path} fill="white" />
-            <circle cx={props.x + props.width / 4} cy={props.y + props.height * 1 / 10} r={props.height / 15} fill="#55cdfc" />
-            <circle cx={props.x - props.width / 4} cy={props.y + props.height * 1 / 10} r={props.height / 15} fill="#55cdfc" />
+            <circle cx={props.x + props.width / 4} cy={props.y + props.height / 10} r={props.height / 20} fill="#55cdfc" />
+            <circle cx={props.x - props.width / 4} cy={props.y + props.height / 10} r={props.height / 20} fill="#55cdfc" />
             <rect x={props.x - props.width / 2} y={props.y - props.height / 2 + props.height * 85 / 100} width={props.width} height={props.height * 15 / 100} fill="#306BAC" />
         </g>
     )

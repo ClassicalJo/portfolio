@@ -1,5 +1,5 @@
 import React from 'react'
-import { preloadArray, Event } from "../App"
+import { preloadArray, Event } from "../../App"
 
 class Projects extends React.Component {
     constructor() {

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import { Event } from "./App"
+import { Event } from "../../App"
 
 let NavBar = () => {
     return (
@@ -15,3 +15,6 @@ let NavBar = () => {
 }
 
 export default NavBar
+
+
+

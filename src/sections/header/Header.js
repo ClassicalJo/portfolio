@@ -1,6 +1,6 @@
 import React from 'react'
 import NavBar from './NavBar'
-import Logo from "./images/svg/Logo"
+import Logo from "../../images/svg/Logo"
 
 let Header = (props) => {
     return (

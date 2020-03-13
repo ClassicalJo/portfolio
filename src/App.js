@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import Header from './Header'
-import Main from "./Main"
-import Footer from "./Footer"
+import Header from './sections/header/Header'
+import Main from "./sections/Main"
+import Footer from "./sections/footer/Footer"
 import { BrowserRouter as Router } from "react-router-dom"
 import ReactGA from 'react-ga';
 import './assets/css/main.css';

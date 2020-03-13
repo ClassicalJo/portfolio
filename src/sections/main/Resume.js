@@ -1,5 +1,5 @@
 import React from "react"
-import Slider from "../images/svg/Slider"
+import Slider from "../../images/svg/Slider"
 
 let Resume = () => {
     return (

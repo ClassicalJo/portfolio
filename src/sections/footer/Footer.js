@@ -1,8 +1,8 @@
 import React from "react"
 import { Body, Bodies, World, Engine, Runner, Events } from 'matter-js'
-import Box from "./images/svg/Box"
-import Circle from "./images/svg/Circle"
-import Lobo from "./images/svg/Lobo"
+import Box from "../../images/svg/Box"
+import Circle from "../../images/svg/Circle"
+import Lobo from "../../images/svg/Lobo"
 
 let bodyRender = {
     square: key => {
@@ -121,7 +121,7 @@ class Footer extends React.Component {
     }
 
     updateCycle = () => {
-        if (this.timer % 200 === 0) this.createRandomBody(-400, -10)
+        if (this.timer % 1000 === 0) this.createRandomBody(-400, -10)
         if (this.timer % 25 === 0) this.bodies.forEach(key => Body.applyForce(key, { x: key.bounds.min.x, y: key.bounds.min.y }, { x: 0.00005, y: 0 }))
 
         this.bodies.forEach((key) => {

@@ -27,35 +27,35 @@ $borderRadius: 25px;
 }
 
 @mixin parenthesis() {
+    background: rgba(0,0,0,0.1);
     border-left: 0.3rem solid white;
     border-right: 0.3rem solid white;
     border-radius: 1rem;
     margin: 1rem 0.5rem;
     padding: 1rem;
-    background: rgba(0,0,0,0.1);
 }
 
 
 html {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    letter-spacing: 2px;
-    font-size: 18px;
     color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;  
     margin: 0;
 }
 
 body, html, #root {
+    box-sizing: border-box;
     overflow: hidden;
     margin: 0;
     height: 100%;
-    box-sizing: border-box;
     width: calc(100% - 2rem);
     width: -moz-available;
     width: -webkit-fill-available;
-    width: fill-available;
+    width: stretch;
     height: -moz-available;
     height: -webkit-fill-available;
-    height: fill-available;
+    height: stretch;
 }
 
 .small-text{ 

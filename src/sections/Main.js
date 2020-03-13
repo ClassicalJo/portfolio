@@ -1,8 +1,8 @@
 import React from 'react'
-import Home from './sections/Home'
-import Projects from "./sections/Projects"
-import Resume from "./sections/Resume"
-import Hire from "./sections/Hire"
+import Home from './main/Home'
+import Projects from "./main/Projects"
+import Resume from "./main/Resume"
+import Hire from "./main/Hire"
 import { Switch, Route, Redirect } from "react-router-dom"
 
 let Main = () => {

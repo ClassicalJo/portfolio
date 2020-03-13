@@ -1,12 +1,12 @@
 import React from 'react'
-import HomeText from '../HomeText'
-import Windmill from '../Windmill'
+import HomeText from './HomeText'
+import NewWorld from './NewWorld'
 
 
 let Home = () => {
     return (
         <div className="home">
-            <Windmill />
+            <NewWorld />
             <HomeText />
         </div>
     )

@@ -516,7 +516,7 @@ template {
   visibility: hidden;
 }
 
-.home svg {
+.home .svg {
   grid-row: 1/2;
   grid-column: 1/2;
   max-height: 100%;
@@ -529,6 +529,11 @@ template {
   grid-column: 1/2;
   font-size: 2rem;
   pointer-events: none;
+}
+
+.home .home-text-container > p {
+  pointer-events: none;
+  user-select: none;
 }
 
 .home .input {
@@ -660,25 +665,25 @@ template {
 
 /*# sourceMappingURL=hire.css.map */
 html {
-  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  letter-spacing: 2px;
-  font-size: 18px;
   color: white;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 18px;
+  letter-spacing: 2px;
   margin: 0;
 }
 
 body, html, #root {
+  box-sizing: border-box;
   overflow: hidden;
   margin: 0;
   height: 100%;
-  box-sizing: border-box;
   width: calc(100% - 2rem);
   width: -moz-available;
   width: -webkit-fill-available;
-  width: fill-available;
+  width: stretch;
   height: -moz-available;
   height: -webkit-fill-available;
-  height: fill-available;
+  height: stretch;
 }
 
 .small-text {
