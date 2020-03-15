@@ -7,6 +7,7 @@ let radiansToDegrees = (number) => {
 let Lobo = (props) => {
     let path = `M${props.x - props.width / 2} ${props.y + props.height / 2} V${props.y - props.height / 2} L${props.x - props.width * 3 / 10} ${props.y - props.height * 1 / 10} H${props.x + props.width * 3 / 10} L${props.x + props.width / 2} ${props.y - props.height / 2} V${props.y + props.height / 2}Z`
     let rotate = `rotate(${radiansToDegrees(props.angle)} ${props.x} ${props.y})`
+
     return (
         <g transform={rotate}>
             <path d={path} fill="white" />

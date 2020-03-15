@@ -1,5 +1,4 @@
 import React from 'react'
-
 let Cloud = props => {
     return (
         <path

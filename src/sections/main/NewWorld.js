@@ -24,8 +24,8 @@ class NewWorld extends React.Component {
 
     componentDidMount = () => {
         Body.applyForce(anim8.vane, { x: -0.25, y: 0 }, { x: 0.0025, y: -0.0025 })
-        this.timeout = setTimeout(()=> this.setState({pause: false}), 3000)
-        Body.rotate(anim8.camera, -0)
+        this.timeout = setTimeout(() => this.setState({ pause: false }), 3000)
+        Body.rotate(anim8.camera, 0)
         Runner.run(this.runner, this.engine)
         this.cycle()
     }
@@ -69,9 +69,11 @@ class NewWorld extends React.Component {
 
     togglePause = () => {
         if (!this.state.pause) Body.setAngularVelocity(anim8.camera, 0)
-        this.setState(prevState => ({
-            pause: !prevState.pause
-        }))
+        this.setState(prevState => {
+            let pause = { ...prevState.pause }
+            pause = (!prevState.pause)
+            return { pause }
+        })
     }
 
     render() {
@@ -81,11 +83,10 @@ class NewWorld extends React.Component {
                 width="100%"
                 height="100%"
                 viewBox="-500 -500 1000 1000"
-                onClick={() => this.togglePause()} 
+                // viewBox="-2000 -2000 4000 4000"
+                onClick={() => this.togglePause()}
                 onTouchStart={() => this.togglePause()}>
-
-                <Definitions date={this.state.date} sea={anim8.sea} waves={anim8.waves} boat={anim8.boat} vane={anim8.vane} />
-                <use x="-3000" y='-1500' width="6000" height="6000" xlinkHref="#loboland" transform={`rotate(${this.state.rotate} 0 1500)`} pointerEvents="none" />
+                <Definitions date={this.state.date} sea={anim8.sea} waves={anim8.waves} vane={anim8.vane} camera={this.state.rotate} />                
             </svg>
         )
     }
