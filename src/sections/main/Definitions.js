@@ -61,7 +61,7 @@ const Definitions = props => {
                     <Cards suit="diamonds" x={230 * cos(270)} y={230 * sin(270)} ratio="0.1" rotation="118.5" />
                     <Cards suit="spades" x={215 * cos(270)} y={215 * sin(270)} ratio="0.1" rotation="125" />
                     <Cards suit="hearts" x={230 * cos(270)} y={230 * sin(270)} ratio="0.1" rotation="131.5" />
-                    <Cards suit="clubs" x={215 * cos(270)} y={215 * sin(270)} ratio="0.09" rotation="138" />
+                    <Cards suit="clubs" x={215 * cos(270)} y={215 * sin(270)} ratio="0.1" rotation="138" />
                     <Cards suit="diamonds" x={230 * cos(270)} y={230 * sin(270)} ratio="0.1" rotation="145.5" />
                     <Clock x={215 * cos(270)} y={215 * sin(270)} ratio="0.1" rotation="180" date={props.date} />
                     <Boat x={200 * cos(270)} y={200 * sin(270)} ratio="0.1" rotation="270" date={props.date} />
