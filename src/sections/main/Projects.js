@@ -9,10 +9,10 @@ class Projects extends React.Component {
                 {
                     title: "Pathfinder",
                     picture: preloadArray[8].src,
-                    text: "Another entry on 'how to prove you can design and implement an algorithm'. Also made in typescript because why not. Doesn't have touchscreen support yet.",
+                    text: "Another entry on 'how to prove you can design and implement an algorithm'. Also made in typescript because why not.",
                     repo: "http://github.com/classicaljo/pathfinder",
                     sample: "http://classicaljo.github.io/pathfinder",
-                    tags: ["typescript", "css3","unfinished", "pc-only", 'algorithm' ],
+                    tags: ["typescript", "css3","unfinished", 'algorithm' ],
                     show: true
 
                 },
