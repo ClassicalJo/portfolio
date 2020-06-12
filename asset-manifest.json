@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.b993f9e0.chunk.css",
-    "main.js": "/portfolio/static/js/main.2fc6bf3f.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.2fc6bf3f.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.828fc3da.chunk.css",
+    "main.js": "/portfolio/static/js/main.43cb429d.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.43cb429d.chunk.js.map",
     "runtime-main.js": "/portfolio/static/js/runtime-main.680679b4.js",
     "runtime-main.js.map": "/portfolio/static/js/runtime-main.680679b4.js.map",
     "static/js/2.e7d1cf99.chunk.js": "/portfolio/static/js/2.e7d1cf99.chunk.js",
     "static/js/2.e7d1cf99.chunk.js.map": "/portfolio/static/js/2.e7d1cf99.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "precache-manifest.f824aedf4181c1566947f28b19fdd7d8.js": "/portfolio/precache-manifest.f824aedf4181c1566947f28b19fdd7d8.js",
+    "precache-manifest.f742817fa461363c165eb3c9bb0bdc7d.js": "/portfolio/precache-manifest.f742817fa461363c165eb3c9bb0bdc7d.js",
     "service-worker.js": "/portfolio/service-worker.js",
-    "static/css/main.b993f9e0.chunk.css.map": "/portfolio/static/css/main.b993f9e0.chunk.css.map",
+    "static/css/main.828fc3da.chunk.css.map": "/portfolio/static/css/main.828fc3da.chunk.css.map",
     "static/js/2.e7d1cf99.chunk.js.LICENSE": "/portfolio/static/js/2.e7d1cf99.chunk.js.LICENSE",
     "static/media/01_barking-board.png": "/portfolio/static/media/01_barking-board.46a63350.png",
     "static/media/02_simple-form.png": "/portfolio/static/media/02_simple-form.bf76a0e0.png",
@@ -19,12 +19,13 @@
     "static/media/05_sudoku.png": "/portfolio/static/media/05_sudoku.141b98a6.png",
     "static/media/06_blinkjs_blood.png": "/portfolio/static/media/06_blinkjs_blood.845b9a21.png",
     "static/media/07_pokedex.png": "/portfolio/static/media/07_pokedex.f4de9c65.png",
-    "static/media/08_pathfinder.png": "/portfolio/static/media/08_pathfinder.79920241.png"
+    "static/media/08_pathfinder.png": "/portfolio/static/media/08_pathfinder.79920241.png",
+    "static/media/09_crudclub.png": "/portfolio/static/media/09_crudclub.a2457cb9.png"
   },
   "entrypoints": [
     "static/js/runtime-main.680679b4.js",
     "static/js/2.e7d1cf99.chunk.js",
-    "static/css/main.b993f9e0.chunk.css",
-    "static/js/main.2fc6bf3f.chunk.js"
+    "static/css/main.828fc3da.chunk.css",
+    "static/js/main.43cb429d.chunk.js"
   ]
 }

@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e287fac3258ef7b0d94a37b94d12ac0c",
+    "revision": "5f4ac80518fcb6a2a89be16eb1ccbdfb",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "8c953063cb75b62c56eb",
-    "url": "/portfolio/static/css/main.b993f9e0.chunk.css"
+    "revision": "fa5aa7317fb62e74d39c",
+    "url": "/portfolio/static/css/main.828fc3da.chunk.css"
   },
   {
     "revision": "de9745bc1ad9df789869",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/js/2.e7d1cf99.chunk.js.LICENSE"
   },
   {
-    "revision": "8c953063cb75b62c56eb",
-    "url": "/portfolio/static/js/main.2fc6bf3f.chunk.js"
+    "revision": "fa5aa7317fb62e74d39c",
+    "url": "/portfolio/static/js/main.43cb429d.chunk.js"
   },
   {
     "revision": "8575fab3f3395c90d845",
@@ -54,5 +54,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "799202412d93972e1d7e3ae4eebd80d1",
     "url": "/portfolio/static/media/08_pathfinder.79920241.png"
+  },
+  {
+    "revision": "a2457cb967dc87cfa7fab4baafd35135",
+    "url": "/portfolio/static/media/09_crudclub.a2457cb9.png"
   }
 ]);
