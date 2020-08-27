@@ -1,5 +1,5 @@
 .hire {
-  justify-content: center;
+  flex-direction: column;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
@@ -14,7 +14,7 @@
   padding: 1rem;
 }
 .hire .hire-me h2 {
-  margin: 0.5rem 0;
+  margin: 1rem 0;
 }
 
 /*# sourceMappingURL=hire.css.map */

@@ -21,7 +21,7 @@ let sin = angle => Math.sin(angle * Math.PI / 180)
 
 let clouds = { 30: 275, 90: 285, 150: 293, 210: 280, 270: 280, 330: 270 }
 
-const Definitions = props => {
+const Definitions = () => {
     return (
         <React.Fragment>
             <defs>
@@ -36,21 +36,22 @@ const Definitions = props => {
             </defs>
 
             <svg x="-3000" y='-1500' width="6000" height="6000" id="loboland" viewBox="-500 -500 1000 1000" >
-                <g transform={`rotate(${props.camera} 0 0)`}>
-
+                <g transform="rotate(0)">
                     <circle cx={340 * cos(270)} cy={340 * sin(270)} r="25" fill="white" />
 
-                    {Object.keys(clouds).map((key, index) => <g key={index} transform={`rotate(${Number(key) + props.vane.angle / 2} 0 0)`}><Cloud position={{ x: clouds[key] * cos(270), y: clouds[key] * sin(270) }} ratio="0.25" rotation={Number(key) + props.vane.angle / 2} camera={props.camera} /></g>)}
+                    {Object.keys(clouds).map((key, index) => (
 
+                        <Cloud key={`cloud${index}`} position={{ x: clouds[key] * cos(270), y: clouds[key] * sin(270) }} ratio="0.25" rotation={key} />
+                    ))}
                     <Pine x={225 * cos(270)} y={225 * sin(270)} rotation="340" ratio="0.15" />
                     <Pine x={225 * cos(270)} y={225 * sin(270)} rotation="315" ratio="0.15" />
 
                     <Lobo x={202 * cos(270)} y={202 * sin(270)} width="25" height="25" angle="0" />
                     <Lobo x={202 * cos(80)} y={202 * sin(80)} width="25" height="25" angle={170 * Math.PI / 180} />
 
-                    <Vanes x={235 * cos(270)} y={235 * sin(270)} ratio={8} degrees="rotate(25 0 0)" angle={props.vane.angle} />
-                    <Vanes x={210 * cos(270)} y={210 * sin(270)} ratio={15} degrees="rotate(35 0 0)" angle={props.vane.angle} />
-                    <Vanes x={225 * cos(270)} y={225 * sin(270)} ratio={10} degrees="rotate(45 0 0)" angle={props.vane.angle} />
+                    <Vanes x={235 * cos(270)} y={235 * sin(270)} ratio={8} rotation="25" />
+                    <Vanes x={210 * cos(270)} y={210 * sin(270)} ratio={15} rotation="35" />
+                    <Vanes x={225 * cos(270)} y={225 * sin(270)} ratio={10} rotation="45" />
 
                     <Dice number="5" x={194 * cos(270)} y={194 * sin(270)} ratio="0.0135" rotation="60.25" />
                     <Dice number="3" x={194 * cos(270)} y={194 * sin(270)} ratio="0.0135" rotation="62" />
@@ -63,16 +64,26 @@ const Definitions = props => {
                     <Cards suit="hearts" x={230 * cos(270)} y={230 * sin(270)} ratio="0.1" rotation="131.5" />
                     <Cards suit="clubs" x={215 * cos(270)} y={215 * sin(270)} ratio="0.1" rotation="138" />
                     <Cards suit="diamonds" x={230 * cos(270)} y={230 * sin(270)} ratio="0.1" rotation="145.5" />
-                    <Clock x={215 * cos(270)} y={215 * sin(270)} ratio="0.1" rotation="180" date={props.date} />
-                    <Boat x={200 * cos(270)} y={200 * sin(270)} ratio="0.1" rotation="270" date={props.date} />
+                    <Clock x={215 * cos(270)} y={215 * sin(270)} ratio="0.1" rotation="180" />
+                    <Boat x={200 * cos(270)} y={200 * sin(270)} ratio="0.1" rotation="270" />
 
-                    <Sea angle={props.sea.angle} />
-                    <Waves angle={props.waves.angle} />
+                    <Sea />
+                    <Waves />
                     <Grass width="500" height="500" x="0" y="0" />
 
                     <rect x="-500" y="-500" width="1000" height="1000" fill="url(#twilight)" />
                     <Luna x={350 * cos(270)} y={350 * sin(270)} ratio="0.1" rotation="180" />
+                    <animateTransform
+                        attributeName="transform"
+                        type="rotate"
+                        from="0 0 0"
+                        to="-360 0 0"
+                        dur="180s"
+                        repeatCount='indefinite'
+                        begin='0s'
+                    />
                 </g>
+
             </svg>
         </React.Fragment>
     )

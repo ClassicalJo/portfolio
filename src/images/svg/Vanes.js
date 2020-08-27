@@ -1,34 +1,39 @@
 import React from 'react'
 
-let radiansToDegrees = (number) => number * 180 / Math.PI
-
-let Vanes = (props) => {
+let Vanes = props => {
+    let { x, y, ratio, rotation } = { ...props }
     let path = ` 
-                M ${props.x - 150 / props.ratio} ${props.y - 50 / props.ratio} 
-                L ${props.x} ${props.y} 
-                L ${props.x - 50 / props.ratio} ${props.y - 150 / props.ratio} 
-                H ${props.x + 50 / props.ratio}  
-                L ${props.x} ${props.y} 
-                L ${props.x + 150 / props.ratio} ${props.y - 50 / props.ratio} 
-                V ${props.y + 50 / props.ratio} 
-                L ${props.x} ${props.y} 
-                L ${props.x + 50 / props.ratio} ${props.y + 150 / props.ratio} 
-                H ${props.x - 50 / props.ratio} 
-                L ${props.x} ${props.y} 
-                L ${props.x - 150 / props.ratio} ${props.y + 50 / props.ratio} 
+                M ${x - 150 / ratio} ${y - 50 / ratio} 
+                L ${x} ${y} 
+                L ${x - 50 / ratio} ${y - 150 / ratio} 
+                H ${x + 50 / ratio}  
+                L ${x} ${y} 
+                L ${x + 150 / ratio} ${y - 50 / ratio} 
+                V ${y + 50 / ratio} 
+                L ${x} ${y} 
+                L ${x + 50 / ratio} ${y + 150 / ratio} 
+                H ${x - 50 / ratio} 
+                L ${x} ${y} 
+                L ${x - 150 / ratio} ${y + 50 / ratio} 
                 Z
                 `
     return (
-        <React.Fragment>
-            <g transform={props.degrees}>
-                <path d={`M ${props.x} ${props.y} L ${props.x - 40 / props.ratio} ${props.y + 400 / props.ratio} H ${props.x + 40 / props.ratio}`} fill="#306BAC" />
-                <g transform={`rotate(${radiansToDegrees(props.angle)} ${props.x} ${props.y})`} >
-                    <path fill="white" d={path} />
-                    <circle cx={props.x} cy={props.y} r={10 / props.ratio} fill="#306BAC" />
-                    <circle fill="transparent" cx={props.x} cy={props.y} r={150 / props.ratio} />
-                </g>
+        <g transform={`rotate(${rotation} 0 0)`}>
+            <path d={`M ${x} ${y} L ${x - 40 / ratio} ${y + 400 / ratio} H ${x + 40 / ratio}`} fill="#306BAC" />
+            <g>
+                <path fill="white" d={path} />
+                <circle cx={x} cy={y} r={10 / ratio} fill="#306BAC" />
+                <animateTransform
+                    attributeName="transform"
+                    type="rotate"
+                    from={`0 ${x} ${y}`}
+                    to={`360 ${x} ${y}`}
+                    dur={`${10 + 10 / ratio}s`}
+                    begin="0s"
+                    repeatCount="indefinite"
+                />
             </g>
-        </React.Fragment>
+        </g>
     )
 }
 export default Vanes

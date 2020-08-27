@@ -6,17 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom"
 import ReactGA from 'react-ga';
 import './assets/css/main.css';
 
-
-let importAll = r => r.keys().map(r)
-export var images = importAll(require.context("./images/projects/", false, /\.png$/))
-export var preloadArray = []
-
-for (let i = 0; i < images.length; i++) {
-  let preload = new Image()
-  preload.src = images[i]
-  preloadArray.push(preload)
-}
-
+//Google Analytics
 export const trackingId = "UA-153521299-1";
 export const initGA = trackingId => ReactGA.initialize(trackingId);
 export const pageView = () => ReactGA.pageview(window.location.pathname + window.location.search)
@@ -29,14 +19,11 @@ export const Event = (category, action, label) => {
   });
 };
 
-let useMount = fn => useEffect(fn, [])
-
 let App = () => {
-  useMount(() => {
+  useEffect(() => {
     initGA(trackingId)
     pageView()
-  })
-  
+  }, [])
   return (
     <Router >
       <div className="container">
@@ -47,4 +34,5 @@ let App = () => {
     </Router>
   )
 }
+
 export default App

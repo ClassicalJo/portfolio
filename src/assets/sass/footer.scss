@@ -1,21 +1,12 @@
 $maya_blue: #55cdfc;
-$borderRadius: 25px;
 @mixin shadow() {
     box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.4);
 }
 
 .footer {
     grid-area: footer;
-    border-bottom-left-radius: $borderRadius;
-    border-bottom-right-radius: $borderRadius;
     background: $maya_blue;
     @include shadow();
     display: flex;
     -webkit-tap-highlight-color:  rgba(255, 255, 255, 0); 
-    
-    svg {
-        border-bottom-left-radius: $borderRadius;
-        border-bottom-right-radius: $borderRadius;
-        
-    }
 }

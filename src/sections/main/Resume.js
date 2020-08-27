@@ -12,7 +12,7 @@ let Resume = () => {
                         <ul className="frameworks">
                             <span><li> Javascript (ES6)</li><Slider progress="80%" /></span>
                             <span><li> React</li><Slider progress="70%" /></span>
-                            <span><li> Ruby</li><Slider progress="20%" /></span>
+                            <span><li> Typescript</li><Slider progress="45%" /></span>
                         </ul>
                     </div>
                     <div className="skillblock">
@@ -36,15 +36,15 @@ let Resume = () => {
                     <div className="skillblock">
                         <h2>Testing</h2>
                         <ul>
-                            <span><li>Cypress.io</li><Slider progress="20%" /></span>
+                            <span><li>Jest</li><Slider progress="20%" /></span>
                         </ul>
                     </div>
 
                     <div className="skillblock">
                         <h2>Back-end</h2>
                         <ul className="back-end">
-                            <span><li>Node.js</li><Slider progress="25%" /></span>
-                            <span><li>MySQL</li><Slider progress="25%" /></span>
+                            <span><li>Node.js</li><Slider progress="50%" /></span>
+                            <span><li>MySQL</li><Slider progress="50%" /></span>
                         </ul>
                     </div>
                 </div>
@@ -53,10 +53,6 @@ let Resume = () => {
             <div className="work-history">
                 <div className="work-history-wrapper">
                     <h1>Work history: </h1>
-                    <h2>>> Your company</h2>
-                    <p className="italic">Junior Front-End Developer | 2020 - current</p>
-                    <p> My excellent work ethics and varied skillset will prove to be a wonderful asset to your project.</p>
-
                     <h2>>> University of Buenos Aires</h2>
                     <p className="italic">Professor assistant | 2017-2018</p>
                     <p>Provided pro-bono legal advice as part of a team promoted by the Faculty of Law.</p>

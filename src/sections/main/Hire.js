@@ -15,7 +15,7 @@ let Hire = () => {
                 <p>I have no issue relocating anywhere in Australia</p>
                 <h2>VISA details</h2>
                 <p>Working Holiday (462)</p>
-                <p>No work hours limit - Max 6 months with same employer</p>
+                <p>No work hours limit</p>
                 <p>Valid until April 2021</p>
             </div>
         </div>

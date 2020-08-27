@@ -18,6 +18,19 @@ let generateSea = () => {
 
 let seaPath = generateSea()
 
-let Sea = props => <path d={seaPath} fill='#141BAC' fillOpacity="0.5" transform={`rotate(${props.angle} 0 0)`} />
+let Sea = () => (
+    <path
+        d={seaPath}
+        fill='#141BAC'
+        fillOpacity="0.5" >
+        <animateTransform
+            attributeName="transform"
+            type="rotate"
+            to="360"
+            dur="15s"
+            begin="0s"
+            repeatCount='indefinite'
+        />
+    </path>)
 
 export default Sea

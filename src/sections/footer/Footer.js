@@ -67,7 +67,7 @@ class Footer extends React.Component {
         this.runner = Runner.create()
         this.world = this.engine.world
         this.timer = 1
-        this.ground = Bodies.rectangle(0, 35, 2000, 5, { friction: 0, isStatic: true, width: 1500, height: 5, color: "white" })
+        this.ground = Bodies.rectangle(0, 35, 2000, 5, { friction: 0, isStatic: true, width: 1500, height: 5, color: "#55cdfc" })
         this.bodies = []
         Events.on(this.engine, "beforeUpdate", () => this.timer++)
         World.add(this.world, this.ground)

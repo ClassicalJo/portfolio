@@ -18,6 +18,16 @@ let generateWaves = () => {
 
 let wavesPath = generateWaves()
 
-let Waves = props => <path d={wavesPath} fill='cyan' fillOpacity="0.5" transform={`rotate(${props.angle} 0 0)`} />
+let Waves = () => (
+    <path d={wavesPath} fill='cyan' fillOpacity="0.5">
+        <animateTransform
+            attributeName="transform"
+            type="rotate"
+            to="360"
+            dur="25s"
+            begin="0s"
+            repeatCount='indefinite'
+        />
+    </path>)
 
 export default Waves

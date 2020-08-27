@@ -1,17 +1,11 @@
 import React from 'react'
 import NavBar from './NavBar'
-import Logo from "../../images/svg/Logo"
+import Title from "./Title"
 
-let Header = (props) => {
+let Header = () => {
     return (
         <div className="header">
-            <div className="logo-wrapper"><Logo /></div>
-            <div className="header-wrapper">
-                <span className="title-wrapper">
-                    <h1>ClassicalJo</h1>
-                    <h2>>> portfolio.create()</h2>
-                </span>
-            </div>
+            <Title />
             <NavBar />
         </div>
     )
