@@ -1,7 +1,7 @@
 @use "../../../node_modules/normalize.css/normalize.css";
 @use "./resume.scss";
 @use './projects.scss';
-@use "./home.scss";
+// @use "./home.scss";
 @use "./footer.scss";
 @use "./header.scss";
 @use './hire.scss';
@@ -82,11 +82,10 @@ a:visited {
     min-height: 575px;
     height: 100%;
     min-height: 100%;
-    grid-template-rows: 12.5vh auto 12.5vh;
+    grid-template-rows: 12.5vh auto;
     grid-template-areas: 
     "header"
     "main"
-    "footer";   
 
 }
 
@@ -95,7 +94,7 @@ a:visited {
     display: flex;
     flex: 1;
     grid-area: main;
-    overflow-y: hidden;
+    
     @include shadow();
 }
 

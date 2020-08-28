@@ -478,43 +478,6 @@ template {
   flex: 1;
 }
 
-.home {
-  flex: 1;
-  display: grid;
-}
-.home .visible {
-  font-weight: 100;
-}
-.home .hidden {
-  visibility: hidden;
-}
-.home .svg {
-  grid-row: 1/2;
-  grid-column: 1/2;
-  max-height: 100%;
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-}
-.home .home-text-container {
-  padding: 1rem;
-  grid-row: 1/2;
-  grid-column: 1/2;
-  font-size: 2rem;
-  pointer-events: none;
-}
-.home .home-text-container > p {
-  pointer-events: none;
-  user-select: none;
-}
-.home .input {
-  background-color: transparent;
-  color: white;
-  letter-spacing: 2px;
-  border: 0px;
-  outline: 0px;
-  width: 80%;
-  font-weight: 100;
-}
-
 .footer {
   grid-area: footer;
   background: #55cdfc;
@@ -676,8 +639,8 @@ a:visited {
   min-height: 575px;
   height: 100%;
   min-height: 100%;
-  grid-template-rows: 12.5vh auto 12.5vh;
-  grid-template-areas: "header" "main" "footer";
+  grid-template-rows: 12.5vh auto;
+  grid-template-areas: "header" "main";
 }
 
 .main-container {
@@ -685,7 +648,6 @@ a:visited {
   display: flex;
   flex: 1;
   grid-area: main;
-  overflow-y: hidden;
   box-shadow: 3px 3px 3px 0px rgba(0, 0, 0, 0.4);
 }
 

@@ -14,6 +14,7 @@ import Cards from "../../images/svg/Cards"
 import Clock from "../../images/svg/Clock"
 import Boat from "../../images/svg/Boat"
 import Luna from "../../images/svg/Luna"
+import TextGlobe from './TextGlobe'
 
 
 let cos = angle => Math.cos(angle * Math.PI / 180)
@@ -45,7 +46,8 @@ const Definitions = () => {
                     ))}
                     <Pine x={225 * cos(270)} y={225 * sin(270)} rotation="340" ratio="0.15" />
                     <Pine x={225 * cos(270)} y={225 * sin(270)} rotation="315" ratio="0.15" />
-
+                    <TextGlobe cx={240 * cos(270)} cy={240 * sin(270)} />
+                
                     <Lobo x={202 * cos(270)} y={202 * sin(270)} width="25" height="25" angle="0" />
                     <Lobo x={202 * cos(80)} y={202 * sin(80)} width="25" height="25" angle={170 * Math.PI / 180} />
 
@@ -80,7 +82,8 @@ const Definitions = () => {
                         to="-360 0 0"
                         dur="180s"
                         repeatCount='indefinite'
-                        begin='0s'
+                        begin='10s'
+                        
                     />
                 </g>
 

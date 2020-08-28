@@ -29,7 +29,6 @@ let App = () => {
       <div className="container">
         <Header />
         <Main />
-        <Footer />
       </div>
     </Router>
   )
