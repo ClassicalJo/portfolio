@@ -343,7 +343,6 @@ template {
   flex-wrap: wrap;
   flex-direction: row;
   padding: 1rem;
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 .resume .skillset {
@@ -406,7 +405,6 @@ template {
 
 .projects {
   flex-direction: column;
-  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
 }
 .projects .item {
@@ -603,7 +601,9 @@ html {
   height: 100%;
 }
 
-body, html, #root {
+body,
+html,
+#root {
   box-sizing: border-box;
   margin: 0;
   height: 100%;
@@ -624,7 +624,10 @@ body, html, #root {
   font-style: italic;
 }
 
-p, h1, h2, ul {
+p,
+h1,
+h2,
+ul {
   margin: 0;
   font-weight: 100;
 }
@@ -664,11 +667,11 @@ a:visited {
 }
 
 ::-webkit-scrollbar-track {
-  background: #306BAC;
+  background: #306bac;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #141B41;
+  background: #141b41;
 }
 
 @keyframes appear {

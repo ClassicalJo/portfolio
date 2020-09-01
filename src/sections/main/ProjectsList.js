@@ -2,9 +2,18 @@ let importAll = r => r.keys().map(r)
 let images = importAll(require.context('../../../src/images/projects', false, /\.(png|jpe?g|svg)$/))
 let items = [
     {
+        title: "El principito",
+        picture: images[10],
+        text: "A visual novel app made for React Native using Expo's managed workflow. Still deciding whether doing the full book or not.",
+        repo: "http://github.com/classicaljo/el-principito",
+        sample: "https://expo.io/@classicaljo/el-principito",
+        tags: ['expo', 'react native', 'finished', 'game'],
+        show: true,
+    },
+    {
         title: "CRUD Club",
         picture: images[9],
-        text: "A node server hosting a RESTful API about English Football Clubs because why not.",
+        text: "A node server hosted in heroku, holding a RESTful API I created about... English Football Clubs.",
         repo: "http://github.com/classicaljo/crud-club",
         sample: "http://crud-club.herokuapp.com",
         tags: ["node", "react", "finished", 'api', 'material', 'express'],
@@ -18,7 +27,7 @@ let items = [
         repo: "http://github.com/classicaljo/pathfinder",
         sample: "http://classicaljo.github.io/pathfinder",
         tags: ["typescript", "css3", "unfinished", 'algorithm'],
-        show: true
+        show: false
 
     },
     {
@@ -46,7 +55,7 @@ let items = [
         repo: "http://github.com/classicaljo/sudoku",
         sample: "http://classicaljo.github.io/sudoku",
         tags: ['javascript', "game", "algorithm", 'finished'],
-        show: true,
+        show: false,
     },
     {
         title: "blinkjs",

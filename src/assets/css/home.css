@@ -1,10 +1,45 @@
 .home {
   display: grid;
-  grid-template-rows: 87.5vh 100vh 100vh;
+  grid-template-rows: 87.5vh 100vmin 100vmin 100vmin;
   width: 100%;
 }
-.home .svg {
-  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
+.home .extra {
+  margin: 40px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+.home .extra .text-block {
+  background-color: white;
+  border: 5px solid black;
+  color: #141b41;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px;
+  box-shadow: 10px 10px #000000;
+  text-shadow: 0.05rem 0.05rem #000000, -0.05rem 0.05rem #ff4123;
+}
+.home .extra .text-block p {
+  font-weight: 900;
+}
+.home .vision-container {
+  display: flex;
+}
+.home .vision-container .vision-wrapper {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.home .vision-container .vision-wrapper .vision {
+  height: calc(100vmin - 2rem);
+  width: calc(100vmin - 2rem);
+  padding: 1rem;
 }
 
 /*# sourceMappingURL=home.css.map */

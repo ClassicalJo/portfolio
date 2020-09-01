@@ -7,7 +7,7 @@ let World = () => {
             className="svg"
             height="100%"
             width="100%"
-            viewBox="-500 -500 1000 1000"
+            viewBox="-550 -550 1100 1100"
 
         >
             <Definitions />            

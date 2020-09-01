@@ -3,10 +3,11 @@ import React from 'react'
 let TextGlobe = ({ cx, cy }) => {
     let [width, height] = [40, 20]
     let begin = "1s"
+    let fade = '9s'
     return (
         <g>
 
-            <rect rx={height / 2} x={cx} y={cy} width="0" height="0" fill="white" >
+            <rect rx={height} x={cx} y={cy}  opacity="0.85"  width="0" height="0" fill="white" >
                 <animateTransform
                     attributeName="transform"
                     type="translate"
@@ -15,6 +16,15 @@ let TextGlobe = ({ cx, cy }) => {
                     dur="0.15s"
                     fill="freeze"
                     begin={begin}
+                />
+                <animateTransform
+                    attributeName="transform"
+                    type="translate"
+                    from={`${-width / 2} ${-height / 2}`}
+                    to={`0 0`}
+                    dur="0.15s"
+                    fill="freeze"
+                    begin={fade}
                 />
                 <animate
                     attributeName="width"
@@ -31,6 +41,22 @@ let TextGlobe = ({ cx, cy }) => {
                     dur="0.15s"
                     fill="freeze"
                     begin={begin}
+                />
+                <animate
+                    attributeName="width"
+                    from={width}
+                    to="0"
+                    dur="0.15s"
+                    fill="freeze"
+                    begin={fade}
+                />
+                <animate
+                    attributeName="height"
+                    from={height}
+                    to="0"
+                    dur="0.15s"
+                    fill="freeze"
+                    begin={fade}
                 />
             </rect>
             <text
@@ -54,6 +80,15 @@ let TextGlobe = ({ cx, cy }) => {
                     dur="0.20s"
                     fill="freeze"
                     begin={begin}
+                />
+                <animate
+                    attributeName="opacity"
+                    from="1"
+                    to="0"
+                    calcMode="discrete"
+                    dur="0.20s"
+                    fill="freeze"
+                    begin={fade}
                 />
             </text>
         </g >
