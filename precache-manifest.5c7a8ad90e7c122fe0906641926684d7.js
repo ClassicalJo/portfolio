@@ -1,11 +1,11 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e960703d11b0ed5b5f6ebfa7dc021f28",
+    "revision": "32f6986561f07f41becf92a5d9b5af69",
     "url": "/portfolio/index.html"
   },
   {
-    "revision": "33e05308155ff1d9acdb",
-    "url": "/portfolio/static/css/main.25cc7b64.chunk.css"
+    "revision": "e21f09a5eb06b920783a",
+    "url": "/portfolio/static/css/main.76ee99df.chunk.css"
   },
   {
     "revision": "fa32f0ec1474cc4dcd95",
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/portfolio/static/js/2.ee3a80fe.chunk.js.LICENSE"
   },
   {
-    "revision": "33e05308155ff1d9acdb",
-    "url": "/portfolio/static/js/main.990bad12.chunk.js"
+    "revision": "e21f09a5eb06b920783a",
+    "url": "/portfolio/static/js/main.2ecc4633.chunk.js"
   },
   {
     "revision": "8575fab3f3395c90d845",
@@ -58,5 +58,9 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "a2457cb967dc87cfa7fab4baafd35135",
     "url": "/portfolio/static/media/09_crudclub.a2457cb9.png"
+  },
+  {
+    "revision": "5807797dcb211271a57393d623efc5f8",
+    "url": "/portfolio/static/media/10_el_principito.5807797d.png"
   }
 ]);
