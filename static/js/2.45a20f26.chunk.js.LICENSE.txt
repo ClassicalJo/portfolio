@@ -1,0 +1,77 @@
+/*
+object-assign
+(c) Sindre Sorhus
+@license MIT
+*/
+
+/*!
+   * Cellular noise ("Worley noise") in 3D in GLSL.
+   * Author:  Stefan Gustavson (stefan.gustavson@liu.se)
+   * Version: Stefan Gustavson 2011-04-19
+   *
+   * Many thanks to Ian McEwan of Ashima Arts for the
+   * ideas for permutation and gradient selection.
+   *
+   * Copyright (c) 2011 Stefan Gustavson. All rights reserved.
+   * Distributed under the MIT license. See LICENSE file.
+   * https://github.com/ashima/webgl-noise
+   */
+
+/*!
+   * GLSL textureless classic 3D noise "cnoise",
+   * with an RSL-style periodic variant "pnoise".
+   * Author:  Stefan Gustavson (stefan.gustavson@liu.se)
+   * Version: 2011-10-11
+   *
+   * Many thanks to Ian McEwan of Ashima Arts for the
+   * ideas for permutation and gradient selection.
+   *
+   * Copyright (c) 2011 Stefan Gustavson. All rights reserved.
+   * Distributed under the MIT license. See LICENSE file.
+   * https://github.com/ashima/webgl-noise
+   */
+
+/** @license React v0.20.2
+ * scheduler.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v16.13.1
+ * react-is.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+ * react-dom.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+ * react-jsx-runtime.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
+
+/** @license React v17.0.2
+ * react.production.min.js
+ *
+ * Copyright (c) Facebook, Inc. and its affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ */
