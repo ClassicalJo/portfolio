@@ -35,7 +35,7 @@ export function drawTags(ctx, rx, ry, tags, angle) {
         ctx.fillStyle = tag.acc > 1 ? 'black' : 'white'
 
         let offset = tag.acc > 1 ? 40 : 0
-        ctx.font = `${60 - (tag.acc * 20)}px Arial`
+        ctx.font = `${60 - (tag.acc * 20)}px Josefin Sans`
         ctx.fillText(tag.element, tag.x, tag.y + offset)
     }
 
@@ -59,7 +59,6 @@ export function drawTags(ctx, rx, ry, tags, angle) {
     function createTagElements(arr, rx, ry, x, y, acc = 0) {
         if (arr instanceof Array) {
             arr.forEach((k, i) => {
-                ctx.font = `${60 - (acc * 20)}px Arial`
                 let theta = Math.PI * 2 / arr.length * i - angle
                 let pos = getPosition(theta, rx, ry)
                 let tag = new Tag(k, x + pos.x, y + pos.y, acc, 1)
@@ -69,8 +68,6 @@ export function drawTags(ctx, rx, ry, tags, angle) {
         else {
             let keys = Object.keys(arr)
             keys.forEach((k, i) => {
-                let fontSize = 60 - (acc * 20)
-                ctx.font = `${fontSize}px Arial`
                 let theta = Math.PI * 2 / keys.length * i + angle
                 let pos = getPosition(theta, rx * acc, ry * acc)
                 let finalX = pos.x + x
