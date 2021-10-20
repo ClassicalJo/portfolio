@@ -1,34 +1,20 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.8740021f.chunk.css",
-    "main.js": "/portfolio/static/js/main.8d21ead6.chunk.js",
-    "main.js.map": "/portfolio/static/js/main.8d21ead6.chunk.js.map",
-    "runtime-main.js": "/portfolio/static/js/runtime-main.06a46f5d.js",
-    "runtime-main.js.map": "/portfolio/static/js/runtime-main.06a46f5d.js.map",
-    "static/js/2.75f69437.chunk.js": "/portfolio/static/js/2.75f69437.chunk.js",
-    "static/js/2.75f69437.chunk.js.map": "/portfolio/static/js/2.75f69437.chunk.js.map",
-    "static/js/3.d4f40f34.chunk.js": "/portfolio/static/js/3.d4f40f34.chunk.js",
-    "static/js/3.d4f40f34.chunk.js.map": "/portfolio/static/js/3.d4f40f34.chunk.js.map",
+    "main.css": "/portfolio/static/css/main.71fdfdcc.chunk.css",
+    "main.js": "/portfolio/static/js/main.d444f429.chunk.js",
+    "main.js.map": "/portfolio/static/js/main.d444f429.chunk.js.map",
+    "runtime-main.js": "/portfolio/static/js/runtime-main.37da8305.js",
+    "runtime-main.js.map": "/portfolio/static/js/runtime-main.37da8305.js.map",
+    "static/js/2.10eaed10.chunk.js": "/portfolio/static/js/2.10eaed10.chunk.js",
+    "static/js/2.10eaed10.chunk.js.map": "/portfolio/static/js/2.10eaed10.chunk.js.map",
     "index.html": "/portfolio/index.html",
-    "static/css/main.8740021f.chunk.css.map": "/portfolio/static/css/main.8740021f.chunk.css.map",
-    "static/js/2.75f69437.chunk.js.LICENSE.txt": "/portfolio/static/js/2.75f69437.chunk.js.LICENSE.txt",
-    "static/media/01_barking-board.png": "/portfolio/static/media/01_barking-board.50abfb95.png",
-    "static/media/02_simple-form.png": "/portfolio/static/media/02_simple-form.e72c12e8.png",
-    "static/media/03_memotest.png": "/portfolio/static/media/03_memotest.76a250f2.png",
-    "static/media/04_blinkjs.png": "/portfolio/static/media/04_blinkjs.7de09073.png",
-    "static/media/05_sudoku.png": "/portfolio/static/media/05_sudoku.9c522e27.png",
-    "static/media/06_blinkjs_blood.png": "/portfolio/static/media/06_blinkjs_blood.00cc7a43.png",
-    "static/media/07_pokedex.png": "/portfolio/static/media/07_pokedex.31b5c93e.png",
-    "static/media/08_pathfinder.png": "/portfolio/static/media/08_pathfinder.864f160c.png",
-    "static/media/09_crudclub.png": "/portfolio/static/media/09_crudclub.db6a02eb.png",
-    "static/media/10_el_principito.png": "/portfolio/static/media/10_el_principito.88d6cf70.png",
-    "static/media/loboBackground.4bda5349.png": "/portfolio/static/media/loboBackground.4bda5349.png",
-    "static/media/water.2832632b.png": "/portfolio/static/media/water.2832632b.png"
+    "static/css/main.71fdfdcc.chunk.css.map": "/portfolio/static/css/main.71fdfdcc.chunk.css.map",
+    "static/js/2.10eaed10.chunk.js.LICENSE.txt": "/portfolio/static/js/2.10eaed10.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.06a46f5d.js",
-    "static/js/2.75f69437.chunk.js",
-    "static/css/main.8740021f.chunk.css",
-    "static/js/main.8d21ead6.chunk.js"
+    "static/js/runtime-main.37da8305.js",
+    "static/js/2.10eaed10.chunk.js",
+    "static/css/main.71fdfdcc.chunk.css",
+    "static/js/main.d444f429.chunk.js"
   ]
 }
