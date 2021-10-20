@@ -1,0 +1,147 @@
+@use './_base' as base
+
+.home, .skills, .contact, .tags, .loading
+    display: flex
+    flex-direction: column
+    flex: 1
+    align-items: center
+    justify-content: center
+
+.home
+    > .wrapper
+        .title, .subtitle
+            @include base.anaglyphText
+            text-align: center
+            color: base.$color8
+
+        .title
+            font-size: base.$fontVeryLarge
+        .subtitle
+            font-size: base.$fontLarge
+
+.header
+    &:active
+        animation: flash .05s ease
+    @include base.smallBoxShadow
+    @include base.anaglyphBox
+    @include base.centerDiv
+    height: 2em
+    width: 2em
+    color: white
+    border-radius: 100%
+    background: base.$color8
+    font-size: base.$fontLarge
+    cursor: pointer
+
+.contact
+    >.button
+        font-size: base.$fontLarge
+        cursor: pointer
+        @include base.anaglyphText
+        > a
+            text-decoration: none
+            color: black
+            &:active
+                animation: flashText .05s ease
+
+    >.card
+        @include base.centerDiv
+        position: absolute
+        top: 0
+        left: 0
+        width: 100vw
+        height: 100vh
+        > .wrapper
+            @include base.centerDiv
+            flex: 1
+            flex-direction: column
+            > .wrapper
+                @include base.mediumBoxShadow
+                @include base.centerDiv
+                justify-content: space-between
+                flex: 1
+                min-height: 50vh
+                position: relative
+                flex-direction: column
+                padding: 2em
+                border: 1px solid rgba(0,0,0,.1)
+                background: white
+                > .close
+                    @include base.anaglyphBox
+                    @include base.centerDiv
+                    display: flex
+                    font-size: base.$fontMedium
+                    color: white
+                    width: 50px
+                    height: 50px
+                    border-radius: 100%
+                    position: absolute
+                    top: 0
+                    right: 0
+                    background: black
+                    margin: .5em
+                    cursor: pointer
+
+                >.line
+                    align-self: flex-start
+                    display: flex
+                    width: 100%
+                    >p
+                        flex: 1
+                        display: flex
+                        flex-direction: column
+                        font-size: base.$fontMedium
+                        > span
+                            width: 25px
+                            padding-bottom: .25em
+                        >a
+                            display: flex
+                            text-decoration: none
+                            > input
+                                border: none
+                                font-size: base.$fontMedium
+                                cursor: pointer
+                                flex: 1
+                                pointer-events: none
+
+                > .wrapper
+                    width: 100%
+                    display: flex
+                    flex-direction: row
+                    justify-content: space-around
+
+.smol-button
+    @include base.anaglyphBox
+    @include base.centerDiv
+    border-radius: 25px
+    background: black
+    color: white
+    min-width: 100px
+    min-height: 50px
+    cursor: pointer
+    &:active
+        animation: flash .05s ease
+
+.home, .skills, .tags, .contact
+    animation: appear .5s ease-out
+
+.card
+    animation: appear .1s ease-out
+
+@keyframes appear
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+@keyframes flash
+    0%
+        background: black
+    100%
+        background: silver
+
+@keyframes flashText
+    0%
+        color: black
+    100%
+        color: snow

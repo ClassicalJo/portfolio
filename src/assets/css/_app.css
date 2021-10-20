@@ -1,0 +1,231 @@
+.container, html, body, .App, #root {
+  width: 100vw;
+  width: -moz-available;
+  width: stretch;
+  width: stretch;
+  height: 100vh;
+  height: -moz-available;
+  height: stretch;
+  height: stretch;
+  flex-direction: column;
+  overflow-y: hidden;
+  font-family: Josefin Sans, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.container {
+  overflow-y: scroll;
+}
+
+.slide {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+}
+
+.header {
+  position: absolute;
+  right: 0;
+  margin: calc(3vw + 1vmin);
+}
+
+p, html, body {
+  margin: 0;
+  padding: 0;
+}
+
+canvas {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.transparent {
+  opacity: 0;
+}
+
+input {
+  font-family: Josefin Sans, "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.home, .skills, .contact, .tags, .loading {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.home > .wrapper .title, .home > .wrapper .subtitle {
+  text-shadow: 2px 0 0px rgba(255, 0, 0, 0.7), -2px 0 0px rgba(0, 255, 255, 0.7);
+  text-align: center;
+  color: #000000;
+}
+.home > .wrapper .title {
+  font-size: calc(64px + 6 * (100vw - 320px) / 680);
+}
+.home > .wrapper .subtitle {
+  font-size: calc(32px + 6 * (100vw - 320px) / 680);
+}
+
+.header {
+  box-shadow: 1.5px 1.5px 1px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 0 0 rgba(255, 0, 0, 0.7), -2px 0 0 rgba(0, 255, 255, 0.7);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  height: 2em;
+  width: 2em;
+  color: white;
+  border-radius: 100%;
+  background: #000000;
+  font-size: calc(32px + 6 * (100vw - 320px) / 680);
+  cursor: pointer;
+}
+.header:active {
+  animation: flash 0.05s ease;
+}
+
+.contact > .button {
+  font-size: calc(32px + 6 * (100vw - 320px) / 680);
+  cursor: pointer;
+  text-shadow: 2px 0 0px rgba(255, 0, 0, 0.7), -2px 0 0px rgba(0, 255, 255, 0.7);
+}
+.contact > .button > a {
+  text-decoration: none;
+  color: black;
+}
+.contact > .button > a:active {
+  animation: flashText 0.05s ease;
+}
+.contact > .card {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+.contact > .card > .wrapper {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.contact > .card > .wrapper > .wrapper {
+  box-shadow: 5px 5px 3px rgba(0, 0, 0, 0.5);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  justify-content: space-between;
+  flex: 1;
+  min-height: 50vh;
+  position: relative;
+  flex-direction: column;
+  padding: 2em;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: white;
+}
+.contact > .card > .wrapper > .wrapper > .close {
+  box-shadow: 2px 0 0 rgba(255, 0, 0, 0.7), -2px 0 0 rgba(0, 255, 255, 0.7);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  display: flex;
+  font-size: calc(20px + 6 * (100vw - 320px) / 680);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: black;
+  margin: 0.5em;
+  cursor: pointer;
+}
+.contact > .card > .wrapper > .wrapper > .line {
+  align-self: flex-start;
+  display: flex;
+  width: 100%;
+}
+.contact > .card > .wrapper > .wrapper > .line > p {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  font-size: calc(20px + 6 * (100vw - 320px) / 680);
+}
+.contact > .card > .wrapper > .wrapper > .line > p > span {
+  width: 25px;
+  padding-bottom: 0.25em;
+}
+.contact > .card > .wrapper > .wrapper > .line > p > a {
+  display: flex;
+  text-decoration: none;
+}
+.contact > .card > .wrapper > .wrapper > .line > p > a > input {
+  border: none;
+  font-size: calc(20px + 6 * (100vw - 320px) / 680);
+  cursor: pointer;
+  flex: 1;
+  pointer-events: none;
+}
+.contact > .card > .wrapper > .wrapper > .wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.smol-button {
+  box-shadow: 2px 0 0 rgba(255, 0, 0, 0.7), -2px 0 0 rgba(0, 255, 255, 0.7);
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  border-radius: 25px;
+  background: black;
+  color: white;
+  min-width: 100px;
+  min-height: 50px;
+  cursor: pointer;
+}
+.smol-button:active {
+  animation: flash 0.05s ease;
+}
+
+.home, .skills, .tags, .contact {
+  animation: appear 0.5s ease-out;
+}
+
+.card {
+  animation: appear 0.1s ease-out;
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes flash {
+  0% {
+    background: black;
+  }
+  100% {
+    background: silver;
+  }
+}
+@keyframes flashText {
+  0% {
+    color: black;
+  }
+  100% {
+    color: snow;
+  }
+}
+
+/*# sourceMappingURL=_app.css.map */
