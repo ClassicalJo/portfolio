@@ -19,8 +19,7 @@ export default function Card({ toggle }) {
                         <p><span>👨‍🦱</span>Jose Barrientos</p>
                     </div>
                     <div className="line">
-                        <p><span>🏡</span>Río Gallegos, Santa Cruz, Argentina</p>
-                    </div>
+                        <p><span>🏡</span>Ciudad Autónoma de Buenos Aires, Argentina</p>                    </div>
                     <div className="line">
                         <p>
                             <span>📧</span>
