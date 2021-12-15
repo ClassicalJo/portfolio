@@ -8,7 +8,7 @@ export default function Hexagon({ ready }) {
 
     useLayoutEffect(() => {
         let count = 0
-        let maxCount = 350
+        let maxCount = 150
         let time = 0
 
         let ctx = canvasRef.current.getContext('2d')
