@@ -12,11 +12,12 @@ export default function Chart({ tags }) {
         let ctx = canvasRef.current.getContext('2d')
 
         function update() {
-            angle += (180 / Math.PI) / 50000
+            angle += (180 / Math.PI) *0.00004
         }
 
         function render(ctx) {
-            clearRect(ctx, width, height)
+            ctx.fillStyle = 'rgba(255,255,255,0.4)'
+            ctx.fillRect(-width / 2, -height / 2, width, height)
             drawOrbit(ctx, width / 3.3, height / 3.3)
             drawTags(ctx, w, h, tags, angle)
 

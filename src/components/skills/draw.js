@@ -6,7 +6,7 @@ export function translate(ctx, width, height) {
     ctx.translate(width, height)
 }
 
-export function drawHexagon(ctx, r) {
+export function drawHexagon(ctx, r, timing) {
     let lineWidth = 2
     let smallLineWidth = lineWidth / 10
 
@@ -25,6 +25,8 @@ export function drawHexagon(ctx, r) {
         for (let int = 0; int < times; int++) {
             hexagon(r / times * int, [
                 () => ctx.setLineDash([5, 10]),
+                () => ctx.strokeStyle = "black",
+                () => ctx.lineDashOffset = 500 - 500 * timing / 1000,
                 () => ctx.lineWidth = smallLineWidth
             ])
         }
@@ -41,10 +43,11 @@ export function drawHexagon(ctx, r) {
     }
 
     hexagon(r, [
-        () => ctx.setLineDash([]),
+        () => ctx.setLineDash([525, 500]),
+        () => ctx.strokeStyke = "black",
+        () => ctx.lineDashOffset = 500 - 500 * timing / 100,
         () => ctx.lineWidth = lineWidth
     ])
-
     web(5)
     lines(r)
 
@@ -57,10 +60,11 @@ export function drawSkillHexagon(ctx, r, arr = [1, 1, 1, 1, 1, 1]) {
         let { x, y } = getPosition(Math.PI * 2 / 6 * i, r * arr[i])
         ctx.lineTo(x, y)
     })
-    let grad = ctx.createRadialGradient(0, 0, r, 0, 0, r / 100)
-    grad.addColorStop(0, "transparent")
-    grad.addColorStop(1, "rgba(255,0,0, .25")
-    grad.addColorStop(.33, "rgba(0,255,0, .25")
+    
+    let grad = ctx.createRadialGradient(0, 0, r, 0, 0, r / 10000)
+    grad.addColorStop(.33, "rgba(0,255,255, .15")
+    grad.addColorStop(1, "rgba(255,0,0, .15")
+    
     
     ctx.fillStyle = grad
     ctx.fill()
