@@ -54,20 +54,38 @@ export function drawHexagon(ctx, r, timing) {
 
 }
 
-export function drawSkillHexagon(ctx, r, arr = [1, 1, 1, 1, 1, 1]) {
-    ctx.beginPath()
-    arr.forEach((k, i) => {
-        let { x, y } = getPosition(Math.PI * 2 / 6 * i, r * arr[i])
-        ctx.lineTo(x, y)
-    })
+export function drawSkillHexagon(ctx, r, arr = [1, 1, 1, 1, 1, 1],time) {
+    function color(x, y, col) {
+        ctx.beginPath()
+        let origin = getPosition(0, r * arr[0])
+
+        arr.forEach((k, i) => {
+            let { x, y } = getPosition(Math.PI * 2 / 6 * i, r * arr[i])
+            ctx.lineTo(x, y)
+        })
+        ctx.lineTo(origin.x, origin.y)
+        let grad = ctx.createRadialGradient(x, y, r, x, y, r / 10)
+        grad.addColorStop(.2, "rgba(255,255,255,0)")
+        grad.addColorStop(1, col)
+        ctx.fillStyle = grad
+        ctx.fill()
+        
+    }
+
+    let angle = (time/2 % 360) * Math.PI / 180
+    let unit = Math.PI / 2
+    let a = angle + unit
+    let b = angle + unit * 2
+    let c = angle + unit * 3
+
+    let getX = (a) => Math.cos(a) * 100
+    let getY = (a) => Math.sin(a) * 100
+
+    color(getX(b), getY(b), "rgba(255,0,0,.15)")
+    color(getX(angle), getY(angle), "rgba(0,255,255,.15)")
+    color(getX(a), getY(a), "rgba(0,0,255,.15)")  
+    color(getX(c), getY(c), "rgba(0,255,0,.15)")
     
-    let grad = ctx.createRadialGradient(0, 0, r, 0, 0, r / 10000)
-    grad.addColorStop(.33, "rgba(0,255,255, .15")
-    grad.addColorStop(1, "rgba(255,0,0, .15")
-    
-    
-    ctx.fillStyle = grad
-    ctx.fill()
 }
 
 export function drawCircle(ctx, r) {
