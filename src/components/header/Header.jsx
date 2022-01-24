@@ -1,9 +1,10 @@
-export default function Header({ element }) {
-    function scrollBot() {
-        element.current.scrollTo(0, element.current.scrollHeight)
-    }
+import { Context } from "../common/Context"
+import { useContext } from "react"
+
+export default function Header() {
+    let { scroll } = useContext(Context)
     return (
-        <div className='header' onClick={scrollBot}>
+        <div className='header' onClick={() => scroll(1)}>
             <p>cv</p>
         </div>
     )

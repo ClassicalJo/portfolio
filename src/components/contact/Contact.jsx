@@ -14,14 +14,18 @@ export default function Contact() {
             setShown(true)
         }
     }, [shown, isVisible])
-    let toggle = () => setShow(!show)
+    let toggleCard = () => setShow(!show)
     return (
         <Slide>
             <div ref={ref} className={!isVisible && !shown ? "transparent" : 'contact'}>
                 <Button><a href="cv.pdf"><p>Resume</p></a></Button>
-                <Button><a rel="noopener noreferrer" target="_blank" href="http://github.com/ClassicalJo/"><p>Projects</p></a></Button>
-                <Button onClick={toggle}><p>Contact details</p></Button>
-                {show && <Card toggle={toggle} />}
+                <Button >
+                    <a rel="noopener noreferrer" target="_blank" href="http://github.com/ClassicalJo/">
+                        <p>Projects</p>
+                    </a>
+                </Button>
+                <Button onClick={toggleCard}><p>Contact details</p></Button>
+                {show && <Card toggle={toggleCard} />}
             </div>
         </Slide>
     )

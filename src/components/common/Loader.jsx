@@ -10,7 +10,6 @@ import Header from '../header/Header'
 export default function Loader({ element }) {
     let [ready, setReady] = useState(false)
     let [done, setDone] = useState(false)
-
     useEffect(() => {
         WebFont.load({
             google: {
@@ -21,16 +20,14 @@ export default function Loader({ element }) {
         let timeout = setTimeout(() => setDone(true), 500)
         return () => clearTimeout(timeout)
     }, [])
-
-
     switch (ready && done) {
         case true: return (
             <>
-                <Header element={element} />
                 <Home />
                 <Skills />
                 <Tags />
                 <Contact />
+                <Header element={element} />
             </>
         );
         default: return <Loading />

@@ -1,5 +1,5 @@
 import { useRef, useLayoutEffect } from "react"
-import { clearRect, drawOrbit, drawTags, resetTranslation, translate } from "./draw"
+import { drawOrbit, drawTags, resetTranslation, translate } from "./draw"
 
 export default function Chart({ tags }) {
     let canvasRef = useRef()
@@ -12,7 +12,7 @@ export default function Chart({ tags }) {
         let ctx = canvasRef.current.getContext('2d')
 
         function update() {
-            angle += (180 / Math.PI) *0.00004
+            angle += (180 / Math.PI) * 0.00004
         }
 
         function render(ctx) {
