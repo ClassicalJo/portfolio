@@ -20,7 +20,7 @@ export default function Contact() {
             <div ref={ref} className={!isVisible && !shown ? "transparent" : 'contact'}>
                 <Button><a href="cv.pdf"><p>Resume</p></a></Button>
                 <Button >
-                    <a rel="noopener noreferrer" target="_blank" href="http://github.com/ClassicalJo/">
+                    <a rel="noopener noreferrer" target="_blank" href="http://classicaljo.github.io/projects">
                         <p>Projects</p>
                     </a>
                 </Button>
