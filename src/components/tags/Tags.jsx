@@ -12,7 +12,7 @@ export default function Tags() {
     }, [shown, isVisible])
     return (
         <Slide>
-            <div ref={ref} className={!isVisible && !shown ? 'transparent' : 'tags'}>
+            <div ref={ref} className={!isVisible && !shown ? 'galaxy transparent' : 'galaxy tags'}>
                 <Chart tags={tags} />
             </div>
         </Slide>
@@ -21,9 +21,9 @@ export default function Tags() {
 
 const tags = {
     "JS": {
-        "React": ["Class componenents", "Functional components", "Hooks", "Component lifecycle", "Webpack", "Babel", "Redux"],
+        "React": ["Class components", "Functional components", "Hooks", "Component lifecycle", "Webpack", "Babel", "Redux"],
         "CSS": ["Box model", "Flexbox", "Grid", "SASS", "Modularity", "Reusability", "Media queries", "Material-UI", "Bootstrap", "Styled components"],
-        "Node": ["Express", "Postman", "JWT", "WebSockets", "Socket.io", "NextJS", "REST", "PostgreSQL"],
+        "Node": ["Express", "Postman", "JWT", "WebSockets", "Socket.io", "NextJS", "REST", "PostgreSQL", "Authentication"],
     }
 }
 
