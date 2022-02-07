@@ -91,8 +91,9 @@ input {
 
 .contact > .button {
   font-size: calc(32px + 6 * (100vw - 320px) / 680);
-  cursor: pointer;
   text-shadow: 2px 0 0px rgba(255, 0, 0, 0.7), -2px 0 0px rgba(0, 255, 255, 0.7);
+  cursor: pointer;
+  margin: 10px 0;
 }
 .contact > .button > a {
   text-decoration: none;
