@@ -13,7 +13,7 @@ export const animation = canvas => {
     return ({
         bodies: [
             new Hex(width / 2, height / 2, [.6, .8, .6, 1, .9, .7], canvas),
-            new Title(0, canvas.height / -2 + 48, "Chart A: Time spent learning about... (%)")
+            new Title(0, canvas.height / -2 + 48, "Chart A: Focused learning about... (%)")
         ],
         update: function () {
             this.bodies.forEach(k => k.update())
