@@ -1,8 +1,10 @@
+import { Swirl } from './swirl'
 let ease = x => Math.sin((x * Math.PI) / 2)
 
 export class Hex {
-    constructor(rx, ry, values = [1, 1, 1, 1, 1, 1]) {
+    constructor(rx, ry, values = [1, 1, 1, 1, 1, 1], originCanvas) {
         this.values = values
+        this.origin = originCanvas
         this.rx = rx
         this.ry = ry
         this.time = 0
@@ -10,6 +12,7 @@ export class Hex {
         this.totalTime = 48
         this.vertices = this.setVertices()
         this.lineOpacity = 0
+        this.background = new Swirl(this.rx, this.ry, originCanvas).canvas
     }
     setVertices() {
         return new Array(6)
@@ -71,7 +74,7 @@ export class Hex {
         })
     }
     words(ctx) {
-        let names = ['UI/UX','Javascript', 'ReactJS', 'Express', 'PostgreSQL', "NextJS" ]
+        let names = ['UI/UX', 'Javascript', 'ReactJS', 'Express', 'PostgreSQL', "NextJS"]
         ctx.font = '18px Josefin Sans'
         names.forEach((k, i) => {
             let show = this.lifetime > 10 * i + this.totalTime
@@ -82,26 +85,33 @@ export class Hex {
             if (y > 0) y += 40
             if (y < 0) y += -25
             ctx.textAlign = 'center'
-            
+
             ctx.fillStyle = `rgba(0,0,0,${opacity})`
-            
+
             ctx.fillText(k, x, y)
         })
     }
+    swirl(ctx){
+        let memCanvas = document.createElement('canvas')
+        let memCtx = memCanvas.getContext('2d')
+        let [WIDTH, HEIGHT] = [this.origin.width, this.origin.height]
+        let [W2, H2] = [WIDTH / 2, HEIGHT / 2]
+        memCanvas.width = WIDTH
+        memCanvas.height = HEIGHT
+        memCtx.translate(W2, H2)
+        memCtx.save()
+        memCtx.rotate(this.lifetime * Math.PI / 180)
+        memCtx.drawImage(this.background, this.background.width / -2, this.background.height / -2, this.background.width, this.background.height)
+        memCtx.restore()
+        memCtx.globalCompositeOperation = 'destination-in'
+        this.vertices.forEach((k, i) => memCtx.lineTo(k.x * this.values[i], k.y * this.values[i]))
+        memCtx.fillStyle = "rgba(0,0,0,1)"
+        memCtx.fill()
+
+        ctx.drawImage(memCanvas, -W2, -H2)
+    }
     render(ctx) {
-        let angle = this.lifetime / this.totalTime
-        let unit = Math.PI / 2
-        let a = angle + unit
-        let b = angle + unit * 2
-        let c = angle + unit * 3
-
-        let getX = (a) => Math.cos(a) * 100
-        let getY = (a) => Math.sin(a) * 100
-
-        this.color(getX(b), getY(b), "rgba(255,0,0,.15)", ctx)
-        this.color(getX(angle), getY(angle), "rgba(0,255,255,.15)", ctx)
-        this.color(getX(a), getY(a), "rgba(0,0,255,.15)", ctx)
-        this.color(getX(c), getY(c), "rgba(0,255,0,.15)", ctx)
+        this.swirl(ctx)
         this.web(ctx)
         this.lines(ctx)
         this.words(ctx)

@@ -12,7 +12,7 @@ export const animation = canvas => {
 
     return ({
         bodies: [
-            new Hex(width / 2, height / 2, [.6, .8, .6, 1, .9, .7]),
+            new Hex(width / 2, height / 2, [.6, .8, .6, 1, .9, .7], canvas),
             new Title(0, canvas.height / -2 + 48, "Chart A: Time spent learning about... (%)")
         ],
         update: function () {
