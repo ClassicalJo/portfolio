@@ -1,16 +1,16 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { Context } from './Context'
-import animateScroll from './scrollTo'
 import Loader from './Loader'
 
 export default function Container() {
     let ref = useRef()
-    let scroll = target => animateScroll(ref.current, target)
+    let scroll = () => ref.current.scroll({ top: ref.current.scrollHeight, behavior: "smooth" })
+
     useEffect(() => {
         ref.current.click()
     }, [])
     return (
-        <Context.Provider value={{ scroll }}>
+        <Context.Provider value={{ scroll, }}>
             <div ref={ref} className="container">
                 <Loader element={ref} />
             </div>
