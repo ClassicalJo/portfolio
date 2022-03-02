@@ -20,18 +20,21 @@
             font-size: base.$fontLarge
 
 .header
-    &:active
-        animation: flash .05s ease
-    @include base.smallBoxShadow
-    @include base.anaglyphBox
-    @include base.centerDiv
-    height: 2em
-    width: 2em
-    color: white
-    border-radius: 100%
-    background: base.$color8
-    font-size: base.$fontLarge
-    cursor: pointer
+    .cv
+        @include base.smallBoxShadow
+        @include base.anaglyphBox
+        @include base.centerDiv
+        height: 2em
+        width: 2em
+        min-height: 40px
+        min-width: 40px
+        color: white
+        border-radius: 100%
+        background: base.$color8
+        font-size: base.$fontLarge
+        cursor: pointer
+        &:active
+            animation: flash .05s ease
 
 .contact
     >.button
