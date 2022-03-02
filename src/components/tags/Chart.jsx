@@ -1,20 +1,24 @@
-import { useRef, useLayoutEffect } from "react"
+import { useRef, useLayoutEffect, useContext } from "react"
+import { Context } from "../common/Context"
 import { cloud } from "./animation"
 
 export default function Chart({ tags }) {
     let canvasRef = useRef()
     let [width, height] = [506.25, 900]
+    let { language } = useContext(Context)
     useLayoutEffect(() => {
-        let galaxy = cloud(canvasRef.current, tags)
+        let galaxy = cloud(canvasRef.current, tags, language.current)
+        let animation;
         function animate() {
-            requestAnimationFrame(() => {
+            animation = requestAnimationFrame(() => {
                 galaxy.update()
                 galaxy.render()
                 animate()
             })
         }
         animate()
-    }, [tags])
+        return () => cancelAnimationFrame(animation)
+    }, [tags, language])
     return (
         <canvas
             role='img'

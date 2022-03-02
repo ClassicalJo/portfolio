@@ -1,18 +1,19 @@
 import { Title } from "./title"
 import { Cloud } from "./cloud"
-
-export const cloud = (canvas, tags) => {
+import text from './text.json'
+export const cloud = (canvas, tags, language) => {
     let ctx = canvas.getContext('2d')
     let verticalMargin = 150
     let horizontalMargin = 0
     let height = canvas.height - verticalMargin * 2
     let width = canvas.width - horizontalMargin * 2
+    ctx.setTransform(1, 0, 0, 1, 0, 0)
     ctx.translate(width / 2 + horizontalMargin, height / 2 + verticalMargin)
     return ({
         bodies: [
-            new Cloud(width/2, height/2, tags),
-            new Title(0, canvas.height / -2 + 72, "Chart B: Skillstackverse "),
-            
+            new Cloud(width / 2, height / 2, tags),
+            new Title(0, canvas.height / -2 + 72, text.title[language]),
+
         ],
         update: function () {
             this.bodies.forEach(k => k.update())
