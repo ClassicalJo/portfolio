@@ -1,7 +1,6 @@
-import { useRef} from "react"
+import { useRef } from "react"
 import SmolButton from "./SmolButton"
 import Wrapper from "../common/Wrapper"
-
 export default function Card({ toggle }) {
     let mailRef = useRef()
 
