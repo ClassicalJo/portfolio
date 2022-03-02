@@ -1,19 +1,20 @@
 import { Hex } from "./hex.js"
 import { Title } from "./title.js"
-
-export const animation = canvas => {
+import text from './text.json'
+export const animation = (canvas, language) => {
     let ctx = canvas.getContext('2d')
     let verticalMargin = 150
     let horizontalMargin = 0
     let height = canvas.height - verticalMargin * 2
     let width = canvas.width - horizontalMargin * 2
-    ctx.setTransform(1,0,0,1,0,0)
+    ctx.setTransform(1, 0, 0, 1, 0, 0)
     ctx.translate(width / 2 + horizontalMargin, height / 2 + verticalMargin)
+    
 
     return ({
         bodies: [
             new Hex(width / 2, height / 2, [.6, .8, .6, 1, .9, .7], canvas),
-            new Title(0, canvas.height / -2 + 48, "Chart A: Focused learning about... (%)")
+            new Title(0, canvas.height / -2 + 48, text.title[language])
         ],
         update: function () {
             this.bodies.forEach(k => k.update())

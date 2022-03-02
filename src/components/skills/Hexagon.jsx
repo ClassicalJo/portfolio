@@ -1,27 +1,32 @@
 import { useLayoutEffect, useRef } from "react";
 import { animation } from "./animation"
+import { Context } from "../common/Context"
+import { useContext } from "react"
+import text from './text.json'
 
 export default function Hexagon({ ready }) {
     let canvasRef = useRef()
     let [width, height] = [506.25, 900]
+    let { language } = useContext(Context)
 
     useLayoutEffect(() => {
-        let swirl = animation(canvasRef.current)
+        let swirl = animation(canvasRef.current, language.current)
+        let frame;
         function animate() {
-            requestAnimationFrame(() => {
+            frame = requestAnimationFrame(() => {
                 swirl.update()
                 swirl.render()
                 animate()
             })
         }
-
         if (ready) animate()
-    }, [ready])
+        return () => cancelAnimationFrame(frame)
+    }, [ready, language])
 
     return (
         <canvas
             role="img"
-            aria-label="Chart A: Time spent learning about... (%). 1. Javascript: 100%. 2. ReactJS: 90%. 3. Express: 70%. 4. PostgreSQL: 60%. 5. NextJS: 80%. 6. UI/UX: 60%."
+            aria-label={text.description}
             ref={canvasRef} {...{ width, height }}
         />
     )

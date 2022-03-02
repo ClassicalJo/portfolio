@@ -1,0 +1,10 @@
+{
+    "title": {
+        "en": "Chart A: Comparative strenghts (%)",
+        "es": "Cuadro A: Fortalezas comparativas (%)"
+    },
+    "alt": {
+        "en": "Chart A: Comparative strengths (%) - 1. Javascript: 100%. 2. ReactJS: 90%. 3. Express: 70%. 4. PostgreSQL: 60%. 5. NextJS: 80%. 6. UI/UX: 60%.",
+        "es": "Cuadro A: Fortalezas comparativas (%) -  1. Javascript: 100%. 2. ReactJS: 90%. 3. Express: 70%. 4. PostgreSQL: 60%. 5. NextJS: 80%. 6. UI/UX: 60%."
+    }
+}
