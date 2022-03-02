@@ -1,17 +1,12 @@
 import { Context } from "../common/Context"
 import { useContext } from "react"
+import Switch from "./Switch.jsx"
 
 export default function Header() {
-    let { scroll, language } = useContext(Context)
-    let { current, toggle } = language
-    console.log(current)
+    let { scroll } = useContext(Context)
     return (
         <div className='header' >
-            <div className="switch">
-                <input type="checkbox" onClick={toggle} />
-                <span className="slider" />
-            </div>
-
+            <Switch width={100} height={30} />
             <div className="cv" onClick={scroll}>
                 <p>cv</p>
             </div>
