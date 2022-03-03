@@ -10,5 +10,9 @@
     "copy": {
         "en": "Copy mail",
         "es": "Copiar correo"
+    },
+    "cv": {
+        "es": "CV - Jose Barrientos, Desarrollador.pdf",
+        "en": "CV - Jose Barrientos, Developer.pdf"
     }
 }

@@ -12,6 +12,7 @@ export default function Contact() {
     let isVisible = useOnScreen(ref)
     let [shown, setShown] = useState(false)
     let { current } = useContext(Context).language
+    
     useEffect(() => {
         if (!shown && isVisible) {
             setShown(true)
@@ -22,7 +23,7 @@ export default function Contact() {
     return (
         <Slide>
             <div ref={ref} className={!isVisible && !shown ? "transparent" : 'contact'}>
-                <Button><a href="cv.pdf"><p>Resume</p></a></Button>
+                <Button><a href={text.cv[current]}><p>Resume</p></a></Button>
                 <Button >
                     <a rel="noopener noreferrer" target="_blank" href="http://classicaljo.github.io/projects">
                         <p>{text.projects[current]}</p>
