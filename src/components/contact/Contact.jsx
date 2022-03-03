@@ -12,7 +12,7 @@ export default function Contact() {
     let isVisible = useOnScreen(ref)
     let [shown, setShown] = useState(false)
     let { current } = useContext(Context).language
-    
+
     useEffect(() => {
         if (!shown && isVisible) {
             setShown(true)
@@ -25,7 +25,10 @@ export default function Contact() {
             <div ref={ref} className={!isVisible && !shown ? "transparent" : 'contact'}>
                 <Button><a href={text.cv[current]}><p>Resume</p></a></Button>
                 <Button >
-                    <a rel="noopener noreferrer" target="_blank" href="http://classicaljo.github.io/projects">
+                    <a
+                        rel="noopener noreferrer"
+                        target="_blank"
+                        href="http://classicaljo.github.io/projects">
                         <p>{text.projects[current]}</p>
                     </a>
                 </Button>
@@ -36,9 +39,7 @@ export default function Contact() {
                     <Card
                         copyLang={text.copy[current]}
                         toggle={toggleCard}
-                        onKeyDown={e => {
-                            console.log('presesed')
-                            e.key === 'Escape' && exitCard()}}
+                        onKeyDown={e => e.key === 'Escape' && exitCard()}
                     />
                 )}
             </div>
