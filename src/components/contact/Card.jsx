@@ -1,7 +1,7 @@
 import { useRef } from "react"
-import SmolButton from "./SmolButton"
+import Copy from "./Copy"
 import Wrapper from "../common/Wrapper"
-export default function Card({ toggle }) {
+export default function Card({ copyLang, toggle, onKeyDown }) {
     let mailRef = useRef()
 
     function copy() {
@@ -10,10 +10,12 @@ export default function Card({ toggle }) {
         mailRef.current.blur()
     }
     return (
-        <div className='card'>
+        <div className='card' onKeyDown={onKeyDown}>
             <Wrapper>
                 <Wrapper>
-                    <div className="close" onClick={toggle} ><p>✖</p></div>
+                    <div className="close"
+                        tabIndex={0}
+                        onKeyDown={e => e.key === 'Enter' && toggle()} onClick={toggle} ><p>✖</p></div>
                     <div className="line">
                         <p><span>👨‍🦱</span>Jose Barrientos</p>
                     </div>
@@ -27,8 +29,9 @@ export default function Card({ toggle }) {
                             </a>
                         </p>
                     </div>
-                    <SmolButton
-                        onClick={copy} ><p>Copy mail</p></SmolButton>
+                    <Copy onClick={copy} >
+                        <p>{copyLang}</p>
+                    </Copy>
                 </Wrapper>
             </Wrapper>
         </div >

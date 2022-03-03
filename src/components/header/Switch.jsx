@@ -1,7 +1,7 @@
 import { useRef, useLayoutEffect, useContext } from 'react'
 import { Context } from '../common/Context.jsx'
 import { switcher } from './switch/index.js'
-export default function Switch({ width, height }) {
+export default function Switch({ width, height, tabIndex }) {
     let ref = useRef()
     let { language } = useContext(Context)
     useLayoutEffect(() => {
@@ -10,14 +10,21 @@ export default function Switch({ width, height }) {
             onEnd: language.toggle
         })
         let changeLanguage = () => !toggler.isAnimating() && toggler.toggle()
+        let keyDown = e => e.key === 'Enter' && changeLanguage()
         canvas.addEventListener('click', changeLanguage)
-        return () => canvas.removeEventListener('click', changeLanguage)
+        canvas.addEventListener('keydown', keyDown)
+        return () => (
+            canvas.removeEventListener('click', changeLanguage) &&
+            canvas.removeEventListener('keydown', keyDown)
+        )
     }, [language])
 
     return (
         <canvas
+            className='language'
+            tabIndex={1}
             style={{ width, height }}
-            {...{ ref, width, height }}
+            {...{ ref, width, height, tabIndex }}
         />
     )
 }

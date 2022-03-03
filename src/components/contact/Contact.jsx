@@ -18,6 +18,7 @@ export default function Contact() {
         }
     }, [shown, isVisible])
     let toggleCard = () => setShow(!show)
+    let exitCard = () => setShow(false)
     return (
         <Slide>
             <div ref={ref} className={!isVisible && !shown ? "transparent" : 'contact'}>
@@ -27,8 +28,10 @@ export default function Contact() {
                         <p>{text.projects[current]}</p>
                     </a>
                 </Button>
-                <Button onClick={toggleCard}><p>{text.contact[current]}</p></Button>
-                {show && <Card toggle={toggleCard} />}
+                <Button onClick={toggleCard}>
+                    <p tabIndex={0} onKeyDown={e => e.key === 'Enter' && toggleCard()} >{text.contact[current]}</p>
+                </Button>
+                {show && <Card copyLang={text.copy[current]} toggle={toggleCard} onKeyDown={e => e.key === 'Escape' && exitCard()} />}
             </div>
         </Slide>
     )

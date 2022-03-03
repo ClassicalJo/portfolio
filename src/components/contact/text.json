@@ -6,5 +6,9 @@
     "contact":{
         "en": "Contact",
         "es": "Contacto"
+    },
+    "copy": {
+        "en": "Copy mail",
+        "es": "Copiar correo"
     }
 }

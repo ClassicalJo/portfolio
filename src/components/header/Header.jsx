@@ -1,16 +1,24 @@
 import { Context } from "../common/Context"
 import { useContext } from "react"
 import Switch from "./Switch.jsx"
+import CV from "./CV"
 
 export default function Header() {
-    let { scroll } = useContext(Context)
+    let { scroll, language } = useContext(Context)
     return (
         <div className='header' >
-            <Switch width={100} height={30} />
-            <div className="cv" onClick={scroll}>
-                <p>cv</p>
-            </div>
-
+            <CV
+                tabIndex={1}
+                width={100}
+                height={50}
+                scroll={scroll}
+                language={language.current}
+            />
+            <Switch
+                width={100}
+                height={50}
+                tabIndex={2}
+            />
         </div>
     )
 }

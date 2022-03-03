@@ -20,10 +20,10 @@ export default function Home() {
         <Slide>
             <div ref={ref} className={!shown && !isVisible ? "transparent" : 'home'}>
                 <Wrapper>
-                    <p className='title'>
+                    <p className={`${current} title`}>
                         {title[current]}
                     </p>
-                    <p className='subtitle'>
+                    <p className={`${current} subtitle`}>
                         {subtitle[current]}
                     </p>
                 </Wrapper>
