@@ -7,8 +7,7 @@ export class Title {
     update() {
         return
     }
-    render(ctx) {
-        ctx.fillStyle = "rgba(0,0,0,1)"
+    render(ctx) {        
         ctx.font = '24px Josefin Sans'
         ctx.textAlign = this.align
         ctx.fillStyle = `rgba(230,230,100, 1)`

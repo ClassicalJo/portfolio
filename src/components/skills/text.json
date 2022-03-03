@@ -1,10 +1,14 @@
 {
     "title": {
-        "en": "Chart A: Comparative strenghts (%)",
+        "en": "Chart A: Comparative strengths (%)",
         "es": "Cuadro A: Fortalezas comparativas (%)"
     },
     "alt": {
         "en": "Chart A: Comparative strengths (%) - 1. Javascript: 100%. 2. ReactJS: 90%. 3. Express: 70%. 4. PostgreSQL: 60%. 5. NextJS: 80%. 6. UI/UX: 60%.",
         "es": "Cuadro A: Fortalezas comparativas (%) -  1. Javascript: 100%. 2. ReactJS: 90%. 3. Express: 70%. 4. PostgreSQL: 60%. 5. NextJS: 80%. 6. UI/UX: 60%."
+    },
+    "skills":{
+        "en": "I consider myself a fast learner, perseverant and problem-solving oriented person, but I think my strength lies in my adaptability and communication skills, which lets me thrive in teamwork oriented workplaces.",
+        "es": "Me considero una persona perseverante, de aprendizaje rápido y orientada a la solución de problemas, pero mi fuerza radica en mi adaptabilidad y en mis habilidades de comunicación, que me permiten desarrollarme en espacios orientados al trabajo en equipo."
     }
 }
