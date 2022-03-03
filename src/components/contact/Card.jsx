@@ -1,21 +1,25 @@
-import { useRef } from "react"
+import { useRef, useEffect } from "react"
 import Copy from "./Copy"
 import Wrapper from "../common/Wrapper"
 export default function Card({ copyLang, toggle, onKeyDown }) {
     let mailRef = useRef()
-
+    let focusRef = useRef()
+    useEffect(() => {
+        focusRef.current.focus()
+    }, [])
     function copy() {
         mailRef.current.select()
         document.execCommand('copy')
-        mailRef.current.blur()
+        focusRef.current.focus()
     }
     return (
         <div className='card' onKeyDown={onKeyDown}>
             <Wrapper>
                 <Wrapper>
                     <div className="close"
+                        ref={focusRef}
                         tabIndex={0}
-                        onKeyDown={e => e.key === 'Enter' && toggle()} onClick={toggle} ><p>✖</p></div>
+                        onClick={toggle} ><p>✖</p></div>
                     <div className="line">
                         <p><span>👨‍🦱</span>Jose Barrientos</p>
                     </div>

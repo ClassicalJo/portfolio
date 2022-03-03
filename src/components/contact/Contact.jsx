@@ -31,7 +31,15 @@ export default function Contact() {
                 <Button onClick={toggleCard}>
                     <p tabIndex={0} onKeyDown={e => e.key === 'Enter' && toggleCard()} >{text.contact[current]}</p>
                 </Button>
-                {show && <Card copyLang={text.copy[current]} toggle={toggleCard} onKeyDown={e => e.key === 'Escape' && exitCard()} />}
+                {show && (
+                    <Card
+                        copyLang={text.copy[current]}
+                        toggle={toggleCard}
+                        onKeyDown={e => {
+                            console.log('presesed')
+                            e.key === 'Escape' && exitCard()}}
+                    />
+                )}
             </div>
         </Slide>
     )
