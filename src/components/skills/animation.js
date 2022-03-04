@@ -7,23 +7,19 @@ export const animation = (canvas, language) => {
     let horizontalMargin = 25
     let height = canvas.height - verticalMargin * 2
     let width = canvas.width - horizontalMargin * 2
-    ctx.setTransform(1, 0, 0, 1, 0, 0)
-    ctx.translate(width / 2 + horizontalMargin, height / 2 + verticalMargin)
+    let hex = new Hex(width / 2, height / 2, [.6, .8, .6, 1, .9, .7], canvas)
+    let title = new Title(0, canvas.height / -2 + 48, text.title[language])
+    ctx.setTransform(1, 0, 0, 1, width / 2 + horizontalMargin, height / 2 + verticalMargin)
     
-
     return ({
-        bodies: [
-            new Hex(width / 2, height / 2, [.6, .8, .6, 1, .9, .7], canvas),
-            new Title(0, canvas.height / -2 + 48, text.title[language])
-        ],
+        bodies: [hex, title],
         update: function () {
             this.bodies.forEach(k => k.update())
         },
         render: function () {
-            let { width, height } = canvas
             let ctx = canvas.getContext('2d')
-            ctx.fillStyle = "rgba(255,255,255,0.1)"
-            ctx.fillRect(width / -2, height / -2, width, height)
+            ctx.clearRect(0, 0, canvas.width / -2, canvas.height / -2)
+            ctx.drawImage(hex.canvas, hex.canvas.width / -2, hex.canvas.height / -2, hex.canvas.width, hex.canvas.height)
             this.bodies.forEach(k => k.render(ctx))
         }
     })

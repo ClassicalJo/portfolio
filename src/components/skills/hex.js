@@ -3,16 +3,27 @@ let ease = x => Math.sin((x * Math.PI) / 2)
 
 export class Hex {
     constructor(rx, ry, values = [1, 1, 1, 1, 1, 1], originCanvas) {
-        this.values = values
-        this.origin = originCanvas
         this.rx = rx
         this.ry = ry
+        console.log(this.rx, this.ry)
+        this.values = values
+        this.origin = originCanvas
+        this.canvas = this.createCanvas(originCanvas)
         this.time = 0
         this.lifetime = 0
         this.totalTime = 48
         this.vertices = this.setVertices()
         this.lineOpacity = 0
         this.background = new Swirl(this.rx, this.ry, originCanvas).canvas
+    }
+    createCanvas(origin) {
+        let canvas = document.createElement('canvas')
+        canvas.width = origin.width
+        canvas.height = origin.height
+
+        let ctx = canvas.getContext('2d')
+        ctx.translate(canvas.width/2, canvas.height/2)
+        return canvas
     }
     setVertices() {
         return new Array(6)
@@ -30,7 +41,7 @@ export class Hex {
     getPosition(angle, rx, ry) {
         return { x: rx * Math.cos(angle), y: ry * Math.sin(angle) }
     }
-    
+
     lines(ctx) {
         ctx.beginPath()
         this.vertices.forEach(k => ctx.lineTo(k.x, k.y))
@@ -82,7 +93,7 @@ export class Hex {
             ctx.fillText(k, x, y)
         })
     }
-    swirl(ctx){
+    swirl(ctx) {
         let memCanvas = document.createElement('canvas')
         let memCtx = memCanvas.getContext('2d')
         let [WIDTH, HEIGHT] = [this.origin.width, this.origin.height]
@@ -98,10 +109,12 @@ export class Hex {
         this.vertices.forEach((k, i) => memCtx.lineTo(k.x * this.values[i], k.y * this.values[i]))
         memCtx.fillStyle = "rgba(0,0,0,1)"
         memCtx.fill()
-
         ctx.drawImage(memCanvas, -W2, -H2)
     }
-    render(ctx) {
+    render() {
+        let ctx = this.canvas.getContext('2d')
+        ctx.fillStyle = "rgba(255,255,255,0.1)"
+        ctx.fillRect(this.canvas.width / -2, this.canvas.height / -2, this.canvas.width, this.canvas.height)
         this.swirl(ctx)
         this.web(ctx)
         this.lines(ctx)
