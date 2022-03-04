@@ -30,16 +30,7 @@ export class Hex {
     getPosition(angle, rx, ry) {
         return { x: rx * Math.cos(angle), y: ry * Math.sin(angle) }
     }
-    color(x, y, col, ctx) {
-        ctx.beginPath()
-        this.vertices.forEach((k, i) => ctx.lineTo(k.x * this.values[i], k.y * this.values[i]))
-        ctx.lineTo(this.vertices[0].x * this.values[0], this.vertices[0].y * this.values[0])
-        let grad = ctx.createRadialGradient(x, y, 2 * Math.max(this.rx, this.ry), x, y, 2 * Math.max(this.rx, this.ry) / 10)
-        grad.addColorStop(.2, "rgba(255,255,255,0)")
-        grad.addColorStop(1, col)
-        ctx.fillStyle = grad
-        ctx.fill()
-    }
+    
     lines(ctx) {
         ctx.beginPath()
         this.vertices.forEach(k => ctx.lineTo(k.x, k.y))
