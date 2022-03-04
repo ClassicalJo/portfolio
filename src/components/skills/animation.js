@@ -4,7 +4,7 @@ import text from './text.json'
 export const animation = (canvas, language) => {
     let ctx = canvas.getContext('2d')
     let verticalMargin = 150
-    let horizontalMargin = 0
+    let horizontalMargin = 25
     let height = canvas.height - verticalMargin * 2
     let width = canvas.width - horizontalMargin * 2
     ctx.setTransform(1, 0, 0, 1, 0, 0)
