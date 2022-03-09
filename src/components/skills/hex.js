@@ -5,7 +5,6 @@ export class Hex {
     constructor(rx, ry, values = [1, 1, 1, 1, 1, 1], originCanvas) {
         this.rx = rx
         this.ry = ry
-        console.log(this.rx, this.ry)
         this.values = values
         this.origin = originCanvas
         this.canvas = this.createCanvas(originCanvas)
