@@ -12,6 +12,9 @@ $fontMedium: calc(20px + 6 * ((100vw - 320px) / 680))
 $fontLarge: calc(32px + 6 * ((100vw - 320px) / 680))
 $fontVeryLarge: calc(64px + 6 * ((100vw - 320px) / 680))
 
+$gridGap: 2em
+$imageSize: 350px
+$doubleImageSize: calc($imageSize *2 + $gridGap)
 @mixin smallTextShadow
     text-shadow: 1.5px 1.5px 1px rgba(0,0,0,.5)
 
@@ -24,6 +27,8 @@ $fontVeryLarge: calc(64px + 6 * ((100vw - 320px) / 680))
 @mixin anaglyphText
     text-shadow: 2px 0 0px rgba(255,0,0,.7), -2px 0 0px rgba(0,255,255, .7)
 
+@mixin anaglyphTextSmall
+    text-shadow: 1px 0 0px rgba(255,0,0,.7), -1px 0 0px rgba(0,255,255, .7)
 @mixin anaglyphBox
     box-shadow: 2px 0 0 rgba(255,0,0,.7), -2px 0 0 rgba(0,255,255, .7)
 

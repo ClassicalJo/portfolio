@@ -1,8 +1,11 @@
 export function switcher(canvas, language, options) {
+    let scale = window.devicePixelRatio
+    canvas.width = options.width * scale
+    canvas.height = options.height * scale
     let config = {
         totalFrames: 10,
-        buttonSize: { width: canvas.width / 2, height: canvas.height },
-        positions: { 0: 0, 1: canvas.width / 2 },
+        buttonSize: { width: options.width / 2, height: options.height },
+        positions: { 0: 0, 1: options.width / 2 },
         animating: false,
         values: ['en', 'es'],
         onStart: () => { },
@@ -10,9 +13,12 @@ export function switcher(canvas, language, options) {
         ...options
     }
 
+
     let ctx = canvas.getContext('2d')
+    ctx.setTransform(1, 0, 0, 1, 0, 0)
+    ctx.scale(scale, scale)
     let { positions, buttonSize, onEnd, values, totalFrames } = config
-    let [W, H] = [canvas.width, canvas.height]
+    let [W, H] = [options.width, options.height]
     let [W2, H2] = [W / 2, H / 2]
     let pos = { x: positions[values.indexOf(language)], y: 0 }
     let direction = pos.x < W2 ? 1 : -1
@@ -43,7 +49,7 @@ export function switcher(canvas, language, options) {
         ctx.textAlign = 'center'
         ctx.textBaseline = 'middle'
         ctx.fillStyle = `hsl(0,0%, ${Math.abs(-100 + progress() * 100)}%)`
-        ctx.fillText(text, pos.x + W2 / 2, H2, W2)
+        ctx.fillText(text, pos.x + W2 / 2, H2)
     }
 
     let update = function () {

@@ -7,7 +7,9 @@ export default function Switch({ width, height, tabIndex }) {
     useLayoutEffect(() => {
         let canvas = ref.current
         let toggler = switcher(canvas, language.current, {
-            onEnd: language.toggle
+            onEnd: language.toggle,
+            width,
+            height
         })
         let changeLanguage = () => !toggler.isAnimating() && toggler.toggle()
         let keyDown = e => e.key === 'Enter' && changeLanguage()
@@ -17,14 +19,13 @@ export default function Switch({ width, height, tabIndex }) {
             canvas.removeEventListener('click', changeLanguage) &&
             canvas.removeEventListener('keydown', keyDown)
         )
-    }, [language])
+    }, [language, width, height])
 
     return (
         <canvas
             className='language'
             tabIndex={1}
-            style={{ width, height }}
-            {...{ ref, width, height, tabIndex }}
+            {...{ ref, tabIndex }}
         />
     )
 }

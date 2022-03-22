@@ -1,0 +1,82 @@
+@use './_base' as base
+
+.project-card-wrapper
+    filter: brightness(90%)
+
+.project-card
+    overflow: hidden
+    opacity: 0
+    @include base.mediumBoxShadow
+    border-radius: 25px
+    background: base.$color1
+    display: flex
+    flex-direction: column
+
+    .action-zone
+        padding: 20px
+        img
+            @include base.smallBoxShadow
+            border-radius: 100%
+
+    .title
+        font-size: 2em
+        margin: 40px 0
+        padding: 0 20px
+        @include base.anaglyphText
+
+    .desc
+        font-size: 1.1em        
+        padding: 0 20px
+        font-family: Verdana, Geneva, Tahoma, sans-serif
+
+    .tags
+        font-size: 0.9em
+        text-align: center
+        padding: 10px 20px 
+        
+        flex: 1
+
+.grid > .expanded
+    grid-row: span 2
+    animation: expand 0.5s forwards, lighten 0.1s forwards
+
+.grid > .reduced
+    animation: reduce 0.5s forwards, darken 0.1s
+    grid-row: span 2
+
+.appear
+    animation: appear 0.5s forwards
+
+@keyframes appear
+    0%
+        opacity: 0
+    100%
+        opacity: 1
+
+@keyframes expand
+    0%
+        height: min(calc(100vw - base.$gridGap *2), 350px)
+
+    100%
+        height: base.$doubleImageSize
+
+@keyframes reduce
+    0%
+        height: base.$doubleImageSize
+
+    100%
+        height: min(calc(100vw - base.$gridGap *2), 350px)
+
+@keyframes lighten
+    0%
+        filter: brightness(90%)
+
+    100%
+        filter: brightness(100%)
+
+@keyframes darken
+    0%
+        filter: brightness(100%)
+
+    100%
+        filter: brightness(90%)

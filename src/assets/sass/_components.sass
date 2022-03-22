@@ -24,6 +24,8 @@
     user-select: none
     .cv, .language
         cursor: pointer
+        width: 100px
+        height: 50px
         &:active
             animation: flash .05s ease
 
@@ -124,15 +126,12 @@
     &:active
         animation: flash .05s
 
-.tags
-    color: rgba(230,230,100)
-
 .es
     animation: appear .5s ease-out
 .en
     animation: appearLan .5s ease-out
 
-.skills, .tags, .contact
+.appear
     animation: appear .5s ease-out
 
 .card
@@ -140,12 +139,30 @@
 
 .galaxy
     background: rgba(30,30,30,1)
+    color: rgba(230,230,100)
 
 .left
     text-align: left
 
 .right
     text-align: right
+
+.projects
+    > .title
+        font-size: base.$fontLarge
+        margin-bottom: 1em
+        @include base.anaglyphText
+    .entries
+        .entry
+            .title
+                @include base.anaglyphTextSmall
+
+                font-size: base.$fontMedium
+            .tags
+                font-size: base.$fontSmall
+    .link
+        font-size: base.$fontMedium
+
 @keyframes appear
     0%
         opacity: 0

@@ -1,0 +1,361 @@
+{
+    "0": {
+        "id": 0,
+        "test": "https://classicaljo.github.io/simon-dice/",
+        "repo": "https://github.com/ClassicalJo/simon-dice",
+        "text": {
+            "en": {
+                "title": "Simon says",
+                "desc": "Just a simple game of simon says. First repo, first project, first approach to Javascript.",
+                "tags": [
+                    "game",
+                    "finished",
+                    "2019",
+                    "Javascript",
+                    "CSS3",
+                    "HTML"
+                ]
+            },
+            "es": {
+                "title": "Simon dice",
+                "desc": "Una implementación del juego Simon Dice, Mi primer repositorio, mi primer proyecto, mi primer acercamiento a Javascript.",
+                "tags": [
+                    "juego",
+                    "completo",
+                    "2019",
+                    "Javascript",
+                    "CSS3",
+                    "HTML"
+                ]
+            }
+        }
+    },
+    "1": {
+        "id": 1,
+        "test": "https://classicaljo.github.io/barking-board/",
+        "repo": "https://github.com/ClassicalJo/barking-board",
+        "text": {
+            "en": {
+                "title": "Barking board",
+                "desc": "Another initial project, a clicker game kinda thing that helps you make ART.",
+                "tags": [
+                    "game",
+                    "unfinished",
+                    "2019",
+                    "Javascript",
+                    "CSS3",
+                    "HTML",
+                    "canvas"
+                ]
+            },
+            "es": {
+                "title": "Barking Board",
+                "desc": "Otro proyecto inicial. Un juego tipo clicker que te ayuda a hacer ARTE con canvas.",
+                "tags": [
+                    "juego",
+                    "incompleto",
+                    "2019",
+                    "Javascript",
+                    "CSS3",
+                    "HTML",
+                    "canvas"
+                ]
+            }
+        }
+    },
+    "2": {
+        "id": 2,
+        "test": "https://classicaljo.github.io/pokedex/",
+        "repo": "https://github.com/ClassicalJo/pokedex",
+        "text": {
+            "en": {
+                "title": "Pokedex",
+                "desc": "A gameboy-like application designed to consume a Pokedex API, developed in React + Redux",
+                "tags": [
+                    "finished",
+                    "2020",
+                    "React",
+                    "Redux",
+                    "CSS3",
+                    "HTML",
+                    "API"
+                ]
+            },
+            "es": {
+                "title": "Pokedex",
+                "desc": "Una aplicación al estilo gameboy diseñada para consumir la PokeAPI, desarrollada en React Class Components y Redux.",
+                "tags": [
+                    "finished",
+                    "2020",
+                    "react",
+                    "redux",
+                    "CSS3",
+                    "HTML",
+                    "API"
+                ]
+            }
+        }
+    },
+    "3": {
+        "id": 3,
+        "test": "https://classicaljo.github.io/blinker/",
+        "repo": "https://github.com/ClassicalJo/blinker",
+        "text": {
+            "en": {
+                "title": "Blinker",
+                "desc": "A bullet hell-like game, developed in React and Redux. Helped me to figure out a lot of things about the React lifecycle.",
+                "tags": [
+                    "finished",
+                    "2020",
+                    "React",
+                    "Redux",
+                    "CSS3",
+                    "game",
+                    "SVG",
+                    "animation"
+                ]
+            },
+            "es": {
+                "title": "Blinker",
+                "desc": "Un juego bullet hell, desarrollado en React y Redux. Me ayudó a integrar un montón de conceptos respecto al ciclo de vida de los componentes de React.",
+                "tags": [
+                    "completo",
+                    "2020",
+                    "React",
+                    "Redux",
+                    "CSS3",
+                    "juego",
+                    "SVG",
+                    "animación"
+                ]
+            }
+        }
+    },
+    "4": {
+        "id": 4,
+        "test": "https://classicaljo.github.io/sudoku/",
+        "repo": "https://github.com/ClassicalJo/sudoku",
+        "text": {
+            "en": {
+                "title": "Sudoku",
+                "desc": "Funny story, I once read that I should have an algorithm implementation in my Portfolio. But instead of doing that I developed my own. Not pretty, but works.",
+                "tags": [
+                    "finished",
+                    "2020",
+                    "Javascript",
+                    "algorithm",
+                    "game"
+                ]
+            },
+            "es": {
+                "title": "Sudoku",
+                "desc": "Historia graciosa, una vez leí que debería tener la implementación de algun algoritmo en mi portfolio. Pero en su lugar termine diseñando el mio. No es bonito pero funciona.",
+                "tags": [
+                    "completo",
+                    "2020",
+                    "Javascript",
+                    "algorithm",
+                    "game"
+                ]
+            }
+        }
+    },
+    "5": {
+        "id": 5,
+        "test": "https://expo.dev/@classicaljo/el-principito",
+        "repo": "https://github.com/ClassicalJo/el-principito",
+        "text": {
+            "en": {
+                "title": "The little prince",
+                "desc": "A visual novel app made for React Native using Expo. Still deciding whether doing the full book or not.",
+                "tags": [
+                    "Expo",
+                    "React Native",
+                    "unfinished",
+                    "game",
+                    "SVG",
+                    "2020"
+                ]
+            },
+            "es": {
+                "title": "El Principito",
+                "desc": "Una aplicación estilo novela visual, hecha con React Native y Expo. Todavia estoy decidiendo si hacer el libro completo o no.",
+                "tags": [
+                    "Expo",
+                    "React Native",
+                    "incompleto",
+                    "juego",
+                    "SVG",
+                    "2020"
+                ]
+            }
+        }
+    },
+    "6": {
+        "id": 6,
+        "test": "https://js13kgames.com/entries/blinker",
+        "repo": "https://github.com/ClassicalJo/blinker13",
+        "text": {
+            "en": {
+                "title": "Blinker13",
+                "desc": "A submission for jsk13, a game jam built around developing a full game in only 13kbs, finished 83th of +200 entries.",
+                "tags": [
+                    "finished",
+                    "game",
+                    "Javascript",
+                    "audio",
+                    "canvas",
+                    "2021"
+                ]
+            },
+            "es": {
+                "title": "Blinker13",
+                "desc": "Un juego hecho para jsk13, un game jam con el desafío de desarrollar un juego completo en solamente 13kbs. Termine 83 de +200 juegos.",
+                "tags": [
+                    "completo",
+                    "juego",
+                    "Javascript",
+                    "audio",
+                    "canvas",
+                    "2021"
+                ]
+            }
+        }
+    },
+    "7": {
+        "id": 7,
+        "test": false,
+        "repo": "https://github.com/ClassicalJo/alkemy-node",
+        "text": {
+            "en": {
+                "title": "Alkemy",
+                "desc": "A back-end challenge for Alkemy. App + Api + Authentication + Postgres database. Documented with Postman.",
+                "tags": [
+                    "finished",
+                    "Node",
+                    "API",
+                    "REST",
+                    "Auth0",
+                    "authentication",
+                    "validation",
+                    "Postman",
+                    "PostgreSQL",
+                    "2021"
+                ]
+            },
+            "es": {
+                "title": "Alkemy",
+                "desc": "Un challenge de back-end para Alkemy. App + Api + Autenticación + Base de datos en Postgres. Documentado con Postman.",
+                "tags": [
+                    "completo",
+                    "Node",
+                    "API",
+                    "REST",
+                    "Auth0",
+                    "autenticación",
+                    "validación",
+                    "Postman",
+                    "PostgreSQL",
+                    "2021"
+                ]
+            }
+        }
+    },
+    "8": {
+        "id": 8,
+        "test": "https://classicaljo.github.io/pathfinder/",
+        "repo": "https://github.com/ClassicalJo/pathfinder",
+        "text": {
+            "en": {
+                "title": "Pathfinder",
+                "desc": "Implementation of the A* pathing algorithm.",
+                "tags": [
+                    "Javascript",
+                    "finished",
+                    "game",
+                    "algorithm",
+                    "2021"
+                ]
+            },
+            "es": {
+                "title": "Pathfinder",
+                "desc": "Implementación del algoritmo de recorrido A*.",
+                "tags": [
+                    "Javascript",
+                    "completo",
+                    "juego",
+                    "algoritmo",
+                    "2021"
+                ]
+            }
+        }
+    },
+    "9": {
+        "id": 9,
+        "test": "https://karken.herokuapp.com",
+        "repo": false,
+        "text": {
+            "en": {
+                "title": "Karken",
+                "desc": "E-commerce solution I developed for a friend. Postgres, Next, Material-UI. If the dyno is on, it's better through karken.com.ar",
+                "tags": [
+                    "unfinished",
+                    "SEO",
+                    "Next",
+                    "PostgreSQL",
+                    "MaterialUI",
+                    "authentication",
+                    "e-commerce",
+                    "React",
+                    "2022"
+                ]
+            },
+            "es": {
+                "title": "Karken",
+                "desc": "Solución de e-commerce que desarrollé para un amigo. Postgres, Next, Material-UI.",
+                "tags": [
+                    "incompleto",
+                    "SEO",
+                    "Next",
+                    "PostgreSQL",
+                    "MaterialUI",
+                    "autenticación",
+                    "e-commerce",
+                    "React",
+                    "2022"
+                ]
+            }
+        }
+    },
+    "10": {
+        "id": 10,
+        "test": "https://classicaljo.github.io/reflections/",
+        "repo": "https://github.com/ClassicalJo/reflections",
+        "text": {
+            "en": {
+                "title": "Reflections",
+                "desc": "Looking for a performant reflection animation not based in CSS. Also, dipping my feet in Webgl",
+                "tags": [
+                    "finished",
+                    "Javascript",
+                    "canvas",
+                    "animation",
+                    "WebGL",
+                    "2022"
+                ]
+            },
+            "es": {
+                "title": "Reflexiones",
+                "desc": "Animación de agua reflejada en canvas. Primeros pasos en WebGL",
+                "tags": [
+                    "completo",
+                    "Javascript",
+                    "canvas",
+                    "animation",
+                    "WebGL",
+                    "2022"
+                ]
+            }
+        }
+    }
+}

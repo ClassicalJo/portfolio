@@ -6,6 +6,7 @@ import Tags from "../tags/Tags";
 import Loading from "./Loading";
 import WebFont from "webfontloader";
 import Header from '../header/Header'
+import Projects from "../projects/Projects";
 
 export default function Loader({ element }) {
     let [ready, setReady] = useState(false)
@@ -26,6 +27,7 @@ export default function Loader({ element }) {
                 <Home />
                 <Skills />
                 <Tags />
+                <Projects />
                 <Contact />
                 <Header element={element} />
             </>
