@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import Contact from "../contact/Contact";
 import Home from "../home/Home";
 import Skills from "../skills/Skills";
@@ -7,10 +7,13 @@ import Loading from "./Loading";
 import WebFont from "webfontloader";
 import Header from '../header/Header'
 import Projects from "../projects/Projects";
+import Sidepage from "../sidepage/Sidepage";
+import { Context } from "./Context";
 
 export default function Loader({ element }) {
     let [ready, setReady] = useState(false)
     let [done, setDone] = useState(false)
+    let { sidepage } = useContext(Context)
     useEffect(() => {
         WebFont.load({
             google: {
@@ -28,8 +31,9 @@ export default function Loader({ element }) {
                 <Skills />
                 <Tags />
                 <Projects />
-                <Contact />
+                <Contact toggle={sidepage.toggle} />
                 <Header element={element} />
+                {sidepage.showSidepage && <Sidepage />}
             </>
         );
         default: return <Loading />

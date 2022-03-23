@@ -1,7 +1,23 @@
 @use './_base' as base
 
+.sidepage
+    animation: fadeIn .55s ease
+    .header
+        border: .5px solid rgba(0,0,0,.1)
+        border-radius: 100%
+        background: white
+        display: flex
+        align-items: center
+        justify-content: center
+        box-shadow: 5px 5px 2px rgba(0,0,0,.3)
+        cursor: pointer
+        @include base.anaglyphText
+        
+
 .project-card-wrapper
     filter: brightness(90%)
+    >.appear
+        animation: appear 0.5s forwards
 
 .project-card
     overflow: hidden
@@ -18,22 +34,22 @@
             @include base.smallBoxShadow
             border-radius: 100%
 
-    .title
-        font-size: 2em
-        margin: 40px 0
+    > .title
+        font-size: 1.5em
+        margin: 20px 0
         padding: 0 20px
         @include base.anaglyphText
 
-    .desc
-        font-size: 1.1em        
+    > .desc
+        font-size: .9em
         padding: 0 20px
         font-family: Verdana, Geneva, Tahoma, sans-serif
 
     .tags
-        font-size: 0.9em
+        font-size: 0.8em
         text-align: center
-        padding: 10px 20px 
-        
+        padding: 10px 20px
+
         flex: 1
 
 .grid > .expanded
@@ -44,8 +60,13 @@
     animation: reduce 0.5s forwards, darken 0.1s
     grid-row: span 2
 
-.appear
-    animation: appear 0.5s forwards
+@keyframes fadeIn
+    0%
+        opacity: 0
+        left: 100vw
+    100%
+        opacity: 1
+        left: 0
 
 @keyframes appear
     0%

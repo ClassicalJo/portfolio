@@ -1,0 +1,72 @@
+@use './_base' as base
+
+.sidepage
+    position: absolute
+    width: 100vw
+    height: 100vh
+    top: 0
+    >.header
+        margin: .5em
+        height: 3em
+        width: 3em
+        font-size: base.$fontMedium
+        
+        position: fixed
+        top: 0
+
+    .background
+        position: fixed
+        > canvas
+            object-fit: cover
+            width: 100vw
+            height: 100vh
+
+.grid
+    margin-top: 100px
+    display: grid
+    grid-template-columns: repeat(12, 1fr)
+    grid-auto-rows: 350px
+    gap: base.$gridGap base.$gridGap
+    padding: base.$gridGap
+    grid-auto-flow: dense
+
+.project-card-wrapper
+    grid-column: span 3
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-self: center
+    width: min(calc(100vw - base.$gridGap *2), 350px)
+    height: min(calc(100vw - base.$gridGap *2), 350px)
+
+.project-card
+    height: stretch
+    .action-zone
+        display: flex
+        justify-content: space-between
+        flex-direction: row-reverse
+        img
+            width: 50px
+            height: 50px
+            opacity: 0.8
+    .demo-wrapper
+        @include base.centerDiv
+        > video
+            width: 100%
+            height: auto
+
+@media (max-width:1600px)
+    .project-card-wrapper
+        grid-column: span 4
+
+@media (max-width:1200px)
+    .project-card-wrapper
+        grid-column: span 6
+
+@media (max-width:800px)
+    .project-card-wrapper
+        grid-column: span 12
+
+@media (max-width:414px)
+    .project-card-wrapper
+        justify-self: flex-start
