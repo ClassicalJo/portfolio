@@ -1,5 +1,11 @@
+import { CanvasAnimationLoop } from './CanvasAnimationLoop'
+import Tiles from './Tiles'
+
 export default function mountCanvas(canvas: HTMLCanvasElement) {
-    const context = canvas.getContext('2d')
-    if (!context) return console.log("Canvas context not supported")
-    context.fillRect(0, 0, 1900, 1080)
+  const gl = canvas.getContext('experimental-webgl')
+  if (!gl || !(gl instanceof WebGLRenderingContext))
+    return console.log('WebGL2 context not supported')
+  const tiles = new Tiles(canvas, gl)
+  const animation = new CanvasAnimationLoop(canvas, tiles)
+  animation.play()
 }
