@@ -10,7 +10,7 @@
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "format": "prettier --write ./src/**/*.{js,svelte,html,ts}",
     "lint": "eslint ./src/**/*.{js,ts,svelte}",
-    "lint:fix": "eslint --fix './src/**/*.{js,ts,svelte}'",
+    "lint:fix": "eslint --fix ./src/**/*.{js,ts,svelte}",
     "prelint": "npm run format"
   },
   "devDependencies": {
@@ -20,6 +20,8 @@
     "@typescript-eslint/parser": "^5.41.0",
     "eslint": "^8.26.0",
     "eslint-plugin-svelte3": "^4.0.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-svelte": "^2.8.0",
     "svelte": "^3.52.0",
