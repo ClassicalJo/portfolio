@@ -1,5 +1,5 @@
 import type { CanvasAnimation, TilesUniforms, Vector } from './types'
-import { createProgram, createShader, resizeCanvasToDisplaySize } from './utils'
+import { createProgram, createShader } from './utils'
 import { fragment } from './fragment'
 import { vertex } from './vertex'
 
@@ -19,7 +19,6 @@ export class Tiles implements CanvasAnimation {
     this.timestamp = 0
     this.locations = this.init()
     this.origin = { x: 0, y: 0 }
-    resizeCanvasToDisplaySize(this.canvas)
   }
   trigger(pos: Vector) {
     this.timestamp = this.lifetime

@@ -3,7 +3,7 @@
 </script>
 
 <main>
-  <Background />
+  <Background red={true} green={false} blue={false} />
 </main>
 
 <style>
