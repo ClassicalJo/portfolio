@@ -2,16 +2,21 @@
   import Background from './background/Background.svelte'
   import Container from './common/Container.svelte'
   import Home from './home/Home.svelte'
+  let currentIndex = 0
+  const observationHandler = (int: number) => {
+    console.log(int - currentIndex)
+    currentIndex = int
+  }
 </script>
 
 <main>
   <Background red={true} green={false} blue={false} />
   <Container>
-    <Home />
-    <Home />
-    <Home />
-    <Home />
-    <Home />
+    <Home index={0} onObservation={observationHandler} />
+    <Home index={1} onObservation={observationHandler} />
+    <Home index={2} onObservation={observationHandler} />
+    <Home index={3} onObservation={observationHandler} />
+    <Home index={4} onObservation={observationHandler} />
   </Container>
 </main>
 

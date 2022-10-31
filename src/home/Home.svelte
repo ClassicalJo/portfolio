@@ -1,8 +1,10 @@
 <script lang="ts">
   import Slide from '../common/Slide.svelte'
+  export let index: number
+  export let onObservation: (int: number) => void
 </script>
 
-<Slide>
+<Slide {index} {onObservation}>
   <div>
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, ipsum. Animi
