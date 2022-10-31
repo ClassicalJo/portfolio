@@ -28,8 +28,8 @@
 </Slide>
 
 <style>
-    p {
-        font-size: 20px;
-        color: rgba(120,120,120,1);
-    }
+  p {
+    font-size: 20px;
+    color: rgba(120, 120, 120, 1);
+  }
 </style>

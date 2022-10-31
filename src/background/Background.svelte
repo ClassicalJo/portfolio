@@ -18,7 +18,7 @@
 </div>
 
 <style>
-  .flex {    
+  .flex {
     align-items: center;
     justify-content: center;
     grid-area: container;
@@ -47,6 +47,5 @@
   canvas {
     height: 100%;
     width: auto;
-
   }
 </style>

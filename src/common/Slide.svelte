@@ -6,9 +6,8 @@
 </div>
 
 <style>
-    .slide {
-        max-width: 100%;
-        margin:0 40px;
-        padding:0 40px;        
-    }
+  .slide {
+    padding: 0 40px;
+    height: 100vh;
+  }
 </style>

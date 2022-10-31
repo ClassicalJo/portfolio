@@ -19,12 +19,10 @@
   main {
     height: 100vh;
     width: 100vw;
-    display: grid;    
-    grid-template-areas: "container";
+    display: grid;
+    grid-template-areas: 'container';
     grid-template-columns: 100%;
     grid-template-rows: 100%;
     overflow: hidden;
-    /* align-items: center; */
-    justify-content: center;
   }
 </style>
