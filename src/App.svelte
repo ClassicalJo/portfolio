@@ -1,15 +1,30 @@
 <script lang="ts">
   import Background from './background/Background.svelte'
+  import Container from './common/Container.svelte'
+  import Home from './home/Home.svelte'
 </script>
 
 <main>
   <Background red={true} green={false} blue={false} />
+  <Container>
+    <Home />
+    <Home />
+    <Home />
+    <Home />
+    <Home />
+  </Container>
 </main>
 
 <style>
   main {
-    overflow: hidden;
     height: 100vh;
     width: 100vw;
+    display: grid;    
+    grid-template-areas: "container";
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
+    overflow: hidden;
+    /* align-items: center; */
+    justify-content: center;
   }
 </style>
