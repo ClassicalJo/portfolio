@@ -5,13 +5,13 @@
 </script>
 
 <main>
-  <Background red={true} green={false} blue={false} />
+  <Background />
   <Container>
-    <Home />
-    <Home />
-    <Home />
-    <Home />
-    <Home />
+    <Home index={0} />
+    <Home index={1} />
+    <Home index={2} />
+    <Home index={3} />
+    <Home index={4} />
   </Container>
 </main>
 

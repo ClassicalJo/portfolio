@@ -6,23 +6,21 @@ import { vertex } from './vertex'
 export class Tiles implements CanvasAnimation {
   tiles: Vector[]
   tileSize: number
-  lifetime: number
   locations: TilesUniforms
   origin: Vector
 
   timestamp: number
-  constructor(public canvas: HTMLCanvasElement, public gl: WebGLRenderingContext) {
+  constructor(
+    public canvas: HTMLCanvasElement,
+    public gl: WebGLRenderingContext,
+    public getColor: () => number
+  ) {
     this.canvas = canvas
     this.tileSize = 20
     this.tiles = this.generateTiles(this.tileSize)
-    this.lifetime = 5
     this.timestamp = 0
     this.locations = this.init()
     this.origin = { x: 0, y: 0 }
-  }
-  trigger(pos: Vector) {
-    this.timestamp = this.lifetime
-    this.origin = pos
   }
 
   init(): TilesUniforms {
@@ -114,13 +112,13 @@ export class Tiles implements CanvasAnimation {
   }
 
   render() {
-    this.lifetime += 0.01
+    const color = this.getColor()
     //Add rendering here
     this.tiles.forEach((tile: Vector) => {
       // Set translation
       this.gl.uniform2f(this.locations.translationUniformLocation, tile.x, tile.y)
-      // Pass the lifetime
-      this.gl.uniform1f(this.locations.timeUniformLocation, this.lifetime)
+      // Pass the color int
+      this.gl.uniform1f(this.locations.timeUniformLocation, color)
       // Draw the rectangle.
       this.gl.drawArrays(this.gl.TRIANGLES, 0, 6)
     })

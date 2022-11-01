@@ -1,8 +1,9 @@
 <script lang="ts">
   import Slide from '../common/Slide.svelte'
+  export let index: number
 </script>
 
-<Slide>
+<Slide {index}>
   <div>
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, ipsum. Animi
