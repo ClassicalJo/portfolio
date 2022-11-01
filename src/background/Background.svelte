@@ -1,13 +1,15 @@
 <script lang="ts">
   import { onMount } from 'svelte'
   import mountCanvas from './animation'
+  import { slideIndex } from '../common/store'
   let canvas: HTMLCanvasElement
-  export let red: boolean
-  export let blue: boolean
-  export let green: boolean
+  $: red = $slideIndex === 3
+  $: green = $slideIndex === 1
+  $: blue = $slideIndex === 5
 
+  const getValue = () => $slideIndex
   onMount(() => {
-    mountCanvas(canvas)
+    mountCanvas(canvas, getValue)
   })
 </script>
 
