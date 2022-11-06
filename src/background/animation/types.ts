@@ -11,6 +11,7 @@ export interface TilesUniforms {
   resolutionUniformLocation: Uniform
   translationUniformLocation: Uniform
   timeUniformLocation: Uniform
+  progressUniformLocation: Uniform
 }
 
 export interface AnimationOptions {

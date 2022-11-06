@@ -10,6 +10,7 @@ export class Tiles implements CanvasAnimation {
   origin: Vector
   color: number
   timestamp: number
+  lifetime: number
   constructor(public canvas: HTMLCanvasElement, public gl: WebGLRenderingContext) {
     this.canvas = canvas
     this.tileSize = 20
@@ -18,6 +19,7 @@ export class Tiles implements CanvasAnimation {
     this.color = 0
     this.locations = this.init()
     this.origin = { x: 0, y: 0 }
+    this.lifetime = 0
   }
 
   init(): TilesUniforms {
@@ -35,6 +37,7 @@ export class Tiles implements CanvasAnimation {
     // look up uniform locations
     const resolutionUniformLocation = this.gl.getUniformLocation(program, 'u_resolution')
     const timeUniformLocation = this.gl.getUniformLocation(program, 'u_time')
+    const progressUniformLocation = this.gl.getUniformLocation(program, "u_progress")
     const translationUniformLocation = this.gl.getUniformLocation(
       program,
       'u_translation'
@@ -75,7 +78,8 @@ export class Tiles implements CanvasAnimation {
       positionAttributeLocation,
       resolutionUniformLocation,
       translationUniformLocation,
-      timeUniformLocation
+      timeUniformLocation,
+      progressUniformLocation
     }
   }
   generateTiles(tileSize: number): Vector[] {
@@ -109,18 +113,22 @@ export class Tiles implements CanvasAnimation {
   }
 
   render() {
+    this.lifetime++
     //Add rendering here
     this.tiles.forEach((tile: Vector) => {
       // Set translation
       this.gl.uniform2f(this.locations.translationUniformLocation, tile.x, tile.y)
       // Pass the color int
-      this.gl.uniform1f(this.locations.timeUniformLocation, this.color)
+      this.gl.uniform1f(this.locations.progressUniformLocation, this.color)
+      // Pass the lifetime int
+      this.gl.uniform1f(this.locations.timeUniformLocation, this.lifetime)
       // Draw the rectangle.
       this.gl.drawArrays(this.gl.TRIANGLES, 0, 6)
     })
   }
 
   update(int: number, color: number) {
+
     this.color = color - (1 - int)
   }
 }
