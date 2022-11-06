@@ -1,5 +1,5 @@
 export interface CanvasAnimation {
-  update: () => void
+  update: (int: number, color: number) => void
   render: (lagOffset: number) => void
 }
 
@@ -11,4 +11,13 @@ export interface TilesUniforms {
   resolutionUniformLocation: Uniform
   translationUniformLocation: Uniform
   timeUniformLocation: Uniform
+}
+
+export interface AnimationOptions {
+  duration: number
+  color: number
+}
+export interface AnimationOptionsUI {
+  duration?: number
+  color?: number
 }

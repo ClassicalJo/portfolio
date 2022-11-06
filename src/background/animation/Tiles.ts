@@ -8,17 +8,14 @@ export class Tiles implements CanvasAnimation {
   tileSize: number
   locations: TilesUniforms
   origin: Vector
-
+  color: number
   timestamp: number
-  constructor(
-    public canvas: HTMLCanvasElement,
-    public gl: WebGLRenderingContext,
-    public getColor: () => number
-  ) {
+  constructor(public canvas: HTMLCanvasElement, public gl: WebGLRenderingContext) {
     this.canvas = canvas
     this.tileSize = 20
     this.tiles = this.generateTiles(this.tileSize)
     this.timestamp = 0
+    this.color = 0
     this.locations = this.init()
     this.origin = { x: 0, y: 0 }
   }
@@ -112,19 +109,19 @@ export class Tiles implements CanvasAnimation {
   }
 
   render() {
-    const color = this.getColor()
     //Add rendering here
     this.tiles.forEach((tile: Vector) => {
       // Set translation
       this.gl.uniform2f(this.locations.translationUniformLocation, tile.x, tile.y)
       // Pass the color int
-      this.gl.uniform1f(this.locations.timeUniformLocation, color)
+      this.gl.uniform1f(this.locations.timeUniformLocation, this.color)
       // Draw the rectangle.
       this.gl.drawArrays(this.gl.TRIANGLES, 0, 6)
     })
   }
-  update() {
-    return
+
+  update(int: number, color: number) {
+    this.color = color - (1 - int)
   }
 }
 export default Tiles

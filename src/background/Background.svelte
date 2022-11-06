@@ -7,9 +7,14 @@
   $: green = $slideIndex === 1
   $: blue = $slideIndex === 5
 
-  const getValue = () => $slideIndex
+  const { animation, start } = mountCanvas()
+  $: {
+    animation.stop()
+    animation.play({ color: $slideIndex })
+  }
   onMount(() => {
-    mountCanvas(canvas, getValue)
+    start(canvas)
+    animation.play({ color: $slideIndex })
   })
 </script>
 
