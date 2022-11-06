@@ -37,7 +37,7 @@ export class Tiles implements CanvasAnimation {
     // look up uniform locations
     const resolutionUniformLocation = this.gl.getUniformLocation(program, 'u_resolution')
     const timeUniformLocation = this.gl.getUniformLocation(program, 'u_time')
-    const progressUniformLocation = this.gl.getUniformLocation(program, "u_progress")
+    const progressUniformLocation = this.gl.getUniformLocation(program, 'u_progress')
     const translationUniformLocation = this.gl.getUniformLocation(
       program,
       'u_translation'
@@ -128,7 +128,6 @@ export class Tiles implements CanvasAnimation {
   }
 
   update(int: number, color: number) {
-
     this.color = color - (1 - int)
   }
 }

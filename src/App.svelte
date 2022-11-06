@@ -1,13 +1,14 @@
 <script lang="ts">
   import Background from './background/Background.svelte'
   import Container from './common/Container.svelte'
+  import Hero from './hero/Hero.svelte'
   import Home from './home/Home.svelte'
 </script>
 
 <main>
   <Background />
   <Container>
-    <Home index={0} />
+    <Hero />
     <Home index={1} />
     <Home index={2} />
     <Home index={3} />

@@ -17,7 +17,6 @@
   }
   .content {
     max-width: 1900px;
-    background-color: rgba(0, 0, 0, 0.9);
     overflow-y: auto;
   }
   .content::-webkit-scrollbar {

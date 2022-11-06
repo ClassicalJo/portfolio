@@ -18,13 +18,18 @@
   })
 </script>
 
-<div class="black flex">
-  <div class:red class:green class:blue class="container flex">
-    <canvas bind:this={canvas} width={1900} height={1080} />
-  </div>
+<div class="black grid">
+  <div class:red class:green class:blue class="container flex" />
+  <canvas bind:this={canvas} width={1900} height={1080} />
 </div>
 
 <style>
+  .grid {
+    display: grid;
+    grid-area: container;
+    grid-template-areas: 'background';
+    background-color: red;
+  }
   .flex {
     align-items: center;
     justify-content: center;
@@ -32,6 +37,7 @@
     display: flex;
   }
   .container {
+    grid-area: 'background';
     height: 100vh;
     width: calc(100vh * 2.5);
   }
@@ -49,10 +55,20 @@
   .blue {
     background: rgb(0, 0, 0);
     background: radial-gradient(circle, rgba(0, 0, 255, 1) 0%, rgba(0, 0, 0, 1) 100%);
+    animation: appear 1s forwards;
   }
 
   canvas {
-    height: 100%;
-    width: auto;
+    grid-area: 'background';
+    height: 100vh;
+    /* max-width: 1900px; */
+  }
+  @keyframes appear {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
   }
 </style>
