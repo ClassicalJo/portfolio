@@ -61,7 +61,7 @@
   canvas {
     grid-area: 'background';
     height: 100vh;
-    /* max-width: 1900px; */
+    min-height: 500px;
   }
   @keyframes appear {
     from {
