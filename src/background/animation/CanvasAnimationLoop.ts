@@ -50,7 +50,7 @@ export class CanvasAnimationLoop {
     while (this.lag >= this.frameDuration) {
       //If animation is not paused update the logic
 
-      if(this.progress < 1) this.progress += 1 / this.options.duration
+      if (this.progress < 1) this.progress += 1 / this.options.duration
       !this._pause &&
         this.animation.update(easeOutBack(this.progress), this.options.color)
 
@@ -59,7 +59,7 @@ export class CanvasAnimationLoop {
     }
     //Calculate the lag offset and use it to render the sprites
     const lagOffset = this.lag / this.frameDuration
-    this.animation.render(lagOffset)    
+    this.animation.render(lagOffset)
   }
 
   set pause(bool: boolean) {
