@@ -30,7 +30,7 @@ return (m * vec4(v, 1.0)).xyz;
 }
 
 float plot(vec2 st, float time) {    
-  return step((st.y + st.x)/2., sin(st.x*55. + time)*.007 +.5);
+  return step((st.x+st.y)/2., sin(sin(st.x*100.)*55. + time)*.05 +.5);
 }
 
 void main() {
