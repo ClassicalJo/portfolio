@@ -1,11 +1,13 @@
 <script lang="ts">
   import Background from './background/Background.svelte'
   import Container from './common/Container.svelte'
+  import Header from './header/Header.svelte'
   import Hero from './hero/Hero.svelte'
   import Home from './home/Home.svelte'
 </script>
 
 <main>
+  <Header />
   <Background />
   <Container>
     <Hero />
