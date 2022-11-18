@@ -10,3 +10,12 @@
 @mixin borderRadius20 {
     border-radius: 20px;
 }
+
+@mixin gradientText {
+    background: rgb(255, 255, 255);
+    background: linear-gradient(90deg, #fff 0%, #aaa 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(3px 3px #333);
+}
