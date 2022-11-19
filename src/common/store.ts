@@ -9,4 +9,7 @@ function createSlideIndex() {
     updateColor: (int: number) => set(colors[int % 3])
   }
 }
+
 export const slideIndex = createSlideIndex()
+
+export const visibleHero = writable(true)
