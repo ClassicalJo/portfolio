@@ -10,7 +10,8 @@
   onMount(() => {
     const observer = setObservable(
       () => visibleHero.set(true),
-      () => visibleHero.set(false)
+      () => visibleHero.set(false),
+      { threshold: 0 }
     )
     observer && observer.observe(card)
     return () => observer && observer.unobserve(card)

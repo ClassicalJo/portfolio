@@ -1,25 +1,16 @@
 <script lang="ts">
   import { onMount } from 'svelte'
+  import { setObservable } from './setObservable'
   import { slideIndex } from './store'
   export let index: number
   let section: HTMLElement
-  let intersecting = false
-
+  const onObserve = () => slideIndex.updateColor(index)
+  const onUnobserve = undefined
+  const options: IntersectionObserverInit = { threshold: 0.5 }
   onMount(() => {
-    if (typeof IntersectionObserver !== 'undefined') {
-      const observer = new IntersectionObserver(
-        entries => {
-          intersecting = entries[0].isIntersecting
-          if (intersecting) {
-            slideIndex.updateColor(index)
-          }
-        },
-        { threshold: 0.5 }
-      )
-
-      observer.observe(section)
-      return () => observer.unobserve(section)
-    }
+    const observer = setObservable(onObserve, onUnobserve, options)
+    observer && observer.observe(section)
+    return () => observer && observer.unobserve(section)
   })
 </script>
 
