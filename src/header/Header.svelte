@@ -1,25 +1,8 @@
 <script lang="ts">
-  import Logo from './Logo.svelte'
-  import '../scss/base.scss'
   import { visibleHero } from '../common/store'
   import Visibility from '../common/Visibility.svelte'
-  let visible = false
-  let timeout: NodeJS.Timeout
-  $: {
-    clearTimeout(timeout)
-    switch ($visibleHero) {
-      case true: {
-        timeout = setTimeout(() => {
-          visible = false
-        }, 1000)
-        break
-      }
-      default: {
-        visible = true
-        break
-      }
-    }
-  }
+  import '../scss/base.scss'
+  import Logo from './Logo.svelte'
 </script>
 
 <header class="header-container flex">
