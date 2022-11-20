@@ -29,3 +29,16 @@
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(3px 3px #333);
 }
+
+.hidden {
+    visibility: hidden;
+}
+
+@keyframes appearFromTop {
+    0% {
+        top: -100%;
+    }
+    100% {
+        top:0;
+    }
+}

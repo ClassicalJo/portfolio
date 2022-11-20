@@ -45,7 +45,7 @@
       rgba(0, 255, 255, 0.5) 100%
     );
     mask-image: linear-gradient(338deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-    background-image: url('public/prism.png');
+    background-image: url('/prism.png');
     background-repeat: repeat;
     -webkit-mask-image: linear-gradient(
       338deg,
