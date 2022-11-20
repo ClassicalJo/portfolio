@@ -1,20 +1,25 @@
 <script lang="ts">
-  import Logo from './Logo.svelte'
-  import '../scss/base.scss'
   import { visibleHero } from '../common/store'
+  import Visibility from '../common/Visibility.svelte'
+  import '../scss/base.scss'
+  import Logo from './Logo.svelte'
 </script>
 
-<header class="header flex" class:appear={!$visibleHero}>
-  <Logo />
-  <nav class="flex-1 flex">
-    <p>Link1</p>
-    <p>Link2</p>
-    <p>Link3</p>
-  </nav>
+<header class="header-container flex">
+  <Visibility show={!$visibleHero}>
+    <div class="header flex">
+      <Logo />
+      <nav class="flex-1 flex">
+        <p>Link1</p>
+        <p>Link2</p>
+        <p>Link3</p>
+      </nav>
+    </div>
+  </Visibility>
 </header>
 
 <style lang="scss">
-  @use '../scss//mixins.scss';
+  @use '../scss/mixins.scss';
   .header::before {
     @include mixins.beforeAbsolute;
     background: linear-gradient(
@@ -23,7 +28,7 @@
       rgba(255, 255, 255, 0) 100%
     );
     mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-    background-image: url('public/prism.png');
+    background-image: url('/prism.png');
     background-repeat: repeat;
     -webkit-mask-image: linear-gradient(
       338deg,
@@ -31,14 +36,17 @@
       rgba(0, 0, 0, 0.3) 100%
     );
   }
-  .header {
+  .header-container {
     position: absolute;
     width: 100vw;
-    backdrop-filter: blur(10px);
+    display: flex;
     height: 64px;
-    top: -64px;
+    z-index: 999;
   }
-  .appear {
-    top: 0;
+  .header {
+    backdrop-filter: blur(10px);
+    height: 100%;
+    flex: 1;
+    position: relative;
   }
 </style>
