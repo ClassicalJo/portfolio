@@ -1,7 +1,15 @@
-<script lang="ts"></script>
+<script lang="ts">
+  import { getContext, onMount } from 'svelte'
+  import { key, Scroller } from '../common/Scroller'
+  let container: HTMLElement
+  const scroller = getContext<Scroller>(key)
+  onMount(() => {
+    scroller.setContainer(container)
+  })
+</script>
 
 <div class="container flex">
-  <div class="content">
+  <div class="content" bind:this={container}>
     <slot />
   </div>
 </div>
@@ -18,6 +26,7 @@
   .content {
     max-width: 1900px;
     overflow-y: auto;
+    scroll-behavior: smooth;
   }
   .content::-webkit-scrollbar {
     background-color: rgba(255, 255, 255, 0.1);

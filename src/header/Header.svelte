@@ -2,17 +2,19 @@
   import { visibleHero } from '../common/store'
   import Visibility from '../common/Visibility.svelte'
   import '../scss/base.scss'
+  import Link from './Link.svelte'
   import Logo from './Logo.svelte'
 </script>
 
-<header class="header-container flex">
+<header class="header-container flex flex-1">
   <Visibility show={!$visibleHero}>
     <div class="header flex">
       <Logo />
       <nav class="flex-1 flex">
-        <p>Link1</p>
-        <p>Link2</p>
-        <p>Link3</p>
+        <Link target="hero">Home</Link>
+        <Link target="about">About me</Link>
+        <Link target="projects">Projects</Link>
+        <Link target="contact">Contact</Link>
       </nav>
     </div>
   </Visibility>
@@ -38,10 +40,11 @@
   }
   .header-container {
     position: absolute;
-    width: 100vw;
-    display: flex;
     height: 64px;
+    width: 100%;
     z-index: 999;
+    flex: 1;
+    max-width: 1900px;
   }
   .header {
     backdrop-filter: blur(10px);

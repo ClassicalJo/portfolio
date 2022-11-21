@@ -1,9 +1,11 @@
 <script lang="ts">
+  import type { ScrollTargetKey } from '../common/Scroller'
   import Slide from '../common/Slide.svelte'
   export let index: number
+  export let target: ScrollTargetKey
 </script>
 
-<Slide {index}>
+<Slide {index} {target}>
   <div>
     <p>
       Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolores, ipsum. Animi

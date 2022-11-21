@@ -1,20 +1,22 @@
 <script lang="ts">
+  import { setContext } from 'svelte'
   import Background from './background/Background.svelte'
   import Container from './common/Container.svelte'
+  import { key, Scroller } from './common/Scroller'
   import Header from './header/Header.svelte'
   import Hero from './hero/Hero.svelte'
   import Home from './home/Home.svelte'
+  setContext(key, new Scroller())
 </script>
 
 <main>
-  <Header />
   <Background />
+  <Header />
   <Container>
     <Hero />
-    <Home index={1} />
-    <Home index={2} />
-    <Home index={3} />
-    <Home index={4} />
+    <Home target="about" index={1} />
+    <Home target="projects" index={2} />
+    <Home target="contact" index={3} />
   </Container>
 </main>
 
