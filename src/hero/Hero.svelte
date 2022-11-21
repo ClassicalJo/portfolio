@@ -7,6 +7,7 @@
   import Pretitle from './Pretitle.svelte'
   import Title from './Title.svelte'
   let card: HTMLElement
+
   onMount(() => {
     const observer = setObservable(
       () => visibleHero.set(true),
@@ -18,7 +19,7 @@
   })
 </script>
 
-<Slide index={0}>
+<Slide index={0} target="hero">
   <div class="flex h-100">
     <div class="h-100 flex-1 flex center">
       <div bind:this={card} class="text-wrapper flex">
