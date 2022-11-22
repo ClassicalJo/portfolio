@@ -20,11 +20,9 @@
   }
   .container {
     grid-area: container;
-    justify-content: center;
-    margin: 0 40px;
+    justify-content: center;    
   }
-  .content {
-    max-width: 1900px;
+  .content {    
     overflow-y: auto;
     scroll-behavior: smooth;
   }

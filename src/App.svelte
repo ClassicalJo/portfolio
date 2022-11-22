@@ -3,6 +3,7 @@
   import Background from './background/Background.svelte'
   import Container from './common/Container.svelte'
   import { key, Scroller } from './common/Scroller'
+  import Footer from './footer/Footer.svelte'
   import Header from './header/Header.svelte'
   import Hero from './hero/Hero.svelte'
   import Home from './home/Home.svelte'
@@ -17,6 +18,7 @@
     <Home target="about" index={1} />
     <Home target="projects" index={2} />
     <Home target="contact" index={3} />
+    <Footer />
   </Container>
 </main>
 
