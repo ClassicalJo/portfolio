@@ -50,9 +50,9 @@
         </div>
       {/each}
     </div>
+    <button class="button left" on:click={backward}>Atras</button>
+    <button class="button right" on:click={forward}>Adelante</button>
   </div>
-  <button class="button left" on:click={backward}>Atras</button>
-  <button class="button right" on:click={forward}>Adelante</button>
 </div>
 
 <style>
@@ -67,8 +67,8 @@
     right: 50px;
   }
   .container {
-    background-color: rgba(12, 12, 12, 1);
-    height: 100%;
+    /* background-color: rgba(12, 12, 12, 1); */
+    
     justify-content: center;
     position: relative;
   }
@@ -80,11 +80,8 @@
     overflow: hidden;
   }
   .limiter {
-    background-color: rgba(122, 0, 0, 1);
-    flex: 1;
-    width: 100%;
-    display: grid;
-    grid-template-areas: 'main';
+    /* background-color: rgba(122, 0, 0, 1); */
+    display: grid;    
     grid-auto-flow: column;
   }
   .carousel {
