@@ -1,8 +1,8 @@
 <script lang="ts">
   import Item from './Item.svelte'
   import { flip } from 'svelte/animate'
-  import { slide } from 'svelte/transition'
-  import { identity } from 'svelte/internal'
+  import { slide } from 'svelte/transition'  
+  import Slider from './Slider.svelte'
 
   let uid = 1
   let items: { id: number; src: string }[] = [
@@ -33,12 +33,24 @@
     const item = items[items.length - 1]
     remove(item)
     addFirst(item)
+    retreat()
   }
   function forward() {
     const item = items[0]
     remove(item)
     addLast(item)
+    advance()
   }
+  function advance() {
+    if (currentIndex === items.length - 1) currentIndex = 0
+    else currentIndex++
+  }
+  function retreat() {
+    if (currentIndex === 0) currentIndex = items.length - 1
+    else currentIndex--
+  }
+  let currentIndex = 0
+  const totalItems = items.length
 </script>
 
 <div class="container flex flex-1">
@@ -50,6 +62,7 @@
         </div>
       {/each}
     </div>
+    <Slider {currentIndex} {totalItems} />
     <button class="button left" on:click={backward}>Atras</button>
     <button class="button right" on:click={forward}>Adelante</button>
   </div>
@@ -68,7 +81,7 @@
   }
   .container {
     /* background-color: rgba(12, 12, 12, 1); */
-    
+
     justify-content: center;
     position: relative;
   }
@@ -81,7 +94,7 @@
   }
   .limiter {
     /* background-color: rgba(122, 0, 0, 1); */
-    display: grid;    
+    display: grid;
     grid-auto-flow: column;
   }
   .carousel {

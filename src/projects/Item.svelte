@@ -1,6 +1,6 @@
 <script lang="ts">
   import Description from './Description.svelte'
-import Title from './Title.svelte'
+  import Title from './Title.svelte'
 
   export let src: string
   export let alt: string
