@@ -8,10 +8,10 @@ export type Vector = { x: number; y: number }
 export type Uniform = WebGLUniformLocation | null
 export interface TilesUniforms {
   positionAttributeLocation: number
+  primaryColorUniformLocation: Uniform
   resolutionUniformLocation: Uniform
   translationUniformLocation: Uniform
   timeUniformLocation: Uniform
-  progressUniformLocation: Uniform
 }
 
 export interface AnimationOptions {
