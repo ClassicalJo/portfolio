@@ -3,10 +3,11 @@
   import { flip } from 'svelte/animate'
 
   const [send, receive] = crossfade({
-    duration: d => Math.sqrt(d * 200)
+    duration: (d: number) => Math.sqrt(d * 800)
   })
   export let currentIndex: number
   export let totalItems: number
+  export let onClick: (int: number) => void
 </script>
 
 <div class="slider flex flex-1 center">
@@ -16,7 +17,7 @@
         {#if index === currentIndex}
           <div class="selected" in:receive={{ key: 0 }} out:send={{ key: 0 }} />
         {/if}
-        <button class="slider-button" />
+        <button class="slider-button" on:click={() => onClick(index)} />
       </div>
     {/each}
   </div>

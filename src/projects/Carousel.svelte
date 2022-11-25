@@ -1,53 +1,28 @@
 <script lang="ts">
-  import Item from './Item.svelte'
   import { flip } from 'svelte/animate'
-  import { slide } from 'svelte/transition'  
+  import Item from './Item.svelte'
   import Slider from './Slider.svelte'
-
-  let uid = 1
-  let items: { id: number; src: string }[] = [
+  let uid = 0
+  let items = [
     { id: uid++, src: './prism.png' },
     { id: uid++, src: './denim.webp' },
     { id: uid++, src: 'https://via.placeholder.com/800' },
+    { id: uid++, src: 'https://via.placeholder.com/700' },
+    { id: uid++, src: 'https://via.placeholder.com/600' },
     { id: uid++, src: 'https://via.placeholder.com/500' }
   ]
-  function addLast(input: { id: number; src: string }) {
-    const item = {
-      id: uid++,
-      src: input.src
-    }
-
-    items = [...items, item]
-  }
-  function addFirst(input: { id: number; src: string }) {
-    const item = {
-      id: input.id,
-      src: input.src
-    }
-    items = [item, ...items]
-  }
-  function remove(item: { id: number; src: string }) {
-    items = items.filter(t => t !== item)
-  }
-  function backward() {
-    const item = items[items.length - 1]
-    remove(item)
-    addFirst(item)
-    retreat()
-  }
-  function forward() {
-    const item = items[0]
-    remove(item)
-    addLast(item)
-    advance()
+  function setItems(index: number) {
+    currentIndex = index
   }
   function advance() {
     if (currentIndex === items.length - 1) currentIndex = 0
     else currentIndex++
+    return currentIndex
   }
   function retreat() {
     if (currentIndex === 0) currentIndex = items.length - 1
     else currentIndex--
+    return currentIndex
   }
   let currentIndex = 0
   const totalItems = items.length
@@ -56,15 +31,20 @@
 <div class="container flex flex-1">
   <div class="scene flex">
     <div class="limiter">
-      {#each items as item (item.id)}
-        <div class="carousel" transition:slide animate:flip={{ duration: 500 }}>
+      <div class="item" />
+      {#each items as item, index (item.id)}
+        <div
+          class="carousel"
+          class:selected={index === currentIndex}
+          animate:flip={{ duration: 500 }}
+        >
           <Item src={item.src} alt="" />
         </div>
       {/each}
     </div>
-    <Slider {currentIndex} {totalItems} />
-    <button class="button left" on:click={backward}>Atras</button>
-    <button class="button right" on:click={forward}>Adelante</button>
+    <Slider {currentIndex} {totalItems} onClick={setItems} />
+    <button class="button left" on:click={retreat}>Atras</button>
+    <button class="button right" on:click={advance}>Adelante</button>
   </div>
 </div>
 
@@ -80,8 +60,6 @@
     right: 50px;
   }
   .container {
-    /* background-color: rgba(12, 12, 12, 1); */
-
     justify-content: center;
     position: relative;
   }
@@ -93,12 +71,15 @@
     overflow: hidden;
   }
   .limiter {
-    /* background-color: rgba(122, 0, 0, 1); */
     display: grid;
-    grid-auto-flow: column;
+    position: relative;
+    grid-template-areas: 'main hidden';
   }
   .carousel {
-    left: -100%;
     position: relative;
+    grid-area: hidden;
+  }
+  .selected {
+    grid-area: main;
   }
 </style>
