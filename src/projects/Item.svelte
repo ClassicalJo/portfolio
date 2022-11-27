@@ -29,12 +29,9 @@
     grid-template-areas: main;
   }
   .item {
-    /* background-color: rgba(120, 255, 21, 0.3); */
+    backdrop-filter: grayscale(1);
+    background-color: rgba(0, 255, 255, 0.1);
     grid-area: main;
-  }
-  .content {
-    /* background: linear-gradient(rgba(255,0,0,0.3), rgba(0,0,0,0.3)); */
-    backdrop-filter: blur(3px);
   }
   img {
     grid-area: main;

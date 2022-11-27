@@ -2,6 +2,7 @@
   import { flip } from 'svelte/animate'
   import Item from './Item.svelte'
   import Slider from './Slider.svelte'
+  import Button from './Button.svelte'
   let uid = 0
   let items = [
     { id: uid++, src: './prism.png' },
@@ -36,6 +37,7 @@
         <div
           class="carousel"
           class:selected={index === currentIndex}
+          class:hidden={index !== currentIndex}
           animate:flip={{ duration: 500 }}
         >
           <Item src={item.src} alt="" />
@@ -43,22 +45,16 @@
       {/each}
     </div>
     <Slider {currentIndex} {totalItems} onClick={setItems} />
-    <button class="button left" on:click={retreat}>Atras</button>
-    <button class="button right" on:click={advance}>Adelante</button>
+    <Button left={true} onClick={retreat}>
+      <title>Previous project</title>
+    </Button>
+    <Button right={true} onClick={advance}>
+      <title>Next project</title>
+    </Button>
   </div>
 </div>
 
 <style>
-  .button {
-    position: absolute;
-    bottom: 0px;
-  }
-  .left {
-    left: 50px;
-  }
-  .right {
-    right: 50px;
-  }
   .container {
     justify-content: center;
     position: relative;
@@ -71,6 +67,7 @@
     overflow: hidden;
   }
   .limiter {
+    background-color: rgba(0, 255, 253, 0.2);
     display: grid;
     position: relative;
     grid-template-areas: 'main hidden';
@@ -81,5 +78,8 @@
   }
   .selected {
     grid-area: main;
+  }
+  .hidden {
+    visibility: hidden;
   }
 </style>

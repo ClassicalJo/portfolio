@@ -1,10 +1,12 @@
 <script lang="ts">
+  import { cubicOut } from 'svelte/easing'
   import { crossfade } from 'svelte/transition'
-  import { flip } from 'svelte/animate'
 
   const [send, receive] = crossfade({
-    duration: (d: number) => Math.sqrt(d * 800)
+    duration: (d: number) => Math.sqrt(d * 1000),
+    easing: cubicOut
   })
+
   export let currentIndex: number
   export let totalItems: number
   export let onClick: (int: number) => void
@@ -12,12 +14,17 @@
 
 <div class="slider flex flex-1 center">
   <div class="grid">
-    {#each Array(totalItems) as item, index (index)}
-      <div class="grid-item" animate:flip>
+    {#each Array(totalItems) as _, index}
+      <div class="grid-item flex flex-1">
         {#if index === currentIndex}
           <div class="selected" in:receive={{ key: 0 }} out:send={{ key: 0 }} />
         {/if}
-        <button class="slider-button" on:click={() => onClick(index)} />
+        <button
+          aria-label={`Display project ${currentIndex}`}
+          aria-pressed={currentIndex === index}
+          class="slider-button"
+          on:click={() => onClick(index)}
+        />
       </div>
     {/each}
   </div>
@@ -28,18 +35,24 @@
     position: relative;
     display: grid;
     grid-auto-flow: column;
-    height: 15px;
-    column-gap: 15px;
-    background-color: rgba(12, 100, 12, 0.7);
+    column-gap: 10px;
+    border-radius: 20px;
+    background: rgb(32, 191, 85);
+    background: linear-gradient(
+      90deg,
+      rgba(32, 191, 85, 0.5) 0%,
+      rgba(29, 26, 56, 0.5) 100%
+    );
+    margin: 10px;
+    backdrop-filter: blur(10px);
   }
   .grid-item {
     position: relative;
-    z-index: 1;
+    padding: 5px;
   }
   .slider {
     position: absolute;
     width: 100%;
-    height: 50px;
     bottom: 0px;
   }
   .slider-button {
@@ -47,15 +60,17 @@
     width: 15px;
     height: 15px;
     aspect-ratio: 1;
-    background-color: black;
+    border: 0;
+    background-color: rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    z-index: 2;
+    z-index: 3;
   }
   .selected {
     position: absolute;
-    width: 20px;
-    height: 20px;
-    background-color: aqua;
+    width: 15px;
+    height: 15px;
+    background: #202c39;
     border-radius: 100%;
+    z-index: 1;
   }
 </style>
