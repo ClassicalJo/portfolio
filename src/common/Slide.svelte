@@ -29,7 +29,7 @@
 
 <style>
   .slide {
-    padding: 0 40px;
+    min-width: 100vw;
     height: 100vh;
   }
 </style>
