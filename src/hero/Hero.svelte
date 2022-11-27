@@ -67,7 +67,7 @@
     @include mixins.borderRadius20;
     position: relative;
     border: 2px dashed rgba(255, 255, 255, 0.2);
-    width: 550px;
+    width: 100%;
     height: 350px;
     padding: 50px;
   }

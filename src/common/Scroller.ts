@@ -1,21 +1,18 @@
 export class Scroller {
   targets: ScrollTarget
-  constructor(public container?: HTMLElement) {
+  constructor() {
     this.targets = {}
-  }
-  setContainer(element: HTMLElement) {
-    this.container = element
   }
   setTarget(section: ScrollTargetKey, int: number) {
     this.targets[section] = int
   }
   go(section: ScrollTargetKey) {
-    const target = this.targets[section]
-    if (this.container && target !== undefined)
-      this.container.scroll({
-        top: target - 64,
-        behavior: 'smooth'
-      })
+    const top = this.targets[section]
+    if (top === undefined) return
+    window.scroll({
+      top: top - 64,
+      behavior: 'smooth'
+    })
   }
 }
 export const key = Symbol()
