@@ -3,21 +3,21 @@
   import Visual from './Visual.svelte'
 </script>
 
-<footer class="footer flex flex-1">
-  <Visual />
-  <div class="column flex-1 flex-column flex">
-    <p>Cosa numero 1</p>
-    <p>Cosa numero 2</p>
+<footer class="footer flex flex-1 flex-column center">
+  <div class="wrapper">
+    <Visual />
+    <div class="column flex-1 flex-column flex">
+      <a href="http://github.com/classicaljo/portfolio">See this repository on Github!</a>
+    </div>
   </div>
 </footer>
 
 <style lang="scss">
-  footer {
-    position: relative;
+  .footer {
     bottom: 0px;
-    width: 100%;
-    height: 300px;
-    background: rgb(214, 2, 112);    
+    width: 100vw;
+    /* padding: 20px; */
+    background: rgb(214, 2, 112);
     background: linear-gradient(
       90deg,
       rgba(214, 2, 112, 0.3) 0%,
@@ -26,6 +26,10 @@
     );
     backdrop-filter: blur(10px);
   }
-
-
+  .wrapper {
+    padding: 20px;
+  }
+  .invisible {
+    visibility: hidden;
+  }
 </style>

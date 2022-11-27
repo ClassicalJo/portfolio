@@ -14,7 +14,7 @@
 
 <style lang="scss">
   .visual {
-    margin: 20px;    
+    margin: 20px;
     align-items: center;
     justify-content: center;
   }
@@ -25,8 +25,7 @@
     text-align: center;
     color: white;
   }
-  .svg-wrapper {    
-    
-    align-items: center;    
+  .svg-wrapper {
+    align-items: center;
   }
 </style>

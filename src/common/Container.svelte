@@ -20,9 +20,9 @@
   }
   .container {
     grid-area: container;
-    justify-content: center;    
+    justify-content: center;
   }
-  .content {    
+  .content {
     overflow-y: auto;
     scroll-behavior: smooth;
   }
