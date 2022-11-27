@@ -1,50 +1,58 @@
 export const fragment = `
-// fragment shaders don't have a default precision so we need
-// to pick one. mediump is a good default. It means "medium precision"
 precision highp float;
-
-uniform vec2 u_resolution;
+uniform vec4 u_primary_color;
 uniform vec2 u_translation;
 uniform float u_time;
-uniform float u_progress;
-
-#define pi 3.14159265359
-
-mat4 rotationMatrix(vec3 axis, float angle) {
-  axis = normalize(axis);
-  float s = sin(angle);
-  float c = cos(angle);
-  float oc = 1.0 - c;
-  
-  return mat4(oc * axis.x * axis.x + c,           oc * axis.x * axis.y - axis.z * s,  oc * axis.z * axis.x + axis.y * s,  0.0,
-              oc * axis.x * axis.y + axis.z * s,  oc * axis.y * axis.y + c,           oc * axis.y * axis.z - axis.x * s,  0.0,
-              oc * axis.z * axis.x - axis.y * s,  oc * axis.y * axis.z + axis.x * s,  oc * axis.z * axis.z + c,           0.0,
-              0.0,                                0.0,                                0.0,                                1.0);
+uniform vec2 u_resolution;
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
 }
 
+float noise(vec2 uv, float seed_h, float seed_v) {
+    uv.x = uv.x + seed_h;
+    uv.y = uv.y + seed_v;
+    
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
 
-
-vec3 rotate(vec3 v, vec3 axis, float angle) {
-mat4 m = rotationMatrix(axis, angle);
-return (m * vec4(v, 1.0)).xyz;
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+    float alpha = .9;
+    return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) + alpha;
 }
+void main()
+{  
+    // Normalized pixel coordinates (from 0 to 1)
+    vec2 uv = u_translation / u_resolution.x;
+    
+    // animation parameters 
+    float horizontal_speed = 0.0;
+    float vertical_speed = 0.0;
+    float horizontal_oscillation_factor = -3.0;
+    float vertical_oscillation_factor = 1.0;
+    float horizontal_oscillation_speed = 1.0;
+    float vertical_oscillation_speed = 5.0;
+    float horizontal_oscillation_frequency = -4.0;
+    float vertical_oscillation_frequency = 1.0;
+    float chaos_factor = 2.0;
+    float time = u_time * .0003;
 
-float plot(vec2 st, float time) {    
-  return step((st.x+st.y)/2., sin(sin(st.x*100.)*55. + time)*.05 +.5);
-}
+    // noise
+    uv = chaos_factor * uv;
+    uv.x = uv.x - time * horizontal_speed;
+    uv.y = uv.y + time * vertical_speed;
+ 
+    float horizontal_seed = horizontal_oscillation_frequency * noise(uv, horizontal_oscillation_speed * time * horizontal_oscillation_factor, 0.0);
+    float vertical_seed = vertical_oscillation_frequency * noise(uv, 0.0, vertical_oscillation_speed * time * vertical_oscillation_factor);
 
-void main() {
-  // variables
-  vec2 uv = gl_FragCoord.xy / u_resolution;    
-  vec2 p = vec2(0.5) - uv;
-  
-  float mod_y = mod(uv.y, 15.);
-  float mod_x = mod(u_translation.x, 15.);
-  float rotation =  u_progress;
-  float movement = u_time *0.05;
-  vec3 colors = vec3(1.) * vec3(mod_x, mod_y, 1) * 0.1;
-  vec3 rotated = rotate(colors, vec3(1.), rotation);
-  //Set fragment color
-  gl_FragColor = vec4(rotated.xyz * (uv.y*2.-5.) * plot(uv, movement) , 1.);
+    float noise = noise(uv, horizontal_seed, vertical_seed);
+    vec3 col = vec3(noise, noise, noise);
+    
+    // Output to screen
+    gl_FragColor = vec4(col,1.0) * u_primary_color;
 }
 `

@@ -7,6 +7,7 @@
   import Header from './header/Header.svelte'
   import Hero from './hero/Hero.svelte'
   import Home from './home/Home.svelte'
+  import Projects from './projects/Projects.svelte'
   setContext(key, new Scroller())
 </script>
 
@@ -16,7 +17,7 @@
   <Container>
     <Hero />
     <Home target="about" index={1} />
-    <Home target="projects" index={2} />
+    <Projects />
     <Home target="contact" index={3} />
     <Footer />
   </Container>

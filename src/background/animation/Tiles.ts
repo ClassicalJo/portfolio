@@ -35,9 +35,12 @@ export class Tiles implements CanvasAnimation {
     // look up where the vertex data needs to go.
     const positionAttributeLocation = this.gl.getAttribLocation(program, 'a_position')
     // look up uniform locations
+    const primaryColorUniformLocation = this.gl.getUniformLocation(
+      program,
+      'u_primary_color'
+    )
     const resolutionUniformLocation = this.gl.getUniformLocation(program, 'u_resolution')
     const timeUniformLocation = this.gl.getUniformLocation(program, 'u_time')
-    const progressUniformLocation = this.gl.getUniformLocation(program, 'u_progress')
     const translationUniformLocation = this.gl.getUniformLocation(
       program,
       'u_translation'
@@ -78,8 +81,8 @@ export class Tiles implements CanvasAnimation {
       positionAttributeLocation,
       resolutionUniformLocation,
       translationUniformLocation,
-      timeUniformLocation,
-      progressUniformLocation
+      primaryColorUniformLocation,
+      timeUniformLocation
     }
   }
   generateTiles(tileSize: number): Vector[] {
@@ -117,9 +120,14 @@ export class Tiles implements CanvasAnimation {
     //Add rendering here
     this.tiles.forEach((tile: Vector) => {
       // Set translation
+      this.gl.uniform2f(
+        this.locations.resolutionUniformLocation,
+        this.canvas.width,
+        this.canvas.height
+      )
       this.gl.uniform2f(this.locations.translationUniformLocation, tile.x, tile.y)
       // Pass the color int
-      this.gl.uniform1f(this.locations.progressUniformLocation, this.color)
+      this.gl.uniform4f(this.locations.primaryColorUniformLocation, 0.77, 1, 0.99, 1)
       // Pass the lifetime int
       this.gl.uniform1f(this.locations.timeUniformLocation, this.lifetime)
       // Draw the rectangle.
