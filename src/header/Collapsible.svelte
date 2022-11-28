@@ -38,9 +38,7 @@
 </script>
 
 <div class="collapsible flex flex-1" class:expanded={!collapsed} class:collapsing>
-  <div class="menu">
-    <Menu onClick={() => showMenu(!collapsed)} />
-  </div>
+  <Menu onClick={() => showMenu(!collapsed)} />
   <nav class="navbar" class:collapsed class:hiding={collapsing}>
     <Link onClick={goTo('hero')}>Home</Link>
     <Link onClick={goTo('about')}>About me</Link>
@@ -75,11 +73,6 @@
     );
     pointer-events: none;
   }
-  .menu {
-    display: none;
-    padding: 20px;
-  }
-
   .navbar {
     flex: 1;
     display: flex;
@@ -92,10 +85,6 @@
     .collapsed {
       display: none;
     }
-    .menu {
-      display: flex;
-    }
-
     .navbar {
       width: 100%;
       flex: 1;
