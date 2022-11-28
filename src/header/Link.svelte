@@ -1,15 +1,16 @@
 <script lang="ts">
-  import { getContext } from 'svelte'
-  import type { ScrollTargetKey } from '../common/Scroller'
-  import { key, Scroller } from '../common/Scroller'
-  import '../scss/base.scss'
-  export let target: ScrollTargetKey
-  let scroller = getContext<Scroller>(key)
-  const onClick = () => scroller.go(target)
+  export let onClick: () => void
+  import { keyDown } from '../common/utils'
 </script>
 
 <div class="link flex flex-column center">
-  <div role="button" on:click={onClick} aria-label="Go to section" on:keydown={onClick}>
+  <div
+    role="button"
+    aria-label="Go to section"
+    tabindex="0"
+    on:click={onClick}
+    on:keydown={keyDown(onClick)}
+  >
     <slot />
   </div>
 </div>
