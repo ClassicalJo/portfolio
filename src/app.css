@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alexandria&display=swap');
+
 html, body, p, h1, h2, h3, h4 {
   padding: 0;
   margin: 0;
-  font-family: 'Share Tech Mono', monospace;
+  font-family: Alexandria, monospace;
 }
