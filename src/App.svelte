@@ -17,6 +17,7 @@
   <Home target="about" index={1} />
   <Projects />
   <Home target="contact" index={3} />
+  <Footer />
 </main>
 
 <style>

@@ -8,7 +8,7 @@
 >
   <title>My logo, a white wolf outline</title>
   <path
-    fill="rgba(230,230,230,1)"
+    fill="rgba(255,255,255,1)"
     d="
       M 50.00,50.00 
       C 50.00,50.00 50.00,400.00 50.00,400.00
@@ -25,6 +25,6 @@
 
 <style lang="scss">
   .lobo {
-    filter: drop-shadow(5px 5px rgba(0, 0, 0, 0.3));
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.5));
   }
 </style>
