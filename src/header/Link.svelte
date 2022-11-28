@@ -16,7 +16,7 @@
   </div>
 </div>
 
-<style lang="scss">  
+<style lang="scss">
   .link {
     cursor: pointer;
     position: relative;
@@ -31,7 +31,7 @@
     transition: background-color 0.3s ease;
   }
   .link:active {
-    background-color: rgba(0,0,0,0.3);
+    background-color: rgba(0, 0, 0, 0.3);
   }
   .button {
     font-size: 18px;
