@@ -4,13 +4,13 @@
   import { key, Scroller } from './Scroller'
   import { setObservable } from './setObservable'
   import { slideIndex } from './store'
+  import Title from './Title.svelte'
   export let index: number
 
   let section: HTMLElement
   const onObserve = () => slideIndex.updateColor(index)
   const onUnobserve = undefined
   const options: IntersectionObserverInit = { threshold: 0.5 }
-
   export let target: ScrollTargetKey
   const scroller = getContext<Scroller>(key)
 
@@ -24,6 +24,7 @@
 </script>
 
 <section bind:this={section} class="slide" id={target}>
+  <Title title={target} {index} />
   <slot />
 </section>
 
