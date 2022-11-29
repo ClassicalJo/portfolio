@@ -4,6 +4,7 @@
   import Slide from '../common/Slide.svelte'
   import { visibleHero } from '../common/store'
   import '../scss/base.scss'
+  import Navigation from './Navigation.svelte'
   import Pretitle from './Pretitle.svelte'
   import Title from './Title.svelte'
   let card: HTMLElement
@@ -19,16 +20,18 @@
   })
 </script>
 
-<Slide index={0} target="hero">
+<Slide index={0} target="home">
   <div class="flex h-100">
-    <div class="h-100 flex-1 flex center">
-      <div bind:this={card} class="text-wrapper flex">
-        <div class="title-wrapper flex align-left">
+    <div bind:this={card} class="h-100 flex-1 flex flex-column">
+      <div class="text-wrapper flex flex-1 flex-column">
+        <div class="flex flex-1 flex-column">
           <Title />
           <Pretitle />
         </div>
+        <Navigation />
       </div>
     </div>
+    <div class="flex flex-1" />
   </div>
 </Slide>
 
@@ -37,38 +40,14 @@
   .h-100 {
     height: 100%;
   }
-  .text-wrapper::before {
-    @include mixins.beforeAbsolute;
-    @include mixins.borderRadius20;
-    background: linear-gradient(
-      338deg,
-      rgba(255, 255, 255, 0) 0%,
-      rgba(0, 255, 255, 0.5) 100%
-    );
-    mask-image: linear-gradient(338deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-    background-image: url('/prism.png');
-    background-repeat: repeat;
-    -webkit-mask-image: linear-gradient(
-      338deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
-  }
   .text-wrapper {
-    @include mixins.borderRadius20;
-    position: relative;
     backdrop-filter: blur(10px);
     padding: 25px;
-  }
-  .title-wrapper::before {
-    @include mixins.beforeAbsolute;
-  }
-  .title-wrapper {
-    @include mixins.borderRadius20;
-    position: relative;
-    border: 2px dashed rgba(255, 255, 255, 0.2);
-    width: 100%;
-    height: 350px;
-    padding: 50px;
+    background: linear-gradient(
+      90deg,
+      rgba(214, 2, 112, 0.3) 0%,
+      rgba(155, 79, 150, 0.3) 50%,
+      rgba(0, 56, 168, 0.1) 100%
+    );
   }
 </style>

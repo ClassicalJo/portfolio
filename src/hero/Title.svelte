@@ -1,18 +1,13 @@
 <script lang="ts"></script>
 
-<div class="flex flex-1">
-  <h1 class="flex-1 gradient-text">ClassicalJo</h1>
-</div>
+<h1 class="hero-title">ClassicalJo</h1>
 
 <style lang="scss">
-  @use '../scss/mixins.scss';
-
-  div {
-    justify-content: center;
-  }
-  h1 {
-    @include mixins.gradientText;
-    font-weight: 400;
-    font-size: 72px;
+  .hero-title {
+    margin: 25px;
+    color: #555;
+    font-weight: 800;
+    font-size: 144px;
+    mix-blend-mode: multiply;
   }
 </style>

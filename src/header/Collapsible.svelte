@@ -40,7 +40,7 @@
 <div class="collapsible flex flex-1" class:expanded={!collapsed} class:collapsing>
   <Menu onClick={() => showMenu(!collapsed)} />
   <nav class="navbar" class:collapsed class:hiding={collapsing}>
-    <Link onClick={goTo('hero')}>Home</Link>
+    <Link onClick={goTo('home')}>Home</Link>
     <Link onClick={goTo('about')}>About me</Link>
     <Link onClick={goTo('projects')}>Projects</Link>
     <Link onClick={goTo('contact')}>Contact</Link>

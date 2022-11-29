@@ -4,7 +4,7 @@
   const right = index % 2 === 0
 </script>
 
-<h1 class="title" class:hidden={!index} class:right>
+<h1 class="title" class:right>
   {title}
 </h1>
 
@@ -17,10 +17,9 @@
     color: #202c39;
     opacity: 0.2;
     writing-mode: vertical-lr;
+    text-align: center;
   }
-  .hidden {
-    display: none;
-  }
+
   .right {
     writing-mode: vertical-rl;
   }
