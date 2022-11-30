@@ -1,47 +1,45 @@
 <script lang="ts">
   export let onClick: () => void
+  export let color: string
 </script>
 
-<div class="wrapper flex-1">
+<div class="wrapper flex-1" style={`--link-color: ${color}`}>
   <button class="nav-button" on:click={onClick}>
     <slot />
   </button>
 </div>
 
 <style lang="scss">
+  @use '../scss/text';
+  @use '../scss/breakpoints';
+  $color: attr(data-color);
   .wrapper {
     position: relative;
   }
-  .nav-button:before {
-    content: ' ';
-    position: absolute;
-    border-top: 1px solid white;
-    z-index: -1;
-    top: 50%;
-    left: -25px;
-    width: 25px;
-    right: 0;
-  }
   .nav-button {
-    position: relative;
-    padding: 12px 24px;
-    font-size: 24px;
-    font-weight: 600;
-    width: 250px;
-    background-color: rgba(255, 255, 255, 0.3);
-    border: 0;
-    border-left: 1px solid white;
-    border-radius: 0px 20px 0px 0px;
-    text-align: center;
-    cursor: pointer;
+    font-family: Nunito Sans;
     color: black;
-    transition: background-color 0.2s ease;
-  }
-  .nav-button:active {
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(255, 255, 255, 0.6);
+    mix-blend-mode: lighten;
+    border: 0px;
+    font-weight: 200;
+    border-left: 20px solid var(--link-color);
+    border-radius: 0px 30px 30px 0px;
+    padding: 15px 30px;
+    cursor: pointer;
+    @include text.d-l2;
+    width: 300px;
   }
   .nav-button:hover {
     background-color: rgba(255, 255, 255, 0.8);
-    transition: background-color 0.2s ease;
+    transition: background-color 0.3s ease;
+  }
+  .nav-button:active {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  @include breakpoints.lg {
+    .nav-button {
+      @include text.m-l2;
+    }
   }
 </style>

@@ -21,8 +21,8 @@
 </script>
 
 <Slide index={0} target="home">
-  <div class="flex h-100">
-    <div bind:this={card} class="h-100 flex-1 flex flex-column">
+  <div class="flex h-100 container">
+    <div bind:this={card} class="h-100 flex-1 flex flex-column content">
       <div class="text-wrapper flex flex-1 flex-column">
         <div class="flex flex-1 flex-column">
           <Title />
@@ -31,14 +31,18 @@
         <Navigation />
       </div>
     </div>
-    <div class="flex flex-1" />
+    <div class="flex flex-1 whitespace" />
   </div>
 </Slide>
 
 <style lang="scss">
   @use '../scss/mixins.scss';
+  @use '../scss/breakpoints.scss';
   .h-100 {
-    height: 100%;
+    min-height: 100vh;
+  }
+  .content {
+    min-width: 992px;
   }
   .text-wrapper {
     backdrop-filter: blur(10px);
@@ -49,5 +53,21 @@
       rgba(155, 79, 150, 0.3) 50%,
       rgba(0, 56, 168, 0.1) 100%
     );
+  }
+  .whitespace {
+    min-height: 300px;
+  }
+  @include breakpoints.lg {
+    .content {
+      min-height: 100vh;
+    }
+    .text-wrapper {
+      padding: 25px;
+    }
+  }
+  @include breakpoints.md {
+    .text-wrapper {
+      padding: 10px;
+    }
   }
 </style>

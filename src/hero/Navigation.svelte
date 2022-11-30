@@ -10,20 +10,17 @@
 
 <div class="navbar-wrapper flex flex-1">
   <nav class="navbar flex flex-1 flex-column halftone">
-    <Link onClick={goTo('about')}>About me</Link>
-    <Link onClick={goTo('projects')}>Projects</Link>
-    <Link onClick={goTo('contact')}>Contact</Link>
+    <Link onClick={goTo('about')} color="rgba(214, 2, 112, 1)">About me</Link>
+    <Link onClick={goTo('projects')} color="rgba(155, 79, 150, 1)">Projects</Link>
+    <Link onClick={goTo('contact')} color="rgba(0, 56, 168, 1)">Contact</Link>
   </nav>
 </div>
 
 <style lang="scss">
   .navbar-wrapper {
-    border-left: 1px solid white;
-    border-bottom: 1px solid white;
     position: relative;
   }
   .navbar {
-    margin: 25px;
     margin-top: 0px;
     gap: 10px;
     position: relative;
