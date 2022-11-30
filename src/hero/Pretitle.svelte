@@ -5,14 +5,13 @@
 </div>
 
 <style lang="scss">
-  @use '../scss/text.scss';
+  @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
-  @use 'sass:color';
   .container {
     margin: 25px;
   }
   .pretitle {
-    @include text.d-l2;
+    @include text-d-l2;
     font-family: Noto Sans JP;
     letter-spacing: -2px;
     margin: 0px 5px;
@@ -22,7 +21,7 @@
 
   @include breakpoints.md {
     .pretitle {
-      @include text.m-l2;
+      @include text-m-l2;
     }
   }
 </style>

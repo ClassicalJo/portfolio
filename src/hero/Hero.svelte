@@ -36,7 +36,7 @@
 </Slide>
 
 <style lang="scss">
-  @use '../scss/mixins.scss';
+  @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
   .h-100 {
     min-height: 100vh;

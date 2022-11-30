@@ -10,9 +10,8 @@
 </div>
 
 <style lang="scss">
-  @use '../scss/text';
-  @use '../scss/breakpoints';
-  $color: attr(data-color);
+  @use '../scss/global.scss' as *;
+  @use '../scss/breakpoints.scss';
   .wrapper {
     position: relative;
   }
@@ -27,7 +26,7 @@
     border-radius: 0px 30px 30px 0px;
     padding: 15px 30px;
     cursor: pointer;
-    @include text.d-l2;
+    @include text-d-l2;
     width: 300px;
   }
   .nav-button:hover {
@@ -39,7 +38,7 @@
   }
   @include breakpoints.lg {
     .nav-button {
-      @include text.m-l2;
+      @include text-m-l2;
     }
   }
 </style>
