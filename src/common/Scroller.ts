@@ -17,7 +17,7 @@ export class Scroller {
 }
 export const key = Symbol()
 export type ScrollTarget = {
-  hero?: number
+  home?: number
   about?: number
   projects?: number
   contact?: number
