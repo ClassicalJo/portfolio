@@ -1,24 +1,17 @@
 <script lang="ts">
   export let onClick: () => void
-  import { keyDown } from '../common/utils'
 </script>
 
-<div
-  class="link flex flex-column center"
-  role="button"
-  aria-label="Go to section"
-  tabindex="0"
-  on:click={onClick}
-  on:keydown={keyDown(onClick)}
->
-  <div class="button">
+<div class="link flex flex-column center">
+  <button class="button" on:click={onClick} aria-label="Go to section">
     <slot />
-  </div>
+  </button>
 </div>
 
 <style lang="scss">
+  @use '../scss/global.scss' as *;
+  @use '../scss/breakpoints.scss';
   .link {
-    cursor: pointer;
     position: relative;
     border-left: 1px solid rgba(255, 255, 255, 0.5);
     user-select: none;
@@ -27,19 +20,19 @@
     border-right: 1px solid rgba(255, 255, 255, 0.5);
   }
   .link:hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transition: background-color 0.3s ease;
+    @include link-hover;
   }
   .link:active {
-    background-color: rgba(0, 0, 0, 0.3);
+    @include link-active;
   }
   .button {
+    @include link-button;
     font-size: 18px;
-    font-family: Alexandria;
+    font-family: Noto Sans JP;
     color: white;
-    text-shadow: 2px 2px black;
+    text-shadow: 2px 2px $black;
   }
-  @media all and (max-width: 800px) {
+  @include breakpoints.lg {
     .link {
       border-left: 0;
     }

@@ -15,13 +15,15 @@
 </header>
 
 <style lang="scss">
+  @use '../scss/global.scss' as *;
   .header-container {
     position: fixed;
     width: 100%;
     z-index: 5;
   }
   .header {
-    backdrop-filter: blur(10px);
+    background: $gradientFooter;
+    backdrop-filter: $backdropBlur;
     min-height: 64px;
     flex: 1;
   }

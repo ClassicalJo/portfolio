@@ -49,6 +49,7 @@
 
 <style lang="scss">
   @use '../scss/global.scss' as *;
+  @use '../scss/breakpoints.scss';
   .collapsible {
     flex: 1;
     flex-direction: row;
@@ -63,21 +64,14 @@
       rgba(255, 255, 255, 0.2) 0%,
       rgba(255, 255, 255, 0) 100%
     );
-    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
-    background-image: url('/prism.png');
-    background-repeat: repeat;
-    -webkit-mask-image: linear-gradient(
-      338deg,
-      rgba(0, 0, 0, 0) 0%,
-      rgba(0, 0, 0, 0.3) 100%
-    );
+
     pointer-events: none;
   }
   .navbar {
     flex: 1;
     display: flex;
   }
-  @media all and (max-width: 800px) {
+  @include breakpoints.lg {
     .collapsible {
       flex-direction: column;
       align-items: flex-end;

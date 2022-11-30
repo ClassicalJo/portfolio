@@ -2,7 +2,8 @@
   import '../scss/base.scss'
 </script>
 
-<div class="container flex flex-1 flex-column">
+<div class="container relative flex flex-1 flex-column">
+  <img class="absolute cloud" src="./cloud.png" alt="" />
   <p class="logo">ClassicalJo</p>
 </div>
 
@@ -10,16 +11,22 @@
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
   .container {
-    justify-content: center;
     order: -1;
   }
-  .logo {
-    font-size: 32px;
+  .cloud {
+    position: absolute;
+    mix-blend-mode: darken;
+    width: 200px;
+    height: auto;
   }
-  @media all and (max-width: 800px) {
+  .logo {
+    font-family: Alexandria;
+    margin: 15px 10px;
+    @include text-d-l3;
+  }
+  @include breakpoints.lg {
     .container {
       position: absolute;
-      height: 64px;
       width: 50%;
     }
   }

@@ -39,6 +39,7 @@
 </div>
 
 <style lang="scss">
+  @use '../scss/breakpoints.scss';
   .menu {
     display: none;
     margin: 10px;
@@ -47,7 +48,7 @@
     background-color: white;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   }
-  @media all and (max-width: 800px) {
+  @include breakpoints.lg {
     .menu {
       display: block;
       position: relative;
