@@ -15,16 +15,12 @@
 </footer>
 
 <style lang="scss">
+  @use '../scss/global.scss' as *;
   .footer {
     bottom: 0px;
     width: 100vw;
     background: rgb(214, 2, 112);
-    background: linear-gradient(
-      90deg,
-      rgba(214, 2, 112, 0.3) 0%,
-      rgba(155, 79, 150, 0.3) 50%,
-      rgba(0, 56, 168, 0.3) 100%
-    );
+    background: $gradientFooter;
     backdrop-filter: blur(10px);
   }
   .wrapper {
@@ -40,7 +36,7 @@
     background-color: white;
     border-radius: 20px;
     padding: 5px 10px;
-    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
+    box-shadow: $shadow-box-3;
   }
   .link:visited {
     color: inherit;
