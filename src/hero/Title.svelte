@@ -6,8 +6,8 @@
 </div>
 
 <style lang="scss">
+  @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
-  @use '../scss/text.scss';
   .wrapper {
     position: relative;
     margin: 25px;
@@ -21,14 +21,14 @@
   }
 
   .hero-title {
-    @include text.d-l1;
+    @include text-d-l1;
     color: #555;
     mix-blend-mode: multiply;
     margin: 25px 0;
   }
   @include breakpoints.md {
     .hero-title {
-      @include text.m-l1;
+      @include text-m-l1;
       margin: 10px 0px;
     }
     .cloud {

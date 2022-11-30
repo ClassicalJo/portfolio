@@ -48,7 +48,7 @@
 </div>
 
 <style lang="scss">
-  @use '../scss/mixins.scss';
+  @use '../scss/global.scss' as *;
   .collapsible {
     flex: 1;
     flex-direction: row;
@@ -57,7 +57,7 @@
   }
 
   .collapsible::before {
-    @include mixins.beforeAbsolute;
+    @include beforeAbsolute;
     background: linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.2) 0%,

@@ -5,9 +5,10 @@
 </p>
 
 <style lang="scss">
-  @use '../scss/mixins.scss';
+  @use '../scss/global.scss' as *;
+
   .title {
-    @include mixins.gradientText;
+    @include gradientText;
     font-size: 30px;
     filter: drop-shadow(2px 2px grey);
   }

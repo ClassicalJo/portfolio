@@ -1,0 +1,18 @@
+//Colours
+$red: rgb(214, 2, 112);
+$purple: rgba(155, 79, 150);
+$blue: rgba(0, 56, 168);
+
+//Gradients
+$gradientFooter: linear-gradient(90deg,
+        rgba(214, 2, 112, 0.3) 0%,
+        rgba(155, 79, 150, 0.3) 50%,
+        rgba(0, 56, 168, 0.3) 100%);
+$gradientHero: linear-gradient(90deg,
+        rgba(214, 2, 112, 0.3) 0%,
+        rgba(155, 79, 150, 0.3) 50%,
+        rgba(0, 56, 168, 0.1) 100%);
+
+// 
+
+$shadow-box-3: 3px 3px 3px rgba(0, 0, 0, 0.3);

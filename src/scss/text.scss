@@ -1,36 +1,36 @@
 // D for desktop, M for mobile
-@mixin d-l1 {
+@mixin text-d-l1 {
     font-size: 132px;
     font-weight: bold;
     line-height: 80%;
 }
 
-@mixin d-l2 {
+@mixin text-d-l2 {
     font-size: 48px;
     font-weight: bold;
     line-height: 80%;
 }
 
-@mixin d-l3 {
+@mixin text-d-l3 {
     font-size: 32px;
     font-weight: bold;
     line-height: 100%;
 }
 
-@mixin m-l1 {
+@mixin text-m-l1 {
     font-size: 84px;
     font-weight: bold;
     line-height: 80%;
     
 }
 
-@mixin m-l2 {
+@mixin text-m-l2 {
     font-size: 36px;
     font-weight: bold;
     line-height: 80%;
 }
 
-@mixin m-l3 {
+@mixin text-m-l3 {
     font-size: 24px;
     font-weight: bold;
     line-height: 100%;

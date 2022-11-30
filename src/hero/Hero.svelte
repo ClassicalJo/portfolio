@@ -36,7 +36,7 @@
 </Slide>
 
 <style lang="scss">
-  @use '../scss/mixins.scss';
+  @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
   .h-100 {
     min-height: 100vh;
@@ -47,12 +47,7 @@
   .text-wrapper {
     backdrop-filter: blur(10px);
     padding: 25px;
-    background: linear-gradient(
-      90deg,
-      rgba(214, 2, 112, 0.3) 0%,
-      rgba(155, 79, 150, 0.3) 50%,
-      rgba(0, 56, 168, 0.1) 100%
-    );
+    background: $gradientHero;
   }
   .whitespace {
     min-height: 300px;

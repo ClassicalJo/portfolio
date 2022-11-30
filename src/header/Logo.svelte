@@ -7,14 +7,14 @@
 </div>
 
 <style lang="scss">
-  @use '../scss/mixins.scss';
+  @use '../scss/global.scss' as *;
+  @use '../scss/breakpoints.scss';
   .container {
     justify-content: center;
     order: -1;
   }
   .logo {
     font-size: 32px;
-    @include mixins.gradientText;
   }
   @media all and (max-width: 800px) {
     .container {

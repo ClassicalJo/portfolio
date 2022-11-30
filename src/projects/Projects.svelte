@@ -6,5 +6,3 @@
 <Slide target="projects" index={2}>
   <Carousel />
 </Slide>
-
-<style lang="scss"></style>
