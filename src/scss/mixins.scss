@@ -16,12 +16,17 @@
     filter: drop-shadow(3px 3px #333);
 }
 
-@mixin link-button {
-    height: 100%;
-    width: 100%;
-    background: none;    
+@mixin button {
+    background: none;
     border: 0px;
     cursor: pointer;
+}
+
+@mixin link-button {
+    @include button;
+    height: 100%;
+    width: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @mixin link-hover {

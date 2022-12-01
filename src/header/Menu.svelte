@@ -1,15 +1,8 @@
 <script lang="ts">
-  import { keyDown } from '../common/utils'
   export let onClick: () => void
 </script>
 
-<div
-  class="menu"
-  role="button"
-  tabindex="0"
-  on:click={onClick}
-  on:keydown={keyDown(onClick)}
->
+<button class="menu relative" on:click={onClick}>
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -5 50 40">
     <path
       fill="black"
@@ -36,11 +29,13 @@
              45.00,30.00 30.00,30.00 25.00,30.00 Z"
     />
   </svg>
-</div>
+</button>
 
 <style lang="scss">
+  @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
   .menu {
+    @include button;
     display: none;
     margin: 10px;
     padding: 6px;
@@ -50,11 +45,11 @@
   }
   @include breakpoints.lg {
     .menu {
+      position: absolute;
+      top: 0px;
+      right: 0px;
       display: block;
-      position: relative;
-      border-radius: 5px;
       box-shadow: 2px 2px rgba(0, 0, 0, 0.3);
-      cursor: pointer;
     }
     .menu:after {
       content: '';

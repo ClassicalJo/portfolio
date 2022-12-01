@@ -2,100 +2,34 @@
   import { getContext } from 'svelte'
   import type { ScrollTargetKey } from '../common/Scroller'
   import { key, Scroller } from '../common/Scroller'
-  import { visibleHero } from '../common/store'
-  import '../scss/base.scss'
-  import Link from './Link.svelte'
+  import { currentSection } from '../common/store'
   import Menu from './Menu.svelte'
+  import NavBar from './NavBar.svelte'
 
-  let collapsed = true
-  let collapsing = false
-  let timeout: NodeJS.Timeout
-  $: {
-    if ($visibleHero) collapsed = true
-  }
-
-  function showMenu(value: boolean) {
-    if (collapsing) {
-      clearTimeout(timeout)
-      collapsing = false
-    }
-    if (value) {
-      collapsing = true
-      timeout = setTimeout(() => {
-        collapsing = false
-      }, 1000)
-    }
-    collapsed = value
-  }
+  let expanded = false
+  const expand = (value: boolean) => (expanded = value)
 
   let scroller = getContext<Scroller>(key)
-  function goTo(target: ScrollTargetKey) {
-    return () => {
-      showMenu(true)
-      scroller.go(target)
-    }
+  const goTo = (target: ScrollTargetKey) => () => {
+    expand(false)
+    scroller.go(target)
   }
+
+  let renderSections: [ScrollTargetKey, string][] = [
+    ['home', 'Home'],
+    ['about', 'About me'],
+    ['projects', 'Projects'],
+    ['contact', 'Contact']
+  ]
+
+  let sections = renderSections.map(([section, title]) => ({
+    title,
+    link: goTo(section),
+    current: $currentSection === section
+  }))
 </script>
 
-<div class="collapsible flex flex-1" class:expanded={!collapsed} class:collapsing>
-  <Menu onClick={() => showMenu(!collapsed)} />
-  <nav class="navbar" class:collapsed class:hiding={collapsing}>
-    <Link onClick={goTo('home')}>Home</Link>
-    <Link onClick={goTo('about')}>About me</Link>
-    <Link onClick={goTo('projects')}>Projects</Link>
-    <Link onClick={goTo('contact')}>Contact</Link>
-  </nav>
+<div class="collapsible flex flex-1 flex-column">
+  <Menu onClick={() => expand(!expanded)} />
+  <NavBar {expanded} {sections} />
 </div>
-
-<style lang="scss">
-  @use '../scss/global.scss' as *;
-  @use '../scss/breakpoints.scss';
-  .collapsible {
-    flex: 1;
-    flex-direction: row;
-    height: 64px;
-    overflow: hidden;
-  }
-
-  .collapsible::before {
-    @include beforeAbsolute;
-    background: linear-gradient(
-      180deg,
-      rgba(255, 255, 255, 0.2) 0%,
-      rgba(255, 255, 255, 0) 100%
-    );
-
-    pointer-events: none;
-  }
-  .navbar {
-    flex: 1;
-    display: flex;
-  }
-  @include breakpoints.lg {
-    .collapsible {
-      flex-direction: column;
-      align-items: flex-end;
-    }
-    .collapsed {
-      display: none;
-    }
-    .navbar {
-      width: 100%;
-      flex: 1;
-      flex-direction: column;
-    }
-    .expanded {
-      height: 100vh;
-      transition: height 1s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .collapsing {
-      height: 64px;
-      transition: height 1s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-    .hiding {
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      display: inherit;
-    }
-  }
-</style>

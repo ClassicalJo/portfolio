@@ -19,3 +19,7 @@ $gradientHero: linear-gradient(90deg,
 $shadow-box-3: 3px 3px 3px rgba(0, 0, 0, 0.3);
 
 $backdropBlur: blur(10px);
+
+//easings:
+$easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
+$easeOutQuart: cubic-bezier(0.25, 1, 0.5, 1);

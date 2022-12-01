@@ -7,15 +7,16 @@
 
 <header class="header-container flex flex-1">
   {#if !$visibleHero}
-    <div class="header flex" transition:translate>
-      <Collapsible />
+    <div class="header flex flex-1" transition:translate>
       <Logo />
+      <Collapsible />
     </div>
   {/if}
 </header>
 
 <style lang="scss">
   @use '../scss/global.scss' as *;
+  @use '../scss/breakpoints.scss';
   .header-container {
     position: fixed;
     width: 100%;
@@ -25,6 +26,10 @@
     background: $gradientFooter;
     backdrop-filter: $backdropBlur;
     min-height: 64px;
-    flex: 1;
+  }
+  @include breakpoints.lg {
+    .header {
+      flex-direction: column;
+    }
   }
 </style>

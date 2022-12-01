@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store'
+import type { ScrollTargetKey } from './Scroller'
 
 function createSlideIndex() {
   const colors = [5, 1, 3]
@@ -13,3 +14,4 @@ function createSlideIndex() {
 export const slideIndex = createSlideIndex()
 
 export const visibleHero = writable(true)
+export const currentSection = writable<ScrollTargetKey>('home')

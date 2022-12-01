@@ -1,8 +1,9 @@
 <script lang="ts">
   export let onClick: () => void
+  export let current: boolean
 </script>
 
-<div class="link flex flex-column center">
+<div class="link flex flex-column center" aria-current="step" class:current>
   <button class="button" on:click={onClick} aria-label="Go to section">
     <slot />
   </button>
