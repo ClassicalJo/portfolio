@@ -3,17 +3,19 @@
   import type { ScrollTargetKey } from './Scroller'
   import { key, Scroller } from './Scroller'
   import { setObservable } from './setObservable'
-  import { slideIndex } from './store'
+  import { slideIndex, currentSection } from './store'
   import Title from './Title.svelte'
   export let index: number
-
+  export let target: ScrollTargetKey
   let section: HTMLElement
-  const onObserve = () => slideIndex.updateColor(index)
+
+  const scroller = getContext<Scroller>(key)
+  const onObserve = () => {
+    currentSection.set(target)
+    slideIndex.updateColor(index)
+  }
   const onUnobserve = undefined
   const options: IntersectionObserverInit = { threshold: 0.5 }
-  export let target: ScrollTargetKey
-  const scroller = getContext<Scroller>(key)
-
   onMount(() => {
     scroller.setTarget(target, section.getBoundingClientRect().top)
 

@@ -2,7 +2,7 @@
   import '../scss/base.scss'
 </script>
 
-<div class="container flex flex-1 flex-column">
+<div class="container relative flex flex-1 flex-column">
   <p class="logo">ClassicalJo</p>
 </div>
 
@@ -10,17 +10,22 @@
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
   .container {
-    justify-content: center;
-    order: -1;
+    margin: 12.5px 15px;
+    align-items: flex-start;
   }
+
   .logo {
-    font-size: 32px;
-  }
-  @media all and (max-width: 800px) {
-    .container {
-      position: absolute;
-      height: 64px;
-      width: 50%;
-    }
+    font-family: Alexandria;
+    pointer-events: none;
+    mix-blend-mode: screen;
+    @include text-d-l2;
+    z-index: 3;
+    color: $black;
+    background-image: url('./cloud.png');
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 0px 3.5px $black);
   }
 </style>
