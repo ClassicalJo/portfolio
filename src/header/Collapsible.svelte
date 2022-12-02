@@ -22,7 +22,7 @@
     ['contact', 'Contact']
   ]
 
-  let sections = renderSections.map(([section, title]) => ({
+  $: sections = renderSections.map(([section, title]) => ({
     title,
     link: goTo(section),
     current: $currentSection === section

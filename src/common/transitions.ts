@@ -17,3 +17,17 @@ export function translate(node: Element, options?: TranslationOptions) {
     css: (_: number, u: number) => '' + `position: relative;` + `top: -${u * height}px;`
   }
 }
+
+export function horizontalScale(node: Element, options?: TranslationOptions) {
+  const { duration, easing } = { ...defaultTranslationOptions, ...options }
+  const style = getComputedStyle(node)
+  const transform = style.transform === 'none' ? '' : style.transform
+  return {
+    duration,
+    easing,
+    css: (t: number) => `
+        transform: ${transform} scale(${t}, 1);
+        opacity: ${t}
+      `
+  }
+}
