@@ -5,7 +5,8 @@
 </div>
 
 <style lang="scss">
+  @use '../scss/breakpoints.scss';
   .card {
-    flex-direction: row-reverse;
+    display: inline;
   }
 </style>
