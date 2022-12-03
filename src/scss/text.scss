@@ -35,3 +35,31 @@
     font-weight: bold;
     line-height: 100%;
 }
+
+@mixin text-d-l4 {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0%;
+}
+
+@mixin text-d-l5 {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 5%;
+}
+
+@mixin text-m-l4 {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 0%;
+}
+
+@mixin text-m-l5 {
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 150%;
+    letter-spacing: 5%;
+}
