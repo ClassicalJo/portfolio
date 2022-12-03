@@ -8,5 +8,6 @@
   @use '../scss/breakpoints.scss';
   .card {
     display: inline;
+    max-width: 800px;
   }
 </style>
