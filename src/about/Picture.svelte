@@ -20,11 +20,12 @@
 <style lang="scss">
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
+  @use './values.scss';
   .image {
     background-image: url('./joe.jpg');
     background-size: 250px;
-    width: 250px;
-    height: 250px;
+    width: values.$imageWidth;
+    height: values.$imageHeight;
   }
   .green {
     filter: hue-rotate(90deg);
@@ -43,26 +44,32 @@
     clear: both;
   }
   .container {
-    display: inline;
-    width: 500px;
-    height: 500px;
-    padding: 15px;
-    float: right;
+    top: 0px;
+    right: 0px;
+    position: absolute;
+    margin: values.$margin;
+    width: values.$containerWidth;
+    height: values.$containerHeight;
+    padding: values.$padding;
     border-radius: 10px;
     background-color: white;
     filter: drop-shadow(2px 2px 3px $black);
-    transform: rotate(25deg);
   }
-  @include breakpoints.md {
+  @include breakpoints.lg {
     .container {
-      width: 250px;
-      height: 1000px;
+      width: values.$longContainerWidth;
+      height: values.$longContainerHeight;
     }
     .pictures {
       clear: both;
     }
     .picture {
       float: left;
+    }
+  }
+  @include breakpoints.md {
+    .container {
+      /* transform: rotate(0); */
     }
   }
 </style>

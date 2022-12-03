@@ -1,0 +1,13 @@
+$imageWidth: 250px;
+$imageHeight: 250px;
+$containerWidth: $imageWidth *2;
+$containerHeight: $imageHeight *2;
+$margin: 30px;
+$padding: 15px;
+$offset: $padding * 2 + $margin *2;
+$pictureWidth: $containerWidth + $offset;
+$pictureHeight: $containerHeight + $offset;
+$longContainerHeight: $imageHeight * 4;
+$longContainerWidth: $imageWidth; 
+$longPictureHeight: $longContainerHeight + $offset;
+$longPictureWidth: $longContainerWidth + $offset;

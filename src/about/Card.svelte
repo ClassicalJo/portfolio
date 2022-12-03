@@ -1,13 +1,22 @@
 <script lang="ts"></script>
 
-<div class="card flex-column flex-1 flex relative">
+<div class="card relative">
   <slot />
 </div>
 
 <style lang="scss">
   @use '../scss/breakpoints.scss';
+  @use './values.scss';
   .card {
-    display: inline;
-    max-width: 800px;
+    min-height: 100vw;
+    margin-left: 250px;
+    background-color: papayawhip;
+    padding: values.$margin;
+    filter: drop-shadow(2px 2px 5px grey);
+  }
+  @include breakpoints.lg {
+    .card {
+      margin-left: 50px;
+    }
   }
 </style>
