@@ -3,9 +3,15 @@
 </script>
 
 <button class="menu relative" on:click={onClick}>
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 -5 50 40">
+  <svg
+    class="icon"
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 50 40"
+  >
     <path
-      fill="black"
+      fill="currentColor"
       d="M 5.00,0.00
            C 0.00,0.00 0.00,5.00 0.00,5.00
              0.00,5.00 0.00,10.00 5.00,10.00
@@ -34,14 +40,26 @@
 <style lang="scss">
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
+  $lightPurple: scale-color($purple, $lightness: 20%);
   .menu {
     @include button;
     display: none;
-    margin: 10px;
-    padding: 6px;
     border-radius: 5px;
-    background-color: white;
+    margin: 12.5px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 2.5px solid $purple;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    mix-blend-mode: overlay;
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.3));
+  }
+  .icon {
+    border-radius: 2px;
+    color: $purple;
+    padding: 5px;
+    margin: 0;
+    display: block;
+    outline: 3px solid $purple;
   }
   @include breakpoints.lg {
     .menu {
@@ -63,17 +81,20 @@
       opacity: 0;
       transition: all 0.3s;
       box-shadow: 0 0 5px 20px white;
+      pointer-events: none;
     }
-
+    .menu:active {
+      border-radius: 0px;
+    }
     .menu:active:after {
       box-shadow: 0 0 0 0 white;
       position: absolute;
-      border-radius: 5px;
+      border-radius: 0px;
       left: 0;
       top: 0;
       opacity: 1;
       transition: 0s;
-      background-color: rgba(0, 0, 0, 0.1);
+      background-color: rgba(255, 255, 255, 0.3);
     }
   }
 </style>

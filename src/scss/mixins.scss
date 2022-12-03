@@ -16,10 +16,11 @@
     filter: drop-shadow(3px 3px #333);
 }
 
-@mixin button {
+@mixin button {    
     background: none;
     border: 0px;
-    cursor: pointer;
+    padding: 0px;
+    margin:0;
 }
 
 @mixin link-button {
@@ -33,6 +34,7 @@
     background-color: rgba(255, 255, 255, 0.3);
     transition: background-color 0.3s ease;
 }
+
 @mixin link-active {
     background-color: rgba(0, 0, 0, 0.3);
 }
