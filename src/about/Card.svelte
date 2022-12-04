@@ -14,12 +14,11 @@
     width: 100%;
   }
   .card {
-    flex: 1 1 75%;
     min-height: 100vw;
     background: values.$manilaGradient;
     border-radius: 0px 0px 20px 20px;
-    padding: values.$marginY values.$marginX;
-    margin: 20px;
+    padding: values.$marginY 10px;
+    margin: 0px 10px;
     clip-path: polygon(
       0px 50px,
       50px 0px,
@@ -29,10 +28,5 @@
       100% 100%,
       0% 100%
     );
-  }
-  @include breakpoints.lg {
-    .card {
-      margin-left: 50px;
-    }
   }
 </style>
