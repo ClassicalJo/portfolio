@@ -18,10 +18,12 @@
     observer && observer.observe(card)
     return () => observer && observer.unobserve(card)
   })
+  let innerHeight: number
 </script>
 
+<svelte:window bind:innerHeight />
 <Slide index={0} target="home">
-  <div class="flex h-100 container">
+  <div class="flex h-100 container" style="height:{innerHeight}px">
     <div bind:this={card} class="h-100 flex-1 flex flex-column content">
       <div class="text-wrapper flex flex-1 flex-column">
         <div class="flex flex-1 flex-column">
@@ -39,7 +41,7 @@
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
   .h-100 {
-    min-height: 100vh;
+    min-height: fill-available;
   }
   .content {
     min-width: 992px;
@@ -53,9 +55,6 @@
     min-height: 300px;
   }
   @include breakpoints.lg {
-    .content {
-      min-height: 100vh;
-    }
     .text-wrapper {
       padding: 25px;
     }
