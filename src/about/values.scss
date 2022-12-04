@@ -1,7 +1,8 @@
+@use 'sass:color';
 $imageWidth: 250px;
 $imageHeight: 250px;
-$smallImageWidth: $imageWidth/2;
-$smallImageHeight: $imageHeight/2;
+$smallImageWidth: calc($imageWidth / 2);
+$smallImageHeight: calc($imageHeight / 2);
 $containerWidth: $imageWidth *2;
 $containerHeight: $imageHeight *2;
 $marginY: 60px;
@@ -17,4 +18,7 @@ $longContainerHeight: $smallImageHeight * 4;
 $longContainerWidth: $smallImageWidth;
 $longPictureHeight: $longContainerHeight + $smallOffsetY;
 $longPictureWidth: $longContainerWidth + $smallOffsetX;
-
+$manila: #D69A5D;
+$manilaLighter: color.scale($manila, $lightness: 10%);
+$manilaDarker: color.scale($manila, $blackness: 10%);
+$manilaGradient: linear-gradient(135deg, $manilaLighter, $manilaDarker)

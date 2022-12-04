@@ -16,7 +16,7 @@
   .card {
     flex: 1 1 75%;
     min-height: 100vw;
-    background-color: papayawhip;
+    background: values.$manilaGradient;
     border-radius: 0px 0px 20px 20px;
     padding: values.$marginY values.$marginX;
     margin: 20px;
