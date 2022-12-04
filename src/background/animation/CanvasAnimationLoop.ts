@@ -38,8 +38,8 @@ export class CanvasAnimationLoop {
   }
 
   loop() {
-    if (!this.canvas || !this.animation) return
-    this.animationFrame = requestAnimationFrame(() => this.loop())
+    if (!this.canvas || !this.animation) return cancelAnimationFrame(this.animationFrame)
+    else this.animationFrame = requestAnimationFrame(() => this.loop())
     //Calculate the time that has elapsed since the last frame
     const CURRENT = performance.now()
     const ELAPSED = CURRENT - this.time
@@ -48,8 +48,10 @@ export class CanvasAnimationLoop {
 
     //Update the frame if the lag counter is greater than or equal to the frame duration
     while (this.lag >= this.frameDuration) {
-      //If animation is not paused update the logic
+      //If lag exceeds a half a second, slow hardware is detected and pauses the animation
+      this.lag > 500 && this.stop()
 
+      //If animation is not paused update the logic
       if (this.progress < 1) this.progress += 1 / this.options.duration
       !this._pause &&
         this.animation.update(easeOutBack(this.progress), this.options.color)
@@ -77,6 +79,7 @@ export class CanvasAnimationLoop {
   }
   stop() {
     this.progress = 0
+    this.lag = 0
     cancelAnimationFrame(this.animationFrame)
   }
 }
