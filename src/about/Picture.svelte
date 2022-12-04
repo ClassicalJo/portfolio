@@ -1,6 +1,10 @@
-<script lang="ts"></script>
+<script lang="ts">
+  import Clip from './Clip.svelte'
+</script>
 
 <div class="container">
+  <Clip />
+
   <div class="wrapper">
     <div class="image pictures green" />
     <div class="image pictures blue" />
@@ -23,7 +27,12 @@
   @use './values.scss';
   .image {
     background-image: url('./joe.jpg');
-    background-size: 250px;
+    background-size: values.$imageWidth values.$imageHeight;
+    width: values.$imageWidth;
+    height: values.$imageHeight;
+    background-size: contain;
+  }
+  .picture {
     width: values.$imageWidth;
     height: values.$imageHeight;
   }
@@ -43,23 +52,22 @@
     float: right;
     clear: both;
   }
+
   .container {
     top: 0px;
     right: 0px;
     position: absolute;
-    margin: values.$margin;
+    margin: values.$marginY values.$marginX;
     width: values.$containerWidth;
     height: values.$containerHeight;
     padding: values.$padding;
     border-radius: 10px;
     background-color: white;
     filter: drop-shadow(2px 2px 3px $black);
+    transform: rotate(15deg);
+    z-index: 5;
   }
   @include breakpoints.lg {
-    .container {
-      width: values.$longContainerWidth;
-      height: values.$longContainerHeight;
-    }
     .pictures {
       clear: both;
     }
@@ -67,9 +75,22 @@
       float: left;
     }
   }
-  @include breakpoints.md {
+  @include breakpoints.lg {
+    .image {
+      background-image: url('./joe.jpg');
+      background-size: values.$smallImageWidth values.$smallImageHeight;
+      background-size: contain;
+    }
+    .picture,
+    .image {
+      width: values.$smallImageWidth;
+      height: values.$smallImageHeight;
+    }
     .container {
-      /* transform: rotate(0); */
+      width: values.$longContainerWidth;
+      height: values.$longContainerHeight;
+      top: 4px;
+      transform: rotate(2deg);
     }
   }
 </style>

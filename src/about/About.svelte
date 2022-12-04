@@ -5,14 +5,14 @@
 </script>
 
 <Slide target="about" index={1}>
-  <div class="about">
+  <div class="about relative flex">
+    <Picture />
     <Card>
-      <Picture />
       <p class="flex-1 text left">
-        Hi! My name is Jose Barrientos, but pretty much everyone calls me Joe. I'm a
-        developer from Argentina and I've been coding for about three years now.<br />
-        Currently living in Buenos Aires, I spent a lot of time travelling and working in Australia's
-        east coast, mostly improving my english.
+        Name: Jose Barrientos <br />
+        Age: 34 years old <br />
+        City: Buenos Aires <br />
+        Pronouns: he/him <br />
       </p>
     </Card>
   </div>
@@ -29,6 +29,8 @@
   .text {
     @include text-d-l4;
     float: left;
+    background-color: white;
+    filter: drop-shadow(2px 2px 5px rgba(0, 0, 0, 0.3));
   }
   .text::before {
     content: '';
