@@ -38,4 +38,15 @@
       height: auto;
     }
   }
+  @include breakpoints.sm {
+    .hero-title {
+      @include text-m-l2;
+      margin: 0px;
+    }
+    .cloud {
+      width: 225px;
+      top: -20px;
+      left: -17.5px;
+    }
+  }
 </style>

@@ -9,7 +9,7 @@
 </script>
 
 <div class="navbar-wrapper flex flex-1">
-  <nav class="navbar flex flex-1 flex-column halftone">
+  <nav class="navbar flex flex-1 flex-column">
     <Link onClick={goTo('about')} color="rgba(214, 2, 112, 1)">About me</Link>
     <Link onClick={goTo('projects')} color="rgba(155, 79, 150, 1)">Projects</Link>
     <Link onClick={goTo('contact')} color="rgba(0, 56, 168, 1)">Contact</Link>
@@ -19,10 +19,10 @@
 <style lang="scss">
   .navbar-wrapper {
     position: relative;
+    margin-bottom: 20px;
   }
   .navbar {
-    margin-top: 0px;
-    gap: 10px;
-    position: relative;
+    border-left: 1px solid white;
+    justify-content: space-between;
   }
 </style>

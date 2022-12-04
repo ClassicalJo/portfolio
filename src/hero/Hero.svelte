@@ -8,7 +8,7 @@
   import Pretitle from './Pretitle.svelte'
   import Title from './Title.svelte'
   let card: HTMLElement
-
+  const height = window.innerHeight
   onMount(() => {
     const observer = setObservable(
       () => visibleHero.set(true),
@@ -21,8 +21,8 @@
 </script>
 
 <Slide index={0} target="home">
-  <div class="flex h-100 container">
-    <div bind:this={card} class="h-100 flex-1 flex flex-column content">
+  <div class="flex container" style="height:{height}px">
+    <div bind:this={card} class="flex-1 flex flex-column content">
       <div class="text-wrapper flex flex-1 flex-column">
         <div class="flex flex-1 flex-column">
           <Title />
@@ -38,24 +38,18 @@
 <style lang="scss">
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
-  .h-100 {
-    min-height: 100vh;
-  }
   .content {
     min-width: 992px;
   }
+
   .text-wrapper {
     backdrop-filter: blur(10px);
-    padding: 25px;
     background: $gradientHero;
   }
   .whitespace {
     min-height: 300px;
   }
   @include breakpoints.lg {
-    .content {
-      min-height: 100vh;
-    }
     .text-wrapper {
       padding: 25px;
     }
