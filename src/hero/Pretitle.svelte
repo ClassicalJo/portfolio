@@ -24,4 +24,12 @@
       @include text-m-l2;
     }
   }
+  @include breakpoints.sm {
+    .container {
+      margin: 5px 20px;
+    }
+    .pretitle {
+      font-size: 20px;
+    }
+  }
 </style>

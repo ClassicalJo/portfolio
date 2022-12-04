@@ -5,10 +5,6 @@
   let canvas: HTMLCanvasElement
 
   const { animation, start } = mountCanvas()
-  $: {
-    animation.stop()
-    animation.play({ color: $slideIndex })
-  }
   onMount(() => {
     start(canvas)
     animation.play({ color: $slideIndex })
@@ -33,7 +29,7 @@
   }
 
   canvas {
-    height: 100%;
+    height: 100vh;
     width: 100vw;
     object-fit: cover;
   }
