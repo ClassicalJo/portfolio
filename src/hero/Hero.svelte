@@ -8,7 +8,7 @@
   import Pretitle from './Pretitle.svelte'
   import Title from './Title.svelte'
   let card: HTMLElement
-
+  const height = window.innerHeight
   onMount(() => {
     const observer = setObservable(
       () => visibleHero.set(true),
@@ -18,13 +18,11 @@
     observer && observer.observe(card)
     return () => observer && observer.unobserve(card)
   })
-  let innerHeight: number
 </script>
 
-<svelte:window bind:innerHeight />
 <Slide index={0} target="home">
-  <div class="flex h-100 container" style="height:{innerHeight}px">
-    <div bind:this={card} class="h-100 flex-1 flex flex-column content">
+  <div class="flex container" style="height:{height}px">
+    <div bind:this={card} class="flex-1 flex flex-column content">
       <div class="text-wrapper flex flex-1 flex-column">
         <div class="flex flex-1 flex-column">
           <Title />
@@ -40,9 +38,6 @@
 <style lang="scss">
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
-  .h-100 {
-    min-height: fill-available;
-  }
   .content {
     min-width: 992px;
   }
