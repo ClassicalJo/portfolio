@@ -5,10 +5,6 @@
   let canvas: HTMLCanvasElement
 
   const { animation, start } = mountCanvas()
-  $: {
-    animation.stop()
-    animation.play({ color: $slideIndex })
-  }
   onMount(() => {
     start(canvas)
     animation.play({ color: $slideIndex })
