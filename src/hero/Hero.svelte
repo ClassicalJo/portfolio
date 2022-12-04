@@ -41,9 +41,9 @@
   .content {
     min-width: 992px;
   }
+
   .text-wrapper {
     backdrop-filter: blur(10px);
-    padding: 25px;
     background: $gradientHero;
   }
   .whitespace {

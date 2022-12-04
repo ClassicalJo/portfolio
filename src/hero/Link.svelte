@@ -3,7 +3,7 @@
   export let color: string
 </script>
 
-<div class="wrapper flex-1" style={`--link-color: ${color}`}>
+<div class="wrapper" style={`--link-color: ${color}`}>
   <button class="nav-button" on:click={onClick}>
     <slot />
   </button>
@@ -39,6 +39,14 @@
   @include breakpoints.lg {
     .nav-button {
       @include text-m-l2;
+    }
+  }
+  @include breakpoints.md {
+    .nav-button {
+      @include text-m-l3;
+      font-size: 18px;
+      width: 200px;
+      margin: 0;
     }
   }
 </style>
