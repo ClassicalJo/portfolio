@@ -1,5 +1,6 @@
 <script lang="ts">
   import { setContext } from 'svelte'
+  import About from './about/About.svelte'
   import Background from './background/Background.svelte'
   import { key, Scroller } from './common/Scroller'
   import Footer from './footer/Footer.svelte'
@@ -14,7 +15,7 @@
   <Background />
   <Header />
   <Hero />
-  <Home target="about" index={1} />
+  <About />
   <Projects />
   <Home target="contact" index={3} />
   <Footer />
