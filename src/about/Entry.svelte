@@ -11,9 +11,11 @@
 <style lang="scss">
   .container {
     border: 1px solid black;
+    margin: 10px 0;
   }
   .title {
     background-color: darkgrey;
+    border-bottom: 1px solid black;
     color: white;
     padding: 5px;
   }
