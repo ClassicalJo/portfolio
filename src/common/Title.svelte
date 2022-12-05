@@ -19,6 +19,7 @@
     opacity: 0.2;
     writing-mode: vertical-lr;
     text-align: center;
+    pointer-events: none;
   }
   .right {
     writing-mode: vertical-rl;

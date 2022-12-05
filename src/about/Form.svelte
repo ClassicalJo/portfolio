@@ -11,7 +11,7 @@
       'HTML, CSS, Javascript, Typescript, React, Svelte, Sass, Styled-Components, Node, Express, Next, Svelte-kit'
     ],
     ['E-MAIL', 'jb.barrientos@yahoo.com'],
-    ['OTHER EDUCATION', "Bachelor's degree in Criminal Law"],
+    ['EDUCATION', "Bachelor's degree in Criminal Law"],
     [
       'WRITE SOMETHING ABOUT YOURSELF',
       "I really enjoy a lot developing accessible and pixel-perfect user experiences. Lately I've been focusing on taking advantage of WebGL"
