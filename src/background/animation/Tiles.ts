@@ -115,8 +115,7 @@ export class Tiles implements CanvasAnimation {
     )
   }
 
-  render() {
-    this.lifetime++
+  render() {    
     //Add rendering here
     this.tiles.forEach((tile: Vector) => {
       // Set translation
@@ -135,8 +134,8 @@ export class Tiles implements CanvasAnimation {
     })
   }
 
-  update(int: number, color: number) {
-    this.color = color - (1 - int)
+  update(dt: number) {
+    this.lifetime += dt
   }
 }
 export default Tiles

@@ -7,7 +7,7 @@
   const { animation, start } = mountCanvas()
   onMount(() => {
     start(canvas)
-    animation.play({ color: $slideIndex })
+    animation.play()
   })
 </script>
 

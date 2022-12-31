@@ -1,6 +1,6 @@
 export interface CanvasAnimation {
-  update: (int: number, color: number) => void
-  render: (lagOffset: number) => void
+  update: (t:number) => void
+  render: (t:number) => void
 }
 
 export type Vector = { x: number; y: number }

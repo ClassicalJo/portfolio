@@ -1,33 +1,36 @@
 import type { AnimationOptions, AnimationOptionsUI, CanvasAnimation } from './types'
 import { easeOutBack } from './utils'
 
-const defaultOptions: AnimationOptions = {
-  duration: 1000,
-  color: 3
+export class Looper {
+  frameDuration: number
+  
+  now: number
+  then: number
+  constructor(public fps: number) {
+    this.frameDuration = 1000 / fps
+    this.then = window.performance.now()    
+    this.now = 0
+  }
+  update(t: number): boolean {
+    this.now = t
+    const elapsed = this.now - this.then    
+    // console.log(elapsed)
+    if (elapsed > this.frameDuration) {
+      this.then = this.now - (elapsed % this.frameDuration)
+      return true
+    }
+    return false
+  }
 }
 
-export class CanvasAnimationLoop {
-  fps: number
-  frameDuration: number
-  time: number
-  lag: number
+export class CanvasAnimationLoop {  
+  looper: Looper
   animationFrame: number
-  progress: number
-  options: AnimationOptions
   private _pause: boolean
-  constructor(
-    public canvas?: HTMLCanvasElement,
-    public animation?: CanvasAnimation,
-    options?: AnimationOptionsUI
-  ) {
-    this.fps = 60
-    this.frameDuration = 1000 / this.fps
-    this.options = { ...defaultOptions, ...options }
-    this.time = performance.now()
-    this.lag = 0
+  constructor(public canvas?: HTMLCanvasElement, public animation?: CanvasAnimation) {
+    this.looper = new Looper(35)    
     this.animationFrame = 0
     this._pause = false
-    this.progress = 0
   }
 
   setCanvas(canvas: HTMLCanvasElement) {
@@ -37,49 +40,30 @@ export class CanvasAnimationLoop {
     this.animation = animation
   }
 
-  loop() {
-    if (!this.canvas || !this.animation) return cancelAnimationFrame(this.animationFrame)
-    else this.animationFrame = requestAnimationFrame(() => this.loop())
-    //Calculate the time that has elapsed since the last frame
-    const CURRENT = performance.now()
-    const ELAPSED = CURRENT - this.time
-    //Add the elapsed time to the lag counter
-    this.lag += ELAPSED
-
-    //Update the frame if the lag counter is greater than or equal to the frame duration
-    while (this.lag >= this.frameDuration) {
-      //If lag exceeds a half a second, slow hardware is detected and pauses the animation
-      this.lag > 500 && this.stop()
-
-      //If animation is not paused update the logic
-      if (this.progress < 1) this.progress += 1 / this.options.duration
-      !this._pause &&
-        this.animation.update(easeOutBack(this.progress), this.options.color)
-
-      //Reduce the lag counter by the frame duration
-      this.lag -= this.frameDuration
+  loop(t:number) {
+    if (!this.canvas || !this.animation) return this.stop()
+    else this.animationFrame = requestAnimationFrame((x:number) => this.loop(x))    
+    let shouldUpdate = this.looper.update(t)        
+    if (shouldUpdate){
+      this.animation.update(this.looper.frameDuration)
+      this.animation.render(t)
     }
-    //Calculate the lag offset and use it to render the sprites
-    const lagOffset = this.lag / this.frameDuration
-    this.animation.render(lagOffset)
+
   }
 
   set pause(bool: boolean) {
     this._pause = bool
   }
+
   get pause() {
     return this._pause
   }
 
-  play(options: AnimationOptionsUI) {
-    this.options = { ...this.options, ...options }
-    this.time = performance.now()
+  play() {    
     this.pause = false
-    this.loop()
+    this.loop(0)
   }
   stop() {
-    this.progress = 0
-    this.lag = 0
     cancelAnimationFrame(this.animationFrame)
   }
 }
