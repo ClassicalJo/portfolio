@@ -7,12 +7,12 @@
   const { animation, start } = mountCanvas()
   onMount(() => {
     start(canvas)
-    animation.play({ color: $slideIndex })
+    animation.play()
   })
 </script>
 
 <div class="black grid">
-  <canvas bind:this={canvas} width={1900} height={1080} />
+  <canvas bind:this={canvas} width={950} height={540} />
 </div>
 
 <style>
