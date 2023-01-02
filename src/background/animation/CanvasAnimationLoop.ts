@@ -45,7 +45,7 @@ export class CanvasAnimationLoop {
     else this.animationFrame = requestAnimationFrame((x:number) => this.loop(x))    
     let shouldUpdate = this.looper.update(t)        
     if (shouldUpdate){
-      this.animation.update(this.looper.frameDuration)
+      this.animation.update(1)
       this.animation.render(t)
     }
 

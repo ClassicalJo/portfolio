@@ -39,7 +39,7 @@ void main()
     float horizontal_oscillation_frequency = -4.0;
     float vertical_oscillation_frequency = 1.0;
     float chaos_factor = 2.0;
-    float time = u_time * .0003;
+    float time = u_time * .001;
 
     // noise
     uv = chaos_factor * uv;
