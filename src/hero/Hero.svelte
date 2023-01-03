@@ -4,8 +4,6 @@
   import Slide from '../common/Slide.svelte'
   import { visibleHero } from '../common/store'
   import '../scss/base.scss'
-  import Navigation from './Navigation.svelte'
-  import Pretitle from './Pretitle.svelte'
   import Title from './Title.svelte'
   let card: HTMLElement
   const height = window.innerHeight
@@ -21,42 +19,22 @@
 </script>
 
 <Slide index={0} target="home">
-  <div class="flex container" style="height:{height}px">
-    <div bind:this={card} class="flex-1 flex flex-column content">
-      <div class="text-wrapper flex flex-1 flex-column">
-        <div class="flex flex-1 flex-column">
-          <Title />
-          <Pretitle />
-        </div>
-        <Navigation />
-      </div>
+  <div class="flex container background" style="height:{height}px">
+    <div bind:this={card} class="flex-1 flex flex-column content center">
+      <Title />
     </div>
-    <div class="flex flex-1 whitespace" />
   </div>
 </Slide>
 
 <style lang="scss">
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
-  .content {
-    min-width: 992px;
-  }
-
-  .text-wrapper {
+  .background {
     backdrop-filter: blur(10px);
     background: $gradientHero;
+    justify-content: center;
   }
-  .whitespace {
-    min-height: 300px;
-  }
-  @include breakpoints.lg {
-    .text-wrapper {
-      padding: 25px;
-    }
-  }
-  @include breakpoints.md {
-    .text-wrapper {
-      padding: 10px;
-    }
-  }
+  .content {
+    max-width: 1000px;    
+  }  
 </style>

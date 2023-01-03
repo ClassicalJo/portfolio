@@ -25,8 +25,7 @@
   })
 </script>
 
-<section bind:this={section} class="slide" id={target}>
-  <Title title={target} {index} />
+<section bind:this={section} class="slide" id={target}>  
   <slot />
 </section>
 
