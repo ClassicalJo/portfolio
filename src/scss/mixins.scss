@@ -1,63 +1,42 @@
+@use "sass:math";
+
 @mixin beforeAbsolute {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 @mixin gradientText {
-    background: rgb(255, 255, 255);
-    background: linear-gradient(90deg, #fff 0%, #aaa 100%);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    filter: drop-shadow(3px 3px #333);
+  background: rgb(255, 255, 255);
+  background: linear-gradient(90deg, #fff 0%, #aaa 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(3px 3px #333);
 }
 
-@mixin button {    
-    background: none;
-    border: 0px;
-    padding: 0px;
-    margin:0;
+@mixin button {
+  background: none;
+  border: 0px;
+  padding: 0px;
+  margin: 0;
 }
 
 @mixin link-button {
-    @include button;
-    height: 100%;
-    width: 100%;
-    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  @include button;
+  height: 100%;
+  width: 100%;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 @mixin link-hover {
-    background-color: rgba(255, 255, 255, 0.3);
-    transition: background-color 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.3);
+  transition: background-color 0.3s ease;
 }
 
 @mixin link-active {
-    background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.3);
 }
-
-
-/// Stroke font-character
-/// @param  {Integer} $stroke - Stroke width
-/// @param  {Color}   $color  - Stroke color
-/// @return {List}            - text-shadow list
-@function stroke($stroke, $color) {
-    $shadow: ();
-    $from: $stroke*-1;
-    @for $i from $from through $stroke {
-     @for $j from $from through $stroke {
-        $shadow: append($shadow, $i*1px $j*1px 0 $color, comma);
-      }
-    }
-    @return $shadow;
-  }
-  /// Stroke font-character
-  /// @param  {Integer} $stroke - Stroke width
-  /// @param  {Color}   $color  - Stroke color
-  /// @return {Style}           - text-shadow
-  @mixin stroke($stroke, $color) {
-    text-shadow: stroke($stroke, $color);
-  }
