@@ -26,7 +26,6 @@
 </script>
 
 <section bind:this={section} class="slide" id={target}>
-  <Title title={target} {index} />
   <slot />
 </section>
 

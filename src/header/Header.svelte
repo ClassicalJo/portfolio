@@ -1,17 +1,14 @@
 <script lang="ts">
-  import { visibleHero } from '../common/store'
-  import { translate } from '../common/transitions'
+  import Lobo from '../footer/Lobo.svelte'
   import Collapsible from './Collapsible.svelte'
   import Logo from './Logo.svelte'
 </script>
 
 <header class="header-container flex flex-1">
-  {#if !$visibleHero}
-    <div class="header flex flex-1" transition:translate>
-      <Logo />
-      <Collapsible />
-    </div>
-  {/if}
+  <div class="header flex flex-1">
+    <Logo />
+    <Collapsible />
+  </div>
 </header>
 
 <style lang="scss">
@@ -21,15 +18,23 @@
     position: fixed;
     width: 100%;
     z-index: 5;
+    height: $headerOuterHeight;
+    background: $gradientHero;
+    backdrop-filter: $backdropBlur;
+    align-items: center;
   }
   .header {
-    background: $gradientFooter;
-    backdrop-filter: $backdropBlur;
-    min-height: 64px;
+    margin: 0px 44px;
+    height: $headerInnerHeight;
   }
   @include breakpoints.lg {
     .header {
       flex-direction: column;
+    }
+  }
+  @include breakpoints.sm {
+    .header {
+      margin: 0px 14px;
     }
   }
 </style>

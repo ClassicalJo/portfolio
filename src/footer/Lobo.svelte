@@ -1,10 +1,15 @@
+<script lang="ts">
+  export let height: number
+  export let width: number
+</script>
+
 <svg
   class="lobo"
   xmlns="http://www.w3.org/2000/svg"
   viewBox="0 0 500 500"
-  preserveAspectRatio
-  height="100"
-  width="100"
+  preserveAspectRatio="true"
+  {height}
+  {width}
 >
   <title>My logo, a white wolf outline</title>
   <path

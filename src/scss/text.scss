@@ -1,24 +1,26 @@
 // D for desktop, M for mobile
+@use './variables.scss' as *;
+
 @mixin text-d-l1 {
-    font-size: 132px;
+    font-size: $d-l1;
     font-weight: bold;
     line-height: 80%;
 }
 
 @mixin text-d-l2 {
-    font-size: 48px;
+    font-size: $d-l2;
     font-weight: bold;
     line-height: 80%;
 }
 
 @mixin text-d-l3 {
-    font-size: 32px;
+    font-size: $d-l3;
     font-weight: bold;
     line-height: 100%;
 }
 
 @mixin text-m-l1 {
-    font-size: 84px;
+    font-size: 54px;
     font-weight: bold;
     line-height: 80%;
     

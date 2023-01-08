@@ -23,3 +23,17 @@ $backdropBlur: blur(10px);
 //easings:
 $easeOutCubic: cubic-bezier(0.33, 1, 0.68, 1);
 $easeOutQuart: cubic-bezier(0.25, 1, 0.5, 1);
+
+//header:
+$headerOuterHeight: 70px;
+$headerInnerHeight: 39px;
+
+//text-size
+$d-l1: 132px;
+$d-l2: 48px;
+$d-l3: 32px;
+$m-l1: 54px;
+$m-l2: 36px;
+$m-l3: 24px;
+
+$fluid-m-l1: calc(54px + (132 - 54) * ((100vw - 350px) / (768 - 350)));

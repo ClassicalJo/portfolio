@@ -21,7 +21,6 @@
     ['projects', 'Projects'],
     ['contact', 'Contact']
   ]
-
   $: sections = renderSections.map(([section, title]) => ({
     title,
     link: goTo(section),
@@ -33,3 +32,9 @@
   <Menu onClick={() => expand(!expanded)} />
   <NavBar {expanded} {sections} />
 </div>
+
+<style lang="scss">
+  .collapsible {
+    max-width: 478px;
+  }
+</style>

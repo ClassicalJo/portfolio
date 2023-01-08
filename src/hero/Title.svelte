@@ -1,52 +1,56 @@
-<script lang="ts"></script>
-
-<div class="wrapper">
-  <img class="cloud" src="./cloud.png" width="833" height="263" alt="" />
-  <h1 class="hero-title">ClassicalJo</h1>
+<div class="flex-column flex">
+  <p class="pre-title">José Barrientos is</p>
+  <div class="flex">
+    <h1 class="hero-title">ClassicalJo</h1>
+  </div>
+  <p class="block">
+    And he's a fullstack developer based in Argentina, striving for pixel perfect digital
+    experiences. Currently breaking barriers as chapter lead @Scalemote.
+  </p>
 </div>
 
 <style lang="scss">
+  @use 'sass:color';
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
-  .wrapper {
-    position: relative;
-    margin: 25px;
+  .pre-title,
+  .block {
+    @include text-d-l4;
+    font-family: Noto Sans JP;
   }
-  .cloud {
-    mix-blend-mode: darken;
-    width: 825px;
-    position: absolute;
-    top: -50px;
-    left: -50px;
+  .pre-title {
+    color: color.scale($black, $blackness: 50%);
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    position: relative;
+    font-family: Alexandria;
+    pointer-events: none;
+    @include text-d-l1;
+    background-image: url('./cloud.png');
+    background-position: center;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 0px 4px $black);
+    margin: 20px 0px 30px 0px;
+  }
+  .block {
+    color: $black;
+    max-width: 540px;
+    font-family: Nunito Sans;
   }
 
-  .hero-title {
-    @include text-d-l1;
-    color: #555;
-    mix-blend-mode: multiply;
-    margin: 25px 0;
-  }
   @include breakpoints.md {
     .hero-title {
       @include text-m-l1;
-      margin: 10px 0px;
+      font-size: $fluid-m-l1;
+      margin: 15px 0px 30px 0px;
+      filter: drop-shadow(0px 0px 2px $black);
     }
-    .cloud {
-      width: 525px;
-      top: -35px;
-      left: -35px;
-      height: auto;
-    }
-  }
-  @include breakpoints.sm {
-    .hero-title {
-      @include text-m-l2;
-      margin: 0px;
-    }
-    .cloud {
-      width: 225px;
-      top: -20px;
-      left: -17.5px;
+    .block,
+    .pre-title {
+      @include text-m-l4;
     }
   }
 </style>

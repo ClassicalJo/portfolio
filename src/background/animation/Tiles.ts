@@ -115,7 +115,7 @@ export class Tiles implements CanvasAnimation {
     )
   }
 
-  render() {    
+  render() {
     //Add rendering here
     this.tiles.forEach((tile: Vector) => {
       // Set translation
