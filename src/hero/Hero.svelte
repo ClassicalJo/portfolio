@@ -1,26 +1,12 @@
 <script lang="ts">
-  import { onMount } from 'svelte'
-  import { setObservable } from '../common/setObservable'
   import Slide from '../common/Slide.svelte'
-  import { visibleHero } from '../common/store'
-  import '../scss/base.scss'
   import Title from './Title.svelte'
-  let card: HTMLElement
   const height = window.innerHeight
-  onMount(() => {
-    const observer = setObservable(
-      () => visibleHero.set(true),
-      () => visibleHero.set(false),
-      { threshold: 0 }
-    )
-    observer && observer.observe(card)
-    return () => observer && observer.unobserve(card)
-  })
 </script>
 
 <Slide index={0} target="home">
   <div class="flex container background" style="height:{height}px">
-    <div bind:this={card} class="flex-1 flex flex-column content">
+    <div class="flex-1 flex flex-column content">
       <Title />
     </div>
   </div>
@@ -36,13 +22,13 @@
   }
   .content {
     padding-top: $headerOuterHeight;
-    max-width: 1000px;    
+    max-width: 1000px;
     align-items: center;
     justify-content: center;
-  }  
-  @include breakpoints.sm {
-  .content {
-    justify-content: center;
   }
+  @include breakpoints.sm {
+    .content {
+      justify-content: center;
+    }
   }
 </style>

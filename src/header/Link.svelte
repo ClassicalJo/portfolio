@@ -4,11 +4,11 @@
   export let current: boolean
 </script>
 
-<div class="link flex flex-column center" aria-current={current}>
+<div class="link flex-1 flex flex-column center" aria-current={current}>
   <button class="button relative" on:click={onClick} aria-label="Go to section">
     <slot />
     {#if current}
-      <div class="selected center" transition:horizontalScale aria-hidden="true">
+      <div class="selected flex center" transition:horizontalScale aria-hidden="true">
         <slot />
       </div>
     {/if}
@@ -21,19 +21,17 @@
   .button {
     @include link-button;
     font-size: 18px;
-    font-family: Noto Sans JP;
+    font-family: Nunito Sans;
+    font-weight: 500;
     color: white;
-    filter: drop-shadow(1.5px 1.5px $black);
+    filter: drop-shadow(1px 1px 0px $black);
   }
   .link {
     position: relative;
     overflow: hidden;
-    border-left: 1px solid rgba(255, 255, 255, 0.5);
     user-select: none;
   }
-  .link:last-child {
-    border-right: 1px solid rgba(255, 255, 255, 0.5);
-  }
+
   .link:hover {
     @include link-hover;
   }
@@ -47,17 +45,9 @@
     text-decoration: underline;
     color: transparent;
     text-decoration-color: white;
+    filter: drop-shadow(0.5px 0.5px 0px $black);
     text-underline-offset: 5.5px;
     text-decoration-thickness: 1px;
     white-space: nowrap;
-  }
-
-  @include breakpoints.lg {
-    .link {
-      border-left: 0;
-    }
-    .link:last-child {
-      border-right: 0;
-    }
   }
 </style>

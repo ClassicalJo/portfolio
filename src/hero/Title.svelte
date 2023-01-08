@@ -43,7 +43,7 @@
 
   @include breakpoints.md {
     .hero-title {
-      @include text-m-l1;      
+      @include text-m-l1;
       font-size: $fluid-m-l1;
       margin: 15px 0px 30px 0px;
       filter: drop-shadow(0px 0px 2px $black);
