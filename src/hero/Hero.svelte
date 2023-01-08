@@ -20,7 +20,7 @@
 
 <Slide index={0} target="home">
   <div class="flex container background" style="height:{height}px">
-    <div bind:this={card} class="flex-1 flex flex-column content center">
+    <div bind:this={card} class="flex-1 flex flex-column content">
       <Title />
     </div>
   </div>
@@ -35,6 +35,14 @@
     justify-content: center;
   }
   .content {
+    padding-top: $headerOuterHeight;
     max-width: 1000px;    
+    align-items: center;
+    justify-content: center;
   }  
+  @include breakpoints.sm {
+  .content {
+    justify-content: center;
+  }
+  }
 </style>
