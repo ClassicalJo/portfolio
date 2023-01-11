@@ -34,7 +34,7 @@
     margin: 0px 44px;
     height: $headerInnerHeight;
   }
-  
+
   @include breakpoints.md {
     .header {
       flex-direction: column;

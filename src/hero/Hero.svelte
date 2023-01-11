@@ -16,7 +16,6 @@
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
   .background {
-    backdrop-filter: blur(10px);
     background: $gradientHero;
     justify-content: center;
   }

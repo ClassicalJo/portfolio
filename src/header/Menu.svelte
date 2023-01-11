@@ -52,5 +52,5 @@
       -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
       filter: drop-shadow(2px 2px 0px rgba(0, 0, 0, 0.3));
     }
-  }  
+  }
 </style>

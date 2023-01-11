@@ -1,6 +1,5 @@
 <script lang="ts">
   import { onMount } from 'svelte'
-  import { slideIndex } from '../common/store'
   import mountCanvas from './animation'
   let canvas: HTMLCanvasElement
 

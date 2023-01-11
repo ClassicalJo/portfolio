@@ -27,7 +27,7 @@ float noise(vec2 uv, float seed_h, float seed_v) {
 void main()
 {  
     // Normalized pixel coordinates (from 0 to 1)
-    vec2 uv = u_translation / u_resolution.x;
+    vec2 uv = gl_FragCoord.xy / u_resolution.x;
     
     // animation parameters 
     float horizontal_speed = 0.0;
