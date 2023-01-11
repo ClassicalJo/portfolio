@@ -26,7 +26,7 @@
     width: 100%;
     z-index: 5;
     height: $headerOuterHeight;
-    background: $gradientHero;
+    background: $gradientHeader;
     backdrop-filter: $backdropBlur;
     align-items: center;
   }
