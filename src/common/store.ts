@@ -15,3 +15,29 @@ export const slideIndex = createSlideIndex()
 
 export const visibleHero = writable(true)
 export const currentSection = writable<ScrollTargetKey>('home')
+
+function createScrollDownListener(){  
+  const { subscribe, set } = writable<boolean>(false)  
+  let lastKnownScrollPosition = 0
+  let ticking = false
+
+  function check(scrollPos: number) {    
+    set((lastKnownScrollPosition - scrollPos) < 0)
+    lastKnownScrollPosition = scrollPos
+  }
+
+  document.addEventListener('scroll', event => {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        check(window.scrollY)
+        ticking = false
+      })
+      ticking = true
+    }
+  })
+  return {
+    subscribe,   
+  }
+}
+
+export const scrollDown = createScrollDownListener()
