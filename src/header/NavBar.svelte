@@ -18,7 +18,7 @@
   .navbar {
     overflow-y: hidden;
   }
-  @include breakpoints.lg {
+  @include breakpoints.md {
     .navbar {
       flex-direction: column;
       max-height: 100vh;
