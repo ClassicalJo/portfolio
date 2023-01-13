@@ -29,16 +29,22 @@
     background: $gradientHeader;
     backdrop-filter: $backdropBlur;
     align-items: center;
+    
   }
-  .header {
-    margin: 0px 44px;
+  .header-container::after {
+    @include beforeAbsolute;
+    content: '';
+    pointer-events: none;
+    background-color: transparent;
+    box-shadow:0px 2px 5px rgba(0,0,0,0.5)
+  }
+  .header {    
     height: $headerInnerHeight;
   }
 
   @include breakpoints.md {
     .header {
-      flex-direction: column;
-      margin: 0px 14px;
+      flex-direction: column;      
     }
   }
 </style>

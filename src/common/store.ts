@@ -41,3 +41,13 @@ function createScrollDownListener() {
 }
 
 export const scrollDown = createScrollDownListener()
+
+type ScreenViewport = { width: number; height: number }
+function createResizeListener() {
+  const { subscribe, set } = writable<ScreenViewport>({
+    width: window.innerWidth,
+    height: window.innerHeight
+  })
+  return {subscribe}
+}
+export const screenViewport = createResizeListener()
