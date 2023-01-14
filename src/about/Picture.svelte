@@ -1,10 +1,7 @@
 <script lang="ts">
-  import Clip from './Clip.svelte'
 </script>
 
 <div class="container">
-  <Clip />
-
   <div class="wrapper">
     <div class="image pictures green" />
     <div class="image pictures blue" />
