@@ -4,22 +4,26 @@
 </script>
 
 <Slide target="about" index={1}>
-  <div class="about relative flex flex-column">
-    <h2>About me</h2>
-    <p>
-      Howdy! My name is José Barrientos, but everybody calls me Joe. I've been travelling
-      & developing for the better part of the last 4 years, and during that time, I lived
-      in Australia improving my english fluency while meeting all sorts of interesting
-      people and working a lot of different jobs, which I think gave me a lot of
-      perspective when working in team-oriented fast-paced environments.
-    </p>
-    <p>
-      I'm currently working as a chapter lead in @Scalemote, providing technical
-      assistance to developers working in different projects, setting standards for
-      building performing, scaling and maintanable code, and interacting with clients and
-      project managers to avoid obstacles, break barriers, and build a high-quality
-      product.
-    </p>
+  <div class="about relative flex center">
+    <div class="card">
+      <h2 class="title">About me</h2>
+      <hr />
+      <p class="text-body">
+        Howdy! I'm <strong>José Barrientos</strong> and I've been developing for the better
+        part of the last 4 years. I lived in Australia for three years improving my english,
+        and during my time down-under I also had the opportunity to meet all sorts of interesting
+        people, while also working in a lot of different jobs, which I think gives me a lot
+        of perspective when working in team-oriented, fast-paced environments.
+      </p>
+      <p class="text-body">
+        I recently moved back to Argentina and now I'm working as a chapter lead at
+        <a class="link" href="https://www.scalemote.co/">Scalemote</a>, providing
+        technical assistance to developers working in different projects, setting
+        standards for building performing, scaling and maintanable code, and interacting
+        with clients and project managers to avoid obstacles, break barriers, and deliver
+        high-quality products and services.
+      </p>
+    </div>
     <Picture />
   </div>
 </Slide>
@@ -31,10 +35,46 @@
   .about {
     margin: 124px 44px;
     min-height: 100vh;
+    font-family: Nunito Sans;
+  }
+  .card {
+    background-color: white;
+    border: 10px solid white;
+    border-radius: 10px;
+    max-width: 650px;
+    box-shadow: 1px 1px 1px $black;
+    padding: 14px;
+  }
+  .text-body {
+    font-family: Nunito Sans;
+    @include text-d-l4;
+    font-weight: 200;
+  }
+  .title,
+  .text-body {
+    padding: 14px 0;
+  }
+  .title {
+    background-color: white;
+  }
+  .link {
+    text-decoration: underline;
+    color: $blue;
+  }
+  .link:visited {
+    color: $red;
   }
   @include breakpoints.lg {
     .about {
       margin: 84px 14px;
+      flex-direction: column;
+    }
+    .text-body {
+      @include text-m-l4;
+    }
+    .title,
+    .text-body {
+      padding: 14px 0;
     }
   }
 </style>

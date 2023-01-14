@@ -62,7 +62,7 @@
     height: values.$containerHeight;
     transform: rotate(7.5deg);
   }
-  @include breakpoints.md {
+  @include breakpoints.sm {
     .image {
       background-image: url('./joe.jpg');
       background-size: values.$smallImageWidth values.$smallImageHeight;
