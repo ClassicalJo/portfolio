@@ -4,7 +4,7 @@
   export let sections: { link: () => void; current: boolean; title: string }[]
 </script>
 
-<nav class="navbar relative flex flex-1" class:expanded class:collapsed={!expanded}>
+<nav class="navbar flex flex-1" class:expanded class:collapsed={!expanded}>
   {#each sections as section}
     <Link onClick={section.link} current={section.current}>
       {section.title}
@@ -18,23 +18,15 @@
   .navbar {
     overflow-y: hidden;
   }
-  @include breakpoints.lg {
-    .navbar {
-      flex-direction: column;
-      max-height: 100vh;
-    }
-    .expanded {
-      height: 100vh;
-      min-height: 100vh;
-      transition: all 0.5s ease, opacity 0.5s;
+  @include breakpoints.md {            
+    .expanded {               
+      max-height: $headerOuterHeight;      
+      transition: all 0.15s ;      
     }
     .collapsed {
-      visibility: hidden;
-      opacity: 0;
-      height: 0vh;
+      visibility: hidden;      
       max-height: 0vh;
-      min-height: 0vh;
-      transition: visibility 0s ease 1s, min-height 0.75s $easeOutQuart, opacity 0.5s ease;
+      transition: all 0.15s ease;
     }
   }
 </style>

@@ -1,5 +1,4 @@
-import type { AnimationOptions, AnimationOptionsUI, CanvasAnimation } from './types'
-import { easeOutBack } from './utils'
+import type { CanvasAnimation } from './types'
 
 export class Looper {
   frameDuration: number
@@ -43,7 +42,7 @@ export class CanvasAnimationLoop {
   loop(t: number) {
     if (!this.canvas || !this.animation) return this.stop()
     else this.animationFrame = requestAnimationFrame((x: number) => this.loop(x))
-    let shouldUpdate = this.looper.update(t)
+    const shouldUpdate = this.looper.update(t)
     if (shouldUpdate) {
       this.animation.update(1)
       this.animation.render(t)

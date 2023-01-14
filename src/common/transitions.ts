@@ -31,3 +31,18 @@ export function horizontalScale(node: Element, options?: TranslationOptions) {
       `
   }
 }
+
+export function verticalScale(node: Element, options?: TranslationOptions) {
+  const { duration, easing } = { ...defaultTranslationOptions, ...options }
+  const style = getComputedStyle(node)
+  const transform = style.transform === 'none' ? '' : style.transform
+  const height = parseInt(style.height)
+  return {
+    duration,
+    easing,
+    css: (t: number, d: number) => `        
+        transform: ${transform}  translate(0, -${d * height}px) scale(1, ${t});
+        opacity: ${t}
+      `
+  }
+}

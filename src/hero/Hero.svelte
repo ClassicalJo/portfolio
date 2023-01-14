@@ -1,11 +1,11 @@
 <script lang="ts">
   import Slide from '../common/Slide.svelte'
   import Title from './Title.svelte'
-  const height = window.innerHeight
+  import {screenViewport} from '../common/store'  
 </script>
 
 <Slide index={0} target="home">
-  <div class="flex container background" style="height:{height}px">
+  <div class="flex container background" style="height:{$screenViewport.height}px">
     <div class="flex-1 flex flex-column content">
       <Title />
     </div>
@@ -16,7 +16,6 @@
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
   .background {
-    backdrop-filter: blur(10px);
     background: $gradientHero;
     justify-content: center;
   }
