@@ -1,7 +1,7 @@
 <script lang="ts">
   import Slide from '../common/Slide.svelte'
   import Title from './Title.svelte'
-  import {screenViewport} from '../common/store'  
+  import { screenViewport } from '../common/store'
 </script>
 
 <Slide index={0} target="home">

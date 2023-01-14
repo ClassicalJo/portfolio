@@ -3,8 +3,7 @@
   import type { ScrollTargetKey } from './Scroller'
   import { key, Scroller } from './Scroller'
   import { setObservable } from './setObservable'
-  import { slideIndex, currentSection } from './store'
-  import Title from './Title.svelte'
+  import { currentSection, slideIndex } from './store'
   export let index: number
   export let target: ScrollTargetKey
   let section: HTMLElement
