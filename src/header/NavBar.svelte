@@ -18,10 +18,7 @@
   .navbar {
     overflow-y: hidden;
   }
-  @include breakpoints.md {        
-    .navbar{
-      background: $gradientHeader;            
-    }
+  @include breakpoints.md {            
     .expanded {               
       max-height: $headerOuterHeight;      
       transition: all 0.15s ;      

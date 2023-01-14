@@ -42,7 +42,7 @@
   }
   @include breakpoints.md {
     .collapsible {
-      max-width:100vw;                  
+      max-width:100vw;              
     }
   }
 </style>
