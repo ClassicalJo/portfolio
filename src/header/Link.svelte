@@ -49,10 +49,10 @@
     text-underline-offset: 5.5px;
     text-decoration-thickness: 1px;
     white-space: nowrap;
-  }  
-  @include breakpoints.md {    
+  }
+  @include breakpoints.md {
     .link {
-      margin: 20px 0px 12px 0px;            
+      margin: 20px 0px 12px 0px;
     }
   }
 </style>

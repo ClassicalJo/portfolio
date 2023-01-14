@@ -36,13 +36,13 @@
 <style lang="scss">
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
-  @use "sass:math";
+  @use 'sass:math';
   .collapsible {
-    max-width: 478px;    
+    max-width: 478px;
   }
   @include breakpoints.md {
     .collapsible {
-      max-width:100vw;              
+      max-width: 100vw;
     }
   }
 </style>

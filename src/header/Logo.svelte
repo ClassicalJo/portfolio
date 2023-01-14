@@ -20,6 +20,5 @@
       min-height: $headerOuterHeight;
       padding-left: 14px;
     }
-    
   }
 </style>

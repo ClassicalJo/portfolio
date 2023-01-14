@@ -26,17 +26,17 @@
     width: 100%;
     z-index: 5;
     min-height: $headerOuterHeight;
-    background: $gradientHeader;    
+    background: $gradientHeader;
     align-items: center;
-    box-shadow:0px 2px 5px rgba(0,0,0,0.5);
-  }  
-  .header {    
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+  }
+  .header {
     min-height: $headerOuterHeight;
   }
 
   @include breakpoints.md {
     .header {
-      flex-direction: column;      
+      flex-direction: column;
     }
   }
 </style>

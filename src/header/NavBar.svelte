@@ -18,13 +18,13 @@
   .navbar {
     overflow-y: hidden;
   }
-  @include breakpoints.md {            
-    .expanded {               
-      max-height: $headerOuterHeight;      
-      transition: all 0.15s ;      
+  @include breakpoints.md {
+    .expanded {
+      max-height: $headerOuterHeight;
+      transition: all 0.15s;
     }
     .collapsed {
-      visibility: hidden;      
+      visibility: hidden;
       max-height: 0vh;
       transition: all 0.15s ease;
     }
