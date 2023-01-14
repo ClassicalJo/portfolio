@@ -1,20 +1,22 @@
 <script lang="ts">
 </script>
 
-<div class="container">
-  <div class="wrapper">
-    <div class="image pictures green" />
-    <div class="image pictures blue" />
-  </div>
-  <div class="wrapper">
-    <div class="image pictures red" />
-    <img
-      class="picture pictures"
-      src="./joe.jpg"
-      width="250"
-      height="250"
-      alt="ClassicalJo, thats me, wearing a suit, glasses and an elephant-themed tie, looking at the camera"
-    />
+<div class="picture-wrapper flex center">
+  <div class="picture-container">
+    <div class="wrapper">
+      <div class="image pictures green" />
+      <div class="image pictures blue" />
+    </div>
+    <div class="wrapper">
+      <div class="image pictures red" />
+      <img
+        class="picture pictures"
+        src="./joe.jpg"
+        width="250"
+        height="250"
+        alt="ClassicalJo, thats me, wearing a suit, glasses and an elephant-themed tie, looking at the camera"
+      />
+    </div>
   </div>
 </div>
 
@@ -22,12 +24,14 @@
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
   @use './values.scss';
+  .picture-wrapper {
+    margin: calc(values.$imageHeight / 2) 0;
+  }
   .image {
     background-image: url('./joe.jpg');
     background-size: values.$imageWidth values.$imageHeight;
     width: values.$imageWidth;
     height: values.$imageHeight;
-    background-size: contain;
   }
   .picture {
     width: values.$imageWidth;
@@ -49,30 +53,16 @@
     float: right;
     clear: both;
   }
-
-  .container {
-    top: 0px;
-    right: 0px;
-    position: absolute;
-    margin: values.$marginY values.$marginX;
-    width: values.$containerWidth;
-    height: values.$containerHeight;
+  .picture-container {
     padding: values.$padding;
     border-radius: 10px;
     background-color: white;
     filter: drop-shadow(2px 2px 3px $black);
-    transform: rotate(15deg);
-    z-index: 5;
+    width: values.$containerWidth;
+    height: values.$containerHeight;
+    transform: rotate(7.5deg);
   }
-  @include breakpoints.lg {
-    .pictures {
-      clear: both;
-    }
-    .picture {
-      float: left;
-    }
-  }
-  @include breakpoints.lg {
+  @include breakpoints.md {
     .image {
       background-image: url('./joe.jpg');
       background-size: values.$smallImageWidth values.$smallImageHeight;
@@ -83,11 +73,9 @@
       width: values.$smallImageWidth;
       height: values.$smallImageHeight;
     }
-    .container {
-      width: values.$longContainerWidth;
-      height: values.$longContainerHeight;
-      top: 4px;
-      transform: rotate(2deg);
+    .picture-container {
+      width: values.$smallContainerWidth;
+      height: values.$smallContainerHeight;
     }
   }
 </style>
