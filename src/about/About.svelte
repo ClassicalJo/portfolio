@@ -1,16 +1,30 @@
 <script lang="ts">
   import Slide from '../common/Slide.svelte'
-  import Card from './Card.svelte'
-  import Form from './Form.svelte'
   import Picture from './Picture.svelte'
 </script>
 
 <Slide target="about" index={1}>
-  <div class="about relative flex">
+  <div class="about relative flex center">
+    <div class="card">
+      <h2 class="title">About me</h2>
+      <hr />
+      <p class="text-body">
+        Howdy! I'm <strong>José Barrientos</strong> and I've been developing for the better
+        part of the last 4 years. I lived in Australia for three years improving my english,
+        and during my time down-under I also had the opportunity to meet all sorts of interesting
+        people, while also working in a lot of different jobs, which I think gives me a lot
+        of perspective when working in team-oriented, fast-paced environments.
+      </p>
+      <p class="text-body">
+        I recently moved back to Argentina and now I'm working as a chapter lead at
+        <a class="link" href="https://www.scalemote.co/">Scalemote</a>, providing
+        technical assistance to developers working in different projects, setting
+        standards for building performing, scaling and maintanable code, and interacting
+        with clients and project managers to avoid obstacles, break barriers, and deliver
+        high-quality products and services.
+      </p>
+    </div>
     <Picture />
-    <Card>
-      <Form />
-    </Card>
   </div>
 </Slide>
 
@@ -21,10 +35,46 @@
   .about {
     margin: 124px 44px;
     min-height: 100vh;
+    font-family: Nunito Sans;
+  }
+  .card {
+    background-color: white;
+    border: 10px solid white;
+    border-radius: 10px;
+    max-width: 650px;
+    box-shadow: 1px 1px 1px $black;
+    padding: 14px;
+  }
+  .text-body {
+    font-family: Nunito Sans;
+    @include text-d-l4;
+    font-weight: 200;
+  }
+  .title,
+  .text-body {
+    padding: 14px 0;
+  }
+  .title {
+    background-color: white;
+  }
+  .link {
+    text-decoration: underline;
+    color: $blue;
+  }
+  .link:visited {
+    color: $red;
   }
   @include breakpoints.lg {
     .about {
       margin: 84px 14px;
+      flex-direction: column;
+    }
+    .text-body {
+      @include text-m-l4;
+    }
+    .title,
+    .text-body {
+      padding: 14px 0;
     }
   }
 </style>
