@@ -14,8 +14,8 @@
     { id: uid++, src: 'https://via.placeholder.com/500' }
   ]
 
-  const currentIndex = createCarouselStore(items.length -1)
-  const {previous, next, setSlide} = currentIndex
+  const currentIndex = createCarouselStore(items.length - 1)
+  const { previous, next, setSlide } = currentIndex
   const totalItems = items.length
 </script>
 
@@ -24,12 +24,12 @@
     <div class="limiter">
       <div class="item" />
       {#each items as item, index (item.id)}
-      {@const selected = index === $currentIndex}
+        {@const selected = index === $currentIndex}
         <div
           class="carousel"
           class:selected
           class:hidden={!selected}
-          aria-hidden={!selected}          
+          aria-hidden={!selected}
           animate:flip={{ duration: 500 }}
           {selected}
         >

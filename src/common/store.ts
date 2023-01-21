@@ -52,12 +52,13 @@ function createResizeListener() {
 }
 export const screenViewport = createResizeListener()
 
-export function  createCarouselStore(slidesMaxIndex:number){
-  const {subscribe, update, set} =  writable<number>(0)
-  const next = () => update((state:number) => (state + 1) % (slidesMaxIndex + 1))
-  const previous = () => update((state:number) => (state - 1) < 0 ? slidesMaxIndex : state - 1)
+export function createCarouselStore(slidesMaxIndex: number) {
+  const { subscribe, update, set } = writable<number>(0)
+  const next = () => update((state: number) => (state + 1) % (slidesMaxIndex + 1))
+  const previous = () =>
+    update((state: number) => (state - 1 < 0 ? slidesMaxIndex : state - 1))
   const setSlide = (int: number) => set(int)
-  
+
   return {
     subscribe,
     next,
