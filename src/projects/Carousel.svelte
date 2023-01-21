@@ -3,6 +3,7 @@
   import Item from './Item.svelte'
   import Slider from './Slider.svelte'
   import Button from './Button.svelte'
+  import { createCarouselStore } from '../common/store'
   let uid = 0
   let items = [
     { id: uid++, src: './prism.png' },
@@ -12,20 +13,9 @@
     { id: uid++, src: 'https://via.placeholder.com/600' },
     { id: uid++, src: 'https://via.placeholder.com/500' }
   ]
-  function setItems(index: number) {
-    currentIndex = index
-  }
-  function advance() {
-    if (currentIndex === items.length - 1) currentIndex = 0
-    else currentIndex++
-    return currentIndex
-  }
-  function retreat() {
-    if (currentIndex === 0) currentIndex = items.length - 1
-    else currentIndex--
-    return currentIndex
-  }
-  let currentIndex = 0
+
+  const currentIndex = createCarouselStore(items.length -1)
+  const {previous, next, setSlide} = currentIndex
   const totalItems = items.length
 </script>
 
@@ -34,21 +24,24 @@
     <div class="limiter">
       <div class="item" />
       {#each items as item, index (item.id)}
+      {@const selected = index === $currentIndex}
         <div
           class="carousel"
-          class:selected={index === currentIndex}
-          class:hidden={index !== currentIndex}
+          class:selected
+          class:hidden={!selected}
+          aria-hidden={!selected}          
           animate:flip={{ duration: 500 }}
+          {selected}
         >
           <Item src={item.src} alt="" />
         </div>
       {/each}
     </div>
-    <Slider {currentIndex} {totalItems} onClick={setItems} />
-    <Button left={true} onClick={retreat}>
+    <Slider currentIndex={$currentIndex} {totalItems} onClick={setSlide} />
+    <Button left={true} onClick={previous}>
       <title>Previous project</title>
     </Button>
-    <Button right={true} onClick={advance}>
+    <Button right={true} onClick={next}>
       <title>Next project</title>
     </Button>
   </div>
