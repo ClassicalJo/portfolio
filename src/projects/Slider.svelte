@@ -12,7 +12,7 @@
   export let onClick: (int: number) => void
 </script>
 
-<div class="slider flex flex-1 center">
+<div class="slider flex center">
   <div class="grid">
     {#each Array(totalItems) as _, index}
       <div class="grid-item flex flex-1">
@@ -31,6 +31,10 @@
 </div>
 
 <style lang="scss">
+  @use '../scss/global.scss' as *;
+  .slider {
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 1));
+  }
   .grid {
     position: relative;
     display: grid;
@@ -38,11 +42,7 @@
     column-gap: 10px;
     border-radius: 20px;
     background: rgb(32, 191, 85);
-    background: linear-gradient(
-      90deg,
-      rgba(32, 191, 85, 0.5) 0%,
-      rgba(29, 26, 56, 0.5) 100%
-    );
+    background: $gradientHeader;
     margin: 10px;
     backdrop-filter: blur(10px);
   }
@@ -50,18 +50,15 @@
     position: relative;
     padding: 5px;
   }
-  .slider {
-    position: absolute;
-    width: 100%;
-    bottom: 0px;
-  }
+
   .slider-button {
+    @include button;
     border-radius: 100%;
     width: 15px;
     height: 15px;
     aspect-ratio: 1;
     border: 0;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
     cursor: pointer;
     z-index: 3;
   }
@@ -69,8 +66,12 @@
     position: absolute;
     width: 15px;
     height: 15px;
-    background: #202c39;
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 100%;
     z-index: 1;
+  }
+  .slider-button:hover,
+  .slider-button:active {
+    background-color: rgba(255, 255, 255, 0.6);
   }
 </style>

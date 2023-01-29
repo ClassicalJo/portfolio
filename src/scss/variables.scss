@@ -1,4 +1,5 @@
 //Colours
+@use 'sass:color';
 $red: rgb(214, 2, 112);
 $purple: rgb(155, 79, 150);
 $blue: rgb(0, 56, 168);
@@ -25,6 +26,18 @@ $gradientHeader: linear-gradient(
   rgba(0, 56, 168, 1) 100%
 );
 
+@function darkerOverlay($color){
+  $overlayBlackness: 70%;
+  $overlayAlpha: -15%;
+  @return color.scale($color, $blackness: $overlayBlackness, $alpha: $overlayAlpha)
+}
+
+$gradientOverlay: linear-gradient(
+  90deg,
+  darkerOverlay($red) 0%,
+  darkerOverlay($purple) 50%,
+  darkerOverlay($blue) 100%,
+);
 //
 
 $shadow-box-3: 3px 3px 3px rgba(0, 0, 0, 0.3);
