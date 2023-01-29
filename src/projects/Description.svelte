@@ -8,7 +8,19 @@
 </p>
 
 <style lang="scss">
+  @use '../scss/global.scss' as *;
+  @use '../scss/breakpoints.scss';
   .description {
-    font-size: 20px;
+    @include text-d-l4;
+    color: white;
+    font-family: Nunito Sans;
+    font-weight: 300;
+    max-width: 600px;
+    margin-bottom: 28px;
+  }
+  @include breakpoints.md {
+    .description {
+      @include text-m-l4;
+    }
   }
 </style>

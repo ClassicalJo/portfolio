@@ -6,10 +6,17 @@
 
 <style lang="scss">
   @use '../scss/global.scss' as *;
-
+  @use '../scss/breakpoints.scss';
   .title {
-    @include gradientText;
-    font-size: 30px;
-    filter: drop-shadow(2px 2px grey);
+    @include text-d-l3;
+    color: white;
+    font-family: Alexandria;
+    font-weight: 500;
+    margin-bottom: 28px;
+  }
+  @include breakpoints.md {
+    .title {
+      @include text-m-l3;
+    }
   }
 </style>

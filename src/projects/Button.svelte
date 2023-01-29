@@ -4,12 +4,20 @@
   export let right = false
 </script>
 
-<button class:left class:right class="button left" on:click={onClick}>
-  <svg width="20" height="40" viewBox="0 0 20 40">
+<button class="button" on:click={onClick}>
+  <svg
+    class:left
+    class:right
+    class="chevron"
+    width="20"
+    height="40"
+    viewBox="0 0 20 40"
+    preserveAspectRatio="none"
+  >
     <slot />
     <path
       transform={`rotate(${left ? 180 : 0} 10 20)`}
-      fill="black"
+      fill="currentColor"
       d="
       M 0.00,0.00
       C 0.00,0.00 5.00,0.00 5.00,0.00
@@ -26,24 +34,36 @@
 </button>
 
 <style lang="scss">
-  .button {
-    position: absolute;
-    top: calc(50% - 20px);
-    height: 40px;
-    border: 0px;
-    background: transparent;
-    cursor: pointer;
-    opacity: 0.5;
-  }
-  .button:hover,
-  .button:active {
-    transition: opacity 0.3s ease;
-    opacity: 1;
-  }
+  @use '../scss/global.scss' as *;
+  @use 'sass:color';
   .left {
-    left: 10px;
+    color: $red;
   }
   .right {
-    right: 10px;
+    color: $blue;
+  }
+  .chevron {
+    height: 100%;
+    width: 100%;
+    filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
+  }
+  .button:first-child {
+    z-index: 2;
+  }
+  .button {
+    @include button;
+    cursor: pointer;
+    height: 20px;
+    width: 15px;
+  }
+  .right:hover,
+  .right:active,
+  .left:hover,
+  .left:active {
+    color: color.scale($red, $lightness: 30%);
+  }
+  .right:hover,
+  .right:active {
+    color: color.scale($blue, $lightness: 30%);
   }
 </style>
