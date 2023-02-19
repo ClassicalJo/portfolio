@@ -1,9 +1,9 @@
 <script lang="ts">
-  import { flip } from 'svelte/animate'
+  import { createStackList } from '../stores/stackList'
+  import { createTouchStore } from '../stores/touch'
+  import Button from './Button.svelte'
   import Item from './Item.svelte'
   import Slider from './Slider.svelte'
-  import Button from './Button.svelte'
-  import { createCarouselStore } from '../common/store'
   let uid = 0
   let items = [
     { tags: ['react', 'javascript', 'redux'], id: uid++, src: './prism.png' },
@@ -30,25 +30,33 @@
     }
   ]
 
-  const currentIndex = createCarouselStore(items.length - 1)
-  const { previous, next, setSlide } = currentIndex
-  const totalItems = items.length
+  const { stack, currentIndex, animate, next, previous, setItem } = createStackList(items)
+  const { touchStart, touchMove, touchEnd } = createTouchStore(0.1)
+  const handleTouchMove = (e: TouchEvent & { currentTarget: HTMLDivElement }) =>
+    touchMove(e, previous, next)
 </script>
 
 <div class="container flex flex-1">
   <div class="scene-wrapper">
     <div class="scene flex-1 relative flex-column flex">
-      <div class="items flex" aria-label="carousel">
-        {#each items as item, index (item.id)}
-          {@const selected = index === $currentIndex}
+      <div
+        class="items"
+        aria-label="carousel"
+        on:touchstart={touchStart}
+        on:touchend={touchEnd}
+        on:touchmove={handleTouchMove}
+        on:touchcancel={touchEnd}
+      >
+        {#each $stack as stackItem (stackItem.id)}
+          {@const { item } = stackItem}
+          {@const selected = $currentIndex === stackItem.id}
           <div
-            class="carousel flex flex-1"
-            class:selected
-            class:hidden={!selected}
+            class="item"
+            class:right={selected && $animate === 'right'}
+            class:left={selected && $animate === 'left'}
             aria-hidden={!selected}
-            animate:flip={{ duration: 500 }}
           >
-            <Item src={item.src} alt="" tags={item.tags} />
+            <Item id={item.id} src={item.src} alt="" tags={item.tags} />
           </div>
         {/each}
       </div>
@@ -56,7 +64,11 @@
         <Button left={true} onClick={previous}>
           <title>Previous project</title>
         </Button>
-        <Slider currentIndex={$currentIndex} {totalItems} onClick={setSlide} />
+        <Slider
+          currentIndex={$currentIndex}
+          totalItems={items.length}
+          onClick={setItem}
+        />
         <Button right={true} onClick={next}>
           <title>Next project</title>
         </Button>
@@ -69,6 +81,15 @@
   @use '../scss/global.scss' as *;
   .container {
     justify-content: center;
+  }
+  .right {
+    animation: right 0.5s ease-out forwards;
+  }
+  .left {
+    animation: left 0.5s ease-out forwards;
+  }
+  .item {
+    @include beforeAbsolute;
   }
 
   .scene,
@@ -85,7 +106,6 @@
   .scene-wrapper::before {
     @include beforeAbsolute;
     max-width: 1228px;
-    background-color: red;
     border-radius: 14px;
     background: $gradientHeader;
     box-shadow: 0px 3px 15px black;
@@ -98,5 +118,6 @@
   }
   .items {
     @include beforeAbsolute;
+    overflow-x: hidden;
   }
 </style>

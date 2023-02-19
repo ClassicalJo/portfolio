@@ -48,13 +48,14 @@
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 0.5));
   }
   .button:first-child {
-    z-index: 2;
+    z-index: 10;
   }
   .button {
     @include button;
     cursor: pointer;
     height: 20px;
     width: 15px;
+    z-index: 10;
   }
   .right:hover,
   .right:active,
