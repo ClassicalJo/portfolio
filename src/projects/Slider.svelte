@@ -34,6 +34,7 @@
   @use '../scss/global.scss' as *;
   .slider {
     filter: drop-shadow(1px 1px 1px rgba(0, 0, 0, 1));
+    z-index: 4;
   }
   .grid {
     position: relative;
@@ -60,7 +61,7 @@
     border: 0;
     background-color: rgba(255, 255, 255, 0.4);
     cursor: pointer;
-    z-index: 3;
+    z-index: 10;
   }
   .selected {
     position: absolute;
@@ -68,7 +69,7 @@
     height: 15px;
     background-color: rgba(255, 255, 255, 0.7);
     border-radius: 100%;
-    z-index: 1;
+    z-index: 11;
   }
   .slider-button:hover,
   .slider-button:active {

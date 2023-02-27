@@ -6,7 +6,7 @@
   export let src: string
   export let alt: string
   export let tags: string[]
-
+  export let id: number
   let loading = true
   const toggle = () => (loading = !loading)
 </script>
@@ -16,7 +16,7 @@
   <div class="item flex">
     <div class="flex flex-column column">
       <div class="flex flex-column flex-1 content">
-        <Title>Project Title #1</Title>
+        <Title>Project Title #{id}</Title>
         <Description />
         <Tags {tags} />
         <div class="action-zone">
