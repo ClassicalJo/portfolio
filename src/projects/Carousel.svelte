@@ -4,31 +4,7 @@
   import Button from './Button.svelte'
   import Item from './Item.svelte'
   import Slider from './Slider.svelte'
-  let uid = 0
-  let items = [
-    { tags: ['react', 'javascript', 'redux'], id: uid++, src: './prism.png' },
-    { tags: ['react', 'javascript', 'redux'], id: uid++, src: './denim.webp' },
-    {
-      tags: ['react', 'javascript', 'redux'],
-      id: uid++,
-      src: 'https://via.placeholder.com/800'
-    },
-    {
-      tags: ['react', 'javascript', 'redux'],
-      id: uid++,
-      src: 'https://via.placeholder.com/700'
-    },
-    {
-      tags: ['react', 'javascript', 'redux'],
-      id: uid++,
-      src: 'https://via.placeholder.com/600'
-    },
-    {
-      tags: ['react', 'javascript', 'redux'],
-      id: uid++,
-      src: 'https://via.placeholder.com/500'
-    }
-  ]
+  import { items } from './projects'
 
   const { stack, currentIndex, animate, next, previous, setItem } = createStackList(items)
   const { touchStart, touchMove, touchEnd } = createTouchStore(0.1)
@@ -56,7 +32,14 @@
             class:left={selected && $animate === 'left'}
             aria-hidden={!selected}
           >
-            <Item id={item.id} src={item.src} alt="" tags={item.tags} />
+            <Item
+              id={item.id}
+              src={item.src}
+              alt=""
+              tags={item.tags}
+              deploy={item.deploy}
+              github={item.github}
+            />
           </div>
         {/each}
       </div>

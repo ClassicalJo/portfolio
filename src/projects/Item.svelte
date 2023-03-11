@@ -7,6 +7,8 @@
   export let alt: string
   export let tags: string[]
   export let id: number
+  export let github: string
+  export let deploy: string
   let loading = true
   const toggle = () => (loading = !loading)
 </script>
@@ -16,13 +18,9 @@
   <div class="item flex">
     <div class="flex flex-column column">
       <div class="flex flex-column flex-1 content">
-        <Title>Project Title #{id}</Title>
+        <Title {deploy} {github}>Project Title #{id}</Title>
         <Description />
         <Tags {tags} />
-        <div class="action-zone">
-          <input type="button" value="Link to Github" />
-          <input type="button" value="Link to Deploy" />
-        </div>
       </div>
     </div>
   </div>
@@ -38,7 +36,6 @@
   }
   .content {
     padding: 56px;
-    /* margin:56px; */
   }
   .background {
     object-fit: cover;
