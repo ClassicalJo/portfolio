@@ -5,11 +5,11 @@
 <div class="picture-wrapper flex center">
   <div class="picture-container">
     <div class="wrapper">
-      <div class="image pictures green" />
-      <div class="image pictures blue" />
+      <div class="image pictures green" style="background-image:url({images.joe})"/>
+      <div class="image pictures blue" style="background-image:url({images.joe})"/>
     </div>
     <div class="wrapper">
-      <div class="image pictures red" />
+      <div class="image pictures red" style="background-image:url({images.joe})"/>
       <img
         class="picture pictures"
         src={images.joe}
@@ -28,8 +28,7 @@
   .picture-wrapper {
     margin: calc(values.$imageHeight / 2) 0;
   }
-  .image {
-    background-image: url(images.joe);
+  .image {    
     background-size: values.$imageWidth values.$imageHeight;
     width: values.$imageWidth;
     height: values.$imageHeight;
