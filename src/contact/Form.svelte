@@ -1,88 +1,120 @@
 <script lang="ts">
-  import Socials from './Socials.svelte'
-  import Loading from './Loading.svelte'
-  import submit from './submit'
-  import type { ISubmitEvent } from './submit'
-  let promise: null | Promise<void> = null
+  import Input from './Input.svelte'
+  import Loading from './Loading.svelte'  
+  import emailService from './utils'
+  import icons from '../assets/icons'
+  import Button from './Button.svelte'
+
+  let promise: null | Promise<Response> = null
   let form: HTMLFormElement
-  let handleSuccess = () => {
-    promise = Promise.resolve()
-    setTimeout(() => (promise = null), 2000)
-  }
-  let handleError = (err: Error) => {
-    console.error(err.message)
-    promise = Promise.reject()
-    setTimeout(() => (promise = null), 2000)
-  }
-  let handleSubmit = (e: ISubmitEvent) => {
-    promise = submit(e, handleSuccess, handleError)
+  let handleSubmit = () => {      
+    promise = emailService(form)
   }
 </script>
 
-<form
-  bind:this={form}
-  class="wrapper flex flex-column center"
-  action="https://formspree.io/f/moqbgdqb"
-  method="POST"
-  on:submit={handleSubmit}
->
-  <input class="input" type="text" name="email" placeholder="Your e-mail address" />
-  <textarea class="area flex-1" name="message" placeholder="Write me something!" />
-  <div class="submit-area">
+<div class="wrapper flex flex-1 flex-column">
+  <form 
+  bind:this={form} 
+  class="flex flex-1 form"  
+  >
+    <div class="flex flex-1 flex-column input-area">
+      <Input
+        id="form-name"
+        name="name"
+        title="Name"
+        type="text"
+        placeholder="John Smith"
+        required={true}
+        src={icons.person}
+      />
+      <Input
+        id="form-company"
+        name="company"
+        title="Company name"
+        type="text"
+        placeholder="Acme Corporation"
+        required={false}
+        src={icons.company}
+      />
+      <Input
+        id="form-email"
+        name="email"
+        title="E-mail"
+        type="email"
+        placeholder="email@example.com"
+        required={true}
+        src={icons.letter}
+      />
+    </div>
+    <div class="flex flex-column flex-1 text-area">
+      <label class="input-label" for="form-text-area">Message body (*)</label>
+      <textarea
+        id="form-text-area"
+        class="area flex-1"
+        required
+        name="message"
+        placeholder="Start writing here..."
+      />
+    </div>
+  </form>
+  <div class="submit-area flex center">
+    <Button onClick={() => form.reset()} backgroundColor="#FF7F50" icon={icons.close} />
     {#if !promise}
-      <button class="submit" type="submit">Send!</button>
+      <Button onClick={handleSubmit} backgroundColor="#32CD32" icon={icons.send} />
     {:else}
-      {#await promise}
-        <Loading />
-      {:then}
-        <p>Form sent!</p>
-      {:catch}
-        <p>Form error!</p>
-      {/await}
+      <div class="flex-1">
+        {#await promise}
+          <Loading />
+        {:then}
+          <p>Form sent!</p>
+        {:catch}
+          <p>Form error!</p>
+        {/await}
+      </div>
     {/if}
   </div>
-  <Socials />
-</form>
+</div>
 
 <style lang="scss">
   @use '../scss/breakpoints.scss';
   @use '../scss/global.scss' as *;
   @use 'sass:color';
+  $gap: 20px;
 
-  .submit {
-    @include button;
+  .form,
+  .submit-area,
+  .wrapper {
+    gap: $gap;
   }
-  .submit-area {
-    width: 100%;
-    min-height: 87px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .input-area {
+    gap: 15px;
   }
-  .input,
-  .submit,
+  .input-label {
+    color: white;
+    padding-bottom: 5px;
+  }
+
+  .form {
+    flex-direction: column;
+  }
   .area {
     box-sizing: border-box;
-    width: 100%;
-    background-color: transparent;
-    color: white;
-    border-radius: 10px;
-    border: 10px double white;
-    padding: 20px;
-    @include text-d-l4;
+    background: $gradientInput;
+    color: black;
+    border: 0px;
+    padding: 10px;
+    min-height: 150px;
     font-family: Noto Sans JP;
-  }
-  .wrapper {
-    padding: 20px;
     border-radius: 10px;
-    background: linear-gradient(blueviolet, color.scale(blueviolet, $blackness: 30%));
-    max-height: 550px;
-
-    filter: drop-shadow(2px 2px 5px black);
-    gap: 20px;
+    @include text-m-l4;
+    width:100%;  
   }
-  .input::placeholder,
+
+  .wrapper {
+    border-radius: 5px;    
+    max-width: 1200px;    
+  }
   .area::placeholder {
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(0, 0, 0, 0.5);
   }
 </style>
