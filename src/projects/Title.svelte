@@ -1,6 +1,5 @@
 <script lang="ts">
-  import githubIcon from '../../public/github.svg'
-  import chevron from '../../public/chevron.svg'
+  import icons from '../assets/icons'
   export let github: string
   export let deploy: string
 </script>
@@ -17,7 +16,7 @@
       rel="noreferrer noopener"
       title="Go to the deploy"
     >
-      <img class="icon" alt="Play button" src={chevron} />
+      <img class="icon" alt="Play button" src={icons.deploy} />
     </a>
     <a
       class="flex center"
@@ -26,7 +25,7 @@
       rel="noreferrer noopener"
       title="Go to the github repository"
     >
-      <img class="icon" alt="Logo of Github" src={githubIcon} />
+      <img class="icon" alt="Logo of Github" src={icons.github} />
     </a>
   </div>
 </div>

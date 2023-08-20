@@ -5,7 +5,7 @@
   export let src: string
   export let placeholder: string
   export let type: 'email' | 'text'
-  export let required: boolean = false
+  export let required = false
 </script>
 
 <div class="wrapper flex flex-column">
@@ -32,14 +32,14 @@
     color: rgba(0, 0, 0, 0.9);
     border: 0px;
     font-family: Noto Sans JP;
-    @include text-m-l4;      
+    @include text-m-l4;
     min-width: 0;
     width: 0;
     background-color: transparent;
-  }  
+  }
   .input-area {
     background: $gradientInput;
-    padding: 10px;    
+    padding: 10px;
     border-radius: 10px;
   }
   .input-label {

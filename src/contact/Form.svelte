@@ -1,22 +1,19 @@
 <script lang="ts">
   import Input from './Input.svelte'
-  import Loading from './Loading.svelte'  
+  import Loading from './Loading.svelte'
   import emailService from './utils'
   import icons from '../assets/icons'
   import Button from './Button.svelte'
 
   let promise: null | Promise<Response> = null
   let form: HTMLFormElement
-  let handleSubmit = () => {      
+  let handleSubmit = () => {
     promise = emailService(form)
   }
 </script>
 
 <div class="wrapper flex flex-1 flex-column">
-  <form 
-  bind:this={form} 
-  class="flex flex-1 form"  
-  >
+  <form bind:this={form} class="flex flex-1 form">
     <div class="flex flex-1 flex-column input-area">
       <Input
         id="form-name"
@@ -107,12 +104,12 @@
     font-family: Noto Sans JP;
     border-radius: 10px;
     @include text-m-l4;
-    width:100%;  
+    width: 100%;
   }
 
   .wrapper {
-    border-radius: 5px;    
-    max-width: 1200px;    
+    border-radius: 5px;
+    max-width: 1200px;
   }
   .area::placeholder {
     color: rgba(0, 0, 0, 0.5);

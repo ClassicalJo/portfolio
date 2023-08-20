@@ -27,7 +27,7 @@ export const mockRejectSubmitter: ISubmitter = () =>
     setTimeout(() => reject(new Response()), 2000)
   })
 
-function submitEmail(form: HTMLFormElement) {  
+function submitEmail(form: HTMLFormElement) {
   switch (process.env.NODE_ENV) {
     case 'production':
       return submitForm(form, formSpreeSubmitter)

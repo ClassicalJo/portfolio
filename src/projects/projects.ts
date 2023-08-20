@@ -1,16 +1,17 @@
+import images from '../assets/images'
 let uid = 0
 export const items = [
   {
     tags: ['react', 'javascript', 'redux'],
     id: uid++,
-    src: './prism.png',
+    src: images.prism,
     deploy: 'https://classicaljo.github.io/portfolio/',
     github: 'https://github.com/ClassicalJo/portfolio'
   },
   {
     tags: ['react', 'javascript', 'redux'],
     id: uid++,
-    src: './denim.webp',
+    src: images.denim,
     deploy: 'https://classicaljo.github.io/portfolio/',
     github: 'https://github.com/ClassicalJo/portfolio'
   },
