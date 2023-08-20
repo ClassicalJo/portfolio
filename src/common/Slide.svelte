@@ -6,6 +6,7 @@
   import { currentSection, slideIndex } from './store'
   export let index: number
   export let target: ScrollTargetKey
+  export let slide = true
   let section: HTMLElement
 
   const scroller = getContext<Scroller>(key)
@@ -24,7 +25,7 @@
   })
 </script>
 
-<section bind:this={section} class="slide" id={target}>
+<section bind:this={section} class:slide id={target}>
   <slot />
 </section>
 

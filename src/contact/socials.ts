@@ -1,10 +1,10 @@
 import icons from '../assets/icons'
 type SocialLinks = {
-    src: string,
-    href: string,
-    alt: string
+  src: string
+  href: string
+  alt: string
 }
-let socials: SocialLinks[] = [
+const socials: SocialLinks[] = [
   {
     src: icons.mail,
     href: 'mailto:jb.barrientos@yahoo.com',

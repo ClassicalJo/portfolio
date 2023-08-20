@@ -1,7 +1,11 @@
+<script lang="ts">
+  import images from '../assets/images'
+</script>
+
 <div class="flex-column flex">
   <p class="pre-title">José Barrientos is</p>
   <div class="flex">
-    <h1 class="hero-title">ClassicalJo</h1>
+    <h1 class="hero-title" style="background-image:url({images.cloud})">ClassicalJo</h1>
   </div>
   <p class="block">
     And he's a fullstack developer based in Argentina, striving for pixel perfect digital
@@ -27,7 +31,6 @@
     font-family: Alexandria;
     pointer-events: none;
     @include text-d-l1;
-    background-image: url('./cloud.png');
     background-position: center;
     background-clip: text;
     -webkit-background-clip: text;

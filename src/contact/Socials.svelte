@@ -8,4 +8,3 @@
     <Link src={link.src} alt={link.alt} href={link.href} />
   {/each}
 </div>
-

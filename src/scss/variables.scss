@@ -21,9 +21,16 @@ $gradientHero: linear-gradient(
 
 $gradientHeader: linear-gradient(
   90deg,
-  rgba(214, 2, 112, 1) 0%,
-  rgba(155, 79, 150, 1) 50%,
-  rgba(0, 56, 168, 1) 100%
+  $red 0%,
+  $purple 50%,
+  $blue 100%
+);
+
+$gradientInput: linear-gradient(
+  90deg,
+  color.scale($red, $lightness: 90%) 0%,
+  color.scale($purple, $lightness: 90%) 50%,
+  color.scale($blue, $lightness: 90%) 100%,
 );
 
 @function darkerOverlay($color){

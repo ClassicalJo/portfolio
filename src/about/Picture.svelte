@@ -1,4 +1,5 @@
 <script lang="ts">
+  import images from '../assets/images'
 </script>
 
 <div class="picture-wrapper flex center">
@@ -11,7 +12,7 @@
       <div class="image pictures red" />
       <img
         class="picture pictures"
-        src="./joe.jpg"
+        src={images.joe}
         width="250"
         height="250"
         alt="ClassicalJo, thats me, wearing a suit, glasses and an elephant-themed tie, looking at the camera"
@@ -28,7 +29,7 @@
     margin: calc(values.$imageHeight / 2) 0;
   }
   .image {
-    background-image: url('./joe.jpg');
+    background-image: url(images.joe);
     background-size: values.$imageWidth values.$imageHeight;
     width: values.$imageWidth;
     height: values.$imageHeight;
@@ -64,7 +65,7 @@
   }
   @include breakpoints.sm {
     .image {
-      background-image: url('./joe.jpg');
+      background-image: url(images.joe);
       background-size: values.$smallImageWidth values.$smallImageHeight;
       background-size: contain;
     }

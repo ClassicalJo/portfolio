@@ -1,7 +1,7 @@
 <script>
   import Form from './Form.svelte'
   import Slide from '../common/Slide.svelte'
-    import Card from './Card.svelte'
+  import Card from './Card.svelte'
 </script>
 
 <Slide target="contact" index={3} slide={false}>
@@ -14,14 +14,14 @@
 </Slide>
 
 <style lang="scss">
-  @use '../scss/breakpoints.scss' as breakpoints;  
+  @use '../scss/breakpoints.scss' as breakpoints;
   @use '../scss/global.scss' as *;
   .contact {
-    margin: 88px 44px;    
+    margin: 88px 44px;
     align-items: center;
     justify-content: center;
   }
-  .wrapper {    
+  .wrapper {
     border-radius: 5px;
     padding: 20px;
     background: $gradientHeader;
@@ -36,10 +36,6 @@
   @include breakpoints.lg {
     .contact {
       margin: 0px 14px;
-    }    
-    .note {
-      margin-bottom: 120px;
     }
-  }  
-
+  }
 </style>
