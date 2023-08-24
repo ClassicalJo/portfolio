@@ -20,7 +20,7 @@
     justify-content: center;
   }
   .content {
-    padding-top: $headerOuterHeight;
+    /* padding-top: $headerOuterHeight; */
     max-width: 1000px;
     align-items: center;
     justify-content: center;

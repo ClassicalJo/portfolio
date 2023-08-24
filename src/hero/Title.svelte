@@ -3,8 +3,8 @@
 </script>
 
 <div class="flex-column flex">
-  <p class="pre-title">Hi! I'm</p>
-  <div class="flex">
+  <div class="flex relative">
+    <p class="pre-title absolute">Hi! I'm</p>
     <h1 class="hero-title" style="background-image:url({images.cloud})">ClassicalJo</h1>
   </div>
 </div>
@@ -19,7 +19,7 @@
   }
   .pre-title {
     color: white;
-    margin-bottom: 10px;
+    top: -36px;
   }
   .hero-title {
     position: relative;
@@ -42,7 +42,9 @@
       filter: drop-shadow(0px 0px 2px $black);
     }
     .pre-title {
-      @include text-m-l4;
+      @include text-m-l5;
+      top: -12px;
+      left: 5px;
     }
   }
 </style>
