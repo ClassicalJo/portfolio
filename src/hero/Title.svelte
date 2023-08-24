@@ -3,27 +3,22 @@
 </script>
 
 <div class="flex-column flex">
-  <p class="pre-title">José Barrientos is</p>
+  <p class="pre-title">Hi! I'm</p>
   <div class="flex">
     <h1 class="hero-title" style="background-image:url({images.cloud})">ClassicalJo</h1>
   </div>
-  <p class="block">
-    And he's a fullstack developer based in Argentina, striving for pixel perfect digital
-    experiences. Currently breaking barriers as chapter lead @Scalemote.
-  </p>
 </div>
 
 <style lang="scss">
   @use 'sass:color';
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
-  .pre-title,
-  .block {
+  .pre-title {
     @include text-d-l4;
     font-family: Noto Sans JP;
   }
   .pre-title {
-    color: color.scale($black, $blackness: 50%);
+    color: white;
     margin-bottom: 10px;
   }
   .hero-title {
@@ -38,11 +33,6 @@
     filter: drop-shadow(0px 0px 4px $black);
     margin: 20px 0px 30px 0px;
   }
-  .block {
-    color: $black;
-    max-width: 540px;
-    font-family: Nunito Sans;
-  }
 
   @include breakpoints.md {
     .hero-title {
@@ -51,7 +41,6 @@
       margin: 15px 0px 30px 0px;
       filter: drop-shadow(0px 0px 2px $black);
     }
-    .block,
     .pre-title {
       @include text-m-l4;
     }
