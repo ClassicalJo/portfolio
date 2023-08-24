@@ -6,7 +6,7 @@
   import { cubicOut } from 'svelte/easing'
 </script>
 
-{#if !$scrollDown}
+{#if $scrollDown}
   <header
     class="header-container flex flex-1"
     transition:verticalScale={{ easing: cubicOut, duration: 500 }}
