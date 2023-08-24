@@ -1,6 +1,7 @@
 export const fragment = `
 precision highp float;
 uniform vec4 u_primary_color;
+vec4 u_secondary_color = vec4(0, 0.1, 0.1, 1.0);
 uniform vec2 u_translation;
 uniform float u_time;
 uniform vec2 u_resolution;
@@ -24,6 +25,16 @@ float noise(vec2 uv, float seed_h, float seed_v) {
                 mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
                      dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) + alpha;
 }
+
+vec4 adjustColor(vec4 col, vec4 colorA, vec4 colorB) {
+    float darkness = (col.r + col.g + col.b) / 3.0;  
+    if (darkness < 0.85) {
+      return col * colorA;
+    } else {
+      return col * colorB * colorA; 
+    }
+  }
+
 void main()
 {  
     // Normalized pixel coordinates (from 0 to 1)
@@ -39,7 +50,7 @@ void main()
     float horizontal_oscillation_frequency = -4.0;
     float vertical_oscillation_frequency = 1.0;
     float chaos_factor = 2.0;
-    float time = u_time * .001;
+    float time = u_time * .0005;
 
     // noise
     uv = chaos_factor * uv;
@@ -53,6 +64,6 @@ void main()
     vec3 col = vec3(noise, noise, noise);
     
     // Output to screen
-    gl_FragColor = vec4(col,1.0) * u_primary_color;
+    gl_FragColor = adjustColor(vec4(col,1.0), u_primary_color, u_secondary_color) ;
 }
 `

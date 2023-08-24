@@ -61,7 +61,7 @@ export class CanvasAnimationLoop {
     this.pause = false
 
     this.loop(0)
-    process.env.NODE_ENV === 'development' && setTimeout(() => this.stop(), 100)
+    // process.env.NODE_ENV === 'development' && setTimeout(() => this.stop(), 100)
   }
   stop() {
     cancelAnimationFrame(this.animationFrame)
