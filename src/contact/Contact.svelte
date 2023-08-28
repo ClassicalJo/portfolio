@@ -23,7 +23,7 @@
   @use '../scss/breakpoints.scss' as breakpoints;
   @use '../scss/global.scss' as *;
   .contact {
-    margin: 88px 44px;
+    padding: 124px 44px;
     align-items: center;
     justify-content: center;
   }
@@ -58,6 +58,7 @@
   @include breakpoints.lg {
     .contact {
       margin: 88px 14px;
+      padding: 0;
     }
   }
 </style>

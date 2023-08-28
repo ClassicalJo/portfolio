@@ -39,8 +39,7 @@
   @use '../scss/breakpoints.scss';
   @use './values.scss';
   .about {
-    margin: 124px 44px;
-    min-height: 100vh;
+    padding: 124px 44px;
     font-family: Nunito Sans;
   }
   .card {
@@ -77,15 +76,11 @@
   }
   @include breakpoints.lg {
     .about {
-      margin: 84px 14px;
+      padding: 84px 14px;
       flex-direction: column;
     }
     .text-body {
       @include text-m-l4;
-    }
-    .title,
-    .text-body {
-      padding: 14px 0;
     }
   }
 </style>

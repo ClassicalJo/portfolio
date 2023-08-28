@@ -32,6 +32,5 @@
 <style>
   .slide {
     min-width: 100vw;
-    min-height: 100vh;
   }
 </style>
