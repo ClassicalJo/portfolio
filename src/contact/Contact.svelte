@@ -44,7 +44,7 @@
     .background {
       flex-direction: column;
       max-width: 500px;
-      gap: 120px;
+      gap: 248px;
       background: none;
     }
     .wrapper-card {

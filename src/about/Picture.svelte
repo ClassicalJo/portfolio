@@ -26,7 +26,7 @@
   @use '../scss/breakpoints.scss';
   @use './values.scss';
   .picture-wrapper {
-    margin: calc(values.$imageHeight / 2) 0;
+    /* margin-top: calc(values.$imageHeight / 2 + 88px) 0; */
   }
   .image {
     background-size: values.$imageWidth values.$imageHeight;
