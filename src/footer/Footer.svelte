@@ -1,30 +1,40 @@
 <script lang="ts">
   import '../scss/base.scss'
+  import Socials from './Socials.svelte'
   import Visual from './Visual.svelte'
 </script>
 
-<footer class="footer flex flex-1 flex-column center">
-  <div class="wrapper">
-    <Visual />
-    <div class="column flex-1 flex-column flex">
+<footer class="footer flex flex-1">
+  <div class="flex flex-1 content">
+    <div class="flex flex-1 flex-column wrapper center">
+      <Visual />
       <a class="link" href="https://github.com/classicaljo/portfolio"
         >See this repository on Github!</a
       >
+    </div>
+    <div class="column flex-1 flex-column flex">
+      <Socials />
     </div>
   </div>
 </footer>
 
 <style lang="scss">
   @use '../scss/global.scss' as *;
+  @use '../scss/breakpoints';
   .footer {
     bottom: 0px;
     width: 100vw;
+    min-height: 440px;
     background: rgb(214, 2, 112);
     background: $gradientFooter;
-    backdrop-filter: blur(10px);
+    justify-content: center;
+  }
+  .content {
+    padding: 20px;
   }
   .wrapper {
-    padding: 20px;
+    border-right: 1px solid white;
+    flex: 1 1 400px;
   }
   .link {
     color: inherit;
@@ -65,5 +75,21 @@
     opacity: 1;
     transition: 0s;
     background-color: rgba(0, 0, 0, 0.1);
+  }
+  .column {
+    flex: 1 1 66%;
+  }
+  @include breakpoints.md {
+    .content {
+      flex-direction: column;
+    }
+    .wrapper {
+      border-right: 0px;
+      border-bottom: 1px solid white;
+    }
+    .column {
+      flex: 0;
+      padding-top: 20px;
+    }
   }
 </style>
