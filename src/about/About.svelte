@@ -77,6 +77,7 @@
   @include breakpoints.lg {
     .about {
       flex-direction: column;
+      padding: 124px 14px;
     }
     .text-body {
       @include text-m-l4;
