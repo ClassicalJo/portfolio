@@ -24,7 +24,7 @@
   .footer {
     bottom: 0px;
     width: 100vw;
-    min-height: 440px;
+    min-height: 280px;
     background: rgb(214, 2, 112);
     background: $gradientFooter;
     justify-content: center;
