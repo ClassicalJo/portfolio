@@ -4,8 +4,8 @@
   export let deploy: string
 </script>
 
-<div class="title flex">
-  <p class="flex-1 text">
+<div class="flex wrapper">
+  <p class="flex-1 title">
     <slot />
   </p>
   <div class="flex icon-zone">
@@ -33,24 +33,26 @@
 <style lang="scss">
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
+  $textColor: rgba(50, 50, 50, 1);
   .title {
-    @include text-d-l3;
-    color: white;
-    font-family: Alexandria;
     font-weight: 500;
-    margin-bottom: 28px;
+    @include text-m-l3;
   }
-  .text {
-    margin-right: 1em;
+  .wrapper {
+    padding-bottom: 10px;
+    border-bottom: 1px solid $textColor;
+    color: $textColor;
   }
+
   .icon-zone {
     gap: 0.5em;
+    /* filter: invert(1); */
   }
   .icon {
-    color: white;
     width: 25px;
     height: 25px;
     opacity: 0.7;
+    filter: invert(1);
   }
   .icon:hover,
   .icon:active {
@@ -58,9 +60,15 @@
     transition: opacity 0.15s ease;
   }
 
-  @include breakpoints.md {
+  @include breakpoints.lg {
     .title {
-      @include text-m-l3;
+      color: rgba(225, 225, 225, 1);
+    }
+    .wrapper {
+      border-bottom: 1px solid rgba(225, 225, 225, 1);
+    }
+    .icon {
+      filter: none;
     }
   }
 </style>

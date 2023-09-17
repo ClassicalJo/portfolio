@@ -1,12 +1,18 @@
 <script lang="ts">
   import Slide from '../common/Slide.svelte'
+  import Lobo from '../footer/Lobo.svelte'
   import Picture from './Picture.svelte'
 </script>
 
 <Slide target="about" index={1}>
   <div class="about relative flex center">
     <div class="card">
-      <h2 class="title">About me</h2>
+      <div class="flex">
+        <h2 class="title flex-1">About me</h2>
+        <div class="lobo">
+          <Lobo width={50} height={50} />
+        </div>
+      </div>
       <hr />
       <p class="text-body">
         Howdy! I'm <strong>José Barrientos</strong> and I've been developing for the better
@@ -33,30 +39,34 @@
   @use '../scss/breakpoints.scss';
   @use './values.scss';
   .about {
-    margin: 124px 44px;
-    min-height: 100vh;
+    padding: 124px 44px;
     font-family: Nunito Sans;
   }
   .card {
-    background-color: white;
-    border: 10px solid white;
+    background: $gradientInput;
     border-radius: 10px;
     max-width: 650px;
     box-shadow: 1px 1px 1px $black;
-    padding: 14px;
+    padding: 24px;
+    color: rgba(50, 50, 50, 1);
   }
+  .lobo {
+    align-items: end;
+    justify-content: start;
+    filter: invert(1);
+    opacity: 0.2;
+  }
+
   .text-body {
     font-family: Nunito Sans;
     @include text-d-l4;
-    font-weight: 200;
+    font-weight: 300;
   }
   .title,
   .text-body {
     padding: 14px 0;
   }
-  .title {
-    background-color: white;
-  }
+
   .link {
     text-decoration: underline;
     color: $blue;
@@ -66,15 +76,11 @@
   }
   @include breakpoints.lg {
     .about {
-      margin: 84px 14px;
       flex-direction: column;
+      padding: 124px 14px;
     }
     .text-body {
       @include text-m-l4;
-    }
-    .title,
-    .text-body {
-      padding: 14px 0;
     }
   }
 </style>

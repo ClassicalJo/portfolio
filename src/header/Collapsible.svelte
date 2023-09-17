@@ -1,36 +1,14 @@
 <script lang="ts">
-  import { getContext } from 'svelte'
-  import type { ScrollTargetKey } from '../common/Scroller'
-  import { key, Scroller } from '../common/Scroller'
-  import { currentSection } from '../common/store'
   import Menu from './Menu.svelte'
   import NavBar from './NavBar.svelte'
 
   let expanded = false
-  const expand = (value: boolean) => (expanded = value)
-
-  let scroller = getContext<Scroller>(key)
-  const goTo = (target: ScrollTargetKey) => () => {
-    expand(false)
-    scroller.go(target)
-  }
-
-  let renderSections: [ScrollTargetKey, string][] = [
-    ['home', 'Home'],
-    ['about', 'About me'],
-    ['projects', 'Projects'],
-    ['contact', 'Contact']
-  ]
-  $: sections = renderSections.map(([section, title]) => ({
-    title,
-    link: goTo(section),
-    current: $currentSection === section
-  }))
+  const expand = () => (expanded = !expanded)
 </script>
 
 <div class="collapsible flex flex-1 flex-column">
-  <Menu onClick={() => expand(!expanded)} />
-  <NavBar {expanded} {sections} />
+  <Menu onClick={expand} />
+  <NavBar {expanded} {expand} />
 </div>
 
 <style lang="scss">

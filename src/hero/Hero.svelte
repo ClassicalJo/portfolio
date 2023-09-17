@@ -18,9 +18,9 @@
   .background {
     background: $gradientHero;
     justify-content: center;
+    margin-bottom: 124px;
   }
   .content {
-    padding-top: $headerOuterHeight;
     max-width: 1000px;
     align-items: center;
     justify-content: center;

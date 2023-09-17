@@ -15,6 +15,12 @@
   .tags {
     @include text-d-l5;
     margin-bottom: 28px;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(50, 50, 50, 1);
+  }
+  @include breakpoints.lg {
+    .tags {
+      color: white;
+      text-align: right;
+    }
   }
 </style>

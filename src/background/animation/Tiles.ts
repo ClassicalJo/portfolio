@@ -126,7 +126,8 @@ export class Tiles implements CanvasAnimation {
       )
       this.gl.uniform2f(this.locations.translationUniformLocation, tile.x, tile.y)
       // Pass the color int
-      this.gl.uniform4f(this.locations.primaryColorUniformLocation, 0.77, 1, 0.99, 1)
+      // this.gl.uniform4f(this.locations.primaryColorUniformLocation, 0.77, 1, 0.99, 1)
+      this.gl.uniform4f(this.locations.primaryColorUniformLocation, 0.05, 0.0, 0.1, 1)
       // Pass the lifetime int
       this.gl.uniform1f(this.locations.timeUniformLocation, this.lifetime)
       // Draw the rectangle.

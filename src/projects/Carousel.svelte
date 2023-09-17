@@ -39,6 +39,7 @@
               tags={item.tags}
               deploy={item.deploy}
               github={item.github}
+              {selected}
             />
           </div>
         {/each}
@@ -61,9 +62,11 @@
 </div>
 
 <style lang="scss">
+  @use '../scss/breakpoints.scss';
   @use '../scss/global.scss' as *;
   .container {
     justify-content: center;
+    padding: 124px 44px;
   }
   .right {
     animation: right 0.5s ease-out forwards;
@@ -90,8 +93,6 @@
     @include beforeAbsolute;
     max-width: 1228px;
     border-radius: 14px;
-    background: $gradientHeader;
-    box-shadow: 0px 3px 15px black;
   }
   .controls {
     bottom: 0;
@@ -102,5 +103,14 @@
   .items {
     @include beforeAbsolute;
     overflow-x: hidden;
+  }
+  @include breakpoints.lg {
+    .container {
+      padding: 124px 0px;
+    }
+    .scene-wrapper {
+      padding: 14px 0px;
+      max-width: 800px;
+    }
   }
 </style>
