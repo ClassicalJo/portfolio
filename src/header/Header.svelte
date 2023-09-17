@@ -1,22 +1,19 @@
 <script lang="ts">
   import Collapsible from './Collapsible.svelte'
   import Logo from './Logo.svelte'
-  import { scrollDown } from '../common/store'
   import { verticalScale } from '../common/transitions'
   import { cubicOut } from 'svelte/easing'
 </script>
 
-{#if $scrollDown}
-  <header
-    class="header-container flex flex-1"
-    transition:verticalScale={{ easing: cubicOut, duration: 500 }}
-  >
-    <div class="header flex flex-1">
-      <Logo />
-      <Collapsible />
-    </div>
-  </header>
-{/if}
+<header
+  class="header-container flex flex-1"
+  transition:verticalScale={{ easing: cubicOut, duration: 500 }}
+>
+  <div class="header flex flex-1">
+    <Logo />
+    <Collapsible />
+  </div>
+</header>
 
 <style lang="scss">
   @use '../scss/global.scss' as *;

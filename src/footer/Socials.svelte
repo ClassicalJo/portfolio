@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Link from './Link.svelte'
   import socials from './socials'
 </script>
 

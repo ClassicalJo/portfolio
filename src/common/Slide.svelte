@@ -1,31 +1,32 @@
 <script lang="ts">
   import { getContext, onMount } from 'svelte'
-  import type { ScrollTargetKey } from './Scroller'
-  import { key, Scroller } from './Scroller'
-  import { setObservable } from './setObservable'
-  import { currentSection, slideIndex } from './store'
-  export let index: number
-  export let target: ScrollTargetKey
+  import type { Writable } from 'svelte/store'
+  import type { SectionName } from './Scroller'
+  import { Scroller, scrollerKey } from './Scroller'
+  import { sectionKey } from './store'
+  export let index = 0
+  export let offsetY = 0
+  export let threshold = 0.5
+  export let target: SectionName
   export let slide = true
   let section: HTMLElement
-
-  const scroller = getContext<Scroller>(key)
-  const onObserve = () => {
-    currentSection.set(target)
-    slideIndex.updateColor(index)
+  const scroller = getContext<Scroller>(scrollerKey)
+  const currentSection = getContext<Writable<SectionName>>(sectionKey)
+  const options: IntersectionObserverInit = {
+    threshold
   }
-  const onUnobserve = undefined
-  const options: IntersectionObserverInit = { threshold: 0.5 }
-  onMount(() => {
-    scroller.setTarget(target, section.getBoundingClientRect().top)
 
-    const observer = setObservable(onObserve, onUnobserve, options)
+  onMount(() => {
+    scroller.setTarget(target, section.getBoundingClientRect().top + offsetY)
+    const observer = new IntersectionObserver(entries => {
+      if (entries[0].isIntersecting) $currentSection = target
+    }, options)
     observer && observer.observe(section)
     return () => observer && observer.unobserve(section)
   })
 </script>
 
-<section bind:this={section} class:slide id={target}>
+<section bind:this={section} class:slide id={`${target}-${index}`}>
   <slot />
 </section>
 

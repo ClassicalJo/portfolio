@@ -1,17 +1,14 @@
 <script lang="ts">
-  import { horizontalScale } from '../common/transitions'
+  import type { SectionName } from '../common/Scroller'
   export let onClick: () => void
-  export let current: boolean
+  export let current: SectionName
+  export let name: SectionName
+  $: isCurrent = current === name
 </script>
 
-<div class="link flex-1 flex flex-column center" aria-current={current}>
+<div class="link flex-1 flex flex-column center" aria-current={isCurrent}>
   <button class="button relative" on:click={onClick} aria-label="Go to section">
     <slot />
-    {#if current}
-      <div class="selected flex center" transition:horizontalScale aria-hidden="true">
-        <slot />
-      </div>
-    {/if}
   </button>
 </div>
 
@@ -39,20 +36,9 @@
     @include link-active;
   }
 
-  .selected {
-    overflow: hidden;
-    @include beforeAbsolute;
-    text-decoration: underline;
-    color: transparent;
-    text-decoration-color: white;
-    filter: drop-shadow(0.5px 0.5px 0px $black);
-    text-underline-offset: 5.5px;
-    text-decoration-thickness: 1px;
-    white-space: nowrap;
-  }
   @include breakpoints.md {
     .link {
-      margin: 20px 0px 12px 0px;
+      padding: calc($headerOuterHeight/2) 0;
     }
   }
 </style>

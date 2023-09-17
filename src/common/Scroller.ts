@@ -1,26 +1,46 @@
 export class Scroller {
-  targets: ScrollTarget
+  targets: Targets
   constructor() {
-    this.targets = {}
+    this.targets = {
+      home: new Section('home', 'Home'),
+      about: new Section('about', 'About'),
+      projects: new Section('projects', 'Projects'),
+      contact: new Section('contact', 'Contact')
+    }
   }
-  setTarget(section: ScrollTargetKey, int: number) {
-    this.targets[section] = int
+  setTarget(section: SectionName, int: number) {
+    this.targets[section].target = int
   }
-  go(section: ScrollTargetKey) {
-    const top = this.targets[section]
-    if (top === undefined) return
+  go(section: SectionName) {
+    const top = this.targets[section].target
     window.scroll({
-      top: top - 64,
+      top: (top ?? 0) - 64,
       behavior: 'smooth'
     })
   }
-}
-export const key = Symbol()
-export type ScrollTarget = {
-  home?: number
-  about?: number
-  projects?: number
-  contact?: number
+  getSections() {
+    return Object.values(this.targets)
+  }
 }
 
-export type ScrollTargetKey = keyof ScrollTarget
+export const scrollerKey = Symbol()
+
+export class Section {
+  constructor(
+    public sectionName: SectionName,
+    public title: string,
+    public _target: number = 0
+  ) {}
+  set target(value: number) {
+    this._target = value
+  }
+  get target() {
+    return this._target
+  }
+}
+
+export type Targets = Record<SectionName, Section>
+
+export type SectionName = 'home' | 'about' | 'projects' | 'contact'
+
+export type ScrollTarget = Partial<Record<SectionName, number>>
