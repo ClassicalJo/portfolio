@@ -2,27 +2,31 @@
   import Description from './Description.svelte'
   import Title from './Title.svelte'
   import Tags from './Tags.svelte'
+  import type { Item } from './projects'
 
-  export let src: string
-  export let alt: string
-  export let tags: string[]
-  export let id: number
-  export let github: string
-  export let deploy: string
+  export let item: Item
+
   export let selected: boolean
   let loading = true
   const toggle = () => (loading = !loading)
 </script>
 
 <div class="item-container flex" class:selected>
-  <img class="background" width="800" height="800" on:load={toggle} {src} {alt} />
+  <img
+    class="background"
+    width="800"
+    height="800"
+    on:load={toggle}
+    src={item.src}
+    alt={item.alt}
+  />
   <div class="background overlay" />
   <div class="item flex flex-column">
     <div class="flex flex-column column center">
       <div class="card">
-        <Title {deploy} {github}>Project Title #{id}</Title>
-        <Description />
-        <Tags {tags} />
+        <Title deploy={item.deploy} github={item.github}>{item.title}</Title>
+        <Description description={item.description} />
+        <Tags tags={item.tags} />
       </div>
     </div>
   </div>
@@ -56,13 +60,13 @@
     position: absolute;
     width: 66%;
     height: 100%;
-    border: 1px solid rgba(50, 50, 50, 1);
     box-sizing: border-box;
   }
   .overlay {
     background: rgba(9, 0, 19, 0.75);
     z-index: 2;
     opacity: 1;
+    mask-image: url('../assets/images/aerolab.webp');
   }
   .overlay:hover,
   .overlay:active {

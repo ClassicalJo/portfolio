@@ -32,15 +32,7 @@
             class:left={selected && $animate === 'left'}
             aria-hidden={!selected}
           >
-            <Item
-              id={item.id}
-              src={item.src}
-              alt=""
-              tags={item.tags}
-              deploy={item.deploy}
-              github={item.github}
-              {selected}
-            />
+            <Item {item} {selected} />
           </div>
         {/each}
       </div>
