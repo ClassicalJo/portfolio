@@ -2,10 +2,13 @@
   import { scrollDown } from '../common/store'
   import Collapsible from './Collapsible.svelte'
   import Logo from './Logo.svelte'
+  let initialHide = true
+  $: if (!$scrollDown) initialHide = false
 </script>
 
 <header
   class="header-container flex flex-1"
+  class:initialHide
   class:hide={$scrollDown}
   class:show={!$scrollDown}
 >
@@ -27,7 +30,6 @@
     background: $gradientHeader;
     align-items: center;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
-    transform: scaleY(0);
   }
   .header {
     min-height: $headerOuterHeight;
@@ -37,6 +39,9 @@
   }
   .hide {
     animation: scaleDown 0.3s ease forwards;
+  }
+  .initialHide {
+    opacity: 0;
   }
 
   @include breakpoints.md {
