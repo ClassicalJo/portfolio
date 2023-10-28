@@ -1,13 +1,16 @@
 <script lang="ts">
+  import { scrollDown } from '../common/store'
   import Collapsible from './Collapsible.svelte'
   import Logo from './Logo.svelte'
-  import { verticalScale } from '../common/transitions'
-  import { cubicOut } from 'svelte/easing'
+  let initialHide = true
+  $: if (!$scrollDown) initialHide = false
 </script>
 
 <header
   class="header-container flex flex-1"
-  transition:verticalScale={{ easing: cubicOut, duration: 500 }}
+  class:initialHide
+  class:hide={$scrollDown}
+  class:show={!$scrollDown}
 >
   <div class="header flex flex-1">
     <Logo />
@@ -18,6 +21,7 @@
 <style lang="scss">
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
+
   .header-container {
     position: fixed;
     width: 100%;
@@ -29,6 +33,15 @@
   }
   .header {
     min-height: $headerOuterHeight;
+  }
+  .show {
+    animation: scaleUp 0.3s ease forwards;
+  }
+  .hide {
+    animation: scaleDown 0.3s ease forwards;
+  }
+  .initialHide {
+    opacity: 0;
   }
 
   @include breakpoints.md {
