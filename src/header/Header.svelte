@@ -1,9 +1,7 @@
 <script lang="ts">
+  import { scrollDown } from '../common/store'
   import Collapsible from './Collapsible.svelte'
   import Logo from './Logo.svelte'
-  import { verticalScale } from '../common/transitions'
-  import { cubicOut } from 'svelte/easing'
-  import { scrollDown } from '../common/store'
 </script>
 
 <header
@@ -29,6 +27,7 @@
     background: $gradientHeader;
     align-items: center;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    transform: scaleY(0);
   }
   .header {
     min-height: $headerOuterHeight;

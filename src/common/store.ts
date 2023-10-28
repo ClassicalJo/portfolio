@@ -5,7 +5,7 @@ export const sectionKey = Symbol()
 export const createCurrentSection = () => writable<SectionName>('home')
 
 function createScrollDownListener() {
-  const { subscribe, set } = writable<boolean>(false)
+  const { subscribe, set } = writable<boolean>(true)
   let lastKnownScrollPosition = 0
   let ticking = false
 
