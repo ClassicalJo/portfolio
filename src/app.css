@@ -11,3 +11,20 @@ html, body, p, h1, h2, h3, h4 {
   margin: 0;
   font-family: Alexandria, monospace;
 }
+
+@keyframes scaleDown {
+  0% {
+    transform: translate(0, 0) scaleY(1);
+  }
+  100% {
+    transform: translate(0, -100%) scaleY(0);
+  }
+}
+@keyframes scaleUp {
+  0% {
+    transform: translate(0, -100%) scaleY(0);
+  }
+  100% {
+    transform: translate(0, 0) scaleY(1);
+  }
+}

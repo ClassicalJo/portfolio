@@ -29,12 +29,9 @@
             {#if selected}
               <div
                 class="flex-1 underline"
-                class:selected
                 transition:horizontalScale
                 aria-hidden="true"
-              >
-                <slot />
-              </div>
+              />
             {/if}
           </div>
         </div>
@@ -50,14 +47,11 @@
     overflow-y: hidden;
   }
   .underline {
-    border-bottom: 5px solid transparent;
     @include beforeAbsolute;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.8);
+    top: 0.5px;
   }
-  .selected {
-    border-bottom: 2px solid white;
-    top: 2px;
-    box-sizing: border-box;
-  }
+
   @include breakpoints.md {
     .expanded {
       max-height: $headerOuterHeight;
