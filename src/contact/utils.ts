@@ -34,12 +34,12 @@ const mockSuccess: EmailProvider = {
     })
 }
 
-const mockReject: EmailProvider = {
-  submitter: () =>
-    new Promise<Response>((_, reject) => {
-      setTimeout(() => reject(new Response()), 2000)
-    })
-}
+// const mockReject: EmailProvider = {
+//   submitter: () =>
+//     new Promise<Response>((_, reject) => {
+//       setTimeout(() => reject(new Response()), 2000)
+//     })
+// }
 
 const selectProvider = (env: Environment) => {
   switch (env) {
