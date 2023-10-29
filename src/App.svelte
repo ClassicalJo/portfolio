@@ -25,6 +25,21 @@
     rel="stylesheet"
   />
   <title>Jose Barrientos</title>
+  <meta
+    name="description"
+    content="C'est moi! classicalJo, currently crafting cascades of code at Scalemote as a Chapter Lead. With creativity, charisma and curiousity, I connect and collaborate with my crew to create cutting-edge applications. Currently working with React, Svelte, Nest and Typescript."
+  />
+  <meta property="og:title" content="Jose Barrientos" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://classicaljo.github.io/portfolio" />
+  <meta
+    property="og:image"
+    content="https://user-images.githubusercontent.com/55909151/278907201-eaf35df1-3537-42d5-84cd-87b94785edfc.png"
+  />
+  <meta
+    property="og:description"
+    content="C'est moi! classicalJo, currently crafting cascades of code at Scalemote as a Chapter Lead. With creativity, charisma and curiousity, I connect and collaborate with my crew to create cutting-edge applications. Currently working with React, Svelte, Nest and Typescript."
+  />
 </svelte:head>
 
 <main>
