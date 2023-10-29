@@ -1,15 +1,14 @@
 <script lang="ts">
+  import icons from '../assets/icons'
+  import { emailStore } from '../stores/email'
+  import Button from './Button.svelte'
+  import FormSent from './FormSent.svelte'
   import Input from './Input.svelte'
   import Loading from './Loading.svelte'
-  import emailService from './utils'
-  import icons from '../assets/icons'
-  import Button from './Button.svelte'
 
-  let promise: null | Promise<Response> = null
   let form: HTMLFormElement
-  let handleSubmit = () => {
-    promise = emailService(form)
-  }
+  const { submission, submit } = emailStore
+  const handleSubmit = () => submit(form)
 </script>
 
 <div class="wrapper flex flex-1 flex-column">
@@ -56,14 +55,14 @@
   </form>
   <div class="submit-area flex center">
     <Button onClick={() => form.reset()} backgroundColor="#FF7F50" icon={icons.close} />
-    {#if !promise}
+    {#if !$submission}
       <Button onClick={handleSubmit} backgroundColor="#32CD32" icon={icons.send} />
     {:else}
       <div class="flex-1">
-        {#await promise}
+        {#await $submission}
           <Loading />
         {:then}
-          <p>Form sent!</p>
+          <FormSent />
         {:catch}
           <p>Form error!</p>
         {/await}
