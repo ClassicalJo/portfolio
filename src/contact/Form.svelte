@@ -103,7 +103,7 @@
     border: 0px;
     padding: 10px;
     min-height: 150px;
-    font-family: Noto Sans JP;
+    font-family: Noto Sans JP, sans-serif;
     border-radius: 10px;
     @include text-m-l4;
     width: 100%;

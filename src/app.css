@@ -4,7 +4,7 @@
 html, body, p, h1, h2, h3, h4 {
   padding: 0;
   margin: 0;
-  font-family: Alexandria, monospace;
+  font-family: Alexandria, sans-serif;
 }
 
 @keyframes scaleDown {
