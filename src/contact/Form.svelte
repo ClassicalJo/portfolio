@@ -9,7 +9,7 @@
 
   let form: HTMLFormElement
   const { submission, submit } = emailStore
-  const handleSubmit = () => submit(form)
+  const handleSubmit = () => !$submission && submit(form)
 </script>
 
 <div class="wrapper flex flex-1 flex-column">
@@ -55,21 +55,13 @@
     </div>
   </form>
   <div class="submit-area flex center">
-    <Button
-      onClick={() => form.reset()}
-      backgroundColor="#FF7F50"
-      hoverColor="#FF9269"
-      icon={icons.close}
-    />
-    {#if !$submission}
-      <Button
-        onClick={handleSubmit}
-        backgroundColor="#32CD32"
-        hoverColor="#47D247"
-        icon={icons.send}
-      />
-    {:else}
-      <div class="flex-1">
+    <Button onClick={() => form.reset()} backgroundColor="#FF7F50" hoverColor="#FF9269">
+      <img class="icon" src={icons.close} alt="" />
+    </Button>
+    <Button onClick={handleSubmit} backgroundColor="#32CD32" hoverColor="#47D247">
+      {#if !$submission}
+        <img class="icon" src={icons.send} alt="" />
+      {:else}
         {#await $submission}
           <Loading />
         {:then}
@@ -77,8 +69,8 @@
         {:catch}
           <FormError />
         {/await}
-      </div>
-    {/if}
+      {/if}
+    </Button>
   </div>
 </div>
 
@@ -123,5 +115,11 @@
   }
   .area::placeholder {
     color: rgba(0, 0, 0, 0.5);
+  }
+  .icon {
+    width: 20px;
+    height: 20px;
+    filter: drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.2));
+    animation: appearFromBelow 0.3s;
   }
 </style>
