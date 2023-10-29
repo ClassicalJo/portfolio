@@ -2,6 +2,7 @@
   import icons from '../assets/icons'
   import { emailStore } from '../stores/email'
   import Button from './Button.svelte'
+  import FormError from './FormError.svelte'
   import FormSent from './FormSent.svelte'
   import Input from './Input.svelte'
   import Loading from './Loading.svelte'
@@ -54,9 +55,19 @@
     </div>
   </form>
   <div class="submit-area flex center">
-    <Button onClick={() => form.reset()} backgroundColor="#FF7F50" icon={icons.close} />
+    <Button
+      onClick={() => form.reset()}
+      backgroundColor="#FF7F50"
+      hoverColor="#FF9269"
+      icon={icons.close}
+    />
     {#if !$submission}
-      <Button onClick={handleSubmit} backgroundColor="#32CD32" icon={icons.send} />
+      <Button
+        onClick={handleSubmit}
+        backgroundColor="#32CD32"
+        hoverColor="#47D247"
+        icon={icons.send}
+      />
     {:else}
       <div class="flex-1">
         {#await $submission}
@@ -64,7 +75,7 @@
         {:then}
           <FormSent />
         {:catch}
-          <p>Form error!</p>
+          <FormError />
         {/await}
       </div>
     {/if}
