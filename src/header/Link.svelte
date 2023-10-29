@@ -18,7 +18,7 @@
   .button {
     @include link-button;
     font-size: 18px;
-    font-family: Nunito Sans;
+    font-family: Nunito Sans, sans-serif;
     font-weight: 500;
     color: white;
     filter: drop-shadow(1px 1px 0px $black);

@@ -40,7 +40,7 @@
   @use './values.scss';
   .about {
     padding: 124px 44px;
-    font-family: Nunito Sans;
+    font-family: Nunito Sans, sans-serif;
   }
   .card {
     background: $gradientInput;
@@ -58,7 +58,7 @@
   }
 
   .text-body {
-    font-family: Nunito Sans;
+    font-family: Nunito Sans, sans-serif;
     @include text-d-l4;
     font-weight: 300;
   }
