@@ -15,7 +15,7 @@
   @use '../scss/breakpoints.scss';
   .pre-title {
     @include text-d-l4;
-    font-family: Noto Sans JP;
+    font-family: Noto Sans JP, sans-serif;
   }
   .pre-title {
     color: white;
@@ -23,7 +23,7 @@
   }
   .hero-title {
     position: relative;
-    font-family: Alexandria;
+    font-family: Alexandria, sans-serif;
     pointer-events: none;
     @include text-d-l1;
     background-position: center;

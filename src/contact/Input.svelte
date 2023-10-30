@@ -31,7 +31,7 @@
     margin: 0px 10px;
     color: rgba(0, 0, 0, 0.9);
     border: 0px;
-    font-family: Noto Sans JP;
+    font-family: Noto Sans JP, sans-serif;
     @include text-m-l4;
     min-width: 0;
     width: 0;

@@ -1,25 +1,13 @@
-import clip from './clip.png'
-import cloud from './cloud.png'
-import cloud2 from './cloud2.png'
-import denim from './denim.webp'
-import github from './github.png'
-import joe from './joe.jpg'
-import prism from './prism.png'
-import wave from './wave.svg'
+import cloud from './cloud.webp'
+import joe from './joe.webp'
 import aerolab from './aerolab.webp'
-import pathfinder from './pathfinder.png'
-import reflections from './reflections.png'
-import blinker from './blinker.png'
+import pathfinder from './pathfinder.webp'
+import reflections from './reflections.webp'
+import blinker from './blinker.webp'
 
 export default {
-  clip,
   cloud,
-  cloud2,
-  denim,
-  github,
   joe,
-  prism,
-  wave,
   aerolab,
   pathfinder,
   reflections,

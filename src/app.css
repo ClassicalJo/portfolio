@@ -1,15 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Arvo&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alexandria&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Covered+By+Your+Grace&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Neucha&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;500;600&display=swap');
 html, body, p, h1, h2, h3, h4 {
   padding: 0;
   margin: 0;
-  font-family: Alexandria, monospace;
+  font-family: Alexandria, sans-serif;
 }
 
 @keyframes scaleDown {

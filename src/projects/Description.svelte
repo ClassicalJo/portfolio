@@ -14,7 +14,7 @@
 
   .description {
     @include text-d-l4;
-    font-family: Nunito Sans;
+    font-family: Nunito Sans, sans-serif;
     font-weight: 300;
     padding: 28px 0;
     color: rgba(50, 50, 50, 1);

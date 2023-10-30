@@ -33,7 +33,7 @@
     color: rgba(50, 50, 50, 1);
   }
   .content {
-    font-family: Nunito Sans;
+    font-family: Nunito Sans, sans-serif;
     @include text-d-l4;
     font-weight: 300;
   }
