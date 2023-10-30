@@ -1,18 +1,32 @@
 <script lang="ts">
   import images from '../assets/images'
+  let fontLoad = false
+  document.fonts.ready.then(() => (fontLoad = true))
+
+  let imageLoad = false
+  let img = new Image()
+  img.src = images.cloud
+  img.onload = () => (imageLoad = true)
+
+  $: appear = fontLoad && imageLoad
 </script>
 
-<div class="flex-column flex">
-  <div class="flex relative">
-    <p class="pre-title absolute">Hi! I'm</p>
-    <h1 class="hero-title" style="background-image:url({images.cloud})">ClassicalJo</h1>
+{#if appear}
+  <div class="flex-column flex appear">
+    <div class="flex relative">
+      <p class="pre-title absolute">Hi! I'm</p>
+      <h1 class="hero-title" style="background-image:url({img.src})">ClassicalJo</h1>
+    </div>
   </div>
-</div>
+{/if}
 
 <style lang="scss">
   @use 'sass:color';
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
+  .appear {
+    animation: appearFromBelow 0.3s;
+  }
   .pre-title {
     @include text-d-l4;
     font-family: Noto Sans JP, sans-serif;
