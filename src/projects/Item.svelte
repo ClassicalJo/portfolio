@@ -66,7 +66,6 @@
     background: rgba(9, 0, 19, 0.75);
     z-index: 2;
     opacity: 1;
-    mask-image: url('../assets/images/aerolab.webp');
   }
   .overlay:hover,
   .overlay:active {
