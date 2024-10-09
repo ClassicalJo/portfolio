@@ -7,22 +7,33 @@
   <svg
     class="icon"
     xmlns="http://www.w3.org/2000/svg"
-    width="30"
-    height="30"
+    width="35"
     viewBox="0 0 50 40"
+    preserveAspectRatio="xMidYMid meet"
   >
+    <animate
+      id="trigger"
+      attributeName="fill"
+      from="transparent"
+      to="transparent"
+      begin="click"
+    />
     {#each translate as offsetY}
-      <path
-        fill="currentColor"
-        transform={`translate(0 ${offsetY})`}
-        d="M 5.00,0.00
-           C 0.00,0.00 0.00,5.00 0.00,5.00
-             0.00,5.00 0.00,10.00 5.00,10.00
-             10.00,10.00 45.00,10.00 45.00,10.00
-             45.00,10.00 50.00,10.00 50.00,5.00
-             50.00,0.00 45.00,0.00 45.00,0.00
-             45.00,0.00 10.00,0.00 5.00,0.00 Z"
-      />
+      <line
+        transform={`translate(0 ${5 + offsetY})`}
+        x1="5"
+        x2="45"
+        stroke="white"
+        stroke-linecap="round"
+        stroke-width="3px"
+      >
+        <animate
+          attributeName="stroke"
+          values="white;rgba(155, 79, 150); white"
+          begin="trigger.begin+{(offsetY / 50) * 0.1}s"
+          dur=".5s"
+        />
+      </line>
     {/each}
   </svg>
 </button>
@@ -32,12 +43,13 @@
   @use '../scss/breakpoints.scss';
   .menu {
     display: none;
+    cursor: pointer;
   }
   .icon {
-    border-radius: 2px;
     color: white;
     margin: 0;
     display: block;
+    min-height: 100%;
   }
   @include breakpoints.md {
     .menu {
