@@ -2,19 +2,17 @@
   import { scrollDown } from '../common/store'
   import Collapsible from './Collapsible.svelte'
   import Logo from './Logo.svelte'
+  import Menu from './Menu.svelte'
+  import { toggleExpanded } from './collapsibleState'
   let initialHide = true
   $: if (!$scrollDown) initialHide = false
 </script>
 
-<header
-  class="header-container flex flex-1"
-  class:initialHide
-  class:hide={$scrollDown}
-  class:show={!$scrollDown}
->
-  <div class="header flex flex-1">
+<header class="header relative" class:hide={$scrollDown} class:show={!$scrollDown}>
+  <Collapsible hide={$scrollDown} />
+  <div class="header-container flex flex-1 relative" class:initialHide>
     <Logo />
-    <Collapsible />
+    <Menu onClick={toggleExpanded} />
   </div>
 </header>
 
@@ -22,18 +20,21 @@
   @use '../scss/global.scss' as *;
   @use '../scss/breakpoints.scss';
 
-  .header-container {
+  .header {
     position: fixed;
     width: 100%;
-    z-index: 5;
-    min-height: $headerOuterHeight;
-    background: $gradientHeader;
+    z-index: 99;
+  }
+
+  .header-container {
+    width: 100%;
+    z-index: 15;
+    height: $headerOuterHeight;
     align-items: center;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.3);
+    background: $gradientHeader;
   }
-  .header {
-    min-height: $headerOuterHeight;
-  }
+
   .show {
     animation: scaleUp 0.3s ease forwards;
   }

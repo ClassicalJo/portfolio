@@ -18,7 +18,9 @@
   .button {
     @include link-button;
     font-size: 18px;
-    font-family: Nunito Sans, sans-serif;
+    font-family:
+      Nunito Sans,
+      sans-serif;
     font-weight: 500;
     color: white;
     filter: drop-shadow(1px 1px 0px $black);
@@ -37,8 +39,9 @@
   }
 
   @include breakpoints.md {
-    .link {
-      padding: calc($headerOuterHeight/2) 0;
+    .button {
+      color: white;
+      filter: drop-shadow(1.5px 1.5px 0px $black);
     }
   }
 </style>
