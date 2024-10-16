@@ -1,14 +1,17 @@
 <script lang="ts">
-  import Menu from './Menu.svelte'
   import NavBar from './NavBar.svelte'
-
-  let expanded = false
-  const expand = () => (expanded = !expanded)
+  import { expanded, toggleExpanded, resetExpandedIfHidden } from './collapsibleState'
+  export let hide: boolean
+  document.addEventListener(
+    'scroll',
+    () => $expanded && resetExpandedIfHidden(true),
+    true
+  )
+  $: resetExpandedIfHidden(hide)
 </script>
 
-<div class="collapsible flex flex-1 flex-column">
-  <Menu onClick={expand} />
-  <NavBar {expanded} {expand} />
+<div class="flex flex-1 flex-column collapsible">
+  <NavBar expanded={$expanded} expand={toggleExpanded} />
 </div>
 
 <style lang="scss">
@@ -16,11 +19,22 @@
   @use '../scss/breakpoints.scss';
   @use 'sass:math';
   .collapsible {
-    max-width: 478px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50vw;
+    z-index: 100;
+    height: $headerOuterHeight;
   }
+
   @include breakpoints.md {
     .collapsible {
-      max-width: 100vw;
+      position: fixed;
+      top: $headerOuterHeight;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
     }
   }
 </style>
