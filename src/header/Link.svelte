@@ -1,14 +1,24 @@
 <script lang="ts">
   import type { SectionName } from '../common/Scroller'
-  export let onClick: () => void
-  export let current: SectionName
-  export let name: SectionName
-  $: isCurrent = current === name
+  interface Props {
+    onClick: () => void;
+    current: SectionName;
+    name: SectionName;
+    children?: import('svelte').Snippet;
+  }
+
+  let {
+    onClick,
+    current,
+    name,
+    children
+  }: Props = $props();
+  let isCurrent = $derived(current === name)
 </script>
 
 <div class="link flex-1 flex flex-column center" aria-current={isCurrent}>
-  <button class="button relative" on:click={onClick} aria-label="Go to section">
-    <slot />
+  <button class="button relative" onclick={onClick} aria-label="Go to section">
+    {@render children?.()}
   </button>
 </div>
 

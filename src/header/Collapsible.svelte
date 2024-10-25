@@ -1,13 +1,19 @@
 <script lang="ts">
   import NavBar from './NavBar.svelte'
-  import { expanded, toggleExpanded, resetExpandedIfHidden } from './collapsibleState'
-  export let hide: boolean
+  import { expanded, resetExpandedIfHidden, toggleExpanded } from './collapsibleState'
+  interface Props {
+    hide: boolean
+  }
+
+  let { hide }: Props = $props()
   document.addEventListener(
     'scroll',
     () => $expanded && resetExpandedIfHidden(true),
     true
   )
-  $: resetExpandedIfHidden(hide)
+  $effect(() => {
+    resetExpandedIfHidden(hide)
+  })
 </script>
 
 <div class="flex flex-1 flex-column collapsible">

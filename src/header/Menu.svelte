@@ -1,9 +1,13 @@
 <script lang="ts">
-  export let onClick: () => void
+  interface Props {
+    onClick: () => void;
+  }
+
+  let { onClick }: Props = $props();
   const translate = [0, 16, 32]
 </script>
 
-<button class="menu relative" on:click={onClick}>
+<button class="menu relative" onclick={onClick}>
   <svg
     class="icon"
     xmlns="http://www.w3.org/2000/svg"

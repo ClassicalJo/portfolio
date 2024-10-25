@@ -1,10 +1,20 @@
 <script lang="ts">
-  export let onClick: () => void
-  export let left = false
-  export let right = false
+  interface Props {
+    onClick: () => void;
+    left?: boolean;
+    right?: boolean;
+    children?: import('svelte').Snippet;
+  }
+
+  let {
+    onClick,
+    left = false,
+    right = false,
+    children
+  }: Props = $props();
 </script>
 
-<button class="button" on:click={onClick}>
+<button class="button" onclick={onClick}>
   <svg
     class:left
     class:right
@@ -14,7 +24,7 @@
     viewBox="0 0 20 40"
     preserveAspectRatio="none"
   >
-    <slot />
+    {@render children?.()}
     <path
       transform={`rotate(${left ? 180 : 0} 10 20)`}
       fill="currentColor"

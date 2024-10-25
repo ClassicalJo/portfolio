@@ -1,11 +1,23 @@
 <script lang="ts">
-  export let name: string
-  export let id: string
-  export let title: string
-  export let src: string
-  export let placeholder: string
-  export let type: 'email' | 'text'
-  export let required = false
+  interface Props {
+    name: string;
+    id: string;
+    title: string;
+    src: string;
+    placeholder: string;
+    type: 'email' | 'text';
+    required?: boolean;
+  }
+
+  let {
+    name,
+    id,
+    title,
+    src,
+    placeholder,
+    type,
+    required = false
+  }: Props = $props();
 </script>
 
 <div class="wrapper flex flex-column">

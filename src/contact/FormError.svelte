@@ -1,3 +1,5 @@
+<script lang="ts"></script>
+
 <p class="error">Form error!</p>
 
 <style lang="scss">

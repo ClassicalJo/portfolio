@@ -11,7 +11,7 @@
 </script>
 
 <div class="black grid">
-  <canvas bind:this={canvas} width={950} height={540} />
+  <canvas bind:this={canvas} width={950} height={540}></canvas>
 </div>
 
 <style>

@@ -1,5 +1,9 @@
 <script lang="ts">
-  export let tags: string[] = []
+  interface Props {
+    tags?: string[];
+  }
+
+  let { tags = [] }: Props = $props();
 </script>
 
 <p class="tags">

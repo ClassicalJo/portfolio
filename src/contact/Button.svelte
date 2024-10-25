@@ -1,21 +1,23 @@
 <script lang="ts">
-  export let onClick: () => void
-  export let backgroundColor: string
-  export let hoverColor: string
-  let touch = false
-  const setTouch = (val: boolean) => (touch = val)
+  import type { Snippet } from 'svelte'
+  interface Props {
+    onClick: () => void
+    children: Snippet
+  }
+  let touch = $state(false)
+  let setTouch = (val: boolean) => (touch = val)
+  let { onClick, children }: Props = $props()
 </script>
 
 <button
   class="button clear flex-1 center flex"
   class:touch
-  on:click|preventDefault={onClick}
-  on:pointerenter={() => setTouch(true)}
-  on:pointerleave={() => setTouch(false)}
-  style="--bg-color: {backgroundColor}; --bg-hover-color: {hoverColor}"
+  onclick={onClick}
+  onpointerenter={() => setTouch(true)}
+  onpointerleave={() => setTouch(false)}
 >
   <div class="flex-1 flex center">
-    <slot />
+    {@render children?.()}
   </div>
 </button>
 
@@ -30,10 +32,10 @@
     height: 49px;
     text-shadow: 0 0 1px white;
     background-color: var(--bg-color);
-    transition: background-color 0.15s;
+    transition: background-color 0.3s;
   }
   .touch {
     background-color: var(--bg-hover-color);
-    transition: background-color 0.15s;
+    transition: background-color 0.3s;
   }
 </style>

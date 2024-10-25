@@ -1,3 +1,5 @@
+<script lang="ts"></script>
+
 <p class="sent">Form sent!</p>
 
 <style lang="scss">

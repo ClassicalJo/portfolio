@@ -1,14 +1,14 @@
 <script lang="ts">
   import images from '../assets/images'
-  let fontLoad = false
+  let fontLoad = $state(false)
   document.fonts.ready.then(() => (fontLoad = true))
 
-  let imageLoad = false
-  let img = new Image()
+  let imageLoad = $state(false)
+  let img = $state(new Image())
   img.src = images.cloud
   img.onload = () => (imageLoad = true)
 
-  $: appear = fontLoad && imageLoad
+  let appear = $derived(fontLoad && imageLoad)
 </script>
 
 {#if appear}
