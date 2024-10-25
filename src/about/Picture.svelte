@@ -5,11 +5,11 @@
 <div class="picture-wrapper flex center">
   <div class="picture-container">
     <div class="wrapper">
-      <div class="image pictures green" style="background-image:url({images.joe})" />
-      <div class="image pictures blue" style="background-image:url({images.joe})" />
+      <div class="image pictures green" style="background-image:url({images.joe})"></div>
+      <div class="image pictures blue" style="background-image:url({images.joe})"></div>
     </div>
     <div class="wrapper">
-      <div class="image pictures red" style="background-image:url({images.joe})" />
+      <div class="image pictures red" style="background-image:url({images.joe})"></div>
       <img
         class="picture pictures"
         src={images.joe}

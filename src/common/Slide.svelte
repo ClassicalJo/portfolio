@@ -4,11 +4,23 @@
   import type { SectionName } from './Scroller'
   import { Scroller, scrollerKey } from './Scroller'
   import { sectionKey } from './store'
-  export let index = 0
-  export let offsetY = 0
-  export let threshold = 0.5
-  export let target: SectionName
-  export let slide = true
+  interface Props {
+    index?: number
+    offsetY?: number
+    threshold?: number
+    target: SectionName
+    slide?: boolean
+    children?: import('svelte').Snippet
+  }
+
+  let {
+    index = 0,
+    offsetY = 0,
+    threshold = 0.5,
+    target,
+    slide = true,
+    children
+  }: Props = $props()
   let section: HTMLElement
   const scroller = getContext<Scroller>(scrollerKey)
   const currentSection = getContext<Writable<SectionName>>(sectionKey)
@@ -27,7 +39,7 @@
 </script>
 
 <section bind:this={section} class:slide id={`${target}-${index}`}>
-  <slot />
+  {@render children?.()}
 </section>
 
 <style>

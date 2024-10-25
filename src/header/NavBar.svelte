@@ -6,8 +6,12 @@
   import type { Writable } from 'svelte/store'
   import { sectionKey } from '../common/store'
   import { horizontalScale } from '../common/transitions'
-  export let expand: () => void
-  export let expanded: boolean
+  interface Props {
+    expand: () => void
+    expanded: boolean
+  }
+
+  let { expand, expanded }: Props = $props()
   let scroller = getContext<Scroller>(scrollerKey)
   let currentSection = getContext<Writable<SectionName>>(sectionKey)
 
@@ -22,7 +26,6 @@
   class:nav-expanded={expanded}
   class:nav-collapsed={!expanded}
   aria-hidden={!expanded}
-  style="--dynamic-bg-image: url({images.card});"
 >
   <div class="card flex-1 flex" class:expanded class:collapsed={!expanded}>
     {#each Object.entries(scroller.targets) as [_, section]}
@@ -37,7 +40,7 @@
                   class="flex-1 underline"
                   transition:horizontalScale
                   aria-hidden="true"
-                />
+                ></div>
               {/if}
             </div>
           </div>
@@ -87,14 +90,7 @@
       flex-direction: row;
       position: relative;
       border-radius: 0 0 10px 10px;
-      background-image: var(--dynamic-bg-image);
-    }
-
-    .card::before {
-      @include beforeAbsolute;
       background: $purple;
-      opacity: 0.4;
-      pointer-events: none;
     }
 
     .collapsed {

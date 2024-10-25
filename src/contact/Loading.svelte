@@ -1,3 +1,5 @@
+<script lang="ts"></script>
+
 <svg
   class="icon"
   width="24"

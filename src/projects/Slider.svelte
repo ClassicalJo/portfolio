@@ -7,9 +7,13 @@
     easing: cubicOut
   })
 
-  export let currentIndex: number
-  export let totalItems: number
-  export let onClick: (int: number) => void
+  interface Props {
+    currentIndex: number;
+    totalItems: number;
+    onClick: (int: number) => void;
+  }
+
+  let { currentIndex, totalItems, onClick }: Props = $props();
 </script>
 
 <div class="slider flex center">
@@ -17,14 +21,14 @@
     {#each Array(totalItems) as _, index}
       <div class="grid-item flex flex-1">
         {#if index === currentIndex}
-          <div class="selected" in:receive={{ key: 0 }} out:send={{ key: 0 }} />
+          <div class="selected" in:receive={{ key: 0 }} out:send={{ key: 0 }}></div>
         {/if}
         <button
           aria-label={`Display project ${currentIndex}`}
           aria-pressed={currentIndex === index}
           class="slider-button"
-          on:click={() => onClick(index)}
-        />
+          onclick={() => onClick(index)}
+></button>
       </div>
     {/each}
   </div>

@@ -1,6 +1,10 @@
 <script lang="ts">
-  export let title: string
-  export let index: number
+  interface Props {
+    title: string;
+    index: number;
+  }
+
+  let { title, index }: Props = $props();
   const right = index % 2 === 0
 </script>
 

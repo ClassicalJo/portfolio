@@ -4,9 +4,13 @@
   import Tags from './Tags.svelte'
   import type { Item } from './projects'
 
-  export let item: Item
 
-  export let selected: boolean
+  interface Props {
+    item: Item;
+    selected: boolean;
+  }
+
+  let { item, selected }: Props = $props();
   let loading = true
   const toggle = () => (loading = !loading)
 </script>
@@ -16,11 +20,11 @@
     class="background"
     width="800"
     height="800"
-    on:load={toggle}
+    onload={toggle}
     src={item.src}
     alt={item.alt}
   />
-  <div class="background overlay" />
+  <div class="background overlay"></div>
   <div class="item flex flex-column">
     <div class="flex flex-column column center">
       <div class="card">

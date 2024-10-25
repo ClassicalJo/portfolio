@@ -4,8 +4,10 @@
   import Logo from './Logo.svelte'
   import Menu from './Menu.svelte'
   import { toggleExpanded } from './collapsibleState'
-  let initialHide = true
-  $: if (!$scrollDown) initialHide = false
+  let initialHide = $state(true)
+  $effect(() => {
+    if (!$scrollDown) initialHide = false
+  })
 </script>
 
 <header class="header relative" class:hide={$scrollDown} class:show={!$scrollDown}>

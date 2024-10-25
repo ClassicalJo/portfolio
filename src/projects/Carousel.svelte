@@ -18,10 +18,10 @@
       <div
         class="items"
         aria-label="carousel"
-        on:touchstart={touchStart}
-        on:touchend={touchEnd}
-        on:touchmove={handleTouchMove}
-        on:touchcancel={touchEnd}
+        ontouchstart={touchStart}
+        ontouchend={touchEnd}
+        ontouchmove={handleTouchMove}
+        ontouchcancel={touchEnd}
       >
         {#each $stack as stackItem (stackItem.id)}
           {@const { item } = stackItem}

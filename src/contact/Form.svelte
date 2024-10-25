@@ -51,14 +51,14 @@
         required
         name="message"
         placeholder="Start writing here..."
-      />
+      ></textarea>
     </div>
   </form>
   <div class="submit-area flex center">
-    <Button onClick={() => form.reset()} backgroundColor="#FF7F50" hoverColor="#FF9269">
+    <Button onClick={() => form.reset()} --bg-color="#FF7F50" --bg-hover-color="#FF9269">
       <img class="icon" src={icons.close} alt="" />
     </Button>
-    <Button onClick={handleSubmit} backgroundColor="#32CD32" hoverColor="#47D247">
+    <Button onClick={handleSubmit} --bg-color="#32CD32" --bg-hover-color="#47D247">
       {#if !$submission}
         <img class="icon" src={icons.send} alt="" />
       {:else}
@@ -103,7 +103,9 @@
     border: 0px;
     padding: 10px;
     min-height: 150px;
-    font-family: Noto Sans JP, sans-serif;
+    font-family:
+      Noto Sans JP,
+      sans-serif;
     border-radius: 10px;
     @include text-m-l4;
     width: 100%;

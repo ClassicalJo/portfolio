@@ -1,12 +1,17 @@
 <script lang="ts">
   import icons from '../assets/icons'
-  export let github: string
-  export let deploy: string
+  interface Props {
+    github: string;
+    deploy: string;
+    children?: import('svelte').Snippet;
+  }
+
+  let { github, deploy, children }: Props = $props();
 </script>
 
 <div class="flex wrapper">
   <p class="flex-1 title">
-    <slot />
+    {@render children?.()}
   </p>
   <div class="flex icon-zone">
     <a
